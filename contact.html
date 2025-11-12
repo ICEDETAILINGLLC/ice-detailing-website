@@ -1,101 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ICE Detailing LLC — Contact</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Contact ICE Detailing LLC — request a service or quote.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - ICE Detailing LLC</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">ICE</div>
-        <div>
-          <div style="font-weight:800;">ICE Detailing LLC</div>
-          <div style="font-size:.85rem;color:#666;">Serving Boston, MA & Middlesex area</div>
-        </div>
-      </div>
-
-      <nav class="navlinks">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <a class="cta" href="contact.html">Book Now</a>
-    </div>
+  <header>
+    <h1>ICE Detailing LLC</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h1>Contact & Booking</h1>
-    <div class="row" style="margin-top:1rem;">
-      <div class="col contact-card">
-        <h3>Get in touch</h3>
-        <p style="color:#666;">Email: icedetailingllc@gmail.com • Phone: (617) 970-2329</p>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Serving Boston, MA & Middlesex area</p>
+    <p>Email: <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
+    <p>Phone: <a href="tel:16179702329">(617) 970-2329</a></p>
+    <p>Instagram: <a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
 
-        <!-- Formspree form: replace YOUR_FORM_ID -->
-        <form action="https://formspree.io/f/manaykpb" method="POST" id="contactForm">
-          <div class="form-row">
-            <div class="col">
-              <input type="text" name="name" placeholder="Your name" required>
-            </div>
-            <div class="col">
-              <input type="email" name="email" placeholder="Your email" required>
-            </div>
-          </div>
+    <form action="https://formspree.io/f/manaykpb" method="POST">
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
 
-          <div style="margin-bottom:.75rem;">
-            <input type="text" name="phone" placeholder="Phone (optional)" value="(617) 970-2329">
-          </div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
 
-          <div style="margin-bottom:.75rem;">
-            <textarea name="message" placeholder="Tell us about your vehicle & service request" required></textarea>
-          </div>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
 
-          <button class="btn" type="submit">Send Message</button>
-        </form>
-
-        <p id="msg" style="margin-top:.85rem;color:#4b4b4b;"></p>
-      </div>
-
-      <aside style="width:320px;">
-        <div class="card" style="padding:1rem; border-radius:12px;">
-          <h4 style="margin-top:0">Service area</h4>
-          <p style="color:#666;">Boston, MA & Middlesex area</p>
-
-          <h4 style="margin-top:1rem">Social</h4>
-          <p style="color:#666;"><a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
-
-          <h4 style="margin-top:1rem">Photos</h4>
-          <div class="gallery">
-            <div class="thumb">Upload image → images/1.jpg</div>
-            <div class="thumb">Upload image → images/2.jpg</div>
-            <div class="thumb">Upload image → images/3.jpg</div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    <div class="container">
-      <div style="margin-bottom:.5rem;">Email: icedetailingllc@gmail.com &nbsp; • &nbsp; (617) 970-2329</div>
-      <div>© <span id="year3"></span> ICE Detailing LLC</div>
-    </div>
+    <p>© 2025 ICE Detailing LLC | Boston, MA | (617) 970-2329</p>
   </footer>
-
-  <script>
-    // Optional: show a small client-side success message after form submit
-    const form = document.getElementById('contactForm');
-    form.addEventListener('submit', (e) => {
-      // Let Formspree handle submit; show quick inline feedback
-      const msg = document.getElementById('msg');
-      msg.textContent = 'Sending…';
-      setTimeout(()=> msg.textContent = 'If the form does not navigate, check your email for confirmation.', 1500);
-    });
-    document.getElementById('year3').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
