@@ -1,37 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICE Detailing LLC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ICE DETAILING LLC — Premium Mobile Auto Detailing Boston, MA</title>
+  <meta name="description" content="ICE DETAILING LLC — Perfection is not optional — it's the standard. Mobile auto detailing serving Boston & Middlesex." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>ICE Detailing LLC</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
+        <div>
+          <div class="title">ICE DETAILING LLC</div>
+          <div class="tagline">Perfection is not optional — it's the standard.</div>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="row">
+        <a class="cta" href="tel:16179702329">Call (617) 970-2329</a>
+        <a class="cta" href="contact.html">Book</a>
+      </div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Premium Auto Detailing in Boston & Middlesex</h2>
-    <p>Keep your vehicle looking brand new — wherever you are.</p>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left card">
+        <h1>Mobile + Professional Auto Detailing</h1>
+        <p>We bring showroom shine to your door. Serving Boston, MA & the Middlesex area — premium packages, clear pricing, and meticulous workmanship.</p>
 
-  <section class="about">
-    <h2>About Us</h2>
-    <p>
-      ICE Detailing LLC offers top-tier mobile auto detailing services across
-      Boston and the Middlesex area. Our mission is simple: deliver that fresh,
-      “just-detailed” feeling every time.
-    </p>
-  </section>
+        <div class="hero-cta">
+          <a class="btn" href="contact.html#contactForm">Book Now</a>
+          <a class="btn secondary" href="services.html">See Services</a>
+        </div>
+
+        <div class="price-note">Click to call: <a href="tel:16179702329" style="color:var(--icy-blue); text-decoration:none;">(617) 970-2329</a></div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Gallery Preview</h3>
+          <div class="gallery" aria-hidden="false">
+            <div class="thumb"><img src="images/gallery/gallery1.jpg" alt="Sport car 1"></div>
+            <div class="thumb"><img src="images/gallery/gallery2.jpg" alt="Sport car 2"></div>
+            <div class="thumb"><img src="images/gallery/gallery3.jpg" alt="Sport car 3"></div>
+            <div class="thumb"><img src="images/gallery/gallery4.jpg" alt="Sport car 4"></div>
+            <div class="thumb"><img src="images/gallery/gallery5.jpg" alt="Sport car 5"></div>
+            <div class="thumb"><img src="images/gallery/gallery6.jpg" alt="Sport car 6"></div>
+          </div>
+          <p class="small-muted" style="margin-top:10px">Replace these with your photos in <code>/images/gallery/</code></p>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0">Why ICE DETAILING LLC?</h2>
+        <div class="row" style="margin-top:12px;">
+          <div style="flex:1">
+            <h4 style="margin:6px 0;">Trusted Professionals</h4>
+            <p class="small-muted">Experienced technicians, premium products, and attention to detail on every vehicle.</p>
+          </div>
+          <div style="flex:1">
+            <h4 style="margin:6px 0;">Convenient Mobile Service</h4>
+            <p class="small-muted">We come to your home or workplace in Boston & Middlesex.</p>
+          </div>
+          <div style="flex:1">
+            <h4 style="margin:6px 0;">Satisfaction Guarantee</h4>
+            <p class="small-muted">We don’t finish until it’s right — your satisfaction is our standard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h2 style="margin-bottom:8px;">What clients say</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>⭐⭐⭐⭐⭐</strong>
+          <p style="margin:8px 0; color:#fff">“Amazing attention to detail — my car looks brand new.”</p>
+          <div class="small-muted">— Jason M., Boston</div>
+        </div>
+        <div class="testimonial">
+          <strong>⭐⭐⭐⭐⭐</strong>
+          <p style="margin:8px 0; color:#fff">“Professional, on time, and an incredible finish.”</p>
+          <div class="small-muted">— Elena R., Cambridge</div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 ICE Detailing LLC | Boston, MA | (617) 970-2329</p>
+    <div class="container">
+      <div style="margin-bottom:6px">
+        <a href="mailto:icedetailingllc@gmail.com" style="color:var(--silver); text-decoration:none">icedetailingllc@gmail.com</a> •
+        <a href="tel:16179702329" style="color:var(--silver); text-decoration:none">(617) 970-2329</a> •
+        <a href="https://instagram.com/icedetailingllc" target="_blank" style="color:var(--silver); text-decoration:none">@icedetailingllc</a>
+      </div>
+      <div style="font-size:.95rem; color:var(--muted)">© <span id="y"></span> ICE DETAILING LLC — Boston & Middlesex area</div>
+    </div>
   </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
