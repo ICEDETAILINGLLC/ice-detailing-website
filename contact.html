@@ -1,44 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us - ICE Detailing LLC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — ICE DETAILING LLC</title>
+  <meta name="description" content="Contact ICE DETAILING LLC — request a quote or book mobile detailing. Serving Boston & Middlesex."/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>ICE Detailing LLC</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
+        <div>
+          <div class="title">ICE DETAILING LLC</div>
+          <div class="tagline">Perfection is not optional — it's the standard.</div>
+        </div>
+      </div>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="row">
+        <a class="cta" href="tel:16179702329">Call</a>
+        <a class="cta" href="mailto:icedetailingllc@gmail.com">Email</a>
+      </div>
+    </div>
   </header>
 
-  <section class="contact">
-    <h2>Contact Us</h2>
-    <p>Serving Boston, MA & Middlesex area</p>
-    <p>Email: <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
-    <p>Phone: <a href="tel:16179702329">(617) 970-2329</a></p>
-    <p>Instagram: <a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
+  <main class="container">
+    <section id="contactForm" style="margin-top:10px;">
+      <h1>Contact & Booking</h1>
+      <div class="contact-grid">
+        <div class="card">
+          <h3 style="margin-top:0">Request a Service</h3>
+          <p class="small-muted">Fill out the form and we’ll respond quickly to confirm availability and pricing.</p>
 
-    <form action="https://formspree.io/f/manaykpb" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required />
+          <!-- Replace YOUR_FORM_ID below with your Formspree endpoint -->
+          <form class="form" action="https://formspree.io/f/manaykpb" method="POST">
+            <label for="name" class="small-muted">Name</label>
+            <input type="text" name="name" id="name" required>
 
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" required />
+            <label for="email" class="small-muted">Email</label>
+            <input type="email" name="email" id="email" required>
 
-      <label for="message">Message</label>
-      <textarea name="message" id="message" rows="5" required></textarea>
+            <label for="phone" class="small-muted">Phone</label>
+            <input type="text" name="phone" id="phone" value="(617) 970-2329">
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+            <label for="service" class="small-muted">Service interested in</label>
+            <input type="text" name="service" id="service" placeholder="Express / Full / Ceramic / Add-ons">
+
+            <label for="message" class="small-muted">Message</label>
+            <textarea name="message" id="message" required placeholder="Tell us about your vehicle & preferred date/time"></textarea>
+
+            <div class="submit">
+              <button class="btn" type="submit">Send Message</button>
+            </div>
+            <div class="small-muted" style="margin-top:8px">We will reply to your email to confirm booking. You can also call (617) 970-2329.</div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h4 style="margin-top:0">Contact Info</h4>
+          <p class="small-muted"><strong>Email</strong><br><a href="mailto:icedetailingllc@gmail.com" style="color:var(--silver); text-decoration:none">icedetailingllc@gmail.com</a></p>
+          <p class="small-muted"><strong>Phone</strong><br><a href="tel:16179702329" style="color:var(--silver); text-decoration:none">(617) 970-2329</a></p>
+          <p class="small-muted"><strong>Service area</strong><br>Boston, MA & Middlesex area</p>
+          <p class="small-muted"><strong>Follow</strong><br><a href="https://instagram.com/icedetailingllc" target="_blank" style="color:var(--silver); text-decoration:none">@icedetailingllc</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 ICE Detailing LLC | Boston, MA | (617) 970-2329</p>
+    <div class="container">
+      <div style="margin-bottom:6px">© <span id="y3"></span> ICE DETAILING LLC — Boston & Middlesex area</div>
+    </div>
   </footer>
+
+  <script>document.getElementById('y3').textContent = new Date().getFullYear();</script>
 </body>
 </html>
