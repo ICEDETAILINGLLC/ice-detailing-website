@@ -1,45 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services - ICE Detailing LLC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — ICE DETAILING LLC</title>
+  <meta name="description" content="Services and pricing — Express Detail, Full Interior & Exterior, Premium Ceramic Protection. Serving Boston & Middlesex."/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>ICE Detailing LLC</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
+        <div>
+          <div class="title">ICE DETAILING LLC</div>
+          <div class="tagline">Perfection is not optional — it's the standard.</div>
+        </div>
+      </div>
+
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="row">
+        <a class="cta" href="tel:16179702329">Call</a>
+        <a class="cta" href="contact.html">Book</a>
+      </div>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>Our Services</h2>
+  <main class="container">
+    <section>
+      <h1>Services & Pricing</h1>
+      <p class="small-muted">Transparent pricing — starting rates listed. Final cost may vary by vehicle size & condition.</p>
 
-    <div class="service">
-      <img src="images/1.jpg" alt="Service 1" />
-      <h3>Exterior Detailing</h3>
-      <p>Full hand wash, wax, and paint protection for that perfect shine.</p>
-    </div>
+      <div class="services-grid">
+        <div class="service card">
+          <h3>Express Detail</h3>
+          <div class="price">Starting at $175</div>
+          <p class="small-muted" style="margin-top:8px">
+            Hand wash & dry, interior vacuum, windows in/out, tire shine, light trim dressing.
+          </p>
+          <div style="margin-top:12px">
+            <a class="btn" href="contact.html#contactForm">Book Now</a>
+          </div>
+        </div>
 
-    <div class="service">
-      <img src="images/2.jpg" alt="Service 2" />
-      <h3>Interior Detailing</h3>
-      <p>Deep clean, leather care, and odor removal to refresh your cabin.</p>
-    </div>
+        <div class="service card">
+          <h3>Full Interior & Exterior</h3>
+          <div class="price">Starting at $300</div>
+          <p class="small-muted" style="margin-top:8px">
+            Includes Express plus carpet & upholstery shampoo, leather care, clay + wax sealant.
+          </p>
+          <div style="margin-top:12px">
+            <a class="btn" href="contact.html#contactForm">Book Now</a>
+          </div>
+        </div>
 
-    <div class="service">
-      <img src="images/3.jpg" alt="Service 3" />
-      <h3>Ceramic Coating</h3>
-      <p>Advanced protection with a brilliant hydrophobic finish.</p>
-    </div>
-  </section>
+        <div class="service card">
+          <h3>Premium Ceramic Protection</h3>
+          <div class="price">Starting at $750</div>
+          <p class="small-muted" style="margin-top:8px">
+            Paint decon, machine polish, ceramic coating application, wheel & glass coating.
+          </p>
+          <div style="margin-top:12px">
+            <a class="btn" href="contact.html#contactForm">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;" class="card">
+        <h3 style="margin-top:0">Add-On Services</h3>
+        <ul style="color:var(--muted); line-height:1.6; padding-left:18px; margin:8px 0 0;">
+          <li>Headlight Restoration — $75</li>
+          <li>Engine Bay Cleaning — $30</li>
+          <li>Excessive Pet Hair Removal — $30+</li>
+          <li>Ozone Odor Treatment — $100</li>
+          <li>Water Spot Removal — $50+</li>
+        </ul>
+        <p class="price-note">Prices may vary based on vehicle size and condition.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 ICE Detailing LLC | Boston, MA | (617) 970-2329</p>
+    <div class="container">
+      <div style="margin-bottom:6px">
+        <a href="mailto:icedetailingllc@gmail.com" style="color:var(--silver); text-decoration:none">icedetailingllc@gmail.com</a> •
+        <a href="tel:16179702329" style="color:var(--silver); text-decoration:none">(617) 970-2329</a> •
+        <a href="https://instagram.com/icedetailingllc" target="_blank" style="color:var(--silver); text-decoration:none">@icedetailingllc</a>
+      </div>
+      <div style="font-size:.95rem; color:var(--muted)">© <span id="y2"></span> ICE DETAILING LLC</div>
+    </div>
   </footer>
+
+  <script>document.getElementById('y2').textContent = new Date().getFullYear();</script>
 </body>
 </html>
