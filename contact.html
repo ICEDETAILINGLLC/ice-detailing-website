@@ -11,7 +11,7 @@
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="images/logo.png" alt="ICE DETAILING LLC logo">
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
         <div>
           <div class="title">ICE DETAILING LLC</div>
           <div class="tag">Perfection is not optional — it's the standard.</div>
@@ -35,37 +35,35 @@
     <p class="small">Choose a service and request availability. Square handles online booking & payments (Apple Pay supported).</p>
 
     <div class="booking">
-      <div>
-        <div style="background:#fff; padding:18px; border-radius:12px; box-shadow:0 10px 30px rgba(10,10,10,0.04)">
-          <h3 style="margin-top:0">Request a Quote</h3>
+      <div class="card-light">
+        <h3 style="margin-top:0">Request a Quote</h3>
 
-          <!-- Backup contact form (Formspree) -->
-          <form action="https://formspree.io/f/manaykpb" method="POST" class="form" style="margin-top:12px;">
-            <label class="small">Name</label>
-            <input type="text" name="name" required>
+        <!-- Backup contact form (Formspree) -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="form" style="margin-top:12px;">
+          <label class="small">Name</label>
+          <input type="text" name="name" required>
 
-            <label class="small">Email</label>
-            <input type="email" name="email" required>
+          <label class="small">Email</label>
+          <input type="email" name="email" required>
 
-            <label class="small">Phone</label>
-            <input type="text" name="phone" value="(617) 970-2329">
+          <label class="small">Phone</label>
+          <input type="text" name="phone" value="(617) 970-2329">
 
-            <label class="small">Service</label>
-            <input type="text" name="service" placeholder="Express / Full / Ceramic / Add-ons">
+          <label class="small">Service</label>
+          <input type="text" name="service" placeholder="Express / Full / Ceramic / Add-ons">
 
-            <label class="small">Message</label>
-            <textarea name="message" required placeholder="Tell us about your vehicle & preferred date/time"></textarea>
+          <label class="small">Message</label>
+          <textarea name="message" required placeholder="Tell us about your vehicle & preferred date/time"></textarea>
 
-            <div style="margin-top:12px"><button class="btn" type="submit">Send Request</button></div>
-            <p class="note">We will reply via email to confirm booking. You can also call (617) 970-2329.</p>
-          </form>
-        </div>
+          <div style="margin-top:12px"><button class="btn" type="submit">Send Request</button></div>
+          <p class="note">We will reply via email to confirm booking. You can also call (617) 970-2329.</p>
+        </form>
       </div>
 
       <aside>
-        <div style="background:#fff; padding:18px; border-radius:12px; box-shadow:0 10px 30px rgba(10,10,10,0.04)">
+        <div class="card-light">
           <h4 style="margin-top:0">Book instantly</h4>
-          <p class="small">Use our live booking calendar (embed from Square). Accepts Apple Pay & card payments.</p>
+          <p class="small">Use our live booking calendar to choose a date & time. Square handles deposits & payments.</p>
 
           <!-- PASTE YOUR SQUARE EMBED CODE BELOW -->
           <div id="square-embed" style="margin-top:12px">
