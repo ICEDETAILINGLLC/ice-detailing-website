@@ -1,98 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ICE DETAILING LLC — Premium Mobile Auto Detailing Boston, MA</title>
-  <meta name="description" content="ICE DETAILING LLC — Perfection is not optional — it's the standard. Mobile auto detailing serving Boston & Middlesex." />
+  <title>ICE DETAILING LLC — Perfection is not optional</title>
+  <meta name="description" content="ICE DETAILING LLC — Premium mobile auto detailing in Boston & Middlesex. Book now for professional interior, exterior, and ceramic protection." />
   <link rel="stylesheet" href="style.css" />
+  <!-- Optional favicon if you add images/favicon.ico -->
+  <!-- <link rel="icon" href="images/favicon.ico"> -->
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo">
         <div>
           <div class="title">ICE DETAILING LLC</div>
-          <div class="tagline">Perfection is not optional — it's the standard.</div>
+          <div class="tag">Perfection is not optional — it's the standard.</div>
         </div>
       </div>
 
-      <nav class="navlinks" aria-label="Main navigation">
+      <nav class="nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="cta">Book</a>
       </nav>
 
-      <div class="row">
-        <a class="cta" href="tel:16179702329">Call (617) 970-2329</a>
-        <a class="cta" href="contact.html">Book</a>
+      <div>
+        <a class="phone-link" href="tel:16179702329">(617) 970-2329</a>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-left card">
-        <h1>Mobile + Professional Auto Detailing</h1>
-        <p>We bring showroom shine to your door. Serving Boston, MA & the Middlesex area — premium packages, clear pricing, and meticulous workmanship.</p>
-
-        <div class="hero-cta">
-          <a class="btn" href="contact.html#contactForm">Book Now</a>
-          <a class="btn secondary" href="services.html">See Services</a>
+  <!-- HERO -->
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Mobile + Professional Auto Detailing</h1>
+        <p>We bring showroom shine to your door. Serving Boston, MA & the Middlesex area — expert technicians, premium products, and a flawless finish.</p>
+        <div class="actions">
+          <a class="btn" href="contact.html#booking">Book Now</a>
+          <a class="btn ghost" href="services.html">View Services</a>
         </div>
-
-        <div class="price-note">Click to call: <a href="tel:16179702329" style="color:var(--icy-blue); text-decoration:none;">(617) 970-2329</a></div>
+        <p class="small" style="margin-top:14px">Click to call: <a href="tel:16179702329" style="color:var(--icy-blue); text-decoration:none;">(617) 970-2329</a></p>
       </div>
 
       <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Gallery Preview</h3>
-          <div class="gallery" aria-hidden="false">
-            <div class="thumb"><img src="images/gallery/gallery1.jpg" alt="Sport car 1"></div>
-            <div class="thumb"><img src="images/gallery/gallery2.jpg" alt="Sport car 2"></div>
-            <div class="thumb"><img src="images/gallery/gallery3.jpg" alt="Sport car 3"></div>
-            <div class="thumb"><img src="images/gallery/gallery4.jpg" alt="Sport car 4"></div>
-            <div class="thumb"><img src="images/gallery/gallery5.jpg" alt="Sport car 5"></div>
-            <div class="thumb"><img src="images/gallery/gallery6.jpg" alt="Sport car 6"></div>
-          </div>
-          <p class="small-muted" style="margin-top:10px">Replace these with your photos in <code>/images/gallery/</code></p>
+        <div class="image-card">
+          <img src="images/gallery/gallery1.jpg" alt="Shiny sport car" style="width:100%; height:520px; object-fit:cover; display:block">
         </div>
       </aside>
     </section>
 
-    <section style="margin-top:18px;">
-      <div class="card">
-        <h2 style="margin-top:0">Why ICE DETAILING LLC?</h2>
-        <div class="row" style="margin-top:12px;">
-          <div style="flex:1">
-            <h4 style="margin:6px 0;">Trusted Professionals</h4>
-            <p class="small-muted">Experienced technicians, premium products, and attention to detail on every vehicle.</p>
+    <!-- WHY -->
+    <section class="band-dark" aria-labelledby="why-title">
+      <div class="container">
+        <div style="display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap">
+          <div style="flex:1; min-width:260px">
+            <h2 id="why-title" style="margin:0; color:#fff">Why ICE DETAILING LLC</h2>
+            <p class="small" style="margin-top:10px">Trusted mobile service, proven results, and a commitment to perfection on every vehicle.</p>
           </div>
-          <div style="flex:1">
-            <h4 style="margin:6px 0;">Convenient Mobile Service</h4>
-            <p class="small-muted">We come to your home or workplace in Boston & Middlesex.</p>
-          </div>
-          <div style="flex:1">
-            <h4 style="margin:6px 0;">Satisfaction Guarantee</h4>
-            <p class="small-muted">We don’t finish until it’s right — your satisfaction is our standard.</p>
+          <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap">
+            <div style="text-align:center">
+              <div style="font-weight:800; color:var(--icy-blue)">Experienced</div>
+              <div class="small">Years in the trade</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-weight:800; color:var(--icy-blue)">Premium</div>
+              <div class="small">Industry-grade products</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-weight:800; color:var(--icy-blue)">Convenient</div>
+              <div class="small">We come to you</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section style="margin-top:18px;">
-      <h2 style="margin-bottom:8px;">What clients say</h2>
+    <!-- Services preview -->
+    <section class="container" aria-labelledby="services-preview">
+      <h2 id="services-preview" style="margin-top:36px">Our Packages</h2>
+      <p class="small">Clear pricing, professional results — starting rates shown.</p>
+
+      <div class="services-row">
+        <div class="service-card">
+          <h3>Express Detail</h3>
+          <div class="price">Starting at $175</div>
+          <p class="small" style="margin-top:8px">Hand wash, interior vacuum, windows, tire shine — 1–2 hours.</p>
+          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+        </div>
+
+        <div class="service-card">
+          <h3>Full Interior & Exterior</h3>
+          <div class="price">Starting at $300</div>
+          <p class="small" style="margin-top:8px">Deep clean, shampoo, leather care, clay + sealant — 3–5 hours.</p>
+          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+        </div>
+
+        <div class="service-card">
+          <h3>Premium Ceramic Protection</h3>
+          <div class="price">Starting at $750</div>
+          <p class="small" style="margin-top:8px">Paint decon, machine polish, ceramic coating — 6+ hours.</p>
+          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="container" style="margin-top:36px">
+      <h2>Gallery</h2>
+      <p class="small">Placeholder sports cars — replace these with your photos in <code class="code">/images/gallery/</code></p>
+      <div class="gallery">
+        <img src="images/gallery/gallery2.jpg" alt="sport car 2">
+        <img src="images/gallery/gallery3.jpg" alt="sport car 3">
+        <img src="images/gallery/gallery4.jpg" alt="sport car 4">
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container" style="margin-top:36px">
+      <h2>Testimonials</h2>
       <div class="testimonials">
         <div class="testimonial">
-          <strong>⭐⭐⭐⭐⭐</strong>
-          <p style="margin:8px 0; color:#fff">“Amazing attention to detail — my car looks brand new.”</p>
-          <div class="small-muted">— Jason M., Boston</div>
+          <strong>★★★★★</strong>
+          <p style="margin:8px 0">“Amazing attention to detail — my car looks brand new.”</p>
+          <div class="small">— Jason M., Boston</div>
         </div>
         <div class="testimonial">
-          <strong>⭐⭐⭐⭐⭐</strong>
-          <p style="margin:8px 0; color:#fff">“Professional, on time, and an incredible finish.”</p>
-          <div class="small-muted">— Elena R., Cambridge</div>
+          <strong>★★★★★</strong>
+          <p style="margin:8px 0">“Professional, punctual, and meticulous.”</p>
+          <div class="small">— Elena R., Cambridge</div>
         </div>
       </div>
     </section>
@@ -100,15 +138,17 @@
 
   <footer>
     <div class="container">
-      <div style="margin-bottom:6px">
-        <a href="mailto:icedetailingllc@gmail.com" style="color:var(--silver); text-decoration:none">icedetailingllc@gmail.com</a> •
-        <a href="tel:16179702329" style="color:var(--silver); text-decoration:none">(617) 970-2329</a> •
-        <a href="https://instagram.com/icedetailingllc" target="_blank" style="color:var(--silver); text-decoration:none">@icedetailingllc</a>
+      <div style="margin-bottom:10px">
+        <a href="mailto:icedetailingllc@gmail.com" style="color:var(--muted); text-decoration:none">icedetailingllc@gmail.com</a> •
+        <a href="tel:16179702329" style="color:var(--muted); text-decoration:none">(617) 970-2329</a> •
+        <a href="https://instagram.com/icedetailingllc" style="color:var(--muted)" target="_blank">@icedetailingllc</a>
       </div>
-      <div style="font-size:.95rem; color:var(--muted)">© <span id="y"></span> ICE DETAILING LLC — Boston & Middlesex area</div>
+      <div class="small">© <span id="year"></span> ICE DETAILING LLC — Boston & Middlesex area</div>
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
