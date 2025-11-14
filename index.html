@@ -4,16 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ICE DETAILING LLC — Perfection is not optional</title>
-  <meta name="description" content="ICE DETAILING LLC — Premium mobile auto detailing in Boston & Middlesex. Book now for professional interior, exterior, and ceramic protection." />
+  <meta name="description" content="ICE DETAILING LLC — Premium mobile auto detailing in Boston & Middlesex. Book now for interior, exterior and ceramic protection." />
   <link rel="stylesheet" href="style.css" />
-  <!-- Optional favicon if you add images/favicon.ico -->
-  <!-- <link rel="icon" href="images/favicon.ico"> -->
 </head>
 <body>
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="images/logo.png" alt="ICE DETAILING LLC logo">
+        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
         <div>
           <div class="title">ICE DETAILING LLC</div>
           <div class="tag">Perfection is not optional — it's the standard.</div>
@@ -32,47 +30,46 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main>
+    <!-- HERO -->
     <section class="hero container" aria-labelledby="hero-title">
-      <div>
+      <div class="hero-left fade-up" id="hero-left">
         <h1 id="hero-title">Mobile + Professional Auto Detailing</h1>
         <p>We bring showroom shine to your door. Serving Boston, MA & the Middlesex area — expert technicians, premium products, and a flawless finish.</p>
-        <div class="actions">
+
+        <div class="hero-actions">
           <a class="btn" href="contact.html#booking">Book Now</a>
           <a class="btn ghost" href="services.html">View Services</a>
         </div>
+
         <p class="small" style="margin-top:14px">Click to call: <a href="tel:16179702329" style="color:var(--icy-blue); text-decoration:none;">(617) 970-2329</a></p>
       </div>
 
-      <aside>
-        <div class="image-card">
-          <img src="images/gallery/gallery1.jpg" alt="Shiny sport car" style="width:100%; height:520px; object-fit:cover; display:block">
-        </div>
+      <aside class="hero-glow fade-up" id="hero-side">
+        <img class="hero-img" src="images/gallery/gallery1.jpg" alt="Shiny sport car">
       </aside>
     </section>
 
     <!-- WHY -->
     <section class="band-dark" aria-labelledby="why-title">
-      <div class="container">
-        <div style="display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap">
-          <div style="flex:1; min-width:260px">
-            <h2 id="why-title" style="margin:0; color:#fff">Why ICE DETAILING LLC</h2>
-            <p class="small" style="margin-top:10px">Trusted mobile service, proven results, and a commitment to perfection on every vehicle.</p>
+      <div class="container band-grid">
+        <div>
+          <h2 id="why-title" style="margin:0">Why ICE DETAILING LLC</h2>
+          <p class="small" style="margin-top:8px">Trusted mobile service, proven results, and a commitment to perfection on every vehicle.</p>
+        </div>
+
+        <div style="display:flex; gap:20px; align-items:center; flex-wrap:wrap">
+          <div style="text-align:center">
+            <div style="font-weight:900; color:var(--icy-blue); font-size:1.05rem">Experienced</div>
+            <div class="small">Years in the trade</div>
           </div>
-          <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap">
-            <div style="text-align:center">
-              <div style="font-weight:800; color:var(--icy-blue)">Experienced</div>
-              <div class="small">Years in the trade</div>
-            </div>
-            <div style="text-align:center">
-              <div style="font-weight:800; color:var(--icy-blue)">Premium</div>
-              <div class="small">Industry-grade products</div>
-            </div>
-            <div style="text-align:center">
-              <div style="font-weight:800; color:var(--icy-blue)">Convenient</div>
-              <div class="small">We come to you</div>
-            </div>
+          <div style="text-align:center">
+            <div style="font-weight:900; color:var(--icy-blue); font-size:1.05rem">Premium</div>
+            <div class="small">Industry products</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-weight:900; color:var(--icy-blue); font-size:1.05rem">Convenient</div>
+            <div class="small">We come to you</div>
           </div>
         </div>
       </div>
@@ -81,24 +78,24 @@
     <!-- Services preview -->
     <section class="container" aria-labelledby="services-preview">
       <h2 id="services-preview" style="margin-top:36px">Our Packages</h2>
-      <p class="small">Clear pricing, professional results — starting rates shown.</p>
+      <p class="small">Transparent pricing with premium results.</p>
 
       <div class="services-row">
-        <div class="service-card">
+        <div class="service-card fade-up">
           <h3>Express Detail</h3>
           <div class="price">Starting at $175</div>
           <p class="small" style="margin-top:8px">Hand wash, interior vacuum, windows, tire shine — 1–2 hours.</p>
           <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card fade-up">
           <h3>Full Interior & Exterior</h3>
           <div class="price">Starting at $300</div>
           <p class="small" style="margin-top:8px">Deep clean, shampoo, leather care, clay + sealant — 3–5 hours.</p>
           <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
         </div>
 
-        <div class="service-card">
+        <div class="service-card fade-up">
           <h3>Premium Ceramic Protection</h3>
           <div class="price">Starting at $750</div>
           <p class="small" style="margin-top:8px">Paint decon, machine polish, ceramic coating — 6+ hours.</p>
@@ -134,6 +131,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -148,6 +146,12 @@
   </footer>
 
   <script>
+    // small fade-up reveal on load
+    window.addEventListener('load', ()=> {
+      document.querySelectorAll('.fade-up').forEach((el, i)=> {
+        setTimeout(()=> el.classList.add('show'), 120 * (i+1));
+      });
+    });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
