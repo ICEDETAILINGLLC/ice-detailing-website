@@ -4,20 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ICE Detailing LLC — Premium Mobile Detailing</title>
-  <meta name="description" content="ICE Detailing LLC — Perfection is not optional. Premium mobile auto detailing serving Boston & Middlesex." />
+  <meta name="description" content="ICE Detailing LLC — Perfection is not optional. Mobile premium detailing serving Boston & Middlesex." />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Header: centered logo, nav below (Option A) -->
-  <header class="site-header" role="banner">
+  <!-- HEADER -->
+  <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-wrap">
-        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-large">
+        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-large" />
       </div>
 
-      <nav class="primary-nav" role="navigation" aria-label="Primary">
+      <nav class="primary-nav" role="navigation" aria-label="Primary navigation">
         <a href="#home" class="nav-link">Home</a>
         <a href="#services" class="nav-link">Services</a>
         <a href="reviews.html" class="nav-link">Reviews</a>
@@ -25,15 +24,235 @@
       </nav>
 
       <div class="header-cta">
-        <a class="call-btn" href="tel:16179702329">(617) 970-2329</a>
+        <a href="tel:16179702329" class="call-btn">Call (617) 970-2329</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO: red Porsche -->
   <main>
-    <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
+    <!-- HERO (full-screen) -->
+    <section id="home" class="hero parallax" style="background-image:url('images/cars/porsche_red.jpg')" aria-label="ICE Detailing hero">
       <div class="hero-overlay"></div>
+      <div class="wrap hero-inner">
+        <h1 class="hero-title">Perfection is not optional — it's the standard.</h1>
+        <p class="hero-sub">Premium mobile auto detailing — showroom finishes delivered to your door in Boston & Middlesex.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#services">See Services</a>
+          <a class="btn btn-outline" href="#contact">Book Now</a>
+        </div>
+
+        <div class="hero-thumbs" aria-hidden="true">
+          <img loading="lazy" src="images/cars/amg_luxury_interior1.jpg" alt="AMG interior">
+          <img loading="lazy" src="images/cars/porsche_718_interior.jpg" alt="Porsche interior">
+          <img loading="lazy" src="images/cars/bmw_interior_open_door.jpg" alt="BMW interior">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Services (Apple-style blocks) -->
+    <section id="services" class="section services-section">
+      <div class="wrap">
+        <h2 class="section-title reveal">Our Signature Services</h2>
+        <p class="section-sub muted reveal">Simple, transparent pricing — high-quality results. Tap a tile to learn more or book.</p>
+
+        <div class="services-grid">
+          <div class="service-tile reveal" tabindex="0" data-service="Express Detail">
+            <div class="tile-media"><img src="images/cars/amg_luxury_interior1.jpg" alt=""></div>
+            <div class="tile-body">
+              <h3>Express Detail</h3>
+              <p class="muted">Quick exterior wash + interior vacuum. Fast maintenance detail.</p>
+              <div class="tile-foot"><span class="price">From $175</span><a href="#contact" class="link" data-service="Express Detail">Book</a></div>
+            </div>
+          </div>
+
+          <div class="service-tile reveal" tabindex="0" data-service="Deep Clean">
+            <div class="tile-media"><img src="images/cars/porsche_leather_seats.jpg" alt=""></div>
+            <div class="tile-body">
+              <h3>Deep Clean</h3>
+              <p class="muted">Interior shampoo, extraction, leather care, and stain removal.</p>
+              <div class="tile-foot"><span class="price">From $300</span><a href="#contact" class="link" data-service="Deep Clean">Book</a></div>
+            </div>
+          </div>
+
+          <div class="service-tile reveal" tabindex="0" data-service="Premium Ceramic">
+            <div class="tile-media"><img src="images/cars/porsche_911.jpg" alt=""></div>
+            <div class="tile-body">
+              <h3>Premium Ceramic</h3>
+              <p class="muted">Paint correction + ceramic coating for long-lasting protection and gloss.</p>
+              <div class="tile-foot"><span class="price">From $750</span><a href="#contact" class="link" data-service="Premium Ceramic">Book</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Before / After (visual storytelling) -->
+    <section class="section split-section reveal">
+      <div class="wrap split-wrap">
+        <div class="split media-left">
+          <img loading="lazy" src="images/cars/bmw_dashboard.jpg" alt="Detail close-up">
+        </div>
+        <div class="split content-right">
+          <h2>Showroom finishes — every time</h2>
+          <p class="muted">We correct paint imperfections, deep-clean interiors, and protect finishes so your vehicle looks and feels like new.</p>
+          <a class="btn btn-primary" href="services.html">View Packages</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: Why Choose Us (Apple spec style) -->
+    <section class="section why-section">
+      <div class="wrap">
+        <h2 class="section-title reveal">Why ICE Detailing</h2>
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <h4>Premium Products</h4>
+            <p class="muted">Industry-leading coatings and finishers for long-lasting protection.</p>
+          </div>
+          <div class="why-card reveal">
+            <h4>Mobile Convenience</h4>
+            <p class="muted">We come to your home, office, or event — saving you time and hassle.</p>
+          </div>
+          <div class="why-card reveal">
+            <h4>Satisfaction Guarantee</h4>
+            <p class="muted">We don’t finish until the vehicle meets our standard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS PREVIEW -->
+    <section id="reviews-preview" class="section reviews-preview">
+      <div class="wrap">
+        <h2 class="section-title reveal">What clients say</h2>
+
+        <div class="reviews-grid reveal">
+          <div class="review-card">
+            <div class="quote">“Amazing attention to detail — my car looks brand new.”</div>
+            <div class="by muted">— Jason M., Boston</div>
+          </div>
+          <div class="review-card">
+            <div class="quote">“Professional, on time, and incredible finish.”</div>
+            <div class="by muted">— Elena R., Cambridge</div>
+          </div>
+          <div class="review-card">
+            <div class="quote">“Ceramic coating gave unbelievable gloss.”</div>
+            <div class="by muted">— Aaron K., Somerville</div>
+          </div>
+        </div>
+
+        <div class="center-btn reveal">
+          <a href="reviews.html" class="btn btn-outline">Read All Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FULL WIDTH -->
+    <section class="cta-strip parallax-cta reveal" style="background-image:linear-gradient(120deg, rgba(7,11,14,0.85), rgba(7,11,14,0.65))">
+      <div class="wrap cta-wrap">
+        <h2>Ready for a showroom finish?</h2>
+        <a class="btn btn-primary" href="#contact">Get a Quote</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="wrap contact-wrap">
+        <div class="contact-form-panel reveal">
+          <h2>Contact & Booking</h2>
+          <p class="muted">Request availability or book. We accept Apple Pay via Square (embed your Square iframe below).</p>
+
+          <form action="https://formspree.io/f/manaykpb" method="POST" class="contact-form">
+            <input name="name" type="text" placeholder="Full name" required />
+            <input name="email" type="email" placeholder="Email" value="icedetailingllc@gmail.com" required />
+            <input name="phone" type="tel" placeholder="Phone" value="(617) 970-2329" required />
+            <select name="service">
+              <option>Express — $175+</option>
+              <option>Deep Clean — $300+</option>
+              <option>Premium Ceramic — $750+</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Preferred date, location, vehicle notes"></textarea>
+
+            <div class="form-row">
+              <button type="submit" class="btn btn-primary">Send Request</button>
+              <a class="btn btn-outline" href="tel:16179702329">Call (617) 970-2329</a>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contact-aside reveal">
+          <div class="panel">
+            <h4>Instant Booking</h4>
+            <p class="muted">Paste your Square booking iframe here to show availability and accept Apple Pay.</p>
+            <div id="square-embed" class="square-placeholder">Square booking placeholder — paste your iframe here.</div>
+
+            <h5 style="margin-top:18px">Contact</h5>
+            <p class="muted"><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a><br><a href="tel:16179702329">(617) 970-2329</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-footer">
+        <img src="images/iced_blue.png" alt="ICE logo" class="logo-small" />
+        <div><strong>ICE Detailing LLC</strong><br>Boston, MA • Middlesex County</div>
+      </div>
+
+      <div class="footer-links">
+        <a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a>
+        <a class="footer-link" href="tel:16179702329">(617) 970-2329</a>
+      </div>
+
+      <div class="footer-social">
+        <a class="footer-link" href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a>
+      </div>
+    </div>
+
+    <div class="legal wrap" style="margin-top:18px;color:#9fb3c8;text-align:center">
+      <span>© ICE Detailing LLC <span id="year"></span> • All rights reserved</span>
+    </div>
+  </footer>
+
+  <script>
+    // inject year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll (IntersectionObserver)
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // Parallax hero
+    const hero = document.querySelector('.hero[data-parallax]');
+    if (hero) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY * 0.25;
+        hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
+      }, { passive: true });
+    }
+
+    // Tile keyboard / click interaction: set service on contact form
+    document.querySelectorAll('[data-service]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const svc = btn.getAttribute('data-service');
+        const sel = document.querySelector('select[name="service"]');
+        if (sel) {
+          for (let i=0;i<sel.options.length;i++){ if (sel.options[i].text.includes(svc)){ sel.selectedIndex = i; break; } }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
       <div class="wrap hero-inner">
         <h1 class="hero-title">Perfection is not optional — it's the standard.</h1>
         <p class="hero-sub">Premium mobile detailing delivering showroom shine across Boston & Middlesex County.</p>
