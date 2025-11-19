@@ -1,63 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — ICE Detailing LLC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ICE Detailing LLC — Contact</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <header class="header">
-  <div class="container">
-    <div class="brand">
-      <img src="images/iced_blue.png" alt="ICE DETAILING LLC logo" />
-      <div class="title">ICE DETAILING LLC</div>
-    </div>
-
-    <nav class="navlinks">
+  <div class="nav-inner">
+    <div class="brand"><img src="images/iced_blue.png" alt="logo"></div>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="container">
-
+<section class="hero">
   <h1>Contact & Booking</h1>
+  <p>Request availability or book instantly. We accept Square (Apple Pay supported) — or use the contact form below.</p>
+</section>
 
-  <p>Call or message us anytime. We serve Boston & Middlesex.</p>
+<section class="section">
+  <div class="form-wrap">
+    <form action="https://formspree.io/f/manaykpb" method="POST" autocomplete="on">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" required>
 
-  <div class="card">
-    <h2>Contact Info</h2>
-    <p><strong>Phone:</strong> <a href="tel:16179702329">(617) 970-2329</a></p>
-    <p><strong>Email:</strong> <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
-  </div>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" value="icedetailingllc@gmail.com" required>
 
-  <div class="card">
-    <h2>Send a Message</h2>
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" value="(617) 970-2329" required>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label>Your Name</label>
-      <input type="text" name="name" required />
+      <label for="service">Service</label>
+      <select id="service" name="service">
+        <option>Express — $175+</option>
+        <option>Deep Clean — $300+</option>
+        <option>Premium Ceramic — $750+</option>
+        <option>Add-on</option>
+      </select>
 
-      <label>Your Email</label>
-      <input type="email" name="email" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Tell us about your vehicle & preferred dates"></textarea>
 
-      <label>Your Message</label>
-      <textarea name="message" required></textarea>
-
-      <button class="btn" type="submit">Send Message</button>
+      <div class="form-cta">
+        <button class="btn btn-primary" type="submit">Send Request</button>
+        <a class="btn btn-ghost" href="tel:16179702329">Call (617) 970-2329</a>
+      </div>
     </form>
+
+    <div style="margin-top:18px;color:var(--muted)">
+      <strong>Email:</strong> <a href="mailto:icedetailingllc@gmail.com" style="color:var(--icy);text-decoration:none">icedetailingllc@gmail.com</a><br>
+      <strong>Service area:</strong> Boston & Middlesex
+    </div>
   </div>
 
-</main>
+  <div style="max-width:900px;margin:40px auto;text-align:center">
+    <p style="color:var(--muted)">Want instant booking? Paste your Square embed into the file where you see the <!-- SQUARE_EMBED --> comment. We accept Apple Pay via Square.</p>
+    <!-- SQUARE_EMBED -->
+  </div>
+</section>
 
 <footer>
-  <p>© 2025 ICE Detailing LLC</p>
+  © 2025 ICE Detailing LLC
 </footer>
 
 </body>
