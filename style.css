@@ -1,125 +1,204 @@
-/* style.css — ICE DETAILING LLC (Dark Luxury, A+C hybrid) */
-:root{
-  --icy-blue:#29a9ff;
-  --accent:#78c7ff;
-  --black:#030406;
-  --char:#0b0f14;
-  --silver:#bfc7cc;
-  --muted:#9aa6b2;
-  --white:#ffffff;
-  --maxw:1200px;
-  --radius:14px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ICE Detailing LLC</title>
+
+<style>
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0a0c;
+    color: white;
 }
 
-/* Reset */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-  color:var(--white); background:linear-gradient(180deg,#020304 0%, #071018 100%);
-  -webkit-font-smoothing:antialiased; line-height:1.45;
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(180deg, #000000, #0d0f15);
+    padding: 120px 20px;
+    text-align: center;
 }
-.container{max-width:var(--maxw); margin:0 auto; padding:28px}
 
-/* Header */
-.header{
-  position:sticky; top:0; z-index:90; background:linear-gradient(180deg, rgba(3,6,8,0.75), rgba(3,6,8,0.45));
-  backdrop-filter: blur(6px); border-bottom:1px solid rgba(255,255,255,0.03);
+.hero-logo {
+    width: 180px;
+    margin-bottom: 30px;
 }
-.header .container{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 28px}
-.brand{display:flex; align-items:center; gap:14px}
-.brand img{height:56px; width:auto; filter:drop-shadow(0 10px 28px rgba(41,169,255,0.12))}
-.brand .title{font-weight:800; color:#fff; letter-spacing:0.6px}
-.brand .tag{font-size:.88rem; color:var(--muted)}
 
-/* Nav */
-.nav{display:flex; gap:12px; align-items:center}
-.nav a{color:var(--silver); text-decoration:none; padding:8px 12px; border-radius:8px; font-weight:700}
-.nav a.cta{background:var(--icy-blue); color:#02121a; font-weight:900}
-.phone-link{color:var(--muted); font-weight:700; text-decoration:none}
-
-/* HERO */
-.hero{
-  display:grid; grid-template-columns:1fr 560px; gap:36px; align-items:center; padding:84px 0 110px;
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #d5ecff;
+    text-shadow: 0 0 25px rgba(100,160,255,0.4);
 }
-.hero-left h1{font-size:3rem; margin:0; letter-spacing:-0.6px; color:#ffffff}
-.hero-left p{color:var(--muted); margin-top:14px; font-size:1.05rem}
-.hero-actions{margin-top:18px; display:flex; gap:12px}
-.btn{background:var(--icy-blue); color:#02121a; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:900}
-.btn.ghost{background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--silver)}
 
-/* Hero glow and image */
-.hero-glow{position:relative; border-radius:16px; overflow:hidden; box-shadow: 0 60px 140px rgba(2,8,18,0.65)}
-.hero-glow::after{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  background:
-    radial-gradient(600px 200px at 20% 30%, rgba(41,169,255,0.08), transparent 15%),
-    radial-gradient(420px 140px at 80% 70%, rgba(191,199,204,0.03), transparent 20%);
+.hero p {
+    font-size: 20px;
+    color: #cfcfcf;
+    margin-bottom: 35px;
 }
-.hero-img{width:100%; height:520px; object-fit:cover; display:block}
 
-/* Band (features) */
-.band-dark{background:linear-gradient(180deg,#06080a,#071018); color:var(--white); padding:46px 0; border-top:1px solid rgba(255,255,255,0.02)}
-.band-grid{display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap}
-
-/* Services */
-.services-row{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:28px}
-.service-card{background:linear-gradient(180deg,#081018,#061018); border-radius:12px; padding:20px; box-shadow:0 18px 60px rgba(2,6,12,0.6); border:1px solid rgba(255,255,255,0.02)}
-.service-card h3{margin:8px 0; color:var(--white)}
-.price{font-weight:900; color:var(--icy-blue); margin-top:8px}
-
-/* Addons */
-.addons{margin-top:12px; display:flex; flex-direction:column; gap:10px}
-.addon-row{display:flex; justify-content:space-between; color:var(--muted); padding:8px 0; border-bottom:1px dashed rgba(255,255,255,0.02)}
-
-/* Gallery */
-.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
-.gallery img{width:100%; height:220px; object-fit:cover; display:block; border-radius:10px; box-shadow:0 12px 40px rgba(2,8,18,0.5)}
-
-/* Before/After slider */
-.ba-wrap{position:relative; width:100%; max-width:980px; margin:20px auto; border-radius:12px; overflow:hidden; box-shadow:0 28px 80px rgba(2,8,18,0.6)}
-.ba-img{width:100%; display:block; height:480px; object-fit:cover;}
-.ba-handle{position:absolute; left:50%; top:0; bottom:0; width:4px; background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2)); transform:translateX(-50%); z-index:40}
-.ba-handle:after{content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:36px; height:36px; background:var(--icy-blue); border-radius:50%; box-shadow:0 6px 20px rgba(41,169,255,0.18)}
-
-/* Testimonials */
-.testimonials{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px}
-.testimonial{background:linear-gradient(180deg,#0b0f14,#071018); padding:18px; border-radius:10px; border:1px solid rgba(255,255,255,0.02)}
-.testimonial strong{color:var(--icy-blue)}
-
-/* Booking/contact */
-.booking{display:grid; grid-template-columns:1fr 420px; gap:22px; margin-top:28px}
-.card-light{background:linear-gradient(180deg,#071018,#061018); padding:18px; border-radius:12px; border:1px solid rgba(255,255,255,0.02)}
-.form input, .form textarea{width:100%; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--white)}
-.form textarea{min-height:140px; resize:vertical}
-.form .note{font-size:.9rem; color:var(--muted); margin-top:8px}
-
-/* Sticky book button */
-.sticky-book{position:fixed; right:18px; bottom:18px; z-index:120; background:var(--icy-blue); color:#02121a; padding:12px 16px; border-radius:999px; box-shadow:0 18px 50px rgba(2,8,18,0.5); font-weight:900; text-decoration:none}
-
-/* Footer */
-footer{padding:36px 0; color:var(--muted); text-align:center; border-top:1px solid rgba(255,255,255,0.03); margin-top:36px}
-
-/* Utilities */
-.small{font-size:.95rem; color:var(--muted)}
-.code{background:#0a0f14; padding:6px 8px; border-radius:6px; font-family:monospace; font-size:.9rem}
-
-/* Animations */
-.fade-up{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
-.fade-up.show{opacity:1; transform:none}
-
-/* Responsive */
-@media (max-width:980px){
-  .hero{grid-template-columns:1fr}
-  .services-row{grid-template-columns:repeat(2,1fr)}
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .testimonials{grid-template-columns:1fr}
-  .booking{grid-template-columns:1fr}
-  .ba-img{height:340px}
+.btn {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.25s;
 }
-@media (max-width:600px){
-  .nav{display:none}
-  .brand img{height:44px}
-  .services-row{grid-template-columns:1fr}
-  .gallery{grid-template-columns:1fr}
+
+.btn-blue {
+    background: #69bfff;
+    color: black;
 }
+
+.btn-blue:hover {
+    background: #97d6ff;
+    transform: translateY(-4px);
+}
+
+.btn-silver {
+    background: #bfc4c9;
+    color: black;
+}
+
+.btn-silver:hover {
+    background: #e2e2e2;
+    transform: translateY(-4px);
+}
+
+/* SERVICES */
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.service-card {
+    background: #111218;
+    width: 320px;
+    margin: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 35px rgba(120,180,255,0.6);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    padding: 20px;
+    color: #d5ecff;
+}
+
+.service-card p {
+    padding: 0 20px 20px 20px;
+    color: #cccccc;
+}
+
+/* ADD ON CARDS */
+.addons {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.addon-row {
+    background: #111218;
+    padding: 18px 20px;
+    border-radius: 12px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* BEFORE/AFTER */
+.before-after {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.placeholder-img {
+    width: 90%;
+    max-width: 450px;
+    border-radius: 12px;
+    margin: 10px;
+    opacity: 0.85;
+}
+
+/* FOOTER */
+footer {
+    background: #0c0d11;
+    padding: 40px 20px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+footer p {
+    margin: 8px 0;
+    color: #b5b5b5;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="images/ice-logo.png" class="hero-logo" alt="ICE Detailing Logo">
+
+    <h1>Perfection Isn’t Optional — It’s the Standard.</h1>
+    <p>Premium Mobile Detailing Serving Boston & Middlesex County.</p>
+
+    <a href="#booking" class="btn btn-blue">Book Now</a>
+    <a href="tel:6179702329" class="btn btn-silver">Call Now</a>
+</section>
+
+<!-- SERVICES -->
+<h2 class="section-title">Our Packages</h2>
+
+<div class="services">
+    <div class="service-card">
+        <img src="images/car1.jpg" alt="Express Detail">
+        <h3>Express Detail — Starting at $175</h3>
+        <p>Perfect for maintaining gloss & cleanliness. Exterior wash, light interior clean, windows, and wheels.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/car2.jpg" alt="Deep Clean">
+        <h3>Deep Clean — Starting at $300</h3>
+        <p>Full interior shampoo, steam, deep vacuum, interior plastics restored, exterior wash & gloss enhancement.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/car3.jpg" alt="Ceramic Coating">
+        <h3>Premium Ceramic — Starting at $750</h3>
+        <p>Long-term paint protection, intense shine, hydrophobic properties, easier maintenance & premium finish.</p>
+    </div>
+</div>
+
+<!-- ADD-ONS
