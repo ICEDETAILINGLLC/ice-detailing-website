@@ -1,39 +1,193 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ICE Detailing LLC — Premium Mobile Detailing</title>
-  <meta name="description" content="ICE Detailing LLC — Perfection is not optional. Premium mobile auto detailing serving Boston & Middlesex." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICE Detailing LLC — Premium Auto Detailing Boston</title>
+  <meta name="description" content="ICE Detailing LLC — Mobile professional auto detailing serving Boston & Middlesex. Perfection is not optional — it's the standard." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#06090c">
-  <style>
-    /* Minimal inline safe-guard styles for first-paint clarity (rest in style.css) */
-    :root{--ice:#66d1ff;--silver:#c7c7c7;--bg:#06090c}
-    html,body{height:100%;margin:0;background:var(--bg);font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e9f6ff}
-    .loading-center{height:40vh;display:flex;align-items:center;justify-content:center}
-    .logo-large{height:72px}
-  </style>
 </head>
+
 <body>
 
-  <!-- HEADER: centered logo, nav below -->
-  <header class="site-header" id="top" role="banner">
-    <div class="wrap header-inner" style="position:relative;">
-      <div class="logo-wrap" aria-hidden="false">
-        <!-- Your repo logo file; kept in images/iced_blue.png -->
-        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-large" />
-      </div>
+<!-- ===========================
+        HEADER
+=========================== -->
+<header class="header">
+  <div class="nav-container fade-in">
+    <div class="logo-area">
+      <img src="images/iced_blue.png" class="main-logo" alt="ICE Detailing LLC Logo">
+    </div>
 
-      <nav class="primary-nav" role="navigation" aria-label="Primary" style="margin-top:12px;">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#reviews">Reviews</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
 
-      <div class="header-cta" style="position:absolute;right:18px;top:18px;">
+    <a href="tel:16179702329" class="call-btn">Call (617) 970-2329</a>
+  </div>
+</header>
+
+
+
+<!-- ===========================
+        HERO SECTION
+=========================== -->
+<section id="home" class="hero-section parallax" 
+         style="background-image:url('images/cars/porsche_red.jpg');">
+
+  <div class="hero-content fade-in-up">
+    <h1>Perfection Is Not Optional —<br> It's the Standard.</h1>
+    <p>Boston’s Premium Mobile Auto Detailing Service</p>
+
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn-primary">Book Now</a>
+      <a href="services.html" class="btn-secondary">View Services</a>
+    </div>
+  </div>
+
+  <!-- floating thumbnails -->
+  <div class="hero-thumbs fade-in">
+    <img src="images/cars/amg_interior1.jpg" alt="AMG Interior">
+    <img src="images/cars/porsche_911.jpg" alt="Porsche Detail">
+    <img src="images/cars/bmw_m3.jpg" alt="BMW M Exterior">
+  </div>
+</section>
+
+
+
+<!-- ===========================
+      ABOUT SECTION
+=========================== -->
+<section class="about-section fade-in">
+  <h2>Mobile Luxury Detailing</h2>
+  <p>
+    Serving Boston & Middlesex — we deliver true showroom results using
+    premium products, industry-leading techniques, and unmatched attention to detail.
+  </p>
+</section>
+
+
+
+<!-- ===========================
+        SERVICES PREVIEW
+=========================== -->
+<section class="services-preview fade-in">
+  <h2>Our Signature Services</h2>
+
+  <div class="service-grid">
+
+    <a href="services.html#express" class="service-card">
+      <div class="svc-img"><img src="images/cars/amg_interior2.jpg"></div>
+      <h3>Express Detail</h3>
+      <p>Perfect for maintenance. Interior + exterior refresh.</p>
+    </a>
+
+    <a href="services.html#deepclean" class="service-card">
+      <div class="svc-img"><img src="images/cars/porsche_logo.jpg"></div>
+      <h3>Deep Interior Clean</h3>
+      <p>Shampoo extraction, stain removal, interior steam treatment.</p>
+    </a>
+
+    <a href="services.html#ceramic" class="service-card">
+      <div class="svc-img"><img src="images/cars/porsche_911.jpg"></div>
+      <h3>Ceramic Premium</h3>
+      <p>Long-term gloss & protection with a ceramic shield.</p>
+    </a>
+
+  </div>
+
+  <div class="center-btn">
+    <a href="services.html" class="btn-primary">See Full Services</a>
+  </div>
+</section>
+
+
+
+<!-- ===========================
+        REVIEWS SECTION
+=========================== -->
+<section id="reviews" class="reviews-section fade-in">
+  <h2>What Clients Say</h2>
+
+  <div class="review-grid">
+
+    <div class="review-card">
+      <p class="stars">★★★★★</p>
+      <p>“The best detail I’ve ever had — my AMG looks brand new.”</p>
+      <span>— Daniel P.</span>
+    </div>
+
+    <div class="review-card">
+      <p class="stars">★★★★★</p>
+      <p>“Professional, on time, and flawless results. Highly recommended.”</p>
+      <span>— Michael R.</span>
+    </div>
+
+    <div class="review-card">
+      <p class="stars">★★★★★</p>
+      <p>“Paint correction on my Porsche 911 was PERFECT.”</p>
+      <span>— Alex T.</span>
+    </div>
+
+  </div>
+
+  <div class="center-btn">
+    <a href="https://www.google.com/search?q=ice+detailing+llc" target="_blank" class="btn-secondary">
+      View All Google Reviews
+    </a>
+  </div>
+</section>
+
+
+
+<!-- ===========================
+        CTA STRIP
+=========================== -->
+<section class="cta-strip fade-in">
+  <h2>Ready for a Showroom Finish?</h2>
+  <a href="contact.html" class="btn-primary">Get a Quote</a>
+</section>
+
+
+
+<!-- ===========================
+        FOOTER
+=========================== -->
+<footer class="footer">
+  <div class="footer-columns">
+
+    <div>
+      <h4>ICE Detailing LLC</h4>
+      <p>Boston & Middlesex</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
+      <p><a href="tel:16179702329">(617) 970-2329</a></p>
+    </div>
+
+    <div>
+      <h4>Social</h4>
+      <p><a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © <span id="year"></span> ICE Detailing LLC — All Rights Reserved
+  </p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
         <a class="call-btn" href="tel:16179702329" aria-label="Call ICE Detailing">(617) 970-2329</a>
         <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-controls="mobileNav" style="display:none;margin-left:8px;">Menu</button>
       </div>
