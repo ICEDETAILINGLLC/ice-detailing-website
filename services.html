@@ -4,20 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services — ICE Detailing LLC</title>
-  <meta name="description" content="Services & pricing — Express, Deep Clean, Premium Ceramic. ICE Detailing LLC." />
+  <meta name="description" content="Detailing packages & pricing — Express, Deep Clean, Premium Ceramic." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-wrap"><img src="images/iced_blue.png" alt="ICE logo" class="logo-large"></div>
-      <nav class="primary-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#services" class="active">Services</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
+      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
       <div class="header-cta"><a class="call-btn" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
   </header>
@@ -26,26 +20,29 @@
     <section class="section dark-section">
       <div class="wrap">
         <h1 class="section-title">Detailing Packages & Pricing</h1>
-        <p class="section-sub muted">Starting prices — final quotes depend on vehicle size & condition.</p>
+        <p class="section-sub muted">Starting prices. Final quote depends on vehicle size & condition.</p>
 
         <div class="service-detail-card">
+          <img src="images/cars/porsche_718_interior.jpg" alt="Express" style="width:100%;border-radius:12px;margin-bottom:12px;">
           <h2>Express Detail</h2>
           <div class="price">From $175</div>
-          <p>Exterior wash, interior vacuum, wheel clean, windows, light trim dressing — 1–2 hours.</p>
+          <p>Exterior hand wash, wheels, interior vacuum, windows, light trim dress. 1–2 hours.</p>
           <a class="btn primary" href="index.html#contact" data-service="Express Detail">Book Express</a>
         </div>
 
         <div class="service-detail-card">
+          <img src="images/cars/porsche_leather_seats.jpg" alt="Deep" style="width:100%;border-radius:12px;margin-bottom:12px;">
           <h2>Deep Clean</h2>
           <div class="price">From $300</div>
-          <p>Full interior shampoo and extraction, leather care, clay & sealant — 3–5 hours.</p>
+          <p>Full interior shampoo & extraction, stain removal, leather care, clay & sealant. 3–5 hours.</p>
           <a class="btn primary" href="index.html#contact" data-service="Deep Clean">Book Deep Clean</a>
         </div>
 
         <div class="service-detail-card">
+          <img src="images/cars/porsche_911.jpg" alt="Ceramic" style="width:100%;border-radius:12px;margin-bottom:12px;">
           <h2>Premium Ceramic</h2>
           <div class="price">From $750</div>
-          <p>Paint correction, multi-stage polish, and ceramic coating — 6+ hours depending on scope.</p>
+          <p>Paint correction, multi-stage polish and ceramic coating for long-term protection. 6+ hours.</p>
           <a class="btn primary" href="index.html#contact" data-service="Ceramic">Book Ceramic</a>
         </div>
 
@@ -53,7 +50,7 @@
           <h3>Add-Ons</h3>
           <div class="addon-grid">
             <div class="addon"><span>Headlight Restoration</span><strong>$75</strong></div>
-            <div class="addon"><span>Engine Bay</span><strong>$30</strong></div>
+            <div class="addon"><span>Engine Bay Clean</span><strong>$30</strong></div>
             <div class="addon"><span>Excessive Pet Hair</span><strong>$30+</strong></div>
             <div class="addon"><span>Ozone Treatment</span><strong>$100</strong></div>
             <div class="addon"><span>Water Spot Removal</span><strong>$50+</strong></div>
@@ -61,6 +58,21 @@
           </div>
         </section>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>ICE Detailing LLC — Boston & Middlesex</div>
+      <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
+      <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
+    </div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearServices"></span></div>
+  </footer>
+
+  <script>document.getElementById('yearServices').textContent = ' ' + new Date().getFullYear();</script>
+</body>
+</html>
     </section>
   </main>
 
