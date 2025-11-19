@@ -1,94 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact & Booking — ICE DETAILING LLC</title>
-  <meta name="description" content="Contact ICE DETAILING LLC — request a quote or book a service. Serving Boston & Middlesex." />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — ICE Detailing LLC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="brand">
-        <img src="images/ice-logo.png" alt="ICE DETAILING LLC logo" />
-        <div>
-          <div class="title">ICE DETAILING LLC</div>
-          <div class="tag">Perfection is not optional — it's the standard.</div>
-        </div>
-      </div>
 
-      <nav class="nav">
+<body>
+
+<header>
+    <img src="images/iced_blue.png" class="logo">
+    <nav>
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
-        <a href="contact.html" class="cta">Contact</a>
-      </nav>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
 
-      <div>
-        <a class="phone-link" href="tel:16179702329">(617) 970-2329</a>
-      </div>
+<section class="section">
+    <h1>Contact & Booking</h1>
+
+    <p class="center">
+        Have questions or want to book a detail? Get in touch below.
+    </p>
+
+    <div class="contact-box">
+        <p><strong>Phone:</strong> <a href="tel:6179702329">617-970-2329</a></p>
+        <p><strong>Email:</strong> <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
+        <p><strong>Instagram:</strong> @icedetailingllc</p>
     </div>
-  </header>
 
-  <main class="container" style="padding-top:36px">
-    <h1 id="booking">Book a Service</h1>
-    <p class="small">Choose a service and request availability. Square handles online booking & payments (Apple Pay supported).</p>
+    <h2>Booking Form</h2>
 
-    <div class="booking">
-      <div class="card-light">
-        <h3 style="margin-top:0">Request a Quote</h3>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" placeholder="What service are you looking for?" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
 
-        <!-- Backup contact form (Formspree) -->
-        <form action="https://formspree.io/f/manaykpb" method="POST" class="form" style="margin-top:12px;">
-          <label class="small">Name</label>
-          <input type="text" name="name" required>
+</section>
 
-          <label class="small">Email</label>
-          <input type="email" name="email" required>
+<footer>
+    <p>© 2025 ICE Detailing LLC</p>
+</footer>
 
-          <label class="small">Phone</label>
-          <input type="text" name="phone" value="(617) 970-2329">
-
-          <label class="small">Service</label>
-          <input type="text" name="service" placeholder="Express / Full / Ceramic / Add-ons">
-
-          <label class="small">Message</label>
-          <textarea name="message" required placeholder="Tell us about your vehicle & preferred date/time"></textarea>
-
-          <div style="margin-top:12px"><button class="btn" type="submit">Send Request</button></div>
-          <p class="note">We will reply via email to confirm booking. You can also call (617) 970-2329.</p>
-        </form>
-      </div>
-
-      <aside>
-        <div class="card-light">
-          <h4 style="margin-top:0">Book instantly</h4>
-          <p class="small">Use our live booking calendar to choose a date & time. Square handles deposits & payments.</p>
-
-          <!-- PASTE YOUR SQUARE EMBED CODE BELOW -->
-          <div id="square-embed" style="margin-top:12px">
-            <!-- SQUARE_EMBED_CODE_HERE -->
-            <div class="small note">Paste your Square embed or iframe code here (Square Dashboard → Online Booking → Embed).</div>
-          </div>
-
-          <div style="margin-top:14px">
-            <strong>Contact</strong>
-            <div class="small" style="margin-top:8px"><a href="mailto:icedetailingllc@gmail.com" style="color:inherit; text-decoration:none">icedetailingllc@gmail.com</a></div>
-            <div class="small" style="margin-top:8px"><a href="tel:16179702329" style="color:inherit; text-decoration:none">(617) 970-2329</a></div>
-            <div class="small" style="margin-top:8px">Serving Boston & Middlesex area</div>
-            <div style="margin-top:8px"><a href="https://instagram.com/icedetailingllc" target="_blank" class="small" style="text-decoration:none; color:var(--icy-blue)">@icedetailingllc</a></div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="small">© <span id="y3"></span> ICE DETAILING LLC — Boston & Middlesex area</div>
-    </div>
-  </footer>
-
-  <script>document.getElementById('y3').textContent = new Date().getFullYear();</script>
 </body>
 </html>
