@@ -11,7 +11,7 @@
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="images/logo.png" alt="ICE DETAILING LLC logo" />
+        <img src="images/ice-logo.png" alt="ICE DETAILING LLC logo" />
         <div>
           <div class="title">ICE DETAILING LLC</div>
           <div class="tag">Perfection is not optional — it's the standard.</div>
@@ -34,12 +34,12 @@
     <!-- HERO -->
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-left fade-up" id="hero-left">
-        <h1 id="hero-title">Mobile + Professional Auto Detailing</h1>
-        <p>We bring showroom shine to your door. Serving Boston, MA & the Middlesex area — expert technicians, premium products, and a flawless finish.</p>
+        <h1 id="hero-title">Perfection Isn’t Optional — It’s the Standard.</h1>
+        <p>Mobile + Professional Auto Detailing. We bring showroom shine to your door across Boston & Middlesex.</p>
 
         <div class="hero-actions">
           <a class="btn" href="contact.html#booking">Book Now</a>
-          <a class="btn ghost" href="services.html">View Services</a>
+          <a class="btn ghost" href="tel:16179702329">Call Now</a>
         </div>
 
         <p class="small" style="margin-top:14px">Click to call: <a href="tel:16179702329" style="color:var(--icy-blue); text-decoration:none;">(617) 970-2329</a></p>
@@ -50,7 +50,7 @@
       </aside>
     </section>
 
-    <!-- WHY -->
+    <!-- FEATURES band -->
     <section class="band-dark" aria-labelledby="why-title">
       <div class="container band-grid">
         <div>
@@ -75,32 +75,46 @@
       </div>
     </section>
 
-    <!-- Services preview -->
+    <!-- SERVICES preview -->
     <section class="container" aria-labelledby="services-preview">
       <h2 id="services-preview" style="margin-top:36px">Our Packages</h2>
-      <p class="small">Transparent pricing with premium results.</p>
+      <p class="small">Clear pricing, professional results — starting rates shown.</p>
 
       <div class="services-row">
         <div class="service-card fade-up">
           <h3>Express Detail</h3>
           <div class="price">Starting at $175</div>
           <p class="small" style="margin-top:8px">Hand wash, interior vacuum, windows, tire shine — 1–2 hours.</p>
-          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+          <div style="margin-top:12px"><a class="btn" href="contact.html#booking">Book Now</a></div>
         </div>
 
         <div class="service-card fade-up">
           <h3>Full Interior & Exterior</h3>
           <div class="price">Starting at $300</div>
           <p class="small" style="margin-top:8px">Deep clean, shampoo, leather care, clay + sealant — 3–5 hours.</p>
-          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+          <div style="margin-top:12px"><a class="btn" href="contact.html#booking">Book Now</a></div>
         </div>
 
         <div class="service-card fade-up">
           <h3>Premium Ceramic Protection</h3>
           <div class="price">Starting at $750</div>
           <p class="small" style="margin-top:8px">Paint decon, machine polish, ceramic coating — 6+ hours.</p>
-          <div class="service-cta"><a class="btn" href="contact.html#booking">Book Now</a></div>
+          <div style="margin-top:12px"><a class="btn" href="contact.html#booking">Book Now</a></div>
         </div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="container" style="margin-top:36px">
+      <h2>Before & After</h2>
+      <p class="small">Drag the handle to compare a typical transformation. Replace images at <code class="code">/images/before1.jpg</code> and <code class="code">/images/after1.jpg</code>.</p>
+
+      <div class="ba-wrap" id="ba">
+        <img src="images/after1.jpg" alt="After" class="ba-img" style="position:absolute; inset:0; z-index:10;">
+        <div style="position:relative; z-index:20; overflow:hidden;">
+          <img src="images/before1.jpg" alt="Before" class="ba-img" id="ba-before" style="width:100%; display:block;">
+        </div>
+        <div class="ba-handle" id="ba-handle" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -119,20 +133,21 @@
     <section class="container" style="margin-top:36px">
       <h2>Testimonials</h2>
       <div class="testimonials">
-        <div class="testimonial">
+        <div class="testimonial fade-up">
           <strong>★★★★★</strong>
           <p style="margin:8px 0">“Amazing attention to detail — my car looks brand new.”</p>
           <div class="small">— Jason M., Boston</div>
         </div>
-        <div class="testimonial">
+        <div class="testimonial fade-up">
           <strong>★★★★★</strong>
           <p style="margin:8px 0">“Professional, punctual, and meticulous.”</p>
           <div class="small">— Elena R., Cambridge</div>
         </div>
       </div>
     </section>
-
   </main>
+
+  <a href="contact.html#booking" class="sticky-book" aria-label="Book Now">BOOK NOW</a>
 
   <footer>
     <div class="container">
@@ -146,12 +161,38 @@
   </footer>
 
   <script>
-    // small fade-up reveal on load
+    // reveal animations
     window.addEventListener('load', ()=> {
       document.querySelectorAll('.fade-up').forEach((el, i)=> {
         setTimeout(()=> el.classList.add('show'), 120 * (i+1));
       });
     });
+
+    // Before/After slider
+    (function(){
+      const wrap = document.getElementById('ba');
+      if(!wrap) return;
+      const before = document.getElementById('ba-before');
+      const handle = document.getElementById('ba-handle');
+      let isDown = false;
+
+      function setPos(x){
+        const rect = wrap.getBoundingClientRect();
+        let px = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+        before.style.width = (px * 100) + '%';
+        handle.style.left = (px * 100) + '%';
+      }
+
+      handle.addEventListener('pointerdown', e => { isDown = true; handle.setPointerCapture(e.pointerId); });
+      window.addEventListener('pointerup', ()=> isDown = false);
+      window.addEventListener('pointermove', e => { if(isDown) setPos(e.clientX); });
+
+      // allow clicking on slider to reposition
+      wrap.addEventListener('click', e => setPos(e.clientX));
+
+      // initialize center
+      setPos(wrap.getBoundingClientRect().left + wrap.getBoundingClientRect().width / 2);
+    })();
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
