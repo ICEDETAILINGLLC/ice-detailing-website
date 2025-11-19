@@ -6,18 +6,12 @@
   <title>Contact — ICE Detailing LLC</title>
   <meta name="description" content="Contact ICE Detailing LLC — Book mobile detailing in Boston & Middlesex." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="logo-wrap"><img src="images/iced_blue.png" alt="ICE logo" class="logo-large"></div>
-      <nav class="primary-nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#reviews">Reviews</a>
-        <a href="index.html#contact" class="active">Contact</a>
-      </nav>
+      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="#contact" class="active">Contact</a></nav>
       <div class="header-cta"><a class="call-btn" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
   </header>
@@ -27,13 +21,61 @@
       <div class="wrap contact-wrap">
         <div class="contact-main">
           <h1 class="section-title">Contact & Booking</h1>
-          <p class="section-sub muted">Use the form below or call — we confirm within 24 hours.</p>
+          <p class="section-sub muted">Use the form or call — we'll confirm within 24 hours.</p>
 
           <form action="https://formspree.io/f/manaykpb" method="POST" class="contact-form">
             <label class="sr-only" for="cname">Name</label>
             <input id="cname" name="name" type="text" placeholder="Your name" required>
 
             <label class="sr-only" for="cemail">Email</label>
+            <input id="cemail" name="email" type="email" placeholder="Email" required value="icedetailingllc@gmail.com">
+
+            <label class="sr-only" for="cphone">Phone</label>
+            <input id="cphone" name="phone" type="tel" placeholder="Phone" required value="(617) 970-2329">
+
+            <label class="sr-only" for="cservice">Service</label>
+            <select id="cservice" name="service">
+              <option>Express — $175+</option>
+              <option>Deep Clean — $300+</option>
+              <option>Premium Ceramic — $750+</option>
+            </select>
+
+            <label class="sr-only" for="cmessage">Message</label>
+            <textarea id="cmessage" name="message" rows="5" placeholder="Preferred date, location & vehicle notes"></textarea>
+
+            <div class="form-row">
+              <button class="btn primary" type="submit">Send Request</button>
+              <a class="btn outline" href="tel:16179702329">Call (617) 970-2329</a>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contact-aside">
+          <div class="panel">
+            <h4>Instant Booking</h4>
+            <p class="muted">Paste your Square booking iframe into the placeholder to show live availability and accept Apple Pay.</p>
+            <div id="square-embed" class="square-embed"><div class="square-placeholder">Square booking placeholder — paste your iframe here.</div></div>
+
+            <h5 style="margin-top:18px">Contact</h5>
+            <p class="muted">icedetailingllc@gmail.com<br>(617) 970-2329</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>ICE Detailing LLC — Boston & Middlesex</div>
+      <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
+      <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
+    </div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearContact"></span></div>
+  </footer>
+
+  <script>document.getElementById('yearContact').textContent = ' ' + new Date().getFullYear();</script>
+</body>
+</html>
             <input id="cemail" name="email" type="email" placeholder="Email" required value="icedetailingllc@gmail.com">
 
             <label class="sr-only" for="cphone">Phone</label>
