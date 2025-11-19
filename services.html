@@ -1,79 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — ICE Detailing LLC</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ICE Detailing LLC — Services</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <header class="header">
-  <div class="container">
-    <div class="brand">
-      <img src="images/iced_blue.png" alt="ICE DETAILING LLC logo" />
-      <div class="title">ICE DETAILING LLC</div>
-    </div>
-
-    <nav class="navlinks">
+  <div class="nav-inner">
+    <div class="brand"><img src="images/iced_blue.png" alt="logo"></div>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="services.html" class="active">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<main class="container">
+<section class="hero">
+  <h1>Services & Pricing</h1>
+  <p>Transparent pricing with clear descriptions. Final quotes may vary based on vehicle size & condition.</p>
+</section>
 
-  <h1>Detailing Packages</h1>
+<section class="section">
+  <div class="service-card">
+    <h3>Express Detail</h3>
+    <p>Exterior hand wash, interior vacuum, windows, tire dressing. Quick maintenance detail.</p>
+    <div class="price">Starting at $175</div>
+  </div>
 
-  <section class="card">
-    <h2>Express Detail — Starting at $175</h2>
-    <ul>
-      <li>Exterior wash & shine</li>
-      <li>Interior wipe-down</li>
-      <li>Windows & wheels</li>
-      <li>Vacuum</li>
-    </ul>
-  </section>
+  <div class="service-card">
+    <h3>Deep Clean — Full Interior & Exterior</h3>
+    <p>Interior shampoo, leather cleaning, carpet extraction, exterior decontamination, clay and sealant.</p>
+    <div class="price">Starting at $300</div>
+  </div>
 
-  <section class="card">
-    <h2>Deep Clean — Starting at $300</h2>
-    <ul>
-      <li>Full exterior decontamination</li>
-      <li>Steam cleaning</li>
-      <li>Carpet & seat deep cleaning</li>
-      <li>Interior sanitizing</li>
-    </ul>
-  </section>
+  <div class="service-card">
+    <h3>Premium Ceramic Protection</h3>
+    <p>Multi-stage paint correction and ceramic coating application for long-term protection.</p>
+    <div class="price">Starting at $750</div>
+  </div>
 
-  <section class="card">
-    <h2>Premium Ceramic — Starting at $750</h2>
-    <ul>
-      <li>Paint correction</li>
-      <li>2–5 year ceramic coating</li>
-      <li>Gloss enhancement</li>
-      <li>Hydrophobic protection</li>
-    </ul>
-  </section>
-
-  <h2>Add-Ons</h2>
-
-  <section class="card">
-    <ul>
-      <li>Engine Bay — $30</li>
-      <li>Excessive Pet Hair — $30</li>
-      <li>Ozone Treatment — $100</li>
-      <li>Trim Restore — Price varies</li>
-      <li>Water Spot Removal — $50+</li>
-    </ul>
-  </section>
-
-</main>
+  <h2 style="margin-top:40px">Add-On Services</h2>
+  <div class="card" style="margin-top:10px; text-align:left">
+    <p>Headlight Restoration — $75</p>
+    <p>Engine Bay Cleaning — $30</p>
+    <p>Excessive Pet Hair — $30+</p>
+    <p>Ozone Odor Treatment — $100</p>
+    <p>Water Spot Removal — $50+</p>
+    <p>Trim Restoration — price varies</p>
+  </div>
+</section>
 
 <footer>
-  <p>© 2025 ICE Detailing LLC</p>
+  © 2025 ICE Detailing LLC
 </footer>
 
 </body>
