@@ -12,7 +12,7 @@
     <div class="wrap header-inner">
       <div class="logo-wrap"><img src="images/iced_blue.png" alt="ICE logo" class="logo-large"></div>
       <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="#contact" class="active">Contact</a></nav>
-      <div class="header-cta"><a class="call-btn" href="tel:16179702329">(617) 970-2329</a></div>
+      <div class="header-cta"><a href="tel:16179702329" class="call-btn">(617) 970-2329</a></div>
     </div>
   </header>
 
@@ -21,19 +21,52 @@
       <div class="wrap contact-wrap">
         <div class="contact-main">
           <h1 class="section-title">Contact & Booking</h1>
-          <p class="section-sub muted">Use the form or call — we'll confirm within 24 hours.</p>
+          <p class="section-sub muted">Use the form below or call — we typically confirm within 24 hours.</p>
 
           <form action="https://formspree.io/f/manaykpb" method="POST" class="contact-form">
-            <label class="sr-only" for="cname">Name</label>
-            <input id="cname" name="name" type="text" placeholder="Your name" required>
+            <input type="text" name="name" placeholder="Full name" required />
+            <input type="email" name="email" placeholder="Email" value="icedetailingllc@gmail.com" required />
+            <input type="tel" name="phone" placeholder="Phone" value="(617) 970-2329" required />
+            <select name="service">
+              <option>Express — $175+</option>
+              <option>Deep Clean — $300+</option>
+              <option>Premium Ceramic — $750+</option>
+            </select>
+            <textarea name="message" rows="5" placeholder="Preferred date, location & vehicle notes"></textarea>
 
-            <label class="sr-only" for="cemail">Email</label>
-            <input id="cemail" name="email" type="email" placeholder="Email" required value="icedetailingllc@gmail.com">
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Send Request</button>
+              <a class="btn btn-outline" href="tel:16179702329">Call (617) 970-2329</a>
+            </div>
+          </form>
+        </div>
 
-            <label class="sr-only" for="cphone">Phone</label>
-            <input id="cphone" name="phone" type="tel" placeholder="Phone" required value="(617) 970-2329">
+        <aside class="contact-aside">
+          <div class="panel">
+            <h4>Instant Booking</h4>
+            <p class="muted">Paste your Square booking iframe into the placeholder to show live availability and accept Apple Pay.</p>
+            <div id="square-embed" class="square-placeholder">Square booking placeholder — paste your iframe here.</div>
 
-            <label class="sr-only" for="cservice">Service</label>
+            <h5 style="margin-top:18px">Contact</h5>
+            <p class="muted"><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a><br>(617) 970-2329</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>ICE Detailing LLC — Boston & Middlesex</div>
+      <div><a href="mailto:icedetailingllc@gmail.com" class="footer-link">icedetailingllc@gmail.com</a></div>
+      <div><a href="tel:16179702329" class="footer-link">(617) 970-2329</a></div>
+    </div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearCon"></span></div>
+  </footer>
+
+  <script>document.getElementById('yearCon').textContent = ' ' + new Date().getFullYear();</script>
+</body>
+</html>
             <select id="cservice" name="service">
               <option>Express — $175+</option>
               <option>Deep Clean — $300+</option>
