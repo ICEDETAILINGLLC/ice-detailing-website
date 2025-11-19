@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — ICE Detailing LLC</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — ICE Detailing LLC</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header>
-    <img src="images/iced_blue.png" class="logo">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<section class="section">
-    <h1>Contact & Booking</h1>
-
-    <p class="center">
-        Have questions or want to book a detail? Get in touch below.
-    </p>
-
-    <div class="contact-box">
-        <p><strong>Phone:</strong> <a href="tel:6179702329">617-970-2329</a></p>
-        <p><strong>Email:</strong> <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
-        <p><strong>Instagram:</strong> @icedetailingllc</p>
+<header class="header">
+  <div class="container">
+    <div class="brand">
+      <img src="images/iced_blue.png" alt="ICE DETAILING LLC logo" />
+      <div class="title">ICE DETAILING LLC</div>
     </div>
 
-    <h2>Booking Form</h2>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="phone" placeholder="Phone Number" required>
-        <textarea name="message" placeholder="What service are you looking for?" required></textarea>
-        <button type="submit">Submit</button>
+<main class="container">
+
+  <h1>Contact & Booking</h1>
+
+  <p>Call or message us anytime. We serve Boston & Middlesex.</p>
+
+  <div class="card">
+    <h2>Contact Info</h2>
+    <p><strong>Phone:</strong> <a href="tel:16179702329">(617) 970-2329</a></p>
+    <p><strong>Email:</strong> <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Send a Message</h2>
+
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Your Name</label>
+      <input type="text" name="name" required />
+
+      <label>Your Email</label>
+      <input type="email" name="email" required />
+
+      <label>Your Message</label>
+      <textarea name="message" required></textarea>
+
+      <button class="btn" type="submit">Send Message</button>
     </form>
+  </div>
 
-</section>
+</main>
 
 <footer>
-    <p>© 2025 ICE Detailing LLC</p>
+  <p>© 2025 ICE Detailing LLC</p>
 </footer>
 
 </body>
