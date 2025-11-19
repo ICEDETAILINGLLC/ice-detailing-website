@@ -1,83 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services — ICE Detailing LLC</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services — ICE Detailing</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html"><img src="images/iced_blue.png" alt="logo" class="logo"></a>
-    <nav class="main-nav">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#services" class="active">Services</a>
-      <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </div>
+<header class="nav">
+    <div class="nav-container">
+        <img src="YOUR-LOGO.png" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<main class="wrap section-dark">
-  <h1 class="section-title">Detailing Packages & Pricing</h1>
-  <p class="section-sub">Starting prices — exact quote depends on vehicle size & condition.</p>
+<section class="services">
+    <h1>Detailing Packages</h1>
 
-  <section class="service-detail-card">
-    <h2>Express Detail</h2>
-    <div class="price">From $175</div>
-    <p>Exterior hand wash & drying, wheel clean, vacuum, windows, light trim dress.</p>
-    <ul>
-      <li>Time: ~1–2 hours</li>
-      <li>Great for regular maintenance</li>
-    </ul>
-    <a class="btn btn-primary" href="index.html#contact" data-service="Express Detail">Book Express</a>
-  </section>
-
-  <section class="service-detail-card">
-    <h2>Deep Clean</h2>
-    <div class="price">From $300</div>
-    <p>Full interior shampoo, steam & extract, leather treatment, exterior clay + sealant.</p>
-    <ul>
-      <li>Time: ~3–5 hours</li>
-      <li>Recommended every 6–12 months</li>
-    </ul>
-    <a class="btn btn-primary" href="index.html#contact" data-service="Deep Clean">Book Deep Clean</a>
-  </section>
-
-  <section class="service-detail-card">
-    <h2>Premium Ceramic</h2>
-    <div class="price">From $750</div>
-    <p>Paint correction, multi-stage polish, and ceramic coating application for long-term protection.</p>
-    <ul>
-      <li>Time: 6+ hours</li>
-      <li>Optional hydrophobic packages available</li>
-    </ul>
-    <a class="btn btn-primary" href="index.html#contact" data-service="Ceramic">Book Ceramic</a>
-  </section>
-
-  <section class="service-detail-card addons">
-    <h3>Add-Ons</h3>
-    <div class="addon-list">
-      <div class="addon"><span>Engine Bay Clean</span><strong>$30</strong></div>
-      <div class="addon"><span>Excessive Pet Hair</span><strong>$30+</strong></div>
-      <div class="addon"><span>Ozone Treatment</span><strong>$100</strong></div>
-      <div class="addon"><span>Water Spot Removal</span><strong>$50+</strong></div>
+    <div class="service-card">
+        <h2>Basic Detail</h2>
+        <p>A clean, refreshed vehicle with a smoother daily driving experience.</p>
+        <a href="service-basic.html" class="btn-secondary">Learn More</a>
     </div>
-  </section>
 
-</main>
+    <div class="service-card">
+        <h2>Premium Detail</h2>
+        <p>Full interior + exterior transformation with showroom shine.</p>
+        <a href="service-premium.html" class="btn-secondary">Learn More</a>
+    </div>
 
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div>ICE Detailing LLC • Boston & Middlesex</div>
-    <div><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
-    <div><a href="tel:16179702329">(617) 970-2329</a></div>
-  </div>
-  <div class="legal">© ICE Detailing LLC <span id="year2"></span></div>
+    <div class="service-card">
+        <h2>Ceramic Coating</h2>
+        <p>Long-term protection with extreme gloss and hydrophobic performance.</p>
+        <a href="service-ceramic.html" class="btn-secondary">Learn More</a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 ICE Detailing LLC — All Rights Reserved</p>
 </footer>
 
-<script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
 </body>
 </html>
