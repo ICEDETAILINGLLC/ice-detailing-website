@@ -119,7 +119,7 @@ body {
     color: #cccccc;
 }
 
-/* ADD ON CARDS */
+/* ADD ONS */
 .addons {
     padding: 40px 20px;
     max-width: 900px;
@@ -146,7 +146,7 @@ body {
     max-width: 450px;
     border-radius: 12px;
     margin: 10px;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* FOOTER */
@@ -183,22 +183,50 @@ footer p {
 
 <div class="services">
     <div class="service-card">
-        <img src="images/car1.jpg" alt="Express Detail">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200" alt="Express Detail">
         <h3>Express Detail — Starting at $175</h3>
         <p>Perfect for maintaining gloss & cleanliness. Exterior wash, light interior clean, windows, and wheels.</p>
     </div>
 
     <div class="service-card">
-        <img src="images/car2.jpg" alt="Deep Clean">
+        <img src="https://images.unsplash.com/photo-1542367592-8849eb950fd8?q=80&w=1200" alt="Deep Clean">
         <h3>Deep Clean — Starting at $300</h3>
         <p>Full interior shampoo, steam, deep vacuum, interior plastics restored, exterior wash & gloss enhancement.</p>
     </div>
 
     <div class="service-card">
-        <img src="images/car3.jpg" alt="Ceramic Coating">
+        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=1200" alt="Ceramic Coating">
         <h3>Premium Ceramic — Starting at $750</h3>
         <p>Long-term paint protection, intense shine, hydrophobic properties, easier maintenance & premium finish.</p>
     </div>
 </div>
 
-<!-- ADD-ONS
+<!-- ADD-ONS -->
+<h2 class="section-title">Add-Ons</h2>
+
+<div class="addons">
+    <div class="addon-row"><span>Engine Bay Cleaning</span><strong>$30</strong></div>
+    <div class="addon-row"><span>Excessive Pet Hair</span><strong>$30</strong></div>
+    <div class="addon-row"><span>Ozone Treatment</span><strong>$100</strong></div>
+    <div class="addon-row"><span>Water Spot Removal</span><strong>$50+</strong></div>
+</div>
+
+<!-- BEFORE AFTER -->
+<h2 class="section-title">Before & After</h2>
+<div class="before-after">
+    <img src="https://images.unsplash.com/photo-1619712501830-ec2c22b4fb76?q=80&w=1200" class="placeholder-img" alt="Before">
+    <img src="https://images.unsplash.com/photo-1619712500689-df8fdb3dc47a?q=80&w=1200" class="placeholder-img" alt="After">
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>ICE Detailing LLC</p>
+    <p>Boston, MA • Middlesex County</p>
+    <p>Phone: 617-970-2329</p>
+    <p>Email: icedetailingllc@gmail.com</p>
+    <p>Instagram: @icedetailingllc</p>
+    <p>© 2025 ICE Detailing LLC</p>
+</footer>
+
+</body>
+</html>
