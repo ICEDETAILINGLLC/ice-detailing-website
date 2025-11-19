@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services — ICE Detailing LLC</title>
-  <meta name="description" content="Detailing packages & pricing — Express, Deep Clean, Premium Ceramic." />
+  <meta name="description" content="ICE Detailing services — Express, Deep Clean, Premium Ceramic, and add-ons." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,28 +12,68 @@
     <div class="wrap header-inner">
       <div class="logo-wrap"><img src="images/iced_blue.png" alt="ICE logo" class="logo-large"></div>
       <nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
-      <div class="header-cta"><a class="call-btn" href="tel:16179702329">(617) 970-2329</a></div>
+      <div class="header-cta"><a href="tel:16179702329" class="call-btn">(617) 970-2329</a></div>
     </div>
   </header>
 
   <main>
     <section class="section dark-section">
       <div class="wrap">
-        <h1 class="section-title">Detailing Packages & Pricing</h1>
-        <p class="section-sub muted">Starting prices. Final quote depends on vehicle size & condition.</p>
+        <h1 class="section-title">Detailing Packages</h1>
+        <p class="section-sub muted">Starting prices — final quote depends on vehicle size & condition.</p>
 
-        <div class="service-detail-card">
-          <img src="images/cars/porsche_718_interior.jpg" alt="Express" style="width:100%;border-radius:12px;margin-bottom:12px;">
-          <h2>Express Detail</h2>
-          <div class="price">From $175</div>
-          <p>Exterior hand wash, wheels, interior vacuum, windows, light trim dress. 1–2 hours.</p>
-          <a class="btn primary" href="index.html#contact" data-service="Express Detail">Book Express</a>
+        <div class="service-cards">
+          <div class="service-detail-card reveal">
+            <img src="images/cars/porsche_718_interior.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
+            <h2>Express Detail</h2>
+            <div class="price">$175+</div>
+            <p>Exterior wash, interior vacuum, windows, light trim dress. 1–2 hours.</p>
+            <a href="#contact" class="btn btn-primary" data-service="Express Detail">Book Express</a>
+          </div>
+
+          <div class="service-detail-card reveal">
+            <img src="images/cars/porsche_leather_seats.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
+            <h2>Deep Clean</h2>
+            <div class="price">$300+</div>
+            <p>Full interior shampoo & extraction, leather cleaning, stain removal. 3–5 hours.</p>
+            <a href="#contact" class="btn btn-primary" data-service="Deep Clean">Book Deep Clean</a>
+          </div>
+
+          <div class="service-detail-card reveal">
+            <img src="images/cars/porsche_911.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
+            <h2>Premium Ceramic</h2>
+            <div class="price">$750+</div>
+            <p>Paint correction, multi-stage polish, and ceramic coating for long-term protection. 6+ hours.</p>
+            <a href="#contact" class="btn btn-primary" data-service="Premium Ceramic">Book Ceramic</a>
+          </div>
         </div>
 
-        <div class="service-detail-card">
-          <img src="images/cars/porsche_leather_seats.jpg" alt="Deep" style="width:100%;border-radius:12px;margin-bottom:12px;">
-          <h2>Deep Clean</h2>
-          <div class="price">From $300</div>
+        <section class="addons reveal">
+          <h3>Add-Ons</h3>
+          <div class="addon-grid">
+            <div class="addon"><span>Headlight Restoration</span><strong>$75</strong></div>
+            <div class="addon"><span>Engine Bay Clean</span><strong>$30</strong></div>
+            <div class="addon"><span>Excessive Pet Hair</span><strong>$30+</strong></div>
+            <div class="addon"><span>Ozone Treatment</span><strong>$100</strong></div>
+            <div class="addon"><span>Water Spot Removal</span><strong>$50+</strong></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>ICE Detailing LLC — Boston & Middlesex</div>
+      <div><a href="mailto:icedetailingllc@gmail.com" class="footer-link">icedetailingllc@gmail.com</a></div>
+      <div><a href="tel:16179702329" class="footer-link">(617) 970-2329</a></div>
+    </div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearSvc"></span></div>
+  </footer>
+
+  <script>document.getElementById('yearSvc').textContent = ' ' + new Date().getFullYear();</script>
+</body>
+</html>
           <p>Full interior shampoo & extraction, stain removal, leather care, clay & sealant. 3–5 hours.</p>
           <a class="btn primary" href="index.html#contact" data-service="Deep Clean">Book Deep Clean</a>
         </div>
