@@ -3,90 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Services — ICE Detailing LLC</title> 
-  <meta name="description" content="ICE Detailing services — Express, Deep Clean, Premium Ceramic, and add-ons." />
+  <title>Services — ICE Detailing LLC</title>
+  <meta name="description" content="Detailing packages & pricing — Express, Deep Clean, Premium Ceramic." />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header class="site-header">
+<body class="hybrid">
+
+  <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <div class="logo-wrap"><img src="images/iced_blue.png" alt="ICE logo" class="logo-large"></div>
+      <div class="logo-wrap"><img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="logo-large"></div>
       <nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
       <div class="header-cta"><a href="tel:16179702329" class="call-btn">(617) 970-2329</a></div>
     </div>
   </header>
 
   <main>
-    <section class="section dark-section">
+    <section class="section light-section">
       <div class="wrap">
         <h1 class="section-title">Detailing Packages</h1>
         <p class="section-sub muted">Starting prices — final quote depends on vehicle size & condition.</p>
 
         <div class="service-cards">
-          <div class="service-detail-card reveal">
+          <article class="service-detail-card reveal">
             <img src="images/cars/porsche_718_interior.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
             <h2>Express Detail</h2>
             <div class="price">$175+</div>
             <p>Exterior wash, interior vacuum, windows, light trim dress. 1–2 hours.</p>
-            <a href="#contact" class="btn btn-primary" data-service="Express Detail">Book Express</a>
-          </div>
+            <a href="index.html#contact" class="btn btn-primary" data-service="Express — $175+">Book Express</a>
+          </article>
 
-          <div class="service-detail-card reveal">
+          <article class="service-detail-card reveal">
             <img src="images/cars/porsche_leather_seats.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
             <h2>Deep Clean</h2>
             <div class="price">$300+</div>
             <p>Full interior shampoo & extraction, leather cleaning, stain removal. 3–5 hours.</p>
-            <a href="#contact" class="btn btn-primary" data-service="Deep Clean">Book Deep Clean</a>
-          </div>
+            <a href="index.html#contact" class="btn btn-primary" data-service="Deep Clean — $300+">Book Deep Clean</a>
+          </article>
 
-          <div class="service-detail-card reveal">
+          <article class="service-detail-card reveal">
             <img src="images/cars/porsche_911.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
             <h2>Premium Ceramic</h2>
             <div class="price">$750+</div>
-            <p>Paint correction, multi-stage polish, and ceramic coating for long-term protection. 6+ hours.</p>
-            <a href="#contact" class="btn btn-primary" data-service="Premium Ceramic">Book Ceramic</a>
-          </div>
+            <p>Paint correction, multi-stage polish and ceramic coating for long-term protection. 6+ hours.</p>
+            <a href="index.html#contact" class="btn btn-primary" data-service="Ceramic — $750+">Book Ceramic</a>
+          </article>
         </div>
 
         <section class="addons reveal">
-          <h3>Add-Ons</h3>
-          <div class="addon-grid">
-            <div class="addon"><span>Headlight Restoration</span><strong>$75</strong></div>
-            <div class="addon"><span>Engine Bay Clean</span><strong>$30</strong></div>
-            <div class="addon"><span>Excessive Pet Hair</span><strong>$30+</strong></div>
-            <div class="addon"><span>Ozone Treatment</span><strong>$100</strong></div>
-            <div class="addon"><span>Water Spot Removal</span><strong>$50+</strong></div>
-          </div>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>ICE Detailing LLC — Boston & Middlesex</div>
-      <div><a href="mailto:icedetailingllc@gmail.com" class="footer-link">icedetailingllc@gmail.com</a></div>
-      <div><a href="tel:16179702329" class="footer-link">(617) 970-2329</a></div>
-    </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearSvc"></span></div>
-  </footer>
-
-  <script>document.getElementById('yearSvc').textContent = ' ' + new Date().getFullYear();</script>
-</body>
-</html>
-          <p>Full interior shampoo & extraction, stain removal, leather care, clay & sealant. 3–5 hours.</p>
-          <a class="btn primary" href="index.html#contact" data-service="Deep Clean">Book Deep Clean</a>
-        </div>
-
-        <div class="service-detail-card">
-          <img src="images/cars/porsche_911.jpg" alt="Ceramic" style="width:100%;border-radius:12px;margin-bottom:12px;">
-          <h2>Premium Ceramic</h2>
-          <div class="price">From $750</div>
-          <p>Paint correction, multi-stage polish and ceramic coating for long-term protection. 6+ hours.</p>
-          <a class="btn primary" href="index.html#contact" data-service="Ceramic">Book Ceramic</a>
-        </div>
-
-        <section class="addons">
           <h3>Add-Ons</h3>
           <div class="addon-grid">
             <div class="addon"><span>Headlight Restoration</span><strong>$75</strong></div>
@@ -101,46 +64,18 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer light-footer">
     <div class="wrap footer-grid">
       <div>ICE Detailing LLC — Boston & Middlesex</div>
       <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
       <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearServices"></span></div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearSvc"></span></div>
   </footer>
 
-  <script>document.getElementById('yearServices').textContent = ' ' + new Date().getFullYear();</script>
-</body>
-</html>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>ICE Detailing LLC • Boston & Middlesex</div>
-      <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
-      <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
-    </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearServices"></span></div>
-  </footer>
-
-  <script>document.getElementById('yearServices').textContent = ' ' + new Date().getFullYear();</script>
-</body>
-</html>
-    </div>
-
-    <div class="service-card">
-        <h2>Ceramic Coating</h2>
-        <p>Long-term protection with extreme gloss and hydrophobic performance.</p>
-        <a href="service-ceramic.html" class="btn-secondary">Learn More</a>
-    </div>
-
-</section>
-
-<footer>
-    <p>© 2025 ICE Detailing LLC — All Rights Reserved</p>
-</footer>
-
+  <script>
+    document.getElementById('yearSvc').textContent = new Date().getFullYear();
+  </script>
+  <script src="animations.js"></script>
 </body>
 </html>
