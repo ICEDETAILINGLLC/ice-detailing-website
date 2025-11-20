@@ -10,7 +10,7 @@
 <body class="hybrid">
   <header class="site-header">
     <div class="wrap header-inner">
-      <img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo">
+      <img src="images/iced_blue.png" onerror="this.onerror=null;this.src='/mnt/data/iced_blue.png';" class="logo-horizontal" alt="ICE logo">
       <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="#contact" class="active">Contact</a></nav>
       <div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a></div>
     </div>
@@ -21,20 +21,27 @@
       <div class="wrap contact-wrap">
         <div class="contact-main reveal">
           <h1>Contact & Booking</h1>
-          <p class="muted">Request availability or book — forms submit to your Formspree endpoint.</p>
+          <p class="muted">Request availability or book — our form sends directly to your Formspree endpoint.</p>
 
-          <form id="contactForm" action="https://formspree.io/f/manaykpb" method="POST" class="form">
-            <input id="name" type="text" name="name" placeholder="Full name" required>
-            <input id="email" type="email" name="email" placeholder="Email" value="icedetailingllc@gmail.com" required>
-            <input id="phone" type="tel" name="phone" placeholder="Phone" value="(617) 970-2329" required>
+          <form id="contactForm" action="https://formspree.io/f/manaykpb" method="POST" class="form" autocomplete="on">
+            <label class="sr-only" for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Full name" required>
 
-            <select name="service" id="serviceSelect">
+            <label class="sr-only" for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="Email" value="icedetailingllc@gmail.com" required>
+
+            <label class="sr-only" for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="Phone" value="(617) 970-2329" required>
+
+            <label class="sr-only" for="cf-service">Service</label>
+            <select id="cf-service" name="service">
               <option>Basic Detail — Sedan $175 / Truck $250</option>
               <option>Deep Clean — Sedan $300 / Truck $375</option>
               <option>Ceramic Coating — Sedan $750 / Truck $850</option>
             </select>
 
-            <textarea name="message" rows="4" placeholder="Preferred date, location & vehicle notes"></textarea>
+            <label class="sr-only" for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Preferred date, location & vehicle notes"></textarea>
 
             <div class="form-actions">
               <button class="btn primary" type="submit">Send Request</button>
@@ -45,9 +52,9 @@
 
         <aside class="contact-aside reveal">
           <div class="panel">
-            <h4>Instant Booking</h4>
+            <h4>Square Booking</h4>
             <p class="muted">Paste your Square booking iframe here to accept Apple Pay and show availability:</p>
-            <div id="square-embed" class="square-placeholder">Square booking placeholder — paste your iframe here.</div>
+            <div id="square-embed" class="square-placeholder">Square booking placeholder — paste iframe here.</div>
 
             <h5 style="margin-top:18px">Contact</h5>
             <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a><br>
@@ -68,7 +75,6 @@
   </footer>
 
   <script>document.getElementById('yearContact').textContent = new Date().getFullYear();</script>
-  <script src="carousel.js"></script>
-  <script src="animations.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
