@@ -1,68 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services — ICE Detailing LLC</title>
-  <meta name="description" content="Detailing packages & pricing — Express, Deep Clean, Premium Ceramic." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
 </head>
-<body class="hybrid">
-  <header class="site-header"><div class="wrap header-inner"><img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo"><nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav><div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a><a class="cta-book" href="index.html#contact">Book</a></div></div></header>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner fade-in">
+    <img src="/mnt/data/iced_blue.png" class="logo-large" alt="ICE Detailing logo" />
+    <nav class="primary-nav">
+      <a href="index.html#home">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:16179702329">(617) 970-2329</a>
+  </div>
+</header>
 
-  <main>
-    <section class="light-block">
-      <div class="wrap">
-        <h1>Detailing Packages</h1>
-        <p class="muted">Starting prices. Final quote depends on vehicle size & condition.</p>
+<main>
+<section class="section hero-services fade-in">
+  <div class="wrap center">
+    <h1 class="section-title">Premium Detailing Packages</h1>
+    <p class="section-sub">Designed to protect, refresh, and elevate your vehicle — wherever you are.</p>
+  </div>
+</section>
 
-        <div class="service-cards grid reveal">
-          <article class="service-detail-card">
-            <img src="images/cars/porsche_718_interior.jpg" alt="">
-            <h3>Express Detail</h3>
-            <div class="price">$175+</div>
-            <p>Exterior wash, interior vacuum, wheels & glass, trim dressing. 1–2 hours.</p>
-            <a href="index.html#contact" class="btn primary" data-prefill="Express">Book</a>
-          </article>
-
-          <article class="service-detail-card">
-            <img src="images/cars/porsche_leather_seats.jpg" alt="">
-            <h3>Deep Clean</h3>
-            <div class="price">$300+</div>
-            <p>Full interior shampoo & extraction, leather care, stain removal. 3–5 hours.</p>
-            <a href="index.html#contact" class="btn primary" data-prefill="Deep Clean">Book</a>
-          </article>
-
-          <article class="service-detail-card">
-            <img src="images/cars/porsche_911.jpg" alt="">
-            <h3>Premium Ceramic</h3>
-            <div class="price">$750+</div>
-            <p>Paint correction, multi-stage polish and ceramic coating. 6+ hours.</p>
-            <a href="index.html#contact" class="btn primary" data-prefill="Ceramic">Book</a>
-          </article>
-        </div>
-
-        <section class="addons reveal">
-          <h3>Add-Ons</h3>
-          <div class="addon-grid">
-            <div class="addon"><span>Headlight Restoration</span><strong>$75</strong></div>
-            <div class="addon"><span>Engine Bay Clean</span><strong>$30</strong></div>
-            <div class="addon"><span>Excessive Pet Hair</span><strong>$30+</strong></div>
-            <div class="addon"><span>Ozone Treatment</span><strong>$100</strong></div>
-            <div class="addon"><span>Water Spot Removal</span><strong>$50+</strong></div>
-            <div class="addon"><span>Trim Restoration</span><strong>Varies</strong></div>
-          </div>
-        </section>
+<section class="section fade-in">
+  <div class="wrap">
+    <div class="packages-grid">
+      <div class="package-card">
+        <h2>✨ Basic Detail</h2>
+        <p class="price">Sedan — $175<br>Truck/SUV — $250</p>
+        <p class="time">Time: 1–2 hours</p>
+        <p class="desc">A clean and simple refresh. Perfect for maintaining a sharp, well-kept look between deeper services.</p>
+        <p class="small-muted">Prices may vary depending on vehicle condition.</p>
+        <a class="btn primary" href="index.html#contact" data-prefill="Basic Detail">Book</a>
       </div>
-    </section>
-  </main>
 
-  <footer class="site-footer light-footer">
-    <div class="wrap footer-grid"><div>ICE Detailing — Boston & Middlesex</div><div><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div><div><a href="tel:16179702329">(617) 970-2329</a></div></div>
-    <div class="legal">© ICE Detailing LLC <span id="yearSvc"></span></div>
-  </footer>
+      <div class="package-card">
+        <h2>✨ Deep Clean</h2>
+        <p class="price">Sedan — $300<br>Truck/SUV — $375</p>
+        <p class="time">Time: 3–5 hours</p>
+        <p class="desc">A full interior and exterior reset restoring clarity, comfort, and cleanliness throughout.</p>
+        <p class="small-muted">Prices may vary depending on vehicle condition.</p>
+        <a class="btn primary" href="index.html#contact" data-prefill="Deep Clean">Book</a>
+      </div>
 
-  <script>document.getElementById('yearSvc').textContent = new Date().getFullYear();</script>
-  <script src="animations.js"></script>
+      <div class="package-card highlight">
+        <h2>✨ Ceramic Coating</h2>
+        <p class="price">Sedan — $750<br>Truck/SUV — $850</p>
+        <p class="time">Time varies by vehicle</p>
+        <p class="desc">Advanced protection with a high-gloss, long-lasting finish. Every day your car will feel effortlessly glossy, stay cleaner longer, and feel protected — like driving a new car that barely ages.</p>
+        <p class="small-muted">Prices may vary depending on vehicle condition.</p>
+        <a class="btn primary" href="index.html#contact" data-prefill="Ceramic Coating">Book</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <div class="wrap">
+    <h2 class="section-title">Add-Ons</h2>
+    <div class="addons-grid">
+      <div class="addon-card"><h3>Headlight Restoration</h3><p class="price">$50 per headlight</p></div>
+      <div class="addon-card"><h3>Engine Bay Detail</h3><p class="price">$30</p></div>
+      <div class="addon-card"><h3>Excessive Pet Hair</h3><p class="price">$30</p></div>
+      <div class="addon-card"><h3>Ozone Treatment</h3><p class="price">$100</p></div>
+      <div class="addon-card"><h3>Trim Restoration</h3><p class="price">$50+</p></div>
+      <div class="addon-card"><h3>Water Spot Removal</h3><p class="price">$50+</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer fade-in">
+  <div class="wrap footer-grid">
+    <div>ICE Detailing LLC — Boston & Middlesex</div>
+    <div><a href="mailto:icedetailingllc@gmail.com" class="footer-link">icedetailingllc@gmail.com</a></div>
+    <div><a href="tel:16179702329" class="footer-link">(617) 970-2329</a></div>
+  </div>
+  <div class="legal wrap">© <span id="yearSrv"></span> ICE Detailing LLC</div>
+</footer>
+
+<script>document.getElementById('yearSrv').textContent = new Date().getFullYear();</script>
+<script src="carousel.js"></script>
+<script src="animations.js" defer></script>
+</main>
 </body>
 </html>
