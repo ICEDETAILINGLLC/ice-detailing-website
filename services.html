@@ -8,44 +8,37 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="hybrid">
-
-  <header class="site-header" role="banner">
-    <div class="wrap header-inner">
-      <div class="logo-wrap"><img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="logo-large"></div>
-      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
-      <div class="header-cta"><a href="tel:16179702329" class="call-btn">(617) 970-2329</a></div>
-    </div>
-  </header>
+  <header class="site-header"><div class="wrap header-inner"><img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo"><nav class="primary-nav"><a href="index.html#home">Home</a><a href="#services" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav><div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a><a class="cta-book" href="index.html#contact">Book</a></div></div></header>
 
   <main>
-    <section class="section light-section">
+    <section class="light-block">
       <div class="wrap">
-        <h1 class="section-title">Detailing Packages</h1>
-        <p class="section-sub muted">Starting prices — final quote depends on vehicle size & condition.</p>
+        <h1>Detailing Packages</h1>
+        <p class="muted">Starting prices. Final quote depends on vehicle size & condition.</p>
 
-        <div class="service-cards">
-          <article class="service-detail-card reveal">
-            <img src="images/cars/porsche_718_interior.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
-            <h2>Express Detail</h2>
+        <div class="service-cards grid reveal">
+          <article class="service-detail-card">
+            <img src="images/cars/porsche_718_interior.jpg" alt="">
+            <h3>Express Detail</h3>
             <div class="price">$175+</div>
-            <p>Exterior wash, interior vacuum, windows, light trim dress. 1–2 hours.</p>
-            <a href="index.html#contact" class="btn btn-primary" data-service="Express — $175+">Book Express</a>
+            <p>Exterior wash, interior vacuum, wheels & glass, trim dressing. 1–2 hours.</p>
+            <a href="index.html#contact" class="btn primary" data-prefill="Express">Book</a>
           </article>
 
-          <article class="service-detail-card reveal">
-            <img src="images/cars/porsche_leather_seats.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
-            <h2>Deep Clean</h2>
+          <article class="service-detail-card">
+            <img src="images/cars/porsche_leather_seats.jpg" alt="">
+            <h3>Deep Clean</h3>
             <div class="price">$300+</div>
-            <p>Full interior shampoo & extraction, leather cleaning, stain removal. 3–5 hours.</p>
-            <a href="index.html#contact" class="btn btn-primary" data-service="Deep Clean — $300+">Book Deep Clean</a>
+            <p>Full interior shampoo & extraction, leather care, stain removal. 3–5 hours.</p>
+            <a href="index.html#contact" class="btn primary" data-prefill="Deep Clean">Book</a>
           </article>
 
-          <article class="service-detail-card reveal">
-            <img src="images/cars/porsche_911.jpg" alt="" style="width:100%;border-radius:12px;margin-bottom:12px;">
-            <h2>Premium Ceramic</h2>
+          <article class="service-detail-card">
+            <img src="images/cars/porsche_911.jpg" alt="">
+            <h3>Premium Ceramic</h3>
             <div class="price">$750+</div>
-            <p>Paint correction, multi-stage polish and ceramic coating for long-term protection. 6+ hours.</p>
-            <a href="index.html#contact" class="btn btn-primary" data-service="Ceramic — $750+">Book Ceramic</a>
+            <p>Paint correction, multi-stage polish and ceramic coating. 6+ hours.</p>
+            <a href="index.html#contact" class="btn primary" data-prefill="Ceramic">Book</a>
           </article>
         </div>
 
@@ -65,17 +58,11 @@
   </main>
 
   <footer class="site-footer light-footer">
-    <div class="wrap footer-grid">
-      <div>ICE Detailing LLC — Boston & Middlesex</div>
-      <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
-      <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
-    </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearSvc"></span></div>
+    <div class="wrap footer-grid"><div>ICE Detailing — Boston & Middlesex</div><div><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div><div><a href="tel:16179702329">(617) 970-2329</a></div></div>
+    <div class="legal">© ICE Detailing LLC <span id="yearSvc"></span></div>
   </footer>
 
-  <script>
-    document.getElementById('yearSvc').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('yearSvc').textContent = new Date().getFullYear();</script>
   <script src="animations.js"></script>
 </body>
 </html>
