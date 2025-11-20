@@ -1,21 +1,46 @@
-images
-.gitkeep
-iced_blue.png
-CNAME
-contact.html
-index.html
-reviews.html
-services.html
-style.css  <footer class="site-footer">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reviews — ICE Detailing LLC</title>
+  <meta name="description" content="See customer reviews for ICE Detailing LLC." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="hybrid">
+
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+      <div class="logo-wrap"><img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="logo-large"></div>
+      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html" class="active">Reviews</a><a href="index.html#contact">Contact</a></nav>
+      <div class="header-cta"><a href="tel:16179702329" class="call-btn">(617) 970-2329</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section light-section">
+      <div class="wrap">
+        <h1 class="section-title">Customer Reviews</h1>
+        <p class="section-sub muted">Paste your Elfsight or Trustindex widget below to render live Google reviews (recommended).</p>
+
+        <div class="reviews-widget">
+          <!-- PASTE YOUR REVIEWS WIDGET SNIPPET HERE -->
+          <div class="reviews-placeholder">Reviews widget placeholder — paste the widget HTML/snippet here.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer light-footer">
     <div class="wrap footer-grid">
       <div>ICE Detailing LLC — Boston & Middlesex</div>
-      <div><a href="mailto:icedetailingllc@gmail.com" class="footer-link">icedetailingllc@gmail.com</a></div>
-      <div><a href="tel:16179702329" class="footer-link">(617) 970-2329</a></div>
+      <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
+      <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearRev"></span></div>
+    <div class="legal wrap">© ICE Detailing LLC <span id="yearReviews"></span></div>
   </footer>
 
-  <script>document.getElementById('yearRev').textContent = ' ' + new Date().getFullYear();</script>
+  <script>document.getElementById('yearReviews').textContent = new Date().getFullYear();</script>
+  <script src="animations.js"></script>
 </body>
 </html>
-
