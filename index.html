@@ -31,12 +31,10 @@
   </header>
 
   <main>
-
     <!-- HERO -->
     <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
-      <div class="hero-gradient"></div>
+      <div class="hero-layer hero-gradient"></div>
       <div class="wrap hero-inner">
-
         <div class="hero-copy reveal">
           <h1 class="super">Perfection is not optional — <span class="accent">it's the standard.</span></h1>
           <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston & Middlesex County.</p>
@@ -45,7 +43,6 @@
             <a class="btn primary" href="#services">See Services</a>
             <a class="btn ghost" href="#contact">Book Now</a>
           </div>
-        </div>
 
         <div class="hero-side reveal" aria-hidden="true">
           <div class="thumb-grid">
@@ -54,7 +51,6 @@
             <img loading="lazy" src="images/cars/bmw_interior_open_door.jpg" alt="BMW interior detail">
           </div>
         </div>
-
       </div>
     </section>
 
@@ -77,14 +73,13 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- SERVICES PREVIEW -->
     <section id="services" class="section services-block">
       <div class="wrap">
         <h2 class="section-title reveal">Signature Services</h2>
         <p class="section-sub muted reveal">Clear packages, transparent pricing, and industry-leading results.</p>
 
         <div class="grid services-grid">
-
           <article class="card service-card reveal" tabindex="0" data-prefill="Basic Detail">
             <div class="card-media"><img src="images/cars/amg_luxury_interior1.jpg" alt="Basic detail"></div>
             <div class="card-body">
@@ -120,7 +115,6 @@
               </div>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -137,7 +131,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS -->
+    <!-- REVIEWS PREVIEW -->
     <section class="light-block reviews-block">
       <div class="wrap">
         <h2 class="section-title reveal">What clients say</h2>
@@ -161,7 +155,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT FORM -->
     <section id="contact" class="section contact-block">
       <div class="wrap contact-wrap reveal">
         <div class="contact-form-panel">
@@ -200,25 +194,15 @@
             <p class="muted" style="margin-top:10px">Serving Boston & Middlesex County</p>
           </div>
         </aside>
-
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer light-footer">
-
     <div class="wrap footer-grid">
-
-      <!-- CLEAN SMALL LOGO -->
       <div class="brand">
-        <img 
-          src="images/iced_blue.png" 
-          onerror="this.onerror=null;this.src='/mnt/data/iced_blue.png';" 
-          alt="ICE Detailing logo" 
-          class="logo-small"
-          style="height:38px; width:auto; opacity:0.9;"
-        />
+        <img src="images/iced_blue.png" onerror="this.onerror=null;this.src='/mnt/data/iced_blue.png';" alt="ICE Detailing logo" class="logo-small" />
         <div class="brand-meta"><strong>ICE Detailing LLC</strong><br/>Boston, MA • Middlesex</div>
       </div>
 
@@ -227,16 +211,12 @@
         <a class="footer-link" href="tel:16179702329">(617) 970-2329</a>
       </div>
 
-      <div class="social">
-        <a class="footer-link" href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a>
-      </div>
-
+      <div class="social"><a class="footer-link" href="https://instagram.com/icedetailingllc" target="_blank">@icedetailingllc</a></div>
     </div>
 
     <div class="legal">
       <span>© ICE Detailing LLC <span id="year"></span> • All rights reserved</span>
     </div>
-
   </footer>
 
   <script src="main.js" defer></script>
@@ -244,9 +224,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const y = document.getElementById('year');
-      if (!y.textContent.trim()) y.textContent = new Date().getFullYear();
+      if (y && !y.textContent.trim()) y.textContent = new Date().getFullYear();
     });
   </script>
-
 </body>
 </html>
