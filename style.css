@@ -1,7 +1,7 @@
 /* ICE Detailing — Apple-inspired hybrid theme with enhanced shadows + logo-blue */
 /* Colors */
 :root{
-  --ice:#00A0FF; /* Updated from your logo */
+  --ice:#00A0FF;
   --silver:#C0C0C0;
   --bg:#020305;
   --light-bg:#f6f9fb;
@@ -41,7 +41,7 @@ body{
   gap:20px;
   padding:18px 12px;
 }
-.logo-horizontal,.logo-large{height:64px;object-fit:contain}
+.logo-horizontal{height:64px;object-fit:contain}
 
 .primary-nav{display:flex;gap:18px;margin-left:12px}
 .primary-nav a{
@@ -304,4 +304,14 @@ body{
 .form select:focus{
   border-color:var(--ice);
   box-shadow:0 0 12px rgba(0,160,255,0.45);
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  padding:30px 0;
+  color:var(--silver);
+  font-size:0.9rem;
+  background:#05070a;
+  border-top:1px solid rgba(255,255,255,0.05);
 }
