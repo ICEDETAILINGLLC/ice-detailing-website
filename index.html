@@ -5,27 +5,29 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ICE Detailing LLC — Premium Mobile Detailing</title>
   <meta name="description" content="ICE Detailing LLC — Perfection is not optional. Mobile premium detailing serving Boston & Middlesex." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body class="hybrid">
 
   <!-- HEADER -->
   <header class="site-header" role="banner">
     <div class="wrap header-inner">
-      <div class="brand">
-        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
-      </div>
+      <a href="index.html" class="brand" aria-label="ICE Detailing home">
+        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
+      </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#services" class="nav-link">Services</a>
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
         <a href="reviews.html" class="nav-link">Reviews</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
         <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
-        <a id="bookSticky" class="cta-book" href="#contact">Book</a>
+        <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
       </div>
     </div>
   </header>
@@ -36,13 +38,12 @@
       <div class="hero-gradient"></div>
       <div class="wrap hero-inner">
         <div class="hero-copy reveal">
-          <h1 class="super">ICE Detailing LLC</h1>
-          <p class="lead">Perfection is not optional — <span class="accent">it's the standard.</span></p>
-          <p class="lead-sub">Premium mobile detailing — showroom finishes delivered to your door across Boston & Middlesex County.</p>
+          <h1 class="super">Perfection is not optional — <span class="accent">it's the standard.</span></h1>
+          <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston &amp; Middlesex County.</p>
 
           <div class="hero-ctas">
-            <a class="btn primary" href="#services" data-prefill="Basic Detail">See Services</a>
-            <a class="btn ghost" href="#contact">Book Now</a>
+            <a class="btn primary" href="services.html">See Services</a>
+            <a class="btn ghost" href="contact.html">Book Now</a>
           </div>
 
           <p class="small-cta">Click-to-call: <a href="tel:16179702329">(617) 970-2329</a></p>
@@ -65,13 +66,13 @@
           <div class="about-copy">
             <h2>Mobile Luxury Detailing</h2>
             <p class="muted">We use premium products and precision techniques to deliver a showroom finish. Fast mobile service, transparent pricing, and a satisfaction guarantee.</p>
-            <a class="btn primary" href="#contact" data-prefill="Basic Detail">Request Availability</a>
+            <a class="btn primary" href="contact.html" data-prefill="Basic Detail">Request Availability</a>
           </div>
 
           <div class="stats">
-            <div class="stat reveal"><strong>1000+</strong><span>Vehicles detailed</span></div>
-            <div class="stat reveal"><strong>Boston & Middlesex</strong><span>Service areas</span></div>
-            <div class="stat reveal"><strong>5★</strong><span>Average Google rating</span></div>
+            <div class="stat"><strong>1000+</strong><span>Vehicles detailed</span></div>
+            <div class="stat"><strong>Boston &middot; Middlesex</strong><span>Service area</span></div>
+            <div class="stat"><strong>5★</strong><span>Average Google rating</span></div>
           </div>
         </div>
       </div>
@@ -91,7 +92,7 @@
               <p class="muted">Quick interior + exterior refresh. 1–2 hours.</p>
               <div class="card-foot">
                 <span class="price">Sedan $175 • Truck/SUV $250</span>
-                <a href="#contact" class="link" data-prefill="Basic Detail">Book</a>
+                <a href="contact.html" class="link" data-prefill="Basic Detail">Book</a>
               </div>
             </div>
           </article>
@@ -103,19 +104,19 @@
               <p class="muted">Full interior & exterior reset. 3–5 hours.</p>
               <div class="card-foot">
                 <span class="price">Sedan $300 • Truck/SUV $375</span>
-                <a href="#contact" class="link" data-prefill="Deep Clean">Book</a>
+                <a href="contact.html" class="link" data-prefill="Deep Clean">Book</a>
               </div>
             </div>
           </article>
 
-          <article class="card service-card reveal" tabindex="0" data-prefill="Ceramic Coating">
+          <article class="card service-card reveal highlight" tabindex="0" data-prefill="Ceramic Coating">
             <div class="card-media"><img src="images/cars/porsche_911.jpg" alt="Ceramic"></div>
             <div class="card-body">
               <h3>Ceramic Coating</h3>
               <p class="muted">Long-term protection with a deep, glossy finish.</p>
               <div class="card-foot">
                 <span class="price">Sedan $750 • Truck/SUV $850</span>
-                <a href="#contact" class="link" data-prefill="Ceramic Coating">Book</a>
+                <a href="contact.html" class="link" data-prefill="Ceramic Coating">Book</a>
               </div>
             </div>
           </article>
@@ -123,108 +124,37 @@
       </div>
     </section>
 
-    <!-- GALLERY / VISUAL STORY -->
-    <section class="section gallery-block">
+    <!-- GALLERY PREVIEW -->
+    <section class="section gallery-preview">
       <div class="wrap">
-        <h2 class="section-title reveal">Before — After Gallery</h2>
-        <p class="section-sub muted reveal">A quick sample of work — polishing, interior rejuvenation, ceramic results.</p>
+        <h2 class="section-title reveal">Gallery — Before & After</h2>
+        <p class="section-sub muted reveal">Swipe to compare our work — drag or tap on mobile.</p>
 
-        <div class="gallery-grid reveal">
-          <img src="images/cars/before_after_1.jpg" alt="before after 1">
-          <img src="images/cars/before_after_2.jpg" alt="before after 2">
-          <img src="images/cars/before_after_3.jpg" alt="before after 3">
-          <img src="images/cars/before_after_4.jpg" alt="before after 4">
+        <div class="reveal before-after-grid">
+          <!-- example slider; goes to gallery page for more -->
+          <div class="before-after" data-before="images/gallery/before1.jpg" data-after="images/gallery/after1.jpg"></div>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="btn ghost" href="gallery.html">See Full Gallery</a>
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS PREVIEW -->
-    <section class="light-block reviews-block">
-      <div class="wrap">
-        <h2 class="section-title reveal">What clients say</h2>
-        <div class="reviews-preview reveal">
-          <div class="review-grid">
-            <div class="review-card"><p class="quote">“Amazing attention to detail — my car looks brand new.”</p><p class="by muted">— Jason M.</p></div>
-            <div class="review-card"><p class="quote">“Professional, on time — incredible finish.”</p><p class="by muted">— Elena R.</p></div>
-            <div class="review-card"><p class="quote">“Ceramic coating gave unbelievable gloss.”</p><p class="by muted">— Aaron K.</p></div>
-          </div>
-
-          <div class="reviews-cta"><a class="btn ghost" href="reviews.html">Read All Reviews</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA STRIP -->
+    <!-- CTA -->
     <section class="cta-strip">
       <div class="wrap cta-wrap reveal">
         <h3>Ready for a showroom finish?</h3>
-        <a class="btn primary" href="#contact" data-prefill="Basic Detail">Get a Quote</a>
-      </div>
-    </section>
-
-    <!-- CONTACT & BOOKING -->
-    <section id="contact" class="section contact-block">
-      <div class="wrap contact-wrap reveal">
-        <div class="contact-form-panel">
-          <h2>Contact & Booking</h2>
-          <p class="muted">Request availability or book now — we’ll confirm within one business day.</p>
-
-          <!-- Formspree form (Option 1) -->
-          <form id="bookingForm" action="https://formspree.io/f/manaykpb" method="POST" class="form" autocomplete="on">
-            <label class="sr-only" for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Full name" required>
-
-            <label class="sr-only" for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="Email" required>
-
-            <label class="sr-only" for="phone">Phone</label>
-            <input id="phone" name="phone" type="tel" placeholder="Phone" required>
-
-            <label class="sr-only" for="service">Service</label>
-            <select id="service" name="service" aria-label="Choose a service" required>
-              <option>Basic Detail — Sedan $175 / Truck $250</option>
-              <option>Deep Clean — Sedan $300 / Truck $375</option>
-              <option>Ceramic Coating — Sedan $750 / Truck $850</option>
-            </select>
-
-            <label class="sr-only" for="vehicle">Vehicle Type</label>
-            <select id="vehicle" name="vehicle" aria-label="Vehicle type" required>
-              <option>Sedan</option>
-              <option>SUV / Truck</option>
-              <option>Luxury / Exotic</option>
-            </select>
-
-            <label class="sr-only" for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Preferred date, address, and any notes"></textarea>
-
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Send Request</button>
-              <a class="btn ghost" href="contact.html">More Booking Options</a>
-            </div>
-          </form>
-        </div>
-
-        <aside class="contact-aside">
-          <div class="panel">
-            <h4>Instant Booking (placeholder)</h4>
-            <p class="muted">Paste your Square booking iframe into the site to show live availability and accept Apple Pay.</p>
-            <div id="square-embed" class="square-placeholder">Square / calendar placeholder</div>
-
-            <h5 style="margin-top:16px">Contact</h5>
-            <a class="link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a><br/>
-            <a class="link" href="tel:16179702329">(617) 970-2329</a>
-            <p class="muted" style="margin-top:10px">Serving Boston & Middlesex County</p>
-          </div>
-        </aside>
+        <a class="btn primary" href="contact.html">Get a Quote</a>
       </div>
     </section>
   </main>
 
-  <!-- SLEEK FOOTER (no large logo) -->
+  <!-- SLEEK FOOTER (small logo) -->
   <footer class="site-footer sleek-footer">
     <div class="wrap footer-flex">
       <div class="footer-brand">
-        <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
         <div class="footer-name">ICE Detailing LLC</div>
         <div class="footer-loc">Boston • Middlesex County</div>
       </div>
@@ -235,11 +165,13 @@
         <a href="reviews.html">Reviews</a>
       </div>
 
-      <div class="footer-copy">© <span id="footerYear"></span> ICE Detailing LLC</div>
+      <div class="footer-copy">© <span id="footerYearHome"></span> ICE Detailing LLC</div>
     </div>
   </footer>
 
-  <script src="main.js" defer></script>
-  <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('footerYearHome').textContent = new Date().getFullYear();</script>
+  <script src="js/slider.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/booking.js" defer></script>
 </body>
 </html>
