@@ -9,7 +9,7 @@
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE Detailing"/>
+      <img src="images/iced_blue.png" alt="ICE logo" class="logo-horizontal" />
       <nav class="primary-nav"><a href="index.html#home">Home</a><a href="services.html" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
       <div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a></div>
     </div>
@@ -19,46 +19,34 @@
     <section class="section hero-services">
       <div class="wrap center">
         <h1 class="section-title">Premium Detailing Packages</h1>
-        <p class="section-sub muted">Designed to protect, refresh, and elevate your vehicle — wherever you are.</p>
+        <p class="section-sub muted">Protect, refresh, and elevate your vehicle — wherever you are.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap">
-        <div class="packages-grid">
-          <div class="package-card reveal">
-            <h2>✨ Basic Detail</h2>
-            <p class="price">Sedan — $175 • Truck/SUV — $250</p>
-            <p class="time muted">Time: 1–2 hours</p>
-            <p>Exterior hand wash, interior vacuum and tidy, windows, and quick trim dressing.</p>
-            <a class="btn primary" href="index.html#contact" data-prefill="Basic Detail">Book</a>
-          </div>
-
-          <div class="package-card reveal">
-            <h2>✨ Deep Clean</h2>
-            <p class="price">Sedan — $300 • Truck/SUV — $375</p>
-            <p class="time muted">Time: 3–5 hours</p>
-            <p>Full interior shampoo, multi-stage exterior decontamination, and detailed trim & wheels.</p>
-            <a class="btn primary" href="index.html#contact" data-prefill="Deep Clean">Book</a>
-          </div>
-
-          <div class="package-card highlight reveal">
-            <h2>✨ Ceramic Coating</h2>
-            <p class="price">Sedan — $750 • Truck/SUV — $850</p>
-            <p class="time muted">Time: varies</p>
-            <p>Paint correction (as needed) + ceramic coating options offering long-term protection & gloss.</p>
-            <a class="btn primary" href="index.html#contact" data-prefill="Ceramic Coating">Book</a>
-          </div>
+      <div class="wrap packages-grid">
+        <div class="package-card">
+          <h2>Basic Detail</h2>
+          <p class="price">Sedan — $175 • Truck/SUV — $250</p>
+          <p class="time muted">Time: 1–2 hours</p>
+          <p>A quick interior and exterior refresh. Ideal for regular maintenance and keeping your car presentable.</p>
+          <a class="btn primary" href="index.html#contact" data-prefill="Basic Detail">Book</a>
         </div>
 
-        <h3 class="section-title" style="margin-top:34px">Add-Ons</h3>
-        <div class="addons-grid">
-          <div class="addon-card reveal"><h4>Headlight Restoration</h4><p class="price">$50 per headlight</p></div>
-          <div class="addon-card reveal"><h4>Engine Bay Detail</h4><p class="price">$30</p></div>
-          <div class="addon-card reveal"><h4>Excessive Pet Hair</h4><p class="price">$30+</p></div>
-          <div class="addon-card reveal"><h4>Ozone Treatment</h4><p class="price">$100</p></div>
-          <div class="addon-card reveal"><h4>Trim Restoration</h4><p class="price">$50+</p></div>
-          <div class="addon-card reveal"><h4>Water Spot Removal</h4><p class="price">$50+</p></div>
+        <div class="package-card">
+          <h2>Deep Clean</h2>
+          <p class="price">Sedan — $300 • Truck/SUV — $375</p>
+          <p class="time muted">Time: 3–5 hours</p>
+          <p>Full interior extraction and exterior reset — ideal before resale or seasonal deep maintenance.</p>
+          <a class="btn primary" href="index.html#contact" data-prefill="Deep Clean">Book</a>
+        </div>
+
+        <div class="package-card highlight">
+          <h2>Ceramic Coating</h2>
+          <p class="price">Sedan — $750 • Truck/SUV — $850</p>
+          <p class="time muted">Time varies by vehicle</p>
+          <p>Long-term protection and exceptional gloss. Best for customers who want maximum longevity and shine.</p>
+          <a class="btn primary" href="index.html#contact" data-prefill="Ceramic Coating">Book</a>
         </div>
       </div>
     </section>
@@ -67,15 +55,18 @@
   <footer class="site-footer sleek-footer">
     <div class="wrap footer-flex">
       <div class="footer-brand">
-        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
         <div class="footer-name">ICE Detailing LLC</div>
       </div>
-      <div class="footer-links"><a href="mailto:icedetailingllc@gmail.com">Email</a><a href="tel:16179702329">Call</a></div>
-      <div class="footer-copy">© <span id="yearSrv"></span> ICE Detailing LLC</div>
+      <div class="footer-links">
+        <a href="mailto:icedetailingllc@gmail.com">Email</a>
+        <a href="tel:16179702329">Call</a>
+      </div>
+      <div class="footer-copy">© <span id="y"></span> ICE Detailing LLC</div>
     </div>
   </footer>
 
-  <script>document.getElementById('yearSrv').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script src="main.js" defer></script>
 </body>
 </html>
