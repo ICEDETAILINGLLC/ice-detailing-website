@@ -1,4 +1,4 @@
-// main.js — reveal on scroll, prefill service, parallax, sticky CTA, small accessible helpers
+// main.js — interactions: reveal on scroll, prefill service, parallax, sticky CTA
 document.addEventListener('DOMContentLoaded', () => {
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
@@ -16,67 +16,46 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-prefill]').forEach(el => {
     el.addEventListener('click', (e) => {
       const pref = el.dataset.prefill || el.getAttribute('data-prefill');
-      // store pref in session so contact page can pick it up
-      if (pref) sessionStorage.setItem('iced_prefill', pref);
+      // set select value if present on page
+      setTimeout(() => {
+        const sel = document.querySelector('#service') || document.querySelector('#serviceSelect') || document.querySelector('#cf-service') || document.querySelector('#serviceSelect');
+        if (!sel || !pref) return;
+        for (let i = 0; i < sel.options.length; i++) {
+          const opt = sel.options[i].text.toLowerCase();
+          if (opt.includes(pref.toLowerCase().split(' — ')[0])) {
+            sel.selectedIndex = i;
+            break;
+          }
+        }
+        // smooth scroll to contact
+        const contact = document.getElementById('contact');
+        if (contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
+      }, 120);
     });
   });
 
-  // When on contact page or a page with a select, set pref selection from sessionStorage
-  const prefillTargets = ['#service', '#serviceSelect', '#cf-service', '#cf-service', '#cf-service', '#cf-service', '#serviceSelect'];
-  const setPrefIfPresent = () => {
-    const pref = sessionStorage.getItem('iced_prefill');
-    if (!pref) return;
-    const sel = document.querySelector('#service') || document.querySelector('#serviceSelect') || document.querySelector('#cf-service') || document.querySelector('#serviceSelect') || document.querySelector('#cf-service');
-    if (!sel) return;
-    for (let i = 0; i < sel.options.length; i++) {
-      if (sel.options[i].text.toLowerCase().includes(pref.toLowerCase().split(' — ')[0])) {
-        sel.selectedIndex = i;
-        break;
-      }
-    }
-    // clear stored value so accidental double-prefill doesn't occur
-    sessionStorage.removeItem('iced_prefill');
-  };
-  setPrefIfPresent();
-
-  // simple parallax for hero background (if present)
+  // simple parallax for hero background
   const hero = document.querySelector('.hero[data-parallax]');
   if (hero) {
     window.addEventListener('scroll', () => {
       const speed = 0.25;
-      const y = Math.round(window.scrollY * speed);
+      const y = window.scrollY * speed;
       hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
     }, {passive:true});
   }
 
-  // sticky Book button visibility (makes it subtle but visible)
+  // sticky Book button visibility
   const bookSticky = document.getElementById('bookSticky');
   if (bookSticky) {
-    const toggle = () => {
+    window.addEventListener('scroll', () => {
       if (window.scrollY > 300) bookSticky.classList.add('visible');
       else bookSticky.classList.remove('visible');
-    };
-    toggle();
-    window.addEventListener('scroll', toggle, {passive:true});
+    }, {passive:true});
   }
 
-  // Smooth link scrolling for in-page links
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    });
-  });
+  // small accessibility: focus outlines when keyboard used
+  let mouseMode = false;
+  window.addEventListener('mousedown', () => { mouseMode = true; document.documentElement.classList.add('using-mouse'); });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Tab') { mouseMode = false; document.documentElement.classList.remove('using-mouse'); } });
 
-  // Tiny accessibility: focus outlines for keyboard users only
-  function handleFirstTab(e) {
-    if (e.key === 'Tab') {
-      document.documentElement.classList.add('user-is-tabbing');
-      window.removeEventListener('keydown', handleFirstTab);
-    }
-  }
-  window.addEventListener('keydown', handleFirstTab);
 });
