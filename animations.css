@@ -1,0 +1,4 @@
+/* Simple reveal animations used site-wide */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.fade-up{opacity:0;transform:translateY(30px);transition:all .9s ease}
