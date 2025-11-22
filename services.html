@@ -4,49 +4,66 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services — ICE Detailing LLC</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <img src="images/iced_blue.png" alt="ICE logo" class="logo-horizontal" />
-      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="services.html" class="active">Services</a><a href="reviews.html">Reviews</a><a href="index.html#contact">Contact</a></nav>
-      <div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a></div>
+      <a href="index.html" class="brand"><img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo"></a>
+      <nav class="primary-nav">
+        <a href="index.html#home">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions"><a class="cta-call" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
   </header>
 
   <main>
     <section class="section hero-services">
       <div class="wrap center">
-        <h1 class="section-title">Premium Detailing Packages</h1>
-        <p class="section-sub muted">Protect, refresh, and elevate your vehicle — wherever you are.</p>
+        <h1 class="section-title reveal">Premium Detailing Packages</h1>
+        <p class="section-sub muted reveal">Designed to protect, refresh, and elevate your vehicle — wherever you are.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="wrap packages-grid">
-        <div class="package-card">
-          <h2>Basic Detail</h2>
-          <p class="price">Sedan — $175 • Truck/SUV — $250</p>
-          <p class="time muted">Time: 1–2 hours</p>
-          <p>A quick interior and exterior refresh. Ideal for regular maintenance and keeping your car presentable.</p>
-          <a class="btn primary" href="index.html#contact" data-prefill="Basic Detail">Book</a>
+      <div class="wrap">
+        <div class="packages-grid reveal">
+          <div class="package-card">
+            <h2>Basic Detail</h2>
+            <p class="price">Sedan — $175<br/>Truck/SUV — $250</p>
+            <p class="time">Time: 1–2 hours</p>
+            <p class="desc">Quick interior and exterior refresh, vacuum, wipe, exterior wash & tire dressing.</p>
+            <a class="btn primary" href="contact.html" data-prefill="Basic Detail">Book</a>
+          </div>
+
+          <div class="package-card">
+            <h2>Deep Clean</h2>
+            <p class="price">Sedan — $300<br/>Truck/SUV — $375</p>
+            <p class="time">Time: 3–5 hours</p>
+            <p class="desc">Full interior shampoo, stain removal, paint decontamination, and machine polish if required.</p>
+            <a class="btn primary" href="contact.html" data-prefill="Deep Clean">Book</a>
+          </div>
+
+          <div class="package-card highlight">
+            <h2>Ceramic Coating</h2>
+            <p class="price">Sedan — $750<br/>Truck/SUV — $850</p>
+            <p class="time">Time varies by vehicle</p>
+            <p class="desc">Long-term hydrophobic protection with a deep gloss finish. Prep, multi-stage polish, ceramic application.</p>
+            <a class="btn primary" href="contact.html" data-prefill="Ceramic Coating">Book</a>
+          </div>
         </div>
 
-        <div class="package-card">
-          <h2>Deep Clean</h2>
-          <p class="price">Sedan — $300 • Truck/SUV — $375</p>
-          <p class="time muted">Time: 3–5 hours</p>
-          <p>Full interior extraction and exterior reset — ideal before resale or seasonal deep maintenance.</p>
-          <a class="btn primary" href="index.html#contact" data-prefill="Deep Clean">Book</a>
-        </div>
-
-        <div class="package-card highlight">
-          <h2>Ceramic Coating</h2>
-          <p class="price">Sedan — $750 • Truck/SUV — $850</p>
-          <p class="time muted">Time varies by vehicle</p>
-          <p>Long-term protection and exceptional gloss. Best for customers who want maximum longevity and shine.</p>
-          <a class="btn primary" href="index.html#contact" data-prefill="Ceramic Coating">Book</a>
+        <h3 class="reveal" style="margin-top:32px">Add-ons</h3>
+        <div class="addons-grid reveal">
+          <div class="addon-card"><h4>Headlight Restoration</h4><p class="price">$50 / per headlight</p></div>
+          <div class="addon-card"><h4>Engine Bay Detail</h4><p class="price">$30</p></div>
+          <div class="addon-card"><h4>Excessive Pet Hair</h4><p class="price">$30+</p></div>
+          <div class="addon-card"><h4>Ozone Treatment</h4><p class="price">$100</p></div>
         </div>
       </div>
     </section>
@@ -55,18 +72,22 @@
   <footer class="site-footer sleek-footer">
     <div class="wrap footer-flex">
       <div class="footer-brand">
-        <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
         <div class="footer-name">ICE Detailing LLC</div>
+        <div class="footer-loc">Boston • Middlesex County</div>
       </div>
+
       <div class="footer-links">
         <a href="mailto:icedetailingllc@gmail.com">Email</a>
         <a href="tel:16179702329">Call</a>
+        <a href="index.html">Home</a>
       </div>
-      <div class="footer-copy">© <span id="y"></span> ICE Detailing LLC</div>
+
+      <div class="footer-copy">© <span id="footerYearSvc"></span> ICE Detailing LLC</div>
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script src="main.js" defer></script>
+  <script>document.getElementById('footerYearSvc').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
