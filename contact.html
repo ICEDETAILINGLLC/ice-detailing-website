@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — ICE Detailing LLC</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="animations.css" />
 </head>
 <body class="hybrid">
   <header class="site-header">
     <div class="wrap header-inner">
-      <img src="images/iced_blue.png" onerror="this.onerror=null;this.src='/mnt/data/iced_blue.png';" class="logo-horizontal" alt="ICE logo">
-      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="#contact" class="active">Contact</a></nav>
+      <img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE Detailing">
+      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="contact.html" class="active">Contact</a></nav>
       <div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a></div>
     </div>
   </header>
@@ -65,13 +64,15 @@
     </section>
   </main>
 
-  <footer class="site-footer light-footer">
-    <div class="wrap footer-grid">
-      <div>ICE Detailing LLC — Boston & Middlesex</div>
-      <div><a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
-      <div><a href="tel:16179702329">(617) 970-2329</a></div>
+  <footer class="site-footer sleek-footer">
+    <div class="wrap footer-flex">
+      <div class="footer-brand">
+        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <div class="footer-name">ICE Detailing LLC</div>
+      </div>
+      <div class="footer-links"><a href="mailto:icedetailingllc@gmail.com">Email</a><a href="tel:16179702329">Call</a></div>
+      <div class="footer-copy">© <span id="yearContact"></span> ICE Detailing LLC</div>
     </div>
-    <div class="legal wrap">© ICE Detailing LLC <span id="yearContact"></span></div>
   </footer>
 
   <script>document.getElementById('yearContact').textContent = new Date().getFullYear();</script>
