@@ -1,6 +1,6 @@
-// main.js — interactions: reveal on scroll, prefill service, parallax, sticky CTA
+// main.js — reveal on scroll, prefill service, parallax, sticky CTA
 document.addEventListener('DOMContentLoaded', () => {
-  // Reveal on scroll
+  // 1) reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -12,29 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   reveals.forEach(r => io.observe(r));
 
-  // Prefill service selection when clicking book links
+  // 2) prefill service selection when clicking book links
   document.querySelectorAll('[data-prefill]').forEach(el => {
     el.addEventListener('click', (e) => {
-      const pref = el.dataset.prefill || el.getAttribute('data-prefill');
-      // set select value if present on page
+      const pref = el.dataset.prefill || el.getAttribute('data-prefill') || '';
       setTimeout(() => {
         const sel = document.querySelector('#service') || document.querySelector('#serviceSelect') || document.querySelector('#cf-service') || document.querySelector('#serviceSelect');
-        if (!sel || !pref) return;
+        if (!sel || !pref) {
+          // try to scroll to contact anyway
+          const contact = document.getElementById('contact'); if (contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
+          return;
+        }
+        // match by first word(s)
+        const key = pref.toLowerCase().split(' — ')[0].trim();
         for (let i = 0; i < sel.options.length; i++) {
-          const opt = sel.options[i].text.toLowerCase();
-          if (opt.includes(pref.toLowerCase().split(' — ')[0])) {
+          if (sel.options[i].text.toLowerCase().includes(key)) {
             sel.selectedIndex = i;
             break;
           }
         }
-        // smooth scroll to contact
         const contact = document.getElementById('contact');
         if (contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
       }, 120);
     });
   });
 
-  // simple parallax for hero background
+  // 3) parallax for hero background
   const hero = document.querySelector('.hero[data-parallax]');
   if (hero) {
     window.addEventListener('scroll', () => {
@@ -44,18 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {passive:true});
   }
 
-  // sticky Book button visibility
+  // 4) sticky Book button visibility
   const bookSticky = document.getElementById('bookSticky');
   if (bookSticky) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) bookSticky.classList.add('visible');
+    const toggle = () => {
+      if (window.scrollY > 320) bookSticky.classList.add('visible');
       else bookSticky.classList.remove('visible');
-    }, {passive:true});
+    };
+    window.addEventListener('scroll', toggle, {passive:true});
+    toggle();
   }
 
-  // small accessibility: focus outlines when keyboard used
-  let mouseMode = false;
-  window.addEventListener('mousedown', () => { mouseMode = true; document.documentElement.classList.add('using-mouse'); });
-  window.addEventListener('keydown', (e) => { if (e.key === 'Tab') { mouseMode = false; document.documentElement.classList.remove('using-mouse'); } });
-
+  // 5) small accessibility: focus outline on keyboard only
+  function handleFirstTab(e) {
+    if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+    window.removeEventListener('keydown', handleFirstTab);
+  }
+  window.addEventListener('keydown', handleFirstTab);
 });
