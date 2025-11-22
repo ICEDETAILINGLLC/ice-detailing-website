@@ -3,56 +3,77 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — ICE Detailing LLC</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Contact & Booking — ICE Detailing LLC</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body class="hybrid">
   <header class="site-header">
     <div class="wrap header-inner">
-      <img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE Detailing">
-      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="index.html#services">Services</a><a href="reviews.html">Reviews</a><a href="contact.html" class="active">Contact</a></nav>
-      <div class="header-actions"><a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a></div>
+      <a href="index.html" class="brand"><img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo"></a>
+      <nav class="primary-nav"><a href="index.html#home">Home</a><a href="services.html">Services</a><a href="reviews.html">Reviews</a><a href="contact.html" class="active">Contact</a></nav>
+      <div class="header-actions"><a class="cta-call" href="tel:16179702329">(617) 970-2329</a></div>
     </div>
   </header>
 
   <main>
     <section class="light-block">
-      <div class="wrap contact-wrap">
-        <div class="contact-main reveal">
+      <div class="wrap contact-wrap reveal">
+        <div class="contact-main">
           <h1>Contact & Booking</h1>
-          <p class="muted">Request availability or book — our form sends directly to your Formspree endpoint.</p>
+          <p class="muted">Pick a date & time, choose your vehicle and package. Our form sends directly to your Formspree endpoint.</p>
 
-          <form id="contactForm" action="https://formspree.io/f/manaykpb" method="POST" class="form" autocomplete="on">
-            <label class="sr-only" for="cf-name">Name</label>
-            <input id="cf-name" name="name" type="text" placeholder="Full name" required>
+          <form id="bookingForm" class="form" autocomplete="on" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Full name" required>
 
-            <label class="sr-only" for="cf-email">Email</label>
-            <input id="cf-email" name="email" type="email" placeholder="Email" value="icedetailingllc@gmail.com" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email" required>
 
-            <label class="sr-only" for="cf-phone">Phone</label>
-            <input id="cf-phone" name="phone" type="tel" placeholder="Phone" value="(617) 970-2329" required>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="Phone" required>
 
-            <label class="sr-only" for="cf-service">Service</label>
-            <select id="cf-service" name="service">
+            <label for="serviceSelect">Service</label>
+            <select id="serviceSelect" name="service" required>
               <option>Basic Detail — Sedan $175 / Truck $250</option>
               <option>Deep Clean — Sedan $300 / Truck $375</option>
               <option>Ceramic Coating — Sedan $750 / Truck $850</option>
             </select>
 
-            <label class="sr-only" for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" placeholder="Preferred date, location & vehicle notes"></textarea>
+            <label for="vehicle">Vehicle Type</label>
+            <select id="vehicle" name="vehicle" required>
+              <option>Sedan</option>
+              <option>SUV / Truck</option>
+              <option>Luxury / Exotic</option>
+            </select>
+
+            <div class="form-row">
+              <div>
+                <label for="date">Preferred date</label>
+                <input id="date" name="date" type="date" required>
+              </div>
+              <div>
+                <label for="time">Preferred time</label>
+                <input id="time" name="time" type="time" required>
+              </div>
+            </div>
+
+            <label for="message">Notes</label>
+            <textarea id="message" name="message" rows="4" placeholder="Add any notes (address, parking, key handoff)"></textarea>
 
             <div class="form-actions">
-              <button class="btn primary" type="submit">Send Request</button>
+              <button class="btn primary" id="submitBooking" type="button">Send Request</button>
               <a class="btn ghost" href="tel:16179702329">Call (617) 970-2329</a>
             </div>
+
+            <div id="bookingStatus" class="muted" style="margin-top:8px"></div>
           </form>
         </div>
 
-        <aside class="contact-aside reveal">
+        <aside class="contact-aside">
           <div class="panel">
             <h4>Square Booking</h4>
-            <p class="muted">Paste your Square booking iframe here to accept Apple Pay and show availability:</p>
+            <p class="muted">Add your Square booking iframe here to accept Apple Pay and show availability.</p>
             <div id="square-embed" class="square-placeholder">Square booking placeholder — paste iframe here.</div>
 
             <h5 style="margin-top:18px">Contact</h5>
@@ -69,13 +90,21 @@
       <div class="footer-brand">
         <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
         <div class="footer-name">ICE Detailing LLC</div>
+        <div class="footer-loc">Boston • Middlesex County</div>
       </div>
-      <div class="footer-links"><a href="mailto:icedetailingllc@gmail.com">Email</a><a href="tel:16179702329">Call</a></div>
-      <div class="footer-copy">© <span id="yearContact"></span> ICE Detailing LLC</div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="reviews.html">Reviews</a>
+      </div>
+
+      <div class="footer-copy">© <span id="footerYearContact"></span> ICE Detailing LLC</div>
     </div>
   </footer>
 
-  <script>document.getElementById('yearContact').textContent = new Date().getFullYear();</script>
-  <script src="main.js" defer></script>
+  <script>document.getElementById('footerYearContact').textContent = new Date().getFullYear();</script>
+  <script src="js/booking.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
