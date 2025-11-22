@@ -1,6 +1,6 @@
-// main.js — reveal on scroll, prefill service, parallax, sticky CTA
+// main.js — reveal on scroll, prefill, parallax, sticky CTA
 document.addEventListener('DOMContentLoaded', () => {
-  // 1) reveal on scroll
+  // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -12,56 +12,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   reveals.forEach(r => io.observe(r));
 
-  // 2) prefill service selection when clicking book links
+  // Prefill booking service when clicking book links (works across pages)
   document.querySelectorAll('[data-prefill]').forEach(el => {
     el.addEventListener('click', (e) => {
-      const pref = el.dataset.prefill || el.getAttribute('data-prefill') || '';
-      setTimeout(() => {
-        const sel = document.querySelector('#service') || document.querySelector('#serviceSelect') || document.querySelector('#cf-service') || document.querySelector('#serviceSelect');
-        if (!sel || !pref) {
-          // try to scroll to contact anyway
-          const contact = document.getElementById('contact'); if (contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
-          return;
-        }
-        // match by first word(s)
-        const key = pref.toLowerCase().split(' — ')[0].trim();
-        for (let i = 0; i < sel.options.length; i++) {
-          if (sel.options[i].text.toLowerCase().includes(key)) {
-            sel.selectedIndex = i;
-            break;
-          }
-        }
-        const contact = document.getElementById('contact');
-        if (contact) contact.scrollIntoView({behavior:'smooth', block:'start'});
-      }, 120);
+      const pref = el.dataset.prefill;
+      try {
+        // Save to session storage so contact page can pick it up
+        if (pref) sessionStorage.setItem('prefillService', pref);
+      } catch (err) { /* ignore storage errors */ }
     });
   });
 
-  // 3) parallax for hero background
+  // When contact page loads, apply prefill if present
+  const serviceSelect = document.querySelector('#serviceSelect') || document.querySelector('#service');
+  if (serviceSelect && sessionStorage.getItem('prefillService')) {
+    const pref = sessionStorage.getItem('prefillService');
+    for (let i = 0; i < serviceSelect.options.length; i++) {
+      if (serviceSelect.options[i].text.toLowerCase().includes(pref.toLowerCase().split(' — ')[0])) {
+        serviceSelect.selectedIndex = i;
+        break;
+      }
+    }
+    sessionStorage.removeItem('prefillService');
+  }
+
+  // Parallax hero (subtle)
   const hero = document.querySelector('.hero[data-parallax]');
   if (hero) {
     window.addEventListener('scroll', () => {
-      const speed = 0.25;
+      const speed = 0.22;
       const y = window.scrollY * speed;
       hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
     }, {passive:true});
   }
 
-  // 4) sticky Book button visibility
+  // sticky Book button visibility
   const bookSticky = document.getElementById('bookSticky');
   if (bookSticky) {
-    const toggle = () => {
-      if (window.scrollY > 320) bookSticky.classList.add('visible');
+    function updateBookVisible(){
+      if (window.scrollY > 420) bookSticky.classList.add('visible');
       else bookSticky.classList.remove('visible');
-    };
-    window.addEventListener('scroll', toggle, {passive:true});
-    toggle();
+    }
+    updateBookVisible();
+    window.addEventListener('scroll', updateBookVisible, {passive:true});
   }
 
-  // 5) small accessibility: focus outline on keyboard only
-  function handleFirstTab(e) {
-    if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
-    window.removeEventListener('keydown', handleFirstTab);
-  }
-  window.addEventListener('keydown', handleFirstTab);
+  // Before/after placeholders: slider.js handles behavior
 });
