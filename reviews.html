@@ -5,96 +5,69 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reviews — ICE Detailing LLC</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="animations.css" />
 </head>
 <body class="hybrid">
-
-<header class="site-header">
-  <div class="wrap header-inner">
-    <img src="images/iced_blue.png" onerror="this.onerror=null;this.src='/mnt/data/iced_blue.png';" class="logo-horizontal" alt="ICE logo">
-    <nav class="primary-nav">
-      <a href="index.html#home">Home</a>
-      <a href="services.html">Services</a>
-      <a href="reviews.html" class="active">Reviews</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-    <div class="header-actions">
-      <a class="cta-call" href="tel:16179702329">Call (617) 970-2329</a>
-      <a class="cta-book" href="index.html#contact">Book</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <img src="/mnt/data/iced_blue.png" class="logo-horizontal" alt="ICE logo" />
+      <nav class="primary-nav">
+        <a href="index.html#home">Home</a>
+        <a href="services.html">Services</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="light-block">
-  <div class="wrap">
-    <h1>Customer Reviews</h1>
-    <p class="muted">Below are placeholder five-star reviews. Replace with your real widget anytime.</p>
+  <main>
+    <section class="light-block">
+      <div class="wrap">
+        <h1>Customer Reviews</h1>
+        <p class="muted">Below are placeholder five-star reviews. Paste your Elfsight/Trustindex widget if you use one.</p>
 
-    <div class="carousel-container reveal">
-      <div class="carousel-track">
+        <div class="review-grid reveal">
+          <div class="review-card">
+            <p class="stars">★★★★★</p>
+            <h3>“My car looks brand new again.”</h3>
+            <p>ICE Detailing went above and beyond. The interior looks brand new. Highly recommend.</p>
+            <span class="author">– Jason R.</span>
+          </div>
 
-        <div class="review-card fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>“My car looks brand new again.”</h3>
-          <p>ICE Detailing went above and beyond. The interior looks brand new. Highly recommend.</p>
-          <span class="author">– Jason R.</span>
+          <div class="review-card">
+            <p class="stars">★★★★★</p>
+            <h3>“Best detailing service in the area.”</h3>
+            <p>Premium package was worth every penny. Insane quality.</p>
+            <span class="author">– Sarah M.</span>
+          </div>
+
+          <div class="review-card">
+            <p class="stars">★★★★★</p>
+            <h3>“Deep clean like I’ve never seen.”</h3>
+            <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
+            <span class="author">– Daniel K.</span>
+          </div>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="review-card fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>“Best detailing service in the area.”</h3>
-          <p>Premium package was worth every penny. Insane quality.</p>
-          <span class="author">– Sarah M.</span>
-        </div>
-
-        <div class="review-card fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>“Deep clean like I’ve never seen.”</h3>
-          <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
-          <span class="author">– Daniel K.</span>
-        </div>
-
-        <div class="review-card fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>“Super professional.”</h3>
-          <p>The paint correction came out flawless.</p>
-          <span class="author">– Anthony L.</span>
-        </div>
-
-        <div class="review-card fade-up">
-          <div class="stars">★★★★★</div>
-          <h3>“My go-to for all my cars.”</h3>
-          <p>Handled my Porsche and daily — perfect results.</p>
-          <span class="author">– Kevin W.</span>
-        </div>
-
+  <footer class="site-footer sleek-footer">
+    <div class="wrap footer-flex">
+      <div class="footer-brand">
+        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <div class="footer-name">ICE Detailing LLC</div>
       </div>
 
-      <div class="carousel-buttons">
-        <button class="carousel-btn prev">←</button>
-        <button class="carousel-btn next">→</button>
+      <div class="footer-links">
+        <a href="mailto:icedetailingllc@gmail.com">Email</a>
+        <a href="tel:16179702329">Call</a>
       </div>
+
+      <div class="footer-copy">© <span id="footerYearReviews"></span> ICE Detailing LLC</div>
     </div>
+  </footer>
 
-  </div>
-</section>
-</main>
-
-<footer class="site-footer light-footer">
-  <div class="wrap footer-grid">
-    <div>ICE Detailing LLC — Boston & Middlesex</div>
-    <div><a class="footer-link" href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a></div>
-    <div><a class="footer-link" href="tel:16179702329">(617) 970-2329</a></div>
-  </div>
-  <div class="legal wrap">© ICE Detailing LLC <span id="yearReviews"></span></div>
-</footer>
-
-<script>
-  document.getElementById('yearReviews').textContent = new Date().getFullYear();
-</script>
-<script src="carousel.js" defer></script>
-<script src="main.js" defer></script>
-
+  <script>document.getElementById('footerYearReviews').textContent = new Date().getFullYear();</script>
+  <script src="main.js" defer></script>
 </body>
 </html>
