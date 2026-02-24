@@ -3,10 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>ICE Detailing LLC — Premium Mobile Detailing</title>
-  <meta name="description" content="ICE Detailing LLC — Perfection is not optional. Mobile premium detailing serving Boston & Middlesex." />
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" href="css/animations.css" />
+  <meta name="description" content="ICE Detailing LLC — Premium mobile detailing serving Boston & Middlesex County." />
+
+  <!-- Premium SEO -->
+  <meta property="og:title" content="ICE Detailing LLC — Premium Mobile Detailing">
+  <meta property="og:description" content="Showroom finishes delivered to your door.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cars/porsche_red.jpg">
+
+  <!-- Performance upgrade -->
+  <link rel="preload" as="image" href="images/cars/porsche_red.jpg">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body class="hybrid">
 
@@ -51,9 +62,9 @@
 
         <div class="hero-side reveal" aria-hidden="true">
           <div class="thumb-grid">
-            <img loading="lazy" src="images/cars/amg_luxury_interior1.jpg" alt="AMG interior detail">
-            <img loading="lazy" src="images/cars/porsche_718_interior.jpg" alt="Porsche interior detail">
-            <img loading="lazy" src="images/cars/bmw_interior_open_door.jpg" alt="BMW interior detail">
+            <img loading="lazy" decoding="async" src="images/cars/amg_luxury_interior1.jpg" alt="AMG interior detail">
+            <img loading="lazy" decoding="async" src="images/cars/porsche_718_interior.jpg" alt="Porsche interior detail">
+            <img loading="lazy" decoding="async" src="images/cars/bmw_interior_open_door.jpg" alt="BMW interior detail">
           </div>
         </div>
       </div>
@@ -86,7 +97,7 @@
 
         <div class="grid services-grid">
           <article class="card service-card reveal" tabindex="0" data-prefill="Basic Detail">
-            <div class="card-media"><img src="images/cars/amg_luxury_interior1.jpg" alt="Basic detail"></div>
+            <div class="card-media"><img decoding="async" src="images/cars/amg_luxury_interior1.jpg" alt="Basic detail"></div>
             <div class="card-body">
               <h3>Basic Detail</h3>
               <p class="muted">Quick interior + exterior refresh. 1–2 hours.</p>
@@ -98,7 +109,7 @@
           </article>
 
           <article class="card service-card reveal" tabindex="0" data-prefill="Deep Clean">
-            <div class="card-media"><img src="images/cars/porsche_leather_seats.jpg" alt="Deep clean"></div>
+            <div class="card-media"><img decoding="async" src="images/cars/porsche_leather_seats.jpg" alt="Deep clean"></div>
             <div class="card-body">
               <h3>Deep Clean</h3>
               <p class="muted">Full interior & exterior reset. 3–5 hours.</p>
@@ -110,7 +121,7 @@
           </article>
 
           <article class="card service-card reveal highlight" tabindex="0" data-prefill="Ceramic Coating">
-            <div class="card-media"><img src="images/cars/porsche_911.jpg" alt="Ceramic"></div>
+            <div class="card-media"><img decoding="async" src="images/cars/porsche_911.jpg" alt="Ceramic"></div>
             <div class="card-body">
               <h3>Ceramic Coating</h3>
               <p class="muted">Long-term protection with a deep, glossy finish.</p>
@@ -131,8 +142,11 @@
         <p class="section-sub muted reveal">Swipe to compare our work — drag or tap on mobile.</p>
 
         <div class="reveal before-after-grid">
-          <!-- example slider; goes to gallery page for more -->
-          <div class="before-after" data-before="images/gallery/before1.jpg" data-after="images/gallery/after1.jpg"></div>
+          <div class="before-after"
+               role="region"
+               aria-label="Before and after detailing comparison"
+               data-before="images/gallery/before1.jpg"
+               data-after="images/gallery/after1.jpg"></div>
         </div>
 
         <div style="margin-top:18px">
@@ -150,7 +164,7 @@
     </section>
   </main>
 
-  <!-- SLEEK FOOTER (small logo) -->
+  <!-- FOOTER -->
   <footer class="site-footer sleek-footer">
     <div class="wrap footer-flex">
       <div class="footer-brand">
