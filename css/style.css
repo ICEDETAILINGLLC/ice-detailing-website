@@ -643,139 +643,55 @@ body .faq-answer p{
 .why-block .why-card{ color:#071018; }
 .why-block .why-card p{ color:#4b5e68; }
 
-/* ==========================================================
-   HEADER UPGRADE — bigger logo + glass + premium spacing
-   ========================================================== */
+/* =========================================
+   LOGO VISIBILITY UPGRADE (transparent PNG)
+   ========================================= */
 
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:300;
-  background: rgba(2,3,5,0.70);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* Give header a little more breathing room */
+.site-header .header-inner{
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
 }
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  padding: 14px 0;
-}
-
-/* brand lockup */
-.brand{
+/* Brand wrapper glow */
+.site-header .brand{
+  position: relative;
   display:flex;
   align-items:center;
   gap:14px;
-  text-decoration:none;
-  min-width: 240px;
-  position:relative;
 }
 
-/* subtle ICE glow behind logo */
-.brand::before{
+/* ICE halo behind logo */
+.site-header .brand::before{
   content:"";
   position:absolute;
-  left:-10px;
+  left:-14px;
   top:50%;
-  width:190px;
-  height:70px;
+  width:220px;
+  height:80px;
   transform:translateY(-50%);
-  background: radial-gradient(circle at 35% 50%, rgba(0,160,255,0.28), transparent 65%);
-  filter: blur(8px);
-  opacity: 0.95;
+  background: radial-gradient(circle at 35% 50%, rgba(0,160,255,0.34), transparent 65%);
+  filter: blur(10px);
+  opacity: 1;
   pointer-events:none;
 }
 
-.logo-horizontal{
-  height: 66px;               /* BIGGER */
-  width:auto;
+/* Make logo bigger + pop */
+.site-header .logo-horizontal{
+  height: 72px !important;                 /* bigger */
+  width:auto !important;
   object-fit:contain;
-  filter: drop-shadow(0 10px 22px rgba(0,160,255,0.18));
   position:relative;
   z-index:1;
-}
 
-/* optional brand text */
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-  position:relative;
-  z-index:1;
-}
-.brand-name{
-  font-weight: 900;
-  letter-spacing: -0.01em;
-  color:#eaf6ff;
-  font-size: 1.02rem;
-}
-.brand-tag{
-  font-size: 0.86rem;
-  color: rgba(192,192,192,0.85);
-  margin-top: 3px;
-}
-
-/* nav spacing + nicer hover */
-.primary-nav{
-  display:flex;
-  gap: 10px;
-  margin-left: 6px;
-  padding: 6px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.primary-nav a{
-  color: rgba(192,192,192,0.88);
-  font-weight: 750;
-  padding: 10px 12px;
-  border-radius: 12px;
-  text-decoration:none;
-  transition: all .2s ease;
-}
-
-.primary-nav a:hover,
-.primary-nav a.active{
-  color: var(--ice);
-  background: rgba(0,160,255,0.08);
-  box-shadow: inset 0 0 0 1px rgba(0,160,255,0.18);
-}
-
-/* actions */
-.header-actions{
-  margin-left:auto;
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-
-/* make call button more premium */
-.cta-call{
-  color: rgba(234,246,255,0.92);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 12px;
-  border-radius: 14px;
-  text-decoration:none;
-  background: rgba(255,255,255,0.02);
-}
-
-.cta-book{
-  background: var(--ice);
-  color:#031018;
-  padding: 11px 14px;
-  border-radius: 14px;
-  font-weight: 900;
-  text-decoration:none;
-  box-shadow: 0 14px 40px rgba(0,160,255,0.22);
+  /* pop on dark + photos */
+  filter:
+    drop-shadow(0 10px 22px rgba(0,160,255,0.22))
+    drop-shadow(0 8px 26px rgba(0,0,0,0.35));
 }
 
 /* Mobile */
 @media (max-width:720px){
-  .brand-text{ display:none; }         /* logo only */
-  .logo-horizontal{ height: 60px; }
-  .primary-nav{ display:none; }
+  .site-header .logo-horizontal{ height: 62px !important; }
+  .site-header .brand::before{ width: 180px; height: 70px; opacity: .95; }
 }
