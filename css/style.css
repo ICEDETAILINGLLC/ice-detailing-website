@@ -527,3 +527,73 @@ body .faq-answer p{
   .process-step{ padding: 18px; }
   .faq-question{ font-size: 1rem; }
 }
+
+/* ==========================================================
+   WHY ICE — premium trust section
+   ========================================================== */
+
+.why-block{
+  position:relative;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  margin-top: var(--s3);
+}
+
+.why-card{
+  background:#ffffff;
+  border-radius:18px;
+  padding:26px 24px;
+  color:#071018;
+  box-shadow:0 20px 60px rgba(2,6,12,0.14);
+  border:1px solid rgba(2,6,12,0.06);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 80px rgba(2,6,12,0.18);
+}
+
+.why-card.featured{
+  border:2px solid var(--ice);
+  box-shadow:
+    0 24px 80px rgba(0,160,255,0.12),
+    0 30px 90px rgba(2,6,12,0.18);
+}
+
+.why-icon{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:rgba(0,160,255,0.12);
+  color:var(--ice);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  margin-bottom:14px;
+  font-size:18px;
+}
+
+.why-card h3{
+  font-size:1.2rem;
+  font-weight:900;
+  margin-bottom:10px;
+  letter-spacing:-0.01em;
+}
+
+.why-card p{
+  color:#4b5e68;
+  line-height:1.6;
+}
+
+/* mobile polish */
+@media (max-width:720px){
+  .why-card{padding:22px 18px;}
+}
