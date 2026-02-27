@@ -332,3 +332,198 @@ body{
   .before-after{height:240px}
   .cta-wrap{justify-content:flex-start}
 }
+
+/* ==========================================================
+   INDEX UPDATES: section-head + What We Offer tiles + Process
+   ========================================================== */
+
+/* Section head (title + sub + buttons) */
+.section-head{
+  text-align:center;
+  margin-bottom: var(--s4);
+}
+.section-actions{
+  margin-top: var(--s2);
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* ---------- WHAT WE OFFER (premium tiles) ---------- */
+.offer-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.offer-tile{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding: 22px;
+  border-radius: 16px;
+  text-decoration:none;
+  color: inherit;
+  background:
+    radial-gradient(650px 240px at 20% 0%, rgba(0,160,255,0.14), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(0,0,0,0.18));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  min-height: 190px;
+}
+
+.offer-tile:hover{
+  transform: translateY(-6px);
+  border-color: rgba(0,160,255,0.30);
+  box-shadow: 0 30px 92px rgba(0,0,0,0.45);
+}
+
+.offer-top{ margin-bottom: 10px; }
+
+.offer-kicker{
+  display:inline-block;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(154,174,185,0.95);
+  margin-bottom: 10px;
+}
+
+.offer-tile h3{
+  font-size: 1.22rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.offer-tile p{
+  color: rgba(154,174,185,0.92);
+  line-height: 1.55;
+}
+
+.offer-cta{
+  margin-top: 14px;
+  color: var(--ice);
+  font-weight: 900;
+}
+
+.offer-tile.featured{
+  border-color: rgba(0,160,255,0.55);
+  box-shadow:
+    0 26px 92px rgba(0,160,255,0.10),
+    0 40px 110px rgba(0,0,0,0.45);
+}
+
+/* ---------- OUR PROCESS (timeline steps) ---------- */
+.process-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.process-step{
+  padding: 24px;
+  border-radius: 16px;
+  background:
+    radial-gradient(650px 240px at 15% 0%, rgba(0,160,255,0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.16));
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.process-step:hover{
+  transform: translateY(-6px);
+  border-color: rgba(0,160,255,0.26);
+  box-shadow: 0 30px 92px rgba(0,0,0,0.45);
+}
+
+.step-num{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(0,160,255,0.95);
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.process-step h3{
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.process-step p{
+  color: rgba(154,174,185,0.92);
+}
+
+/* ---------- FAQ polish (uses your existing FAQ markup) ---------- */
+.faq{
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.faq-item{
+  border-bottom: 1px solid rgba(2,6,12,0.10);
+  padding: 18px 0;
+}
+
+.faq-question{
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  border:none;
+  background:transparent;
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: inherit;
+  padding: 12px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.faq-question:after{
+  content:"+";
+  font-size: 1.2rem;
+  color: var(--ice);
+  transition: transform .22s ease;
+}
+
+.faq-item.open .faq-question:after{
+  content:"—";
+}
+
+.faq-answer{
+  max-height: 0;
+  overflow:hidden;
+  transition: max-height .28s ease;
+}
+
+.faq-item.open .faq-answer{
+  max-height: 240px;
+}
+
+.faq-answer p{
+  padding: 0 0 14px 0;
+  color: #4b5e68;
+  line-height: 1.6;
+}
+
+/* On dark sections (if FAQ ever placed on dark), keep muted readable */
+body .faq-answer p{
+  color: rgba(154,174,185,0.92);
+}
+.light-block .faq-answer p{
+  color: #4b5e68;
+}
+
+/* Mobile tweaks */
+@media (max-width:720px){
+  .offer-tile{ padding: 18px; min-height: 175px; }
+  .process-step{ padding: 18px; }
+  .faq-question{ font-size: 1rem; }
+}
