@@ -642,23 +642,3 @@ body .faq-answer p{
 }
 .why-block .why-card{ color:#071018; }
 .why-block .why-card p{ color:#4b5e68; }
-
-/* WHY ICE layout */
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-  margin-top: var(--s3);
-}
-.why-icon{
-  width:42px;height:42px;
-  border-radius:12px;
-  background:rgba(0,160,255,0.12);
-  color:var(--ice);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  margin-bottom:14px;
-  font-size:18px;
-}
