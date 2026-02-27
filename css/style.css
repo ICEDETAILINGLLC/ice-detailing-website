@@ -1,184 +1,262 @@
 /* =========================
-   LUXURY FOUNDATION SYSTEM
+   ICE DARK LUXURY SYSTEM
    ========================= */
 
 :root{
-  --max-width: 1180px;
-  --section-spacing: 120px;
-  --card-radius: 18px;
-  --transition-smooth: 0.4s cubic-bezier(.2,.6,.2,1);
+  --bg-dark: #0c0f14;
+  --bg-soft: #12161d;
+  --bg-glass: rgba(255,255,255,0.05);
+  --text-main: #f5f7fa;
+  --text-muted: #9aa4b2;
+  --accent: #3da8ff;
+  --accent-glow: rgba(61,168,255,0.35);
+  --radius: 20px;
+  --max-width: 1200px;
+  --transition: 0.45s cubic-bezier(.2,.6,.2,1);
 }
 
-/* Global Reset Improvement */
+*{
+  box-sizing: border-box;
+}
+
 body{
+  margin:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.65;
-  color: #111;
-  background: #fff;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  line-height:1.6;
   -webkit-font-smoothing: antialiased;
 }
+
+/* =========================
+   LAYOUT
+   ========================= */
 
 .wrap{
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
 }
-
-/* =========================
-   TYPOGRAPHY HIERARCHY
-   ========================= */
-
-h1.super{
-  font-size: clamp(2.8rem, 4vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.section-title{
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-
-.section-sub{
-  font-size: 1.05rem;
-  max-width: 600px;
-  margin-bottom: 48px;
-}
-
-.muted{
-  color: #666;
-}
-
-/* =========================
-   SECTION SPACING
-   ========================= */
 
 .section{
-  padding: var(--section-spacing) 0;
-}
-
-.light-block{
-  background: #f8f8f8;
-  padding: var(--section-spacing) 0;
-}
-
-/* =========================
-   HERO REFINEMENT
-   ========================= */
-
-.hero{
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
+  padding: 140px 0;
   position: relative;
 }
 
-.hero-inner{
-  max-width: 760px;
-}
-
-.hero .lead{
-  font-size: 1.2rem;
-  max-width: 540px;
-  margin-bottom: 32px;
+.light-block{
+  background: var(--bg-soft);
 }
 
 /* =========================
-   BUTTON POLISH
+   HEADER
+   ========================= */
+
+.site-header{
+  position: fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+  background: rgba(12,15,20,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:80px;
+}
+
+.primary-nav a{
+  color: var(--text-muted);
+  margin:0 18px;
+  text-decoration:none;
+  font-size:0.95rem;
+  transition: var(--transition);
+}
+
+.primary-nav a:hover{
+  color: var(--text-main);
+}
+
+.cta-book{
+  background: var(--accent);
+  padding:10px 22px;
+  border-radius:40px;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:0 0 20px var(--accent-glow);
+  transition:var(--transition);
+}
+
+.cta-book:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), var(--bg-dark));
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+}
+
+h1.super{
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  font-weight:600;
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  margin-bottom:30px;
+}
+
+.lead{
+  font-size:1.25rem;
+  color:var(--text-muted);
+  margin-bottom:40px;
+  max-width:600px;
+}
+
+/* =========================
+   BUTTONS
    ========================= */
 
 .btn{
-  padding: 14px 28px;
-  border-radius: 40px;
-  font-weight: 500;
-  transition: var(--transition-smooth);
-  text-decoration: none;
-  display: inline-block;
+  padding:16px 34px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:500;
+  transition:var(--transition);
+  display:inline-block;
 }
 
 .btn.primary{
-  background: #111;
-  color: #fff;
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 0 25px var(--accent-glow);
 }
 
 .btn.primary:hover{
-  transform: translateY(-2px);
+  transform:translateY(-3px);
 }
 
 .btn.ghost{
-  border: 1px solid #ccc;
-  color: #111;
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
 }
 
 .btn.ghost:hover{
-  background: #111;
-  color: #fff;
+  background:rgba(255,255,255,0.08);
 }
 
 /* =========================
-   CARD SYSTEM
+   SERVICES CARDS
    ========================= */
 
 .grid{
-  display: grid;
-  gap: 40px;
+  display:grid;
+  gap:50px;
 }
 
 .services-grid{
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
 }
 
 .card{
-  padding: 36px;
-  border-radius: var(--card-radius);
-  background: #fff;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
-  transition: var(--transition-smooth);
+  background: var(--bg-glass);
+  padding:40px;
+  border-radius:var(--radius);
+  backdrop-filter: blur(14px);
+  border:1px solid rgba(255,255,255,0.05);
+  transition:var(--transition);
 }
 
 .card:hover{
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.5);
 }
 
 .card h3{
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  font-weight: 600;
+  font-size:1.3rem;
+  margin-bottom:16px;
+}
+
+.muted{
+  color:var(--text-muted);
 }
 
 /* =========================
-   FAQ POLISH
+   FAQ
    ========================= */
 
 .faq-item{
-  border-bottom: 1px solid #eaeaea;
-  padding: 22px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:28px 0;
 }
 
 .faq-question{
-  font-size: 1.05rem;
-  font-weight: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.1rem;
+  cursor:pointer;
+  width:100%;
+  text-align:left;
 }
 
 .faq-answer{
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.4s ease;
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+  color:var(--text-muted);
 }
 
 .faq-item.open .faq-answer{
-  max-height: 200px;
-  margin-top: 10px;
+  max-height:200px;
+  margin-top:12px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer{
+  background:#090c10;
+  padding:60px 0;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.footer-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+  color:var(--text-muted);
+  margin-left:20px;
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:#fff;
 }
