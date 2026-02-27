@@ -529,71 +529,114 @@ body .faq-answer p{
 }
 
 /* ==========================================================
-   WHY ICE — premium trust section
+   WHY ICE — glass + gradient ICE glow + shimmer
    ========================================================== */
 
-.why-block{
-  position:relative;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-  margin-top: var(--s3);
-}
-
+/* Glass card */
 .why-card{
-  background:#ffffff;
-  border-radius:18px;
-  padding:26px 24px;
-  color:#071018;
-  box-shadow:0 20px 60px rgba(2,6,12,0.14);
-  border:1px solid rgba(2,6,12,0.06);
-  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   position:relative;
   overflow:hidden;
-}
+  border-radius:18px;
+  padding:26px 24px;
 
-.why-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 28px 80px rgba(2,6,12,0.18);
-}
+  /* glass */
+  background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.06)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-.why-card.featured{
-  border:2px solid var(--ice);
+  /* gradient border (uses mask trick) */
+  border: 1px solid transparent;
+
+  /* depth */
   box-shadow:
-    0 24px 80px rgba(0,160,255,0.12),
-    0 30px 90px rgba(2,6,12,0.18);
+    0 20px 60px rgba(2,6,12,0.14),
+    0 0 22px rgba(0,160,255,0.10);
+
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.why-icon{
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  background:rgba(0,160,255,0.12);
-  color:var(--ice);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  margin-bottom:14px;
-  font-size:18px;
+/* Gradient ICE glow border */
+.why-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1.6px; /* border thickness */
+  border-radius:18px;
+  background: linear-gradient(135deg,
+    rgba(0,160,255,0.95),
+    rgba(90,245,255,0.75),
+    rgba(0,160,255,0.85)
+  );
+
+  /* show only border area */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events:none;
+  opacity:0.75;
+  filter: drop-shadow(0 0 14px rgba(0,160,255,0.22));
 }
 
-.why-card h3{
-  font-size:1.2rem;
-  font-weight:900;
-  margin-bottom:10px;
-  letter-spacing:-0.01em;
+/* Shimmer sweep */
+.why-card::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-60%;
+  width:60%;
+  height:140%;
+  transform: rotate(18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  opacity:0.0;
+  pointer-events:none;
 }
 
-.why-card p{
-  color:#4b5e68;
-  line-height:1.6;
+/* Hover: glow + shimmer */
+.why-card:hover{
+  transform: translateY(-7px);
+  box-shadow:
+    0 28px 80px rgba(2,6,12,0.18),
+    0 0 28px rgba(0,160,255,0.22),
+    0 0 55px rgba(0,160,255,0.18);
 }
 
-/* mobile polish */
-@media (max-width:720px){
-  .why-card{padding:22px 18px;}
+.why-card:hover::before{
+  opacity:1;
+  filter: drop-shadow(0 0 22px rgba(0,160,255,0.35));
+}
+
+.why-card:hover::after{
+  opacity:0.6;
+  animation: iceShimmer 1.05s ease-out 1;
+}
+
+@keyframes iceShimmer{
+  0%{ left:-60%; opacity:0.0; }
+  25%{ opacity:0.55; }
+  100%{ left:130%; opacity:0.0; }
+}
+
+/* Featured can get slightly stronger glow */
+.why-card.featured::before{
+  opacity:1;
+  filter: drop-shadow(0 0 26px rgba(0,160,255,0.40));
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .why-card:hover::after{ animation:none; }
 }
