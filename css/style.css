@@ -640,3 +640,5 @@ body .faq-answer p{
 @media (prefers-reduced-motion: reduce){
   .why-card:hover::after{ animation:none; }
 }
+.why-block .why-card{ color:#071018; }
+.why-block .why-card p{ color:#4b5e68; }
