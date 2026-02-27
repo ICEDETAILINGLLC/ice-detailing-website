@@ -1,101 +1,184 @@
-/* ICE Detailing — professional apple-inspired theme */
+/* =========================
+   LUXURY FOUNDATION SYSTEM
+   ========================= */
+
 :root{
-  --ice:#00A0FF; /* your logo-blue */
-  --silver:#C0C0C0;
-  --bg:#020305;
-  --light-bg:#f6f9fb;
-  --muted:#6f8792;
-  --card:rgba(255,255,255,0.03);
-  --maxw:1300px;
-  --radius:12px;
+  --max-width: 1180px;
+  --section-spacing: 120px;
+  --card-radius: 18px;
+  --transition-smooth: 0.4s cubic-bezier(.2,.6,.2,1);
 }
 
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Poppins;background:var(--bg);color:#eaf6ff;line-height:1.45}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-
-/* Header */
-.site-header{position:sticky;top:0;z-index:200;background:linear-gradient(180deg,rgba(2,3,5,0.92),rgba(2,3,5,0.86));border-bottom:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(6px)}
-.header-inner{display:flex;align-items:center;gap:20px;padding:14px 12px}
-.logo-horizontal{height:56px;object-fit:contain}
-.primary-nav{display:flex;gap:18px;margin-left:12px}
-.primary-nav a{color:var(--silver);font-weight:600;padding:8px 10px;border-radius:8px;text-decoration:none;transition:all .22s}
-.primary-nav a:hover,.primary-nav a.active{color:var(--ice);text-shadow:0 0 8px rgba(0,160,255,0.18)}
-.header-actions{margin-left:auto;display:flex;gap:10px;align-items:center}
-.cta-call{color:var(--silver);border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;text-decoration:none}
-.cta-book{background:var(--ice);color:#031018;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 6px 22px rgba(0,160,255,0.18)}
-
-/* Hero */
-.hero{min-height:80vh;background-size:cover;background-position:center;display:flex;align-items:center;position:relative}
-.hero-gradient{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.25),rgba(0,0,0,0.02))}
-.hero-inner{position:relative;z-index:2;display:flex;gap:28px;align-items:center;justify-content:space-between;padding:48px 0}
-.hero-copy{max-width:720px}
-.super{font-size:clamp(2rem,5vw,3.4rem);margin:0 0 10px;font-weight:800;text-shadow:0 8px 40px rgba(0,160,255,0.06)}
-.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
-.accent{color:var(--ice);text-shadow:0 0 10px rgba(0,160,255,0.25)}
-.hero-ctas{display:flex;gap:12px}
-.small-cta{color:var(--muted);margin-top:10px}
-
-/* Buttons */
-.btn{display:inline-block;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;transition:all .22s}
-.btn.primary{background:var(--ice);color:#031018;box-shadow:0 8px 30px rgba(0,160,255,0.14)}
-.btn.primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,160,255,0.25)}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#eaf6ff}
-.btn.ghost:hover{border-color:var(--ice);color:var(--ice);text-shadow:0 0 8px rgba(0,160,255,0.18)}
-
-/* Sections */
-.section{padding:56px 0}
-.light-block{background:var(--light-bg);color:#061018;padding:56px 0}
-.section-title{text-align:center;font-size:1.5rem;margin-bottom:8px}
-.section-sub{color:var(--muted);max-width:920px;margin:0 auto 16px;text-align:center}
-
-/* Cards & grids */
-.services-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{background:linear-gradient(180deg,var(--card),rgba(0,0,0,0.05));border-radius:12px;border:1px solid rgba(255,255,255,0.04);overflow:hidden}
-.card-media img{width:100%;height:180px;object-fit:cover}
-.card-body{padding:14px}
-.card-foot{display:flex;justify-content:space-between;margin-top:10px}
-.price{color:var(--ice);font-weight:800}
-
-/* Packages */
-.packages-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.package-card{background:#fff;padding:20px;border-radius:12px;color:#071018;box-shadow:0 10px 28px rgba(2,6,12,0.12)}
-.package-card.highlight{border:2px solid var(--ice);box-shadow:0 14px 40px rgba(0,160,255,0.12)}
-.addons-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-
-/* Contact form */
-.contact-wrap{display:grid;grid-template-columns:1fr 360px;gap:30px}
-.form input,.form select,.form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(2,6,12,0.08);margin-bottom:12px;background:rgba(255,255,255,0.02);color:inherit}
-.form .form-row{display:flex;gap:12px}
-.form .form-row > div{flex:1}
-
-/* Gallery before/after */
-.before-after{position:relative;height:320px;border-radius:10px;overflow:hidden;margin:12px 0;background:#111}
-.before-after img{display:block;width:100%;height:100%;object-fit:cover;user-select:none}
-.ba-overlay{position:absolute;left:0;top:0;height:100%;width:50%;overflow:hidden}
-.ba-handle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px;background:rgba(255,255,255,0.9);border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;cursor:ew-resize}
-.ba-handle:after{content:"";width:16px;height:2px;background:#222;display:block;box-shadow:0 -6px 0 #222,0 6px 0 #222}
-
-/* Reviews & cards */
-.review-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.review-card{background:#fff;padding:18px;border-radius:10px;color:#071018}
-
-/* Footer (sleek) */
-.sleek-footer{padding:32px 0;border-top:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--silver)}
-.footer-flex{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.footer-logo{height:38px;opacity:0.95}
-.footer-name{font-weight:700;color:#eaf6ff;margin-top:8px}
-.footer-links{display:flex;gap:16px}
-.footer-links a{color:var(--ice);text-decoration:none;font-weight:600}
-
-/* Responsive */
-@media (max-width:1000px){.hero-inner{flex-direction:column;align-items:flex-start}.contact-wrap{grid-template-columns:1fr}}
-@media (max-width:720px){
-  .primary-nav{display:none}
-  .packages-grid{grid-template-columns:1fr}
-  .thumb-grid img{width:140px;height:84px}
-  .before-after{height:220px}
+/* Global Reset Improvement */
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
+.wrap{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* =========================
+   TYPOGRAPHY HIERARCHY
+   ========================= */
+
+h1.super{
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.section-title{
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.section-sub{
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.muted{
+  color: #666;
+}
+
+/* =========================
+   SECTION SPACING
+   ========================= */
+
+.section{
+  padding: var(--section-spacing) 0;
+}
+
+.light-block{
+  background: #f8f8f8;
+  padding: var(--section-spacing) 0;
+}
+
+/* =========================
+   HERO REFINEMENT
+   ========================= */
+
+.hero{
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-inner{
+  max-width: 760px;
+}
+
+.hero .lead{
+  font-size: 1.2rem;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   BUTTON POLISH
+   ========================= */
+
+.btn{
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.primary{
+  background: #111;
+  color: #fff;
+}
+
+.btn.primary:hover{
+  transform: translateY(-2px);
+}
+
+.btn.ghost{
+  border: 1px solid #ccc;
+  color: #111;
+}
+
+.btn.ghost:hover{
+  background: #111;
+  color: #fff;
+}
+
+/* =========================
+   CARD SYSTEM
+   ========================= */
+
+.grid{
+  display: grid;
+  gap: 40px;
+}
+
+.services-grid{
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card{
+  padding: 36px;
+  border-radius: var(--card-radius);
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  transition: var(--transition-smooth);
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.card h3{
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   FAQ POLISH
+   ========================= */
+
+.faq-item{
+  border-bottom: 1px solid #eaeaea;
+  padding: 22px 0;
+}
+
+.faq-question{
+  font-size: 1.05rem;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.faq-answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.faq-item.open .faq-answer{
+  max-height: 200px;
+  margin-top: 10px;
+}
