@@ -1,39 +1,51 @@
 <!doctype html>
 <html lang="en">
-<header class="site-header" role="banner">
-  <div class="wrap header-inner">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reviews — ICE Detailing LLC</title>
 
-    <a href="index.html" class="brand" aria-label="ICE Detailing home">
-      <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
-      <span class="brand-text">
-        <span class="brand-name">ICE Detailing</span>
-        <span class="brand-tag">Premium Mobile Detailing</span>
-      </span>
-    </a>
+  <link rel="stylesheet" href="css/style.css?v=ice6" />
+  <link rel="stylesheet" href="css/animations.css?v=ice6" />
+</head>
 
-    <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html#home" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="reviews.html" class="nav-link">Reviews</a>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+<body class="hybrid">
 
-    <div class="header-actions">
-      <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
-      <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
+  <header class="site-header" role="banner">
+    <div class="wrap header-inner">
+
+      <a href="index.html" class="brand" aria-label="ICE Detailing home">
+        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
+        <span class="brand-text">
+          <span class="brand-name">ICE Detailing</span>
+          <span class="brand-tag">Premium Mobile Detailing</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="reviews.html" class="nav-link active">Reviews</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
+        <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
+      </div>
+
     </div>
-
-  </div>
-</header>
+  </header>
 
   <main>
-    <section class="light-block">
+    <section class="section light-block">
       <div class="wrap">
-        <h1>Customer Reviews</h1>
-        <p class="muted">Below are placeholder five-star reviews. Replace with your Elfsight/Trustindex widget when ready.</p>
+        <h1 class="section-title">Customer Reviews</h1>
+        <p class="section-sub muted">Real feedback from clients — premium results, every time.</p>
 
-        <div class="reviews-grid reveal">
+        <!-- use review-grid (matches your CSS) -->
+        <div class="review-grid reveal">
           <div class="review-card">
             <div class="stars">★★★★★</div>
             <h3>“My car looks brand new again.”</h3>
@@ -55,6 +67,7 @@
             <span class="author">– Daniel K.</span>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -62,7 +75,7 @@
   <footer class="site-footer sleek-footer">
     <div class="wrap footer-flex">
       <div class="footer-brand">
-        <img src="/mnt/data/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+        <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
         <div class="footer-name">ICE Detailing LLC</div>
       </div>
 
@@ -76,7 +89,10 @@
     </div>
   </footer>
 
-  <script>document.getElementById('footerYearRev').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('footerYearRev').textContent = new Date().getFullYear();
+  </script>
+
   <script src="js/main.js" defer></script>
 </body>
 </html>
