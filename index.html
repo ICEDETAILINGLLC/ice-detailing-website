@@ -14,19 +14,22 @@
 
   <link rel="preload" as="image" href="images/cars/porsche_red.jpg">
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <!-- IMPORTANT: bump ?v= number anytime you change CSS so your browser doesn't cache -->
+  <link rel="stylesheet" href="css/style.css?v=ice7" />
+  <link rel="stylesheet" href="css/animations.css?v=ice7" />
+</head>
+
+<body class="hybrid">
+
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
-
     <a href="index.html" class="brand" aria-label="ICE Detailing home">
       <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
-      <!-- reduced brand text: optional + subtle -->
       <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="index.html#home" class="nav-link active">Home</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="reviews.html" class="nav-link">Reviews</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
@@ -37,243 +40,231 @@
       <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
       <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
     </div>
-
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
-<section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
-  <div class="hero-gradient"></div>
+  <!-- HERO -->
+  <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
+    <div class="hero-gradient"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <h1 class="super">Perfection is not optional, <span class="accent">it's the standard.</span></h1>
+        <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston &amp; Middlesex County.</p>
+        <p class="muted" style="margin-top:10px;">Trusted by hundreds of vehicle owners for luxury-level results.</p>
 
-  <div class="wrap hero-inner">
-    <div class="hero-copy reveal">
-      <h1 class="super">Perfection is not optional, <span class="accent">it's the standard.</span></h1>
-      <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston & Middlesex County.</p>
-      <p class="muted" style="margin-top:10px;">Trusted by hundreds of vehicle owners for luxury-level results.</p>
-
-      <div class="hero-ctas">
-        <a class="btn primary" href="services.html">Explore Services</a>
-        <a class="btn ghost" href="contact.html">Book Now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE OFFER (premium tiles / overview only) -->
-<section class="section services-block">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2 class="section-title">What We Offer</h2>
-      <p class="section-sub muted">Luxury-level detailing categories — explore packages, pricing, and add-ons.</p>
-
-      <div class="section-actions">
-        <a class="btn ghost" href="services.html">View Packages</a>
-        <a class="btn primary" href="contact.html">Book</a>
-      </div>
-    </div>
-
-    <div class="offer-grid reveal">
-      <a class="offer-tile" href="services.html" data-prefill="Deep Clean Interior">
-        <div class="offer-top">
-          <span class="offer-kicker">Interior</span>
-          <h3>Deep Clean + Protection</h3>
-        </div>
-        <p>Steam disinfect, extraction, stain removal, UV protection & leather conditioning.</p>
-        <span class="offer-cta">Explore →</span>
-      </a>
-
-      <a class="offer-tile" href="services.html" data-prefill="Mini Detail">
-        <div class="offer-top">
-          <span class="offer-kicker">Exterior</span>
-          <h3>Safe Wash + Decon</h3>
-        </div>
-        <p>Hand wash, paint decontamination, gloss finishing, and tire & trim detailing.</p>
-        <span class="offer-cta">Explore →</span>
-      </a>
-
-      <a class="offer-tile featured" href="services.html" data-prefill="Full Detail">
-        <div class="offer-top">
-          <span class="offer-kicker">Full Detail</span>
-          <h3>Showroom Transformation</h3>
-        </div>
-        <p>Complete interior + exterior reset with clay bar, engine bay, and paint protection.</p>
-        <span class="offer-cta">Most Popular →</span>
-      </a>
-
-      <a class="offer-tile" href="services.html" data-prefill="2-Step Correction">
-        <div class="offer-top">
-          <span class="offer-kicker">Paint</span>
-          <h3>Correction + Gloss</h3>
-        </div>
-        <p>1–3 step polishing to reduce swirls, scratches, and restore deep clarity.</p>
-        <span class="offer-cta">Explore →</span>
-      </a>
-
-      <a class="offer-tile" href="services.html" data-prefill="Ceramic Package">
-        <div class="offer-top">
-          <span class="offer-kicker">Ceramic</span>
-          <h3>Long-Term Protection</h3>
-        </div>
-        <p>Hydrophobic coating with deep shine — perfect for keeping your finish protected.</p>
-        <span class="offer-cta">Explore →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- WHY ICE (premium trust section) -->
-<section class="section light-block why-block">
-  <div class="wrap">
-
-    <div class="section-head reveal">
-      <h2 class="section-title">Why ICE Detailing</h2>
-      <p class="section-sub muted">
-        Luxury-level detailing backed by precision methods, premium products, and a client-first experience.
-      </p>
-    </div>
-
-    <div class="why-grid reveal">
-
-      <div class="why-card">
-        <div class="why-icon">★</div>
-        <h3>Luxury Level Results</h3>
-        <p>Professional techniques and premium products deliver consistent showroom finishes.</p>
-      </div>
-
-      <div class="why-card featured">
-        <div class="why-icon">⚡</div>
-        <h3>Mobile Convenience</h3>
-        <p>We bring the full detailing experience directly to your home or workplace.</p>
-      </div>
-
-      <div class="why-card">
-        <div class="why-icon">✓</div>
-        <h3>Walkthrough With Every Client</h3>
-        <p>We recommend a pre- and post-service walkthrough so expectations are clear and results are verified.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- OUR PROCESS (upgraded + walkthroughs) -->
-<section class="section process-block">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <h2 class="section-title">Our Process</h2>
-      <p class="section-sub muted">A consistent, paint-safe method built for luxury results.</p>
-    </div>
-
-    <div class="process-grid reveal">
-
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h3>Pre-Service Walkthrough</h3>
-        <p>Every appointment begins with a recommended client walkthrough. We inspect the vehicle together, note any concerns, and align on expectations before work begins.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h3>Preparation</h3>
-        <p>Safe wash and decontamination remove dirt and embedded contaminants without introducing new swirls or damage.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h3>Correction</h3>
-        <p>When needed, we perform machine polishing to restore gloss, reduce imperfections, and enhance paint clarity.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h3>Protection</h3>
-        <p>Wax, sealant, or ceramic protection is applied to lock in shine and provide long-lasting defense against the elements.</p>
-      </div>
-
-      <div class="process-step">
-        <div class="step-num">05</div>
-        <h3>Post-Service Walkthrough</h3>
-        <p>We finish with a recommended client walkthrough to review results together and ensure complete satisfaction before delivery.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY PREVIEW -->
-<section class="section gallery-preview">
-  <div class="wrap">
-    <h2 class="section-title reveal">Real Results</h2>
-    <p class="section-sub muted reveal">See the transformation.</p>
-
-    <div class="reveal before-after-grid">
-      <div class="before-after"
-           data-before="images/gallery/before1.jpg"
-           data-after="images/gallery/after1.jpg"></div>
-    </div>
-
-    <div style="margin-top:18px">
-      <a class="btn ghost" href="gallery.html">View Gallery</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ (accordion) -->
-<section class="section light-block">
-  <div class="wrap reveal">
-    <h2 class="section-title">FAQ</h2>
-
-    <div class="faq">
-
-      <div class="faq-item">
-        <button class="faq-question">Do you need water or power?</button>
-        <div class="faq-answer">
-          <p>We arrive fully equipped. If water and power are available, it can improve efficiency — but it’s not required for every appointment.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="services.html">Explore Services</a>
+          <a class="btn ghost" href="contact.html">Book Now</a>
         </div>
       </div>
 
-      <div class="faq-item">
-        <button class="faq-question">How long does detailing take?</button>
-        <div class="faq-answer">
-          <p>Time depends on package and vehicle condition. Maintenance services can be 1–2 hours, while full details and corrections may take several hours.</p>
+      <div class="hero-side reveal" aria-hidden="true">
+        <div class="thumb-grid">
+          <img loading="lazy" decoding="async" src="images/cars/amg_luxury_interior1.jpg" alt="Interior detailing">
+          <img loading="lazy" decoding="async" src="images/cars/porsche_718_interior.jpg" alt="Luxury interior">
+          <img loading="lazy" decoding="async" src="images/cars/bmw_interior_open_door.jpg" alt="Detail finish">
         </div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Do prices vary?</button>
-        <div class="faq-answer">
-          <p>Yes — size and condition can affect final pricing. We confirm expectations and pricing before we begin.</p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">What happens if weather changes?</button>
-        <div class="faq-answer">
-          <p>We monitor weather and will reschedule if needed to ensure results meet our standards.</p>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="cta-strip">
-  <div class="wrap cta-wrap reveal">
-    <h3>Ready for a showroom finish?</h3>
-    <a class="btn primary" href="contact.html">Get a Quote</a>
-  </div>
-</section>
+  <!-- WHAT WE OFFER -->
+  <section class="section services-block">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-sub muted">Luxury-level detailing categories — explore packages, pricing, and add-ons.</p>
+        <div class="section-actions">
+          <a class="btn ghost" href="services.html">View Packages</a>
+          <a class="btn primary" href="contact.html">Book</a>
+        </div>
+      </div>
+
+      <div class="offer-grid reveal">
+        <a class="offer-tile" href="services.html" data-prefill="Deep Clean Interior">
+          <div class="offer-top">
+            <span class="offer-kicker">Interior</span>
+            <h3>Deep Clean + Protection</h3>
+          </div>
+          <p>Steam disinfect, extraction, stain removal, UV protection &amp; leather conditioning.</p>
+          <span class="offer-cta">Explore →</span>
+        </a>
+
+        <a class="offer-tile" href="services.html" data-prefill="Mini Detail">
+          <div class="offer-top">
+            <span class="offer-kicker">Exterior</span>
+            <h3>Safe Wash + Decon</h3>
+          </div>
+          <p>Hand wash, paint decontamination, gloss finishing, and tire &amp; trim detailing.</p>
+          <span class="offer-cta">Explore →</span>
+        </a>
+
+        <a class="offer-tile featured" href="services.html" data-prefill="Full Detail">
+          <div class="offer-top">
+            <span class="offer-kicker">Full Detail</span>
+            <h3>Showroom Transformation</h3>
+          </div>
+          <p>Complete interior + exterior reset with clay bar, engine bay, and paint protection.</p>
+          <span class="offer-cta">Most Popular →</span>
+        </a>
+
+        <a class="offer-tile" href="services.html" data-prefill="2-Step Correction">
+          <div class="offer-top">
+            <span class="offer-kicker">Paint</span>
+            <h3>Correction + Gloss</h3>
+          </div>
+          <p>1–3 step polishing to reduce swirls, scratches, and restore deep clarity.</p>
+          <span class="offer-cta">Explore →</span>
+        </a>
+
+        <a class="offer-tile" href="services.html" data-prefill="Ceramic Package">
+          <div class="offer-top">
+            <span class="offer-kicker">Ceramic</span>
+            <h3>Long-Term Protection</h3>
+          </div>
+          <p>Hydrophobic coating with deep shine — perfect for keeping your finish protected.</p>
+          <span class="offer-cta">Explore →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ICE -->
+  <section class="section light-block why-block">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Why ICE Detailing</h2>
+        <p class="section-sub muted">Luxury-level detailing backed by precision methods, premium products, and a client-first experience.</p>
+      </div>
+
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-icon">★</div>
+          <h3>Luxury Level Results</h3>
+          <p>Professional techniques and premium products deliver consistent showroom finishes.</p>
+        </div>
+
+        <div class="why-card featured">
+          <div class="why-icon">⚡</div>
+          <h3>Mobile Convenience</h3>
+          <p>We bring the full detailing experience directly to your home or workplace.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">✓</div>
+          <h3>Walkthrough With Every Client</h3>
+          <p>We recommend a pre- and post-service walkthrough so expectations are clear and results are verified.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process-block">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-sub muted">A consistent, paint-safe method built for luxury results.</p>
+      </div>
+
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h3>Pre-Service Walkthrough</h3>
+          <p>Every appointment begins with a recommended client walkthrough. We inspect the vehicle together, note concerns, and align on expectations.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h3>Preparation</h3>
+          <p>Safe wash and decontamination remove dirt and embedded contaminants without introducing swirls.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h3>Correction</h3>
+          <p>When needed, machine polishing restores gloss, reduces imperfections, and enhances paint clarity.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h3>Protection</h3>
+          <p>Wax, sealant, or ceramic protection is applied to lock in shine and defend against the elements.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="step-num">05</div>
+          <h3>Post-Service Walkthrough</h3>
+          <p>We finish with a recommended walkthrough to review results together and ensure complete satisfaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="section gallery-preview">
+    <div class="wrap">
+      <h2 class="section-title reveal">Real Results</h2>
+      <p class="section-sub muted reveal">Drag the divider to compare.</p>
+
+      <div class="reveal before-after-grid">
+        <div class="before-after"
+             aria-label="Before and after detailing comparison"
+             data-before="images/gallery/before1.jpg"
+             data-after="images/gallery/after1.jpg"></div>
+      </div>
+
+      <div style="margin-top:18px">
+        <a class="btn ghost" href="gallery.html">View Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section light-block">
+    <div class="wrap reveal">
+      <h2 class="section-title">FAQ</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button">Do you need water or power?</button>
+          <div class="faq-answer"><p>We arrive fully equipped. If water and power are available, it can improve efficiency — but it’s not required for every appointment.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">How long does detailing take?</button>
+          <div class="faq-answer"><p>Time depends on package and vehicle condition. Maintenance services can be 1–2 hours, while full details and corrections may take several hours.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">Do prices vary?</button>
+          <div class="faq-answer"><p>Yes — size and condition can affect final pricing. We confirm expectations and pricing before we begin.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">What happens if weather changes?</button>
+          <div class="faq-answer"><p>We monitor weather and will reschedule if needed to ensure results meet our standards.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="wrap cta-wrap reveal">
+      <h3>Ready for a showroom finish?</h3>
+      <a class="btn primary" href="contact.html">Get a Quote</a>
+    </div>
+  </section>
 
 </main>
 
 <footer class="site-footer sleek-footer">
   <div class="wrap footer-flex">
     <div class="footer-brand">
-      <img src="images/iced_blue.png" class="footer-logo" />
+      <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
       <div class="footer-name">ICE Detailing LLC</div>
       <div class="footer-loc">Boston • Middlesex County</div>
     </div>
@@ -289,14 +280,12 @@
 </footer>
 
 <script>
-document.getElementById('footerYearHome').textContent = new Date().getFullYear();
+  document.getElementById('footerYearHome').textContent = new Date().getFullYear();
 
-/* FAQ accordion */
-document.querySelectorAll('.faq-question').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    btn.parentElement.classList.toggle('open');
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click',()=> btn.parentElement.classList.toggle('open'));
   });
-});
 </script>
 
 <script src="js/slider.js" defer></script>
