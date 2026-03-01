@@ -5,94 +5,84 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Reviews — ICE Detailing LLC</title>
 
-  <link rel="stylesheet" href="css/style.css?v=ice6" />
-  <link rel="stylesheet" href="css/animations.css?v=ice6" />
+  <link rel="stylesheet" href="css/style.css?v=ice7" />
+  <link rel="stylesheet" href="css/animations.css?v=ice7" />
 </head>
 
 <body class="hybrid">
 
-  <header class="site-header" role="banner">
-    <div class="wrap header-inner">
+<header class="site-header" role="banner">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand" aria-label="ICE Detailing home">
+      <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
+      <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
+    </a>
 
-      <a href="index.html" class="brand" aria-label="ICE Detailing home">
-        <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
-        <span class="brand-text">
-          <span class="brand-name">ICE Detailing</span>
-          <span class="brand-tag">Premium Mobile Detailing</span>
-        </span>
-      </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="reviews.html" class="nav-link active">Reviews</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a href="index.html#home" class="nav-link">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="reviews.html" class="nav-link active">Reviews</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
-        <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
-      </div>
-
+    <div class="header-actions">
+      <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
+      <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="section light-block">
-      <div class="wrap">
-        <h1 class="section-title">Customer Reviews</h1>
-        <p class="section-sub muted">Real feedback from clients — premium results, every time.</p>
+<main>
+  <section class="section light-block">
+    <div class="wrap">
+      <h1 class="section-title reveal">Customer Reviews</h1>
+      <p class="section-sub muted reveal">Real feedback from clients — premium results, every time.</p>
 
-        <!-- use review-grid (matches your CSS) -->
-        <div class="review-grid reveal">
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>“My car looks brand new again.”</h3>
-            <p>ICE Detailing went above and beyond. The interior looks brand new.</p>
-            <span class="author">– Jason R.</span>
-          </div>
-
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>“Best detailing service in the area.”</h3>
-            <p>Premium package was worth every penny. Insane quality.</p>
-            <span class="author">– Sarah M.</span>
-          </div>
-
-          <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <h3>“Deep clean like I’ve never seen.”</h3>
-            <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
-            <span class="author">– Daniel K.</span>
-          </div>
+      <div class="review-grid reveal">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“My car looks brand new again.”</h3>
+          <p>ICE Detailing went above and beyond. The interior looks brand new.</p>
+          <span class="author">– Jason R.</span>
         </div>
 
-      </div>
-    </section>
-  </main>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“Best detailing service in the area.”</h3>
+          <p>Premium package was worth every penny. Insane quality.</p>
+          <span class="author">– Sarah M.</span>
+        </div>
 
-  <footer class="site-footer sleek-footer">
-    <div class="wrap footer-flex">
-      <div class="footer-brand">
-        <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
-        <div class="footer-name">ICE Detailing LLC</div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“Deep clean like I’ve never seen.”</h3>
+          <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
+          <span class="author">– Daniel K.</span>
+        </div>
       </div>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-copy">© <span id="footerYearRev"></span> ICE Detailing LLC</div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script>
-    document.getElementById('footerYearRev').textContent = new Date().getFullYear();
-  </script>
+<footer class="site-footer sleek-footer">
+  <div class="wrap footer-flex">
+    <div class="footer-brand">
+      <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+      <div class="footer-name">ICE Detailing LLC</div>
+    </div>
 
-  <script src="js/main.js" defer></script>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="footer-copy">© <span id="footerYearRev"></span> ICE Detailing LLC</div>
+  </div>
+</footer>
+
+<script>document.getElementById('footerYearRev').textContent = new Date().getFullYear();</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
