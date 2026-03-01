@@ -1,92 +1,84 @@
-<div class="ba-slider" id="baSlider">
-  <img src="after.jpg" alt="After">
+// slider.js — Before/After slider for elements like:
+// <div class="before-after" data-before="..." data-after="..."></div>
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(".before-after");
 
-  <div class="resize" id="resize">
-    <img src="before.jpg" alt="Before">
-  </div>
+  sliders.forEach((el) => {
+    const beforeSrc = el.getAttribute("data-before");
+    const afterSrc  = el.getAttribute("data-after");
+    if (!beforeSrc || !afterSrc) return;
 
-  <div class="handle" id="handle"></div>
-</div>
+    el.innerHTML = "";
+    el.classList.add("ba-ready");
 
-<style>
-.ba-slider{
-  position:relative;
-  max-width:900px;
-  margin:40px auto;
-  overflow:hidden;
-  border-radius:14px;
-  user-select:none;
-}
+    const afterImg = document.createElement("img");
+    afterImg.src = afterSrc;
+    afterImg.alt = "After";
 
-.ba-slider img{
-  width:100%;
-  display:block;
-  pointer-events:none;
-}
+    const overlay = document.createElement("div");
+    overlay.className = "ba-overlay";
 
-.resize{
-  position:absolute;
-  top:0;
-  left:0;
-  width:50%;
-  overflow:hidden;
-  height:100%;
-}
+    const beforeImg = document.createElement("img");
+    beforeImg.src = beforeSrc;
+    beforeImg.alt = "Before";
 
-.handle{
-  position:absolute;
-  top:0;
-  left:50%;
-  width:3px;
-  height:100%;
-  background:white;
-  cursor:ew-resize;
-}
+    const handle = document.createElement("div");
+    handle.className = "ba-handle";
+    handle.setAttribute("role", "slider");
+    handle.setAttribute("aria-label", "Before and after slider");
+    handle.setAttribute("aria-valuemin", "0");
+    handle.setAttribute("aria-valuemax", "100");
+    handle.setAttribute("aria-valuenow", "50");
+    handle.tabIndex = 0;
 
-.handle::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:38px;
-  height:38px;
-  border-radius:50%;
-  background:white;
-  box-shadow:0 0 12px rgba(0,0,0,.3);
-}
-</style>
+    overlay.appendChild(beforeImg);
+    el.appendChild(afterImg);
+    el.appendChild(overlay);
+    el.appendChild(handle);
 
-<script>
-const slider = document.getElementById("baSlider");
-const handle = document.getElementById("handle");
-const resize = document.getElementById("resize");
+    let pct = 50;
 
-let dragging=false;
+    const setPct = (nextPct) => {
+      pct = Math.max(0, Math.min(100, nextPct));
+      overlay.style.width = pct + "%";
+      handle.style.left = pct + "%";
+      handle.setAttribute("aria-valuenow", String(Math.round(pct)));
+    };
 
-function move(x){
-  const rect = slider.getBoundingClientRect();
-  let pos = x - rect.left;
-  pos = Math.max(0, Math.min(pos, rect.width));
+    setPct(50);
 
-  const percent = (pos / rect.width) * 100;
-  resize.style.width = percent + "%";
-  handle.style.left = percent + "%";
-}
+    const moveFromClientX = (clientX) => {
+      const rect = el.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const nextPct = (x / rect.width) * 100;
+      setPct(nextPct);
+    };
 
-/* mouse */
-handle.addEventListener("mousedown",()=> dragging=true);
-window.addEventListener("mouseup",()=> dragging=false);
-window.addEventListener("mousemove",(e)=>{
-  if(!dragging) return;
-  move(e.clientX);
+    // Pointer events (mouse + touch)
+    const onPointerDown = (e) => {
+      el.setPointerCapture?.(e.pointerId);
+      moveFromClientX(e.clientX);
+      el.dataset.dragging = "1";
+    };
+
+    const onPointerMove = (e) => {
+      if (el.dataset.dragging !== "1") return;
+      moveFromClientX(e.clientX);
+    };
+
+    const onPointerUp = () => {
+      el.dataset.dragging = "0";
+    };
+
+    el.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
+
+    // Keyboard support
+    handle.addEventListener("keydown", (e) => {
+      const step = e.shiftKey ? 10 : 3;
+      if (e.key === "ArrowLeft") setPct(pct - step);
+      if (e.key === "ArrowRight") setPct(pct + step);
+    });
+  });
 });
-
-/* touch */
-handle.addEventListener("touchstart",()=> dragging=true);
-window.addEventListener("touchend",()=> dragging=false);
-window.addEventListener("touchmove",(e)=>{
-  if(!dragging) return;
-  move(e.touches[0].clientX);
-});
-</script>
