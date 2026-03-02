@@ -1,72 +1,84 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery — ICE Detailing LLC</title>
+// slider.js — Before/After slider for elements like:
+// <div class="before-after" data-before="..." data-after="..."></div>
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(".before-after");
 
-  <link rel="stylesheet" href="css/style.css?v=ice8" />
-  <link rel="stylesheet" href="css/animations.css?v=ice8" />
-</head>
+  sliders.forEach((el) => {
+    const beforeSrc = el.getAttribute("data-before");
+    const afterSrc  = el.getAttribute("data-after");
+    if (!beforeSrc || !afterSrc) return;
 
-<body class="hybrid">
+    el.innerHTML = "";
+    el.classList.add("ba-ready");
 
-<header class="site-header" role="banner">
-  <div class="wrap header-inner">
-    <a href="index.html" class="brand" aria-label="ICE Detailing home">
-      <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
-      <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
-    </a>
+    const afterImg = document.createElement("img");
+    afterImg.src = afterSrc;
+    afterImg.alt = "After";
 
-    <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html#home" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="reviews.html" class="nav-link">Reviews</a>
-      <a href="gallery.html" class="nav-link active">Gallery</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+    const overlay = document.createElement("div");
+    overlay.className = "ba-overlay";
 
-    <div class="header-actions">
-      <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
-      <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
-    </div>
-  </div>
-</header>
+    const beforeImg = document.createElement("img");
+    beforeImg.src = beforeSrc;
+    beforeImg.alt = "Before";
 
-<main>
-  <section class="section">
-    <div class="wrap">
-      <h1 class="section-title reveal">Before &amp; After Gallery</h1>
-      <p class="section-sub muted reveal">Drag the divider to compare — touch friendly.</p>
+    const handle = document.createElement("div");
+    handle.className = "ba-handle";
+    handle.setAttribute("role", "slider");
+    handle.setAttribute("aria-label", "Before and after slider");
+    handle.setAttribute("aria-valuemin", "0");
+    handle.setAttribute("aria-valuemax", "100");
+    handle.setAttribute("aria-valuenow", "50");
+    handle.tabIndex = 0;
 
-      <div class="ba-gallery reveal">
-        <div class="before-after" data-before="images/gallery/before1.jpg" data-after="images/gallery/after1.jpg"></div>
-        <div class="before-after" data-before="images/gallery/before2.jpg" data-after="images/gallery/after2.jpg"></div>
-        <div class="before-after" data-before="images/gallery/before3.jpg" data-after="images/gallery/after3.jpg"></div>
-      </div>
-    </div>
-  </section>
-</main>
+    overlay.appendChild(beforeImg);
+    el.appendChild(afterImg);
+    el.appendChild(overlay);
+    el.appendChild(handle);
 
-<footer class="site-footer sleek-footer">
-  <div class="wrap footer-flex">
-    <div class="footer-brand">
-      <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
-      <div class="footer-name">ICE Detailing LLC</div>
-    </div>
+    let pct = 50;
 
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    const setPct = (nextPct) => {
+      pct = Math.max(0, Math.min(100, nextPct));
+      overlay.style.width = pct + "%";
+      handle.style.left = pct + "%";
+      handle.setAttribute("aria-valuenow", String(Math.round(pct)));
+    };
 
-    <div class="footer-copy">© <span id="footerYearGal"></span> ICE Detailing LLC</div>
-  </div>
-</footer>
+    setPct(50);
 
-<script>document.getElementById('footerYearGal').textContent = new Date().getFullYear();</script>
-<script src="js/slider.js" defer></script>
-<script src="js/main.js" defer></script>
-</body>
-</html>
+    const moveFromClientX = (clientX) => {
+      const rect = el.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const nextPct = (x / rect.width) * 100;
+      setPct(nextPct);
+    };
+
+    // Pointer events (mouse + touch)
+    const onPointerDown = (e) => {
+      el.setPointerCapture?.(e.pointerId);
+      moveFromClientX(e.clientX);
+      el.dataset.dragging = "1";
+    };
+
+    const onPointerMove = (e) => {
+      if (el.dataset.dragging !== "1") return;
+      moveFromClientX(e.clientX);
+    };
+
+    const onPointerUp = () => {
+      el.dataset.dragging = "0";
+    };
+
+    el.addEventListener("pointerdown", onPointerDown);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
+
+    // Keyboard support
+    handle.addEventListener("keydown", (e) => {
+      const step = e.shiftKey ? 10 : 3;
+      if (e.key === "ArrowLeft") setPct(pct - step);
+      if (e.key === "ArrowRight") setPct(pct + step);
+    });
+  });
+});
