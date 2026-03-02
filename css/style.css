@@ -795,3 +795,160 @@ body{
   .gallery-hero-metrics{ grid-template-columns: 1fr; }
   .photo-grid img{ height: 200px; }
 }
+/* ==========================================================
+   GALLERY V2 — grid + hover zoom + lightbox
+   ========================================================== */
+
+.ba-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+  gap:18px;
+}
+
+.gallery-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.18));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.gallery-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(0,160,255,0.26);
+  box-shadow: 0 30px 92px rgba(0,0,0,0.45);
+}
+
+.gallery-head{
+  padding:16px 16px 10px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.gallery-head h3{
+  margin:0;
+  font-size:1.05rem;
+  font-weight:900;
+  letter-spacing:-0.01em;
+}
+
+.gallery-head .tag{
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color: rgba(154,174,185,0.95);
+  white-space:nowrap;
+  margin-top:2px;
+}
+
+.gallery-stage{
+  position:relative;
+  overflow:hidden;
+}
+
+/* Subtle zoom on hover */
+.gallery-stage img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+  transform: scale(1);
+  transition: transform .35s ease, filter .35s ease;
+}
+
+.gallery-card:hover .gallery-stage img{
+  transform: scale(1.04);
+}
+
+/* BEFORE/AFTER slider container inside card */
+.gallery-stage .before-after{
+  margin:0;
+  border-radius: 0;
+  border:none;
+  height:300px;
+}
+
+/* Click-to-expand hint */
+.gallery-click{
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  background: rgba(2,3,5,0.65);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(234,246,255,0.92);
+  padding:8px 10px;
+  border-radius: 12px;
+  font-weight:850;
+  font-size: 12px;
+  cursor:pointer;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding: 24px;
+}
+
+.lightbox.open{ display:flex; }
+
+.lightbox-panel{
+  width:min(1120px, 96vw);
+  background: rgba(2,3,5,0.82);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  overflow:hidden;
+  box-shadow: 0 35px 120px rgba(0,0,0,0.60);
+}
+
+.lightbox-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding: 14px 16px;
+  border-bottom:1px solid rgba(255,255,255,0.10);
+}
+
+.lightbox-title{
+  font-weight: 950;
+  letter-spacing:-0.01em;
+}
+
+.lightbox-close{
+  border:none;
+  background: rgba(255,255,255,0.06);
+  color: rgba(234,246,255,0.92);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor:pointer;
+}
+
+.lightbox-body{
+  padding: 16px;
+}
+
+.lightbox-body .before-after{
+  height: 520px;
+  margin:0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+@media (max-width: 720px){
+  .lightbox-body .before-after{ height: 420px; }
+}
