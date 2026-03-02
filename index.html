@@ -14,9 +14,9 @@
 
   <link rel="preload" as="image" href="images/cars/porsche_red.jpg">
 
-  <!-- IMPORTANT: bump ?v= number anytime you change CSS so your browser doesn't cache -->
-  <link rel="stylesheet" href="css/style.css?v=ice7" />
-  <link rel="stylesheet" href="css/animations.css?v=ice7" />
+  <!-- bump this v number anytime you change CSS so cache never tricks you -->
+  <link rel="stylesheet" href="css/style.css?v=ice8" />
+  <link rel="stylesheet" href="css/animations.css?v=ice8" />
 </head>
 
 <body class="hybrid">
@@ -48,6 +48,7 @@
   <!-- HERO -->
   <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
     <div class="hero-gradient"></div>
+
     <div class="wrap hero-inner">
       <div class="hero-copy reveal">
         <h1 class="super">Perfection is not optional, <span class="accent">it's the standard.</span></h1>
@@ -60,6 +61,7 @@
         </div>
       </div>
 
+      <!-- INDEX ADDITION: hero image tiles (this uses .thumb-grid in your CSS) -->
       <div class="hero-side reveal" aria-hidden="true">
         <div class="thumb-grid">
           <img loading="lazy" decoding="async" src="images/cars/amg_luxury_interior1.jpg" alt="Interior detailing">
@@ -76,6 +78,7 @@
       <div class="section-head reveal">
         <h2 class="section-title">What We Offer</h2>
         <p class="section-sub muted">Luxury-level detailing categories — explore packages, pricing, and add-ons.</p>
+
         <div class="section-actions">
           <a class="btn ghost" href="services.html">View Packages</a>
           <a class="btn primary" href="contact.html">Book</a>
@@ -139,6 +142,7 @@
         <p class="section-sub muted">Luxury-level detailing backed by precision methods, premium products, and a client-first experience.</p>
       </div>
 
+      <!-- INDEX ADDITION: correct grid wrapper (.why-grid) -->
       <div class="why-grid reveal">
         <div class="why-card">
           <div class="why-icon">★</div>
@@ -230,22 +234,30 @@
       <div class="faq">
         <div class="faq-item">
           <button class="faq-question" type="button">Do you need water or power?</button>
-          <div class="faq-answer"><p>We arrive fully equipped. If water and power are available, it can improve efficiency — but it’s not required for every appointment.</p></div>
+          <div class="faq-answer">
+            <p>We arrive fully equipped. If water and power are available, it can improve efficiency — but it’s not required for every appointment.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" type="button">How long does detailing take?</button>
-          <div class="faq-answer"><p>Time depends on package and vehicle condition. Maintenance services can be 1–2 hours, while full details and corrections may take several hours.</p></div>
+          <div class="faq-answer">
+            <p>Time depends on package and vehicle condition. Maintenance services can be 1–2 hours, while full details and corrections may take several hours.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" type="button">Do prices vary?</button>
-          <div class="faq-answer"><p>Yes — size and condition can affect final pricing. We confirm expectations and pricing before we begin.</p></div>
+          <div class="faq-answer">
+            <p>Yes — size and condition can affect final pricing. We confirm expectations and pricing before we begin.</p>
+          </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" type="button">What happens if weather changes?</button>
-          <div class="faq-answer"><p>We monitor weather and will reschedule if needed to ensure results meet our standards.</p></div>
+          <div class="faq-answer">
+            <p>We monitor weather and will reschedule if needed to ensure results meet our standards.</p>
+          </div>
         </div>
       </div>
     </div>
