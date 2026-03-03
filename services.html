@@ -4,127 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Services — ICE Detailing LLC</title>
+  <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic prep, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <!-- bump this v number anytime you change CSS so cache never tricks you -->
-  <link rel="stylesheet" href="css/style.css?v=ice8" />
-  <link rel="stylesheet" href="css/animations.css?v=ice8" />
-
-  <style>
-    /* PREMIUM SERVICE UPGRADES (page-specific) */
-
-    .packages-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:28px;
-      margin-top:40px;
-    }
-
-    .package-card{
-      background:linear-gradient(145deg,#0f1116,#151922);
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:16px;
-      padding:28px;
-      transition:all .35s ease;
-      position:relative;
-    }
-
-    .package-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(95,208,255,0.4);
-      box-shadow:0 20px 40px rgba(0,0,0,.5);
-    }
-
-    .package-card h2,
-    .package-card h3{
-      margin-bottom:12px;
-      font-weight:600;
-      letter-spacing:.5px;
-    }
-
-    .price{
-      font-size:18px;
-      font-weight:600;
-      margin-bottom:6px;
-    }
-
-    .time{
-      font-size:14px;
-      opacity:.7;
-      margin-bottom:16px;
-    }
-
-    .service-list{
-      list-style:none;
-      padding:0;
-      margin:0 0 20px 0;
-    }
-
-    .service-list li{
-      margin-bottom:8px;
-      font-size:14px;
-      opacity:.85;
-    }
-
-    .service-list li:before{
-      content:"• ";
-      color:#5fd0ff;
-    }
-
-    .highlight{
-      border:1px solid rgba(95,208,255,0.5);
-      box-shadow:0 0 40px rgba(95,208,255,0.15);
-    }
-
-    /* IMPORTANT:
-       Your global .btn.primary is already styled in style.css.
-       This only affects services page button style; keep if you like this look. */
-    .btn.primary{
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:30px;
-      background:linear-gradient(135deg,#5fd0ff,#2aa8ff);
-      color:#001018;
-      font-weight:600;
-      text-decoration:none;
-      transition:.3s ease;
-    }
-
-    .btn.primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(95,208,255,.4);
-    }
-
-    .paint-section h2{
-      margin-top:80px;
-      margin-bottom:24px;
-      font-size:26px;
-      font-weight:600;
-    }
-
-    .addons-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:20px;
-    }
-
-    .addon-card{
-      padding:16px;
-      border-radius:12px;
-      background:#141821;
-      border:1px solid rgba(255,255,255,0.05);
-      transition:.3s ease;
-      text-align:center;
-    }
-
-    .addon-card:hover{
-      border-color:rgba(95,208,255,0.4);
-      transform:translateY(-3px);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css?v=ice9" />
+  <link rel="stylesheet" href="css/animations.css?v=ice9" />
 </head>
 
-<body class="hybrid">
+<body class="hybrid services-page">
 
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
@@ -135,7 +21,7 @@
 
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="index.html#home" class="nav-link">Home</a>
-      <a href="services.html" class="nav-link active">Services</a>
+      <a href="services.html" class="nav-link active" aria-current="page">Services</a>
       <a href="reviews.html" class="nav-link">Reviews</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
       <a href="contact.html" class="nav-link">Contact</a>
@@ -148,41 +34,114 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 
-  <section class="section hero-services">
-    <div class="wrap center">
-      <h1 class="section-title reveal">Premium Detailing Packages</h1>
-      <p class="section-sub muted reveal">
-        Designed to protect, refresh, and elevate your vehicle — wherever you are.
-      </p>
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="wrap svc-hero-inner">
+      <div class="svc-hero-copy reveal">
+        <span class="svc-kicker">Mobile Detailing • Boston & Middlesex County</span>
+        <h1 class="svc-title">Premium Detailing Packages</h1>
+        <p class="svc-sub muted">
+          Built for real results — whether you want a quick reset, a full transformation, or paint correction &amp; ceramic prep.
+        </p>
+
+        <div class="svc-hero-ctas">
+          <a class="btn primary" href="contact.html">Get a Quote</a>
+          <a class="btn ghost" href="#packages">See Packages</a>
+        </div>
+
+        <div class="svc-trust">
+          <div class="trust-pill">Paint-safe methods</div>
+          <div class="trust-pill">Mobile convenience</div>
+          <div class="trust-pill">Walkthrough recommended</div>
+        </div>
+      </div>
+
+      <aside class="svc-hero-side reveal" aria-label="Package highlights">
+        <div class="svc-mini-panel">
+          <div class="panel-title">Most Requested</div>
+          <div class="panel-list">
+            <div class="panel-row">
+              <span class="panel-name">Full Detail</span>
+              <span class="panel-meta">Interior + Exterior Reset</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-name">Deep Clean Interior</span>
+              <span class="panel-meta">Extraction + Steam</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-name">2-Step Correction</span>
+              <span class="panel-meta">Major Defect Removal</span>
+            </div>
+          </div>
+          <a class="panel-cta" href="contact.html">Book in minutes →</a>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section class="section">
+  <!-- PACKAGES -->
+  <section id="packages" class="section svc-section">
     <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Packages</h2>
+          <p class="muted svc-lead">
+            Transparent pricing by vehicle size. Condition, pet hair, heavy staining, or excessive sand may affect final pricing — we confirm before we begin.
+          </p>
+        </div>
+      </div>
 
-      <div class="packages-grid reveal">
+      <div class="svc-grid reveal">
 
-        <div class="package-card">
-          <h2>Mini Detail</h2>
-          <p class="price">Sedan — $175<br>SUV/Truck — $225</p>
-          <p class="time">Light refresh service</p>
-          <ul class="service-list">
-            <li>Paint decontamination</li>
+        <!-- Mini Detail -->
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Mini Detail</h3>
+              <p class="svc-bestfor">Best for: maintenance + quick refresh</p>
+            </div>
+            <span class="svc-badge">Popular</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$175</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$225</span></div>
+            <div class="svc-time muted">Light refresh service</div>
+          </div>
+
+          <ul class="svc-list">
             <li>Exterior hand wash</li>
+            <li>Paint decontamination</li>
             <li>Interior vacuum</li>
             <li>Surface wipe down</li>
             <li>Tire shine</li>
           </ul>
-          <a class="btn primary" href="contact.html" data-prefill="Mini Detail">Book Now</a>
-        </div>
 
-        <div class="package-card highlight">
-          <h2>Full Detail</h2>
-          <p class="price">Sedan — $325<br>SUV/Truck — $375</p>
-          <p class="time">Complete transformation</p>
-          <ul class="service-list">
+          <div class="svc-actions">
+            <a class="btn primary" href="contact.html" data-prefill="Mini Detail">Book Mini Detail</a>
+            <a class="btn ghost" href="contact.html" data-prefill="Mini Detail">Ask a Question</a>
+          </div>
+        </article>
+
+        <!-- Full Detail (featured) -->
+        <article class="svc-card featured" aria-label="Full Detail featured package">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Full Detail</h3>
+              <p class="svc-bestfor">Best for: resale prep + full reset</p>
+            </div>
+            <span class="svc-badge strong">Best Value</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$325</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$375</span></div>
+            <div class="svc-time muted">Complete transformation</div>
+          </div>
+
+          <ul class="svc-list">
             <li>Clay bar treatment</li>
             <li>Interior steam disinfect</li>
             <li>Carpet extraction</li>
@@ -190,58 +149,213 @@
             <li>Engine bay detail</li>
             <li>Wax protection</li>
           </ul>
-          <a class="btn primary" href="contact.html" data-prefill="Full Detail">Book Now</a>
-        </div>
 
-        <div class="package-card">
-          <h2>Deep Clean Interior</h2>
-          <p class="price">Sedan — $200<br>SUV — $250</p>
-          <p class="time">Interior reset service</p>
-          <ul class="service-list">
+          <div class="svc-actions">
+            <a class="btn primary" href="contact.html" data-prefill="Full Detail">Book Full Detail</a>
+            <a class="btn ghost" href="contact.html" data-prefill="Full Detail">Get a Quote</a>
+          </div>
+        </article>
+
+        <!-- Deep Clean Interior -->
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Deep Clean Interior</h3>
+              <p class="svc-bestfor">Best for: stains + odors + heavy use</p>
+            </div>
+            <span class="svc-badge">Interior</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$200</span></div>
+            <div class="svc-price-line"><strong>SUV</strong> <span>$250</span></div>
+            <div class="svc-time muted">Interior reset service</div>
+          </div>
+
+          <ul class="svc-list">
             <li>Steam disinfect all surfaces</li>
-            <li>Carpet shampoo &amp; extract</li>
+            <li>Carpet shampoo &amp; extraction</li>
             <li>Leather clean &amp; condition</li>
             <li>Stain removal</li>
           </ul>
-          <a class="btn primary" href="contact.html" data-prefill="Deep Clean Interior">Book Now</a>
-        </div>
+
+          <div class="svc-actions">
+            <a class="btn primary" href="contact.html" data-prefill="Deep Clean Interior">Book Interior</a>
+            <a class="btn ghost" href="contact.html" data-prefill="Deep Clean Interior">Ask a Question</a>
+          </div>
+        </article>
 
       </div>
 
-      <section class="paint-section reveal">
-        <h2>Paint Correction &amp; Ceramic Prep</h2>
+      <div class="svc-note reveal">
+        <strong>Pro tip:</strong> If you’re considering ceramic, start with correction + prep for the best long-term results.
+      </div>
+    </div>
+  </section>
 
-        <div class="packages-grid">
-          <div class="package-card">
-            <h3>1-Step Polish</h3>
-            <p class="price">$300+</p>
-            <p>Enhancement polish removing light swirls.</p>
-          </div>
-
-          <div class="package-card">
-            <h3>2-Step Correction</h3>
-            <p class="price">$600+</p>
-            <p>Major defect removal and gloss restoration.</p>
-          </div>
-
-          <div class="package-card">
-            <h3>3-Step Correction</h3>
-            <p class="price">$850+</p>
-            <p>Showroom-level correction for heavy damage.</p>
-          </div>
+  <!-- PAINT CORRECTION -->
+  <section class="section svc-section svc-alt">
+    <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Paint Correction &amp; Ceramic Prep</h2>
+          <p class="muted svc-lead">
+            Correction levels depend on paint condition. We’ll recommend the right step count after an inspection.
+          </p>
         </div>
-      </section>
-
-      <h3 style="margin-top:70px">Add-Ons</h3>
-
-      <div class="addons-grid reveal">
-        <div class="addon-card">Trim Restoration</div>
-        <div class="addon-card">Headlight Restoration</div>
-        <div class="addon-card">Engine Bay Detail</div>
-        <div class="addon-card">Ozone Treatment</div>
-        <div class="addon-card">Extractor Spot Treatment</div>
       </div>
 
+      <div class="svc-grid reveal">
+
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">1-Step Polish</h3>
+              <p class="svc-bestfor">Best for: light swirls + gloss boost</p>
+            </div>
+            <span class="svc-badge">Enhancement</span>
+          </header>
+
+          <div class="svc-price solo">
+            <div class="svc-price-line"><strong>Starting at</strong> <span>$300+</span></div>
+            <div class="svc-time muted">Typically 3–5 hours</div>
+          </div>
+
+          <ul class="svc-list">
+            <li>Paint-safe wash + decon</li>
+            <li>Single-stage polish</li>
+            <li>High-gloss finishing</li>
+          </ul>
+        </article>
+
+        <article class="svc-card featured">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">2-Step Correction</h3>
+              <p class="svc-bestfor">Best for: moderate defects + deep clarity</p>
+            </div>
+            <span class="svc-badge strong">Most Popular</span>
+          </header>
+
+          <div class="svc-price solo">
+            <div class="svc-price-line"><strong>Starting at</strong> <span>$600+</span></div>
+            <div class="svc-time muted">Typically 6–10 hours</div>
+          </div>
+
+          <ul class="svc-list">
+            <li>Cut + refine polishing</li>
+            <li>Defect reduction focus</li>
+            <li>Prep for ceramic application</li>
+          </ul>
+        </article>
+
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">3-Step Correction</h3>
+              <p class="svc-bestfor">Best for: heavy defects + showroom results</p>
+            </div>
+            <span class="svc-badge">Showroom</span>
+          </header>
+
+          <div class="svc-price solo">
+            <div class="svc-price-line"><strong>Starting at</strong> <span>$850+</span></div>
+            <div class="svc-time muted">Typically 10+ hours</div>
+          </div>
+
+          <ul class="svc-list">
+            <li>Multi-stage correction</li>
+            <li>Maximum clarity &amp; depth</li>
+            <li>Ideal before coating</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <div class="svc-cta reveal">
+        <div class="svc-cta-copy">
+          <h3>Not sure what you need?</h3>
+          <p class="muted">Send a few photos and we’ll recommend the right package.</p>
+        </div>
+        <a class="btn primary" href="contact.html">Get a Recommendation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD-ONS -->
+  <section class="section svc-section">
+    <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Add-Ons</h2>
+          <p class="muted svc-lead">Upgrade your service with targeted restoration and protection options.</p>
+        </div>
+      </div>
+
+      <div class="addons-grid reveal" role="list">
+        <div class="addon-card" role="listitem">
+          <div class="addon-title">Trim Restoration</div>
+          <div class="addon-meta muted">From $40</div>
+        </div>
+        <div class="addon-card" role="listitem">
+          <div class="addon-title">Headlight Restoration</div>
+          <div class="addon-meta muted">From $80</div>
+        </div>
+        <div class="addon-card" role="listitem">
+          <div class="addon-title">Engine Bay Detail</div>
+          <div class="addon-meta muted">From $50</div>
+        </div>
+        <div class="addon-card" role="listitem">
+          <div class="addon-title">Ozone Treatment</div>
+          <div class="addon-meta muted">From $75</div>
+        </div>
+        <div class="addon-card" role="listitem">
+          <div class="addon-title">Extractor Spot Treatment</div>
+          <div class="addon-meta muted">From $25</div>
+        </div>
+      </div>
+
+      <div class="svc-note reveal">
+        Add-on pricing depends on size/condition — we confirm before starting.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (Services-specific) -->
+  <section class="section light-block">
+    <div class="wrap reveal">
+      <h2 class="section-title">Service FAQ</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Do you come to homes and workplaces?</button>
+          <div class="faq-answer">
+            <p>Yes — we’re fully mobile and can service your vehicle at home or work. If access is limited, we’ll coordinate a plan that still meets our standards.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Do you need water or power?</button>
+          <div class="faq-answer">
+            <p>We arrive equipped. If water/power is available, it can improve efficiency — but it’s not required for every appointment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">What affects pricing?</button>
+          <div class="faq-answer">
+            <p>Vehicle size and condition. Heavy pet hair, excessive staining, sand, or neglected interiors can add time. We confirm scope and pricing before we begin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-strip">
+    <div class="wrap cta-wrap reveal">
+      <h3>Ready to lock in your appointment?</h3>
+      <a class="btn primary" href="contact.html">Get a Quote</a>
     </div>
   </section>
 
@@ -267,8 +381,18 @@
 
 <script>
   document.getElementById('footerYearSvc').textContent = new Date().getFullYear();
+
+  // FAQ accordion (keep your current behavior, add aria-expanded)
+  document.querySelectorAll('.faq-question').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item = btn.parentElement;
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
 </script>
 
 <script src="js/main.js" defer></script>
+<script src="js/booking.js" defer></script>
 </body>
 </html>
