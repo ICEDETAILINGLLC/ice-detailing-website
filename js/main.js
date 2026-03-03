@@ -21,47 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Apply prefill on contact page
-  const serviceSelect = document.querySelector('#serviceSelect') || document.querySelector('#service');
-  if (serviceSelect) {
+  // Apply prefill on contact page (checkbox chips)
+  const isContact = document.body.classList.contains('contact-page');
+  if (isContact) {
     const url = new URL(window.location.href);
     const fromUrl = (url.searchParams.get('service') || '').trim();
-    const fromStorage = (() => {
-      try { return (sessionStorage.getItem('prefillService') || '').trim(); } catch { return ''; }
-    })();
+    let fromStorage = '';
+    try { fromStorage = (sessionStorage.getItem('prefillService') || '').trim(); } catch {}
 
     const pref = fromUrl || fromStorage;
 
     if (pref) {
-      // 1) match option value exactly
-      let matched = false;
-      for (let i = 0; i < serviceSelect.options.length; i++) {
-        const opt = serviceSelect.options[i];
-        if ((opt.value || '').toLowerCase() === pref.toLowerCase()) {
-          serviceSelect.selectedIndex = i;
-          matched = true;
-          break;
-        }
-      }
+      const targets = document.querySelectorAll('input[type="checkbox"][data-prefill-target]');
+      targets.forEach(cb => {
+        if ((cb.value || '').toLowerCase() === pref.toLowerCase()) cb.checked = true;
+      });
 
-      // 2) fallback: match visible text
-      if (!matched) {
-        for (let i = 0; i < serviceSelect.options.length; i++) {
-          const txt = (serviceSelect.options[i].text || '').toLowerCase();
-          if (txt.includes(pref.toLowerCase())) {
-            serviceSelect.selectedIndex = i;
-            break;
-          }
-        }
-      }
-
-      try { sessionStorage.removeItem('prefillService'); } catch (err) {}
-
-      // Optional: show selected service in heading
-      const titleEl = document.querySelector('[data-selected-service]');
-      if (titleEl && serviceSelect.value) {
-        titleEl.textContent = `— ${serviceSelect.value}`;
-      }
+      try { sessionStorage.removeItem('prefillService'); } catch {}
     }
   }
 
