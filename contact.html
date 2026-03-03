@@ -4,18 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact & Booking — ICE Detailing LLC</title>
-  <meta name="description" content="Book premium mobile detailing in Boston & Middlesex County. Choose a package, request a quote, and we’ll confirm details and pricing." />
+  <meta name="description" content="Book ICE Detailing LLC — premium mobile detailing serving Boston & Middlesex County. Choose services and add-ons, request a quote, and we’ll confirm." />
 
   <!-- bump this v number anytime you change CSS so cache never tricks you -->
-  <link rel="stylesheet" href="css/style.css?v=ice9" />
-  <link rel="stylesheet" href="css/animations.css?v=ice9" />
+  <link rel="stylesheet" href="css/style.css?v=ice10" />
+  <link rel="stylesheet" href="css/animations.css?v=ice10" />
 </head>
 
 <body class="hybrid contact-page">
 
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
-
     <a href="index.html" class="brand" aria-label="ICE Detailing home">
       <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
       <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
@@ -33,36 +32,39 @@
       <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
       <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
     </div>
-
   </div>
 </header>
 
 <main id="main">
-  <section class="light-block">
+  <section class="contact-hero">
+    <div class="wrap contact-hero-inner reveal">
+      <div>
+        <span class="contact-kicker">Mobile Detailing • Boston & Middlesex County</span>
+        <h1 class="contact-title">Request a Quote / Book</h1>
+        <p class="muted contact-sub">
+          Select one or more services and any add-ons. We’ll confirm timing, scope, and pricing before we begin.
+        </p>
+      </div>
+
+      <div class="contact-hero-actions">
+        <a class="btn primary" href="tel:16179702329">Call Now</a>
+        <a class="btn ghost" href="mailto:icedetailingllc@gmail.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-shell">
     <div class="wrap contact-wrap reveal">
 
       <div class="contact-main">
-        <h1 class="section-title" style="text-align:left;margin-bottom:10px;">
-          Contact & Booking
-          <span class="contact-selected muted" data-selected-service></span>
-        </h1>
+        <form id="bookingForm" class="form contact-card" autocomplete="on" novalidate>
 
-        <p class="muted" style="max-width:78ch;">
-          Choose your service, vehicle, and preferred time. We’ll confirm scope and pricing before we begin.
-        </p>
-
-        <div class="contact-info-row">
-          <div class="contact-pill">Mobile • Boston & Middlesex County</div>
-          <div class="contact-pill">Paint-safe methods</div>
-          <div class="contact-pill">Walkthrough recommended</div>
-        </div>
-
-        <form id="bookingForm" class="form" autocomplete="on" novalidate>
-          <div class="form-row">
+          <div class="contact-grid">
             <div>
               <label for="name">Name *</label>
               <input id="name" name="name" type="text" placeholder="Full name" required>
             </div>
+
             <div>
               <label for="phone">Phone *</label>
               <input id="phone" name="phone" type="tel" placeholder="(617) 555-1234" required>
@@ -72,29 +74,91 @@
           <label for="email">Email *</label>
           <input id="email" name="email" type="email" placeholder="Email" required>
 
-          <label for="serviceSelect">Service *</label>
-          <select id="serviceSelect" name="service" required>
-            <option value="" selected disabled>Select a service</option>
+          <!-- SERVICES (multi-select) -->
+          <div class="field-block">
+            <div class="field-top">
+              <label class="field-label">Services (select all that apply) *</label>
+              <div class="field-hint muted">Choose packages + correction + consultation if needed.</div>
+            </div>
 
-            <optgroup label="Packages">
-              <option value="Mini Detail">Mini Detail — Sedan $175 / SUV/Truck $225</option>
-              <option value="Full Detail">Full Detail — Sedan $325 / SUV/Truck $375</option>
-              <option value="Deep Clean Interior">Deep Clean Interior — Sedan $200 / SUV $250</option>
-            </optgroup>
+            <div class="chip-grid" role="group" aria-label="Services">
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Mini Detail" data-prefill-target>
+                <span>Mini Detail</span>
+              </label>
 
-            <optgroup label="Paint Correction & Prep">
-              <option value="1-Step Polish">1-Step Polish — $300+</option>
-              <option value="2-Step Correction">2-Step Correction — $600+</option>
-              <option value="3-Step Correction">3-Step Correction — $850+</option>
-            </optgroup>
+              <label class="chip featured">
+                <input type="checkbox" name="services[]" value="Full Detail" data-prefill-target>
+                <span>Full Detail</span>
+              </label>
 
-            <optgroup label="Other">
-              <option value="Ceramic Consultation">Ceramic / Coating Consultation</option>
-              <option value="Not sure — recommend">Not sure — recommend the best option</option>
-            </optgroup>
-          </select>
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Deep Clean Interior" data-prefill-target>
+                <span>Deep Clean Interior</span>
+              </label>
 
-          <div class="form-row">
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="1-Step Polish" data-prefill-target>
+                <span>1-Step Polish</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="2-Step Correction" data-prefill-target>
+                <span>2-Step Correction</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="3-Step Correction" data-prefill-target>
+                <span>3-Step Correction</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Ceramic / Coating Consultation" data-prefill-target>
+                <span>Ceramic / Coating Consult</span>
+              </label>
+            </div>
+
+            <div class="inline-alert muted" id="servicesHelp">
+              Tip: If you clicked from Services, your selection will auto-check here.
+            </div>
+          </div>
+
+          <!-- ADD-ONS (multi-select) -->
+          <div class="field-block">
+            <div class="field-top">
+              <label class="field-label">Add-Ons (optional)</label>
+              <div class="field-hint muted">Add-ons can be selected with any package.</div>
+            </div>
+
+            <div class="chip-grid" role="group" aria-label="Add-ons">
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Trim Restoration">
+                <span>Trim Restoration</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Headlight Restoration">
+                <span>Headlight Restoration</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Engine Bay Detail">
+                <span>Engine Bay Detail</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Ozone Treatment">
+                <span>Ozone Treatment</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Extractor Spot Treatment">
+                <span>Extractor Spot Treatment</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="contact-grid">
             <div>
               <label for="vehicle">Vehicle Type *</label>
               <select id="vehicle" name="vehicle" required>
@@ -104,6 +168,7 @@
                 <option value="Luxury/Exotic">Luxury / Exotic</option>
               </select>
             </div>
+
             <div>
               <label for="zip">ZIP Code *</label>
               <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="02118" required>
@@ -113,7 +178,7 @@
           <label for="address">Service Address (optional)</label>
           <input id="address" name="address" type="text" placeholder="Street address (if known)">
 
-          <div class="form-row">
+          <div class="contact-grid">
             <div>
               <label for="date">Preferred date *</label>
               <input id="date" name="date" type="date" required>
@@ -124,8 +189,8 @@
             </div>
           </div>
 
-          <label for="message">Notes (condition, parking, pet hair, stains, key handoff)</label>
-          <textarea id="message" name="message" rows="4" placeholder="Example: dog hair in back seats, coffee stain, parking garage, please call on arrival"></textarea>
+          <label for="message">Notes</label>
+          <textarea id="message" name="message" rows="4" placeholder="Condition notes, stains, pet hair, parking, key handoff, etc."></textarea>
 
           <label for="photos">Photos (optional)</label>
           <input id="photos" name="photos" type="file" accept="image/*" multiple>
@@ -136,7 +201,7 @@
           </div>
 
           <div class="contact-next muted">
-            After you submit, we’ll confirm the service, timing, and pricing. If correction/coating is selected, we may ask for a few photos.
+            After you submit, we’ll confirm the service(s), timing, and pricing.
           </div>
 
           <div id="bookingStatus" class="muted" style="margin-top:10px"></div>
@@ -144,19 +209,9 @@
       </div>
 
       <aside class="contact-aside">
-        <div class="panel">
-          <h4>Quick Contact</h4>
-          <p class="muted">Fastest response: text/call. You can also submit the form and we’ll reach out shortly.</p>
-
-          <div class="contact-side-links">
-            <a class="btn ghost" href="tel:16179702329">Call Now</a>
-            <a class="btn ghost" href="mailto:icedetailingllc@gmail.com">Email</a>
-          </div>
-
-          <hr class="panel-divider">
-
-          <h4>Square Booking</h4>
-          <p class="muted">If you use Square scheduling, paste your booking iframe below.</p>
+        <div class="contact-card">
+          <h4 style="margin-bottom:8px;">Square Booking</h4>
+          <p class="muted">Paste your Square booking iframe below if you want live availability + Apple Pay.</p>
           <div id="square-embed" class="square-placeholder">Square booking placeholder — paste iframe here.</div>
 
           <hr class="panel-divider">
