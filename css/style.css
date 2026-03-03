@@ -953,3 +953,267 @@ body{
   .lightbox-body .before-after{ height: 420px; }
 }
 
+/* =========================================
+   SERVICES PAGE — premium upgrades (scoped)
+   ========================================= */
+
+.services-page .svc-hero{
+  padding: calc(var(--s6) - 10px) 0 38px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background:
+    radial-gradient(900px 340px at 18% 18%, rgba(0,160,255,0.22), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0));
+}
+.services-page .svc-hero-inner{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 26px;
+  align-items: start;
+}
+.services-page .svc-kicker{
+  display:inline-block;
+  font-size: 12px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(154,174,185,0.92);
+  margin-bottom: 10px;
+}
+.services-page .svc-title{
+  font-size: clamp(2.1rem, 3.4vw, 3.1rem);
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.services-page .svc-sub{ max-width: 70ch; }
+.services-page .svc-hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+
+.services-page .svc-trust{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 16px;
+}
+.services-page .trust-pill{
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(214,226,235,0.86);
+}
+
+.services-page .svc-mini-panel{
+  border-radius: 18px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.18));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
+}
+.services-page .panel-title{
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.services-page .panel-list{ display:grid; gap: 10px; }
+.services-page .panel-row{
+  display:grid;
+  gap: 2px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.services-page .panel-name{ font-weight: 950; }
+.services-page .panel-meta{ color: rgba(154,174,185,0.92); font-weight: 700; font-size: .95rem; }
+.services-page .panel-cta{
+  display:inline-block;
+  margin-top: 12px;
+  font-weight: 950;
+  color: var(--ice);
+  text-decoration: none;
+}
+
+.services-page .svc-section{ padding: var(--s6) 0; }
+.services-page .svc-alt{
+  background:
+    radial-gradient(900px 340px at 80% 10%, rgba(0,160,255,0.14), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.services-page .svc-head{ margin-bottom: 22px; }
+.services-page .svc-h2{
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.services-page .svc-lead{ max-width: 85ch; }
+
+.services-page .svc-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.services-page .svc-card{
+  background: linear-gradient(145deg, #0f1116, #151922);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 22px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position: relative;
+  box-shadow: 0 22px 70px rgba(0,0,0,0.28);
+}
+.services-page .svc-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(0,160,255,0.30);
+  box-shadow: 0 30px 92px rgba(0,0,0,0.40);
+}
+.services-page .svc-card.featured{
+  border-color: rgba(0,160,255,0.55);
+  box-shadow:
+    0 26px 92px rgba(0,160,255,0.10),
+    0 40px 110px rgba(0,0,0,0.45);
+}
+
+.services-page .svc-card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.services-page .svc-card-title{
+  font-size: 1.22rem;
+  font-weight: 950;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.services-page .svc-bestfor{
+  margin: 0;
+  color: rgba(154,174,185,0.92);
+  font-weight: 700;
+  font-size: .95rem;
+}
+
+.services-page .svc-badge{
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 950;
+  color: rgba(234,246,255,0.92);
+  background: rgba(0,160,255,0.10);
+  border: 1px solid rgba(0,160,255,0.24);
+  border-radius: 999px;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+.services-page .svc-badge.strong{
+  border-color: rgba(0,160,255,0.45);
+  box-shadow: 0 0 26px rgba(0,160,255,0.16);
+}
+
+.services-page .svc-price{ margin: 10px 0 14px; }
+.services-page .svc-price.solo{ margin-top: 6px; }
+.services-page .svc-price-line{
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-weight: 900;
+}
+.services-page .svc-price-line span{ color: rgba(234,246,255,0.95); }
+.services-page .svc-time{ margin-top: 10px; font-weight: 700; }
+
+.services-page .svc-list{
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display:grid;
+  gap: 8px;
+}
+.services-page .svc-list li{
+  color: rgba(214,226,235,0.86);
+  font-weight: 650;
+  position: relative;
+  padding-left: 18px;
+}
+.services-page .svc-list li::before{
+  content:"•";
+  position:absolute;
+  left: 0;
+  top: 0;
+  color: var(--ice);
+  font-weight: 950;
+}
+
+.services-page .svc-actions{
+  display:grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.services-page .svc-note{
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(214,226,235,0.86);
+}
+
+.services-page .svc-cta{
+  margin-top: 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+.services-page .svc-cta h3{
+  font-size: 1.2rem;
+  font-weight: 950;
+  margin-bottom: 6px;
+}
+.services-page .svc-cta-copy{ max-width: 70ch; }
+
+/* Add-ons grid uses your existing class names */
+.services-page .addons-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.services-page .addon-card{
+  padding: 16px;
+  border-radius: 14px;
+  background: #141821;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  text-align:center;
+}
+.services-page .addon-card:hover{
+  border-color: rgba(0,160,255,0.30);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.25);
+}
+.services-page .addon-title{ font-weight: 950; letter-spacing: -0.01em; }
+.services-page .addon-meta{ margin-top: 6px; font-weight: 750; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .services-page .svc-hero-inner{ grid-template-columns: 1fr; }
+}
