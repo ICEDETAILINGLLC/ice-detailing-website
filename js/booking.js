@@ -4,61 +4,69 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBooking') || document.getElementById('submitBookingBtn');
   const status = document.getElementById('bookingStatus');
 
-  // If page has a native form element (index version or contact version)
-  if (bookingForm && submitBtn) {
-    submitBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      // basic validation
-      const form = bookingForm;
-      const name = form.querySelector('#name');
-      const email = form.querySelector('#email');
-      const phone = form.querySelector('#phone');
-      const service = form.querySelector('#serviceSelect') || form.querySelector('#service');
-      const date = form.querySelector('#date') || null;
-      const time = form.querySelector('#time') || null;
+  if (!bookingForm || !submitBtn) return;
 
-      if (!name.value.trim() || !email.value.trim() || !phone.value.trim() || !service.value.trim()) {
-        showStatus('Please complete required fields (name, email, phone, service).', true);
-        return;
+  const FORMSPREE_URL = 'https://formspree.io/f/manaykpb';
+
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = bookingForm.querySelector('#name');
+    const email = bookingForm.querySelector('#email');
+    const phone = bookingForm.querySelector('#phone');
+    const service = bookingForm.querySelector('#serviceSelect') || bookingForm.querySelector('#service');
+    const vehicle = bookingForm.querySelector('#vehicle');
+    const zip = bookingForm.querySelector('#zip');
+    const date = bookingForm.querySelector('#date');
+    const time = bookingForm.querySelector('#time');
+
+    if (!name?.value.trim() || !email?.value.trim() || !phone?.value.trim()) {
+      showStatus('Please complete required fields (name, email, phone).', true);
+      return;
+    }
+    if (!service?.value.trim()) {
+      showStatus('Please select a service.', true);
+      return;
+    }
+    if (!vehicle?.value.trim()) {
+      showStatus('Please select your vehicle type.', true);
+      return;
+    }
+    if (!zip?.value.trim()) {
+      showStatus('Please enter your ZIP code.', true);
+      return;
+    }
+    if (!date?.value || !time?.value) {
+      showStatus('Please choose a preferred date and time.', true);
+      return;
+    }
+
+    // Build multipart payload (supports optional photos)
+    const fd = new FormData(bookingForm);
+
+    showStatus('Sending request...', false);
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        showStatus('Request sent — we will contact you shortly. Thank you!', false);
+        bookingForm.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        showStatus(data.error || 'Failed to send. Please try again or call us.', true);
       }
-
-      // prepare payload for Formspree
-      const payload = {
-        name: name.value.trim(),
-        email: email.value.trim(),
-        phone: phone.value.trim(),
-        service: service.value.trim(),
-        vehicle: (form.querySelector('#vehicle') ? form.querySelector('#vehicle').value : ''),
-        date: date ? date.value : '',
-        time: time ? time.value : '',
-        message: form.querySelector('#message') ? form.querySelector('#message').value.trim() : ''
-      };
-
-      // Replace with your Formspree endpoint
-      const FORMSPREE_URL = 'https://formspree.io/f/manaykpb';
-
-      showStatus('Sending request...', false);
-      submitBtn.disabled = true;
-      try {
-        const res = await fetch(FORMSPREE_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        if (res.ok) {
-          showStatus('Request sent — we will contact you shortly. Thank you!', false);
-          form.reset();
-        } else {
-          const data = await res.json().catch(()=>({}));
-          showStatus(data.error || 'Failed to send. Please try again or call us.', true);
-        }
-      } catch (err) {
-        showStatus('Network error — please try again or call (617) 970-2329.', true);
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  }
+    } catch (err) {
+      showStatus('Network error — please try again or call (617) 970-2329.', true);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 
   function showStatus(msg, isError){
     if (!status) return;
