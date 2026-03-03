@@ -12,28 +12,57 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
   reveals.forEach(r => io.observe(r));
 
-  // Prefill booking service when clicking book links (works across pages)
+  // Save prefill when clicking any element with data-prefill
   document.querySelectorAll('[data-prefill]').forEach(el => {
-    el.addEventListener('click', (e) => {
-      const pref = el.dataset.prefill;
-      try {
-        // Save to session storage so contact page can pick it up
-        if (pref) sessionStorage.setItem('prefillService', pref);
-      } catch (err) { /* ignore storage errors */ }
+    el.addEventListener('click', () => {
+      const pref = (el.dataset.prefill || '').trim();
+      if (!pref) return;
+      try { sessionStorage.setItem('prefillService', pref); } catch (err) {}
     });
   });
 
-  // When contact page loads, apply prefill if present
+  // Apply prefill on contact page
   const serviceSelect = document.querySelector('#serviceSelect') || document.querySelector('#service');
-  if (serviceSelect && sessionStorage.getItem('prefillService')) {
-    const pref = sessionStorage.getItem('prefillService');
-    for (let i = 0; i < serviceSelect.options.length; i++) {
-      if (serviceSelect.options[i].text.toLowerCase().includes(pref.toLowerCase().split(' — ')[0])) {
-        serviceSelect.selectedIndex = i;
-        break;
+  if (serviceSelect) {
+    const url = new URL(window.location.href);
+    const fromUrl = (url.searchParams.get('service') || '').trim();
+    const fromStorage = (() => {
+      try { return (sessionStorage.getItem('prefillService') || '').trim(); } catch { return ''; }
+    })();
+
+    const pref = fromUrl || fromStorage;
+
+    if (pref) {
+      // 1) match option value exactly
+      let matched = false;
+      for (let i = 0; i < serviceSelect.options.length; i++) {
+        const opt = serviceSelect.options[i];
+        if ((opt.value || '').toLowerCase() === pref.toLowerCase()) {
+          serviceSelect.selectedIndex = i;
+          matched = true;
+          break;
+        }
+      }
+
+      // 2) fallback: match visible text
+      if (!matched) {
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          const txt = (serviceSelect.options[i].text || '').toLowerCase();
+          if (txt.includes(pref.toLowerCase())) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      try { sessionStorage.removeItem('prefillService'); } catch (err) {}
+
+      // Optional: show selected service in heading
+      const titleEl = document.querySelector('[data-selected-service]');
+      if (titleEl && serviceSelect.value) {
+        titleEl.textContent = `— ${serviceSelect.value}`;
       }
     }
-    sessionStorage.removeItem('prefillService');
   }
 
   // Parallax hero (subtle)
@@ -43,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const speed = 0.22;
       const y = window.scrollY * speed;
       hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
-    }, {passive:true});
+    }, { passive:true });
   }
 
-  // sticky Book button visibility
+  // Sticky Book button visibility
   const bookSticky = document.getElementById('bookSticky');
   if (bookSticky) {
     function updateBookVisible(){
@@ -54,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
       else bookSticky.classList.remove('visible');
     }
     updateBookVisible();
-    window.addEventListener('scroll', updateBookVisible, {passive:true});
+    window.addEventListener('scroll', updateBookVisible, { passive:true });
   }
-
-  // Before/after placeholders: slider.js handles behavior
 });
