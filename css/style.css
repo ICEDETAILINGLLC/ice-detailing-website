@@ -1399,3 +1399,19 @@ body{
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
 }
+.service-area-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:10px;
+margin-top:20px;
+}
+
+.service-area-grid span{
+display:inline-flex;
+justify-content:center;
+padding:8px 10px;
+border-radius:8px;
+font-size:.9rem;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+}
