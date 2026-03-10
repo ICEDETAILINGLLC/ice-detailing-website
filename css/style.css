@@ -1517,3 +1517,20 @@ body:not(.hybrid) .service-area-note,
   color:rgba(0,160,255,0.9);
   line-height:1.6;
 }
+.services-intro{
+  max-width:720px;
+  margin:0 auto 42px auto;
+  text-align:center;
+  padding:26px 28px;
+
+  border-radius:18px;
+
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.15));
+
+  border:1px solid rgba(0,160,255,0.35);
+
+  box-shadow:
+    0 0 28px rgba(0,160,255,0.14),
+    0 20px 60px rgba(0,0,0,0.35);
+}
