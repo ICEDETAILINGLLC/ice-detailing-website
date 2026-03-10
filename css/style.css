@@ -294,59 +294,6 @@ body{
 }
 
 /* =========================================
-   Offer tiles
-   ========================================= */
-.offer-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-.offer-tile{
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding: 22px;
-  border-radius: 16px;
-  text-decoration:none;
-  color: inherit;
-  background:
-    radial-gradient(650px 240px at 20% 0%, rgba(0,160,255,0.14), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(0,0,0,0.18));
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-  min-height: 190px;
-}
-.offer-tile:hover{
-  transform: translateY(-6px);
-  border-color: rgba(0,160,255,0.30);
-  box-shadow: 0 30px 92px rgba(0,0,0,0.45);
-}
-.offer-kicker{
-  display:inline-block;
-  font-size: 12px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(154,174,185,0.95);
-  margin-bottom: 10px;
-}
-.offer-tile h3{
-  font-size: 1.22rem;
-  font-weight: 900;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-.offer-tile p{ color: rgba(154,174,185,0.92); line-height: 1.55; }
-.offer-cta{ margin-top: 14px; color: var(--ice); font-weight: 900; }
-.offer-tile.featured{
-  border-color: rgba(0,160,255,0.55);
-  box-shadow:
-    0 26px 92px rgba(0,160,255,0.10),
-    0 40px 110px rgba(0,0,0,0.45);
-}
-
-/* =========================================
    WHY ICE (grid + icon + card effects)
    ========================================= */
 .why-grid{
@@ -447,40 +394,6 @@ body{
 @media (max-width: 980px){
   .why-grid{ grid-template-columns: 1fr; }
 }
-
-/* =========================================
-   Process
-   ========================================= */
-.process-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-}
-.process-step{
-  padding: 24px;
-  border-radius: 16px;
-  background:
-    radial-gradient(650px 240px at 15% 0%, rgba(0,160,255,0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.16));
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 22px 70px rgba(0,0,0,0.35);
-  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-}
-.process-step:hover{
-  transform: translateY(-6px);
-  border-color: rgba(0,160,255,0.26);
-  box-shadow: 0 30px 92px rgba(0,0,0,0.45);
-}
-.step-num{
-  font-size: 12px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(0,160,255,0.95);
-  margin-bottom: 12px;
-  font-weight: 900;
-}
-.process-step h3{ font-size: 1.15rem; margin-bottom: 10px; font-weight: 900; }
-.process-step p{ color: rgba(154,174,185,0.92); }
 
 /* =========================================
    FAQ
@@ -675,13 +588,6 @@ body{
 .gstat strong{ display:block; font-weight: 950; letter-spacing: -0.01em; }
 .gstat span{ display:block; color: rgba(154,174,185,0.88); font-weight: 700; margin-top: 2px; }
 
-/* Make the service slider grid real */
-.ba-gallery{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
 /* Card frame */
 .ba-card{
   position:relative;
@@ -795,6 +701,7 @@ body{
   .gallery-hero-metrics{ grid-template-columns: 1fr; }
   .photo-grid img{ height: 200px; }
 }
+
 /* ==========================================================
    GALLERY V2 — grid + hover zoom + lightbox
    ========================================================== */
@@ -1217,59 +1124,6 @@ body{
 @media (max-width: 980px){
   .services-page .svc-hero-inner{ grid-template-columns: 1fr; }
 }
-/* Contact page polish */
-.contact-page .contact-info-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin: 14px 0 18px;
-}
-.contact-page .contact-pill{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  padding:10px 12px;
-  border-radius:999px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: rgba(214,226,235,0.86);
-}
-.contact-page .panel{
-  border-radius:16px;
-  padding:18px;
-  background:
-    radial-gradient(650px 240px at 15% 0%, rgba(0,160,255,0.10), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.16));
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 22px 70px rgba(0,0,0,0.32);
-}
-.contact-page .panel-divider{
-  border:none;
-  height:1px;
-  background: rgba(255,255,255,0.10);
-  margin: 16px 0;
-}
-.contact-page .square-placeholder{
-  padding:14px;
-  border-radius:14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px dashed rgba(255,255,255,0.16);
-  color: rgba(214,226,235,0.86);
-}
-.contact-page .contact-side-links{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top: 10px;
-}
-.contact-page .contact-next{
-  margin-top: 10px;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-}
 
 /* =========================================
    CONTACT PAGE — modern chips + cards (scoped)
@@ -1589,6 +1443,7 @@ body:not(.hybrid) .service-area-note,
     grid-template-columns:1fr;
   }
 }
+
 .services-vertical{
   max-width:900px;
   margin:0 auto;
