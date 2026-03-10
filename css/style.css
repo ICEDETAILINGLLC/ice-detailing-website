@@ -1516,3 +1516,18 @@ body:not(.hybrid) .service-area-note,
     margin-top: 20px;
   }
 }
+
+.step-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:900;
+  color:#031018;
+  background: linear-gradient(135deg, rgba(0,160,255,0.95), rgba(90,245,255,0.85));
+  box-shadow:0 10px 26px rgba(0,160,255,0.25);
+  margin-bottom:14px;
+}
