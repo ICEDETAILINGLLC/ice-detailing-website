@@ -1534,3 +1534,20 @@ body:not(.hybrid) .service-area-note,
     0 0 28px rgba(0,160,255,0.14),
     0 20px 60px rgba(0,0,0,0.35);
 }
+.services-intro::before{
+  content:"";
+  display:block;
+  width:120px;
+  height:2px;
+  margin:0 auto 16px auto;
+
+  background:linear-gradient(
+    90deg,
+    rgba(0,160,255,0),
+    rgba(0,160,255,0.9),
+    rgba(90,245,255,0.8),
+    rgba(0,160,255,0)
+  );
+
+  box-shadow:0 0 14px rgba(0,160,255,0.35);
+}
