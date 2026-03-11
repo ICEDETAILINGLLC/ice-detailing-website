@@ -8,6 +8,7 @@
 
   <link rel="stylesheet" href="css/style.css?v=ice10" />
   <link rel="stylesheet" href="css/animations.css?v=ice10" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 </head>
 
 <body class="hybrid contact-page">
@@ -123,7 +124,7 @@
             </div>
           </div>
 
-          <!-- ADD-ONS (multi-select) -->
+          <!-- ADD-ONS -->
           <div class="field-block">
             <div class="field-top">
               <label class="field-label">Add-Ons (optional)</label>
@@ -191,16 +192,22 @@
           </div>
 
           <label for="address">Service Address (optional)</label>
-          <input id="address" name="address" type="text" placeholder="Street address (if known)">
+          <input
+            id="address"
+            name="address"
+            type="text"
+            placeholder="Start typing your address"
+            autocomplete="street-address"
+          >
 
           <div class="contact-grid">
             <div>
               <label for="date">Preferred date *</label>
-              <input id="date" name="date" type="date" required>
+              <input id="date" name="date" type="text" placeholder="Select a date" required>
             </div>
             <div>
               <label for="time">Preferred time *</label>
-              <input id="time" name="time" type="time" required>
+              <input id="time" name="time" type="text" placeholder="Select a time" required>
             </div>
           </div>
 
@@ -262,6 +269,9 @@
 <script>
   document.getElementById('footerYearContact').textContent = new Date().getFullYear();
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
 
 <script src="js/main.js" defer></script>
 <script src="js/booking.js" defer></script>
