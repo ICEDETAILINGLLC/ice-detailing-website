@@ -6,7 +6,6 @@
   <title>Contact & Booking — ICE Detailing LLC</title>
   <meta name="description" content="Book ICE Detailing LLC — premium mobile detailing serving Boston & Middlesex County. Choose services and add-ons, request a quote, and we’ll confirm." />
 
-  <!-- bump this v number anytime you change CSS so cache never tricks you -->
   <link rel="stylesheet" href="css/style.css?v=ice10" />
   <link rel="stylesheet" href="css/animations.css?v=ice10" />
 </head>
@@ -20,14 +19,14 @@
       <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
     </a>
 
-<nav class="primary-nav" aria-label="Primary navigation">
-  <a href="index.html#home" class="nav-link active">Home</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="gallery.html" class="nav-link">Gallery</a>
-  <a href="reviews.html" class="nav-link">Reviews</a>
-  <a href="about.html" class="nav-link">About</a>
-  <a href="contact.html" class="nav-link">Contact</a>
-</nav>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#home" class="nav-link active">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="reviews.html" class="nav-link">Reviews</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
     <div class="header-actions">
       <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
@@ -79,23 +78,28 @@
           <div class="field-block">
             <div class="field-top">
               <label class="field-label">Services (select all that apply) *</label>
-              <div class="field-hint muted">Choose packages + correction + consultation if needed.</div>
+              <div class="field-hint muted">Choose one or more services.</div>
             </div>
 
             <div class="chip-grid" role="group" aria-label="Services">
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Mini Detail" data-prefill-target>
-                <span>Mini Detail</span>
-              </label>
-
-              <label class="chip featured">
-                <input type="checkbox" name="services[]" value="Full Detail" data-prefill-target>
-                <span>Full Detail</span>
+                <input type="checkbox" name="services[]" value="Maintenance Detail" data-prefill-target>
+                <span>Maintenance Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Deep Clean Interior" data-prefill-target>
-                <span>Deep Clean Interior</span>
+                <input type="checkbox" name="services[]" value="Interior Detail" data-prefill-target>
+                <span>Interior Detail</span>
+              </label>
+
+              <label class="chip featured">
+                <input type="checkbox" name="services[]" value="Elite Detail" data-prefill-target>
+                <span>Elite Detail</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Ceramic Coating" data-prefill-target>
+                <span>Ceramic Coating</span>
               </label>
 
               <label class="chip">
@@ -114,8 +118,8 @@
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Ceramic / Coating Consultation" data-prefill-target>
-                <span>Ceramic / Coating Consult</span>
+                <input type="checkbox" name="services[]" value="Fleet Maintenance" data-prefill-target>
+                <span>Fleet Maintenance</span>
               </label>
             </div>
 
