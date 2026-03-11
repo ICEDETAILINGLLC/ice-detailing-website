@@ -2007,3 +2007,108 @@ body:not(.hybrid) .service-area-note,
   opacity: 1;
   filter: invert(1);
 }
+/* =========================
+   Contact form field polish
+   ========================= */
+
+.contact-page .form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* all typed / filled fields match */
+.contact-page .form input[type="text"],
+.contact-page .form input[type="email"],
+.contact-page .form input[type="tel"],
+.contact-page .form input[type="time"],
+.contact-page .form select,
+.contact-page .form textarea,
+.contact-page .form .flatpickr-input[readonly] {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.045);
+  color: #ffffff;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+/* placeholders */
+.contact-page .form input::placeholder,
+.contact-page .form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+  font-weight: 400;
+}
+
+/* focus state */
+.contact-page .form input:focus,
+.contact-page .form select:focus,
+.contact-page .form textarea:focus,
+.contact-page .form .flatpickr-input[readonly]:focus {
+  outline: none;
+  border-color: rgba(29, 161, 242, 0.72);
+  box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* select styling */
+.contact-page .form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* dropdown options readable */
+.contact-page .form select option {
+  color: #111;
+  background: #fff;
+}
+
+/* native time icon */
+.contact-page .form input[type="time"] {
+  cursor: pointer;
+}
+
+.contact-page .form input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(1);
+}
+
+/* date fields clickable */
+.contact-page .form .flatpickr-input,
+.contact-page .form input#date {
+  cursor: pointer;
+}
+
+/* notes section bigger */
+.contact-page .form textarea {
+  min-height: 150px;
+  resize: vertical;
+  padding-top: 16px;
+}
+
+/* file input spacing */
+.contact-page .form input[type="file"] {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+
+/* keep field spacing clean */
+.contact-page .form input,
+.contact-page .form select,
+.contact-page .form textarea {
+  margin-bottom: 16px;
+}
