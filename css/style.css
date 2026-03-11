@@ -1937,3 +1937,29 @@ body:not(.hybrid) .service-area-note,
 .flatpickr-day:hover {
   background: rgba(29, 161, 242, 0.12);
 }
+.contact-page select#time {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  min-height: 52px;
+  width: 100%;
+  font: inherit;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+.contact-page select#time:focus {
+  outline: none;
+  border-color: rgba(29, 161, 242, 0.7);
+  box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.12);
+}
+
+.contact-page select#time option {
+  color: #111;
+  background: #fff;
+}
