@@ -1856,3 +1856,44 @@ body:not(.hybrid) .service-area-note,
 @media (max-width: 980px){
   .services-page .svc-hero-inner{ grid-template-columns: 1fr; }
 }
+.services-page .svc-card.elite-card{
+  border-color: rgba(0,160,255,0.72);
+  background:
+    radial-gradient(700px 260px at 20% 0%, rgba(0,160,255,0.14), transparent 55%),
+    linear-gradient(145deg, #10141c, #171c26);
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.10) inset,
+    0 30px 100px rgba(0,160,255,0.14),
+    0 42px 120px rgba(0,0,0,0.50);
+}
+.services-page .svc-card.elite-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  padding:1.5px;
+  background: linear-gradient(135deg, rgba(0,160,255,0.95), rgba(90,245,255,0.45), rgba(0,160,255,0.75));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events:none;
+  opacity:.95;
+}
+.services-page .svc-card.elite-card:hover{
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(90,245,255,0.75);
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.14) inset,
+    0 0 34px rgba(0,160,255,0.22),
+    0 38px 118px rgba(0,160,255,0.18),
+    0 46px 130px rgba(0,0,0,0.56);
+}
+.services-page .svc-card.elite-card .svc-card-title{
+  font-size: 1.28rem;
+}
+.services-page .svc-card.elite-card .svc-badge.strong{
+  box-shadow: 0 0 26px rgba(0,160,255,0.22);
+}
+.services-page .svc-card.elite-card .btn.primary{
+  box-shadow: 0 16px 42px rgba(0,160,255,0.30);
+}
