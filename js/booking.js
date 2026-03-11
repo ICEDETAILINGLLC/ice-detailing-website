@@ -1,6 +1,6 @@
 // booking.js — multi-service + add-ons submission to Formspree
 // keeps flatpickr for date only
-// uses a clean dropdown for time
+// uses native time picker for cleaner time selection
 
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 0) Enhanced date picker only
   // -------------------------------
   const dateInput = document.getElementById('date');
+  const timeInput = document.getElementById('time');
 
   if (window.flatpickr && dateInput) {
     flatpickr(dateInput, {
@@ -21,6 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
       disableMobile: true,
       clickOpens: true,
       allowInput: false
+    });
+  }
+
+  // improve native time picker behavior
+  if (timeInput) {
+    timeInput.step = 900; // 15 minute intervals
+
+    timeInput.addEventListener('focus', () => {
+      if (typeof timeInput.showPicker === 'function') {
+        timeInput.showPicker();
+      }
+    });
+
+    timeInput.addEventListener('click', () => {
+      if (typeof timeInput.showPicker === 'function') {
+        timeInput.showPicker();
+      }
     });
   }
 
@@ -73,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = bookingForm.querySelector('#email');
     const phone = bookingForm.querySelector('#phone');
     const vehicle = bookingForm.querySelector('#vehicle');
+    const vehicleDetails = bookingForm.querySelector('#vehicleDetails');
     const zip = bookingForm.querySelector('#zip');
     const date = bookingForm.querySelector('#date');
     const time = bookingForm.querySelector('#time');
@@ -101,6 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    if (!vehicleDetails?.value.trim()) {
+      showStatus('Please enter your vehicle year, make, and model.', true);
+      return;
+    }
+
     if (!zip?.value.trim()) {
       showStatus('Please enter your ZIP code.', true);
       return;
@@ -115,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fd.set('services', serviceChecks.map(x => x.value).join(', '));
     fd.set('addons', addonChecks.map(x => x.value).join(', '));
+    fd.set('vehicleDetails', vehicleDetails.value.trim());
 
     if (address) fd.set('address', address.value.trim());
     if (message) fd.set('message', message.value.trim());
