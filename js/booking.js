@@ -1,6 +1,6 @@
 // booking.js — multi-service + add-ons submission to Formspree
-// supports auto-prefill from services page buttons
-// upgraded with flatpickr date/time
+// keeps flatpickr for date only
+// uses a clean dropdown for time
 
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById('bookingStatus');
 
   // -------------------------------
-  // 0) Enhanced date + time pickers
+  // 0) Enhanced date picker only
   // -------------------------------
   const dateInput = document.getElementById('date');
-  const timeInput = document.getElementById('time');
 
   if (window.flatpickr && dateInput) {
     flatpickr(dateInput, {
@@ -19,21 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       altFormat: 'F j, Y',
       dateFormat: 'Y-m-d',
       minDate: 'today',
-      disableMobile: true,
-      clickOpens: true,
-      allowInput: false
-    });
-  }
-
-  if (window.flatpickr && timeInput) {
-    flatpickr(timeInput, {
-      enableTime: true,
-      noCalendar: true,
-      dateFormat: 'H:i',
-      altInput: true,
-      altFormat: 'h:i K',
-      minuteIncrement: 15,
-      time_24hr: false,
       disableMobile: true,
       clickOpens: true,
       allowInput: false
@@ -49,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!service) return;
 
       const href = link.getAttribute('href') || 'contact.html';
-
       if (!href.includes('contact.html')) return;
 
       e.preventDefault();
