@@ -75,7 +75,7 @@
           <label for="email">Email *</label>
           <input id="email" name="email" type="email" placeholder="Email" required>
 
-          <!-- SERVICES (multi-select) -->
+          <!-- SERVICES -->
           <div class="field-block">
             <div class="field-top">
               <label class="field-label">Services (select all that apply) *</label>
@@ -187,7 +187,7 @@
 
             <div>
               <label for="zip">ZIP Code *</label>
-              <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="02118" required>
+              <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="02118" autocomplete="postal-code" required>
             </div>
           </div>
 
@@ -196,7 +196,7 @@
             id="address"
             name="address"
             type="text"
-            placeholder="Start typing your address"
+            placeholder="Street address"
             autocomplete="street-address"
           >
 
@@ -271,8 +271,6 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
-
 <script src="js/main.js" defer></script>
 <script src="js/booking.js" defer></script>
 </body>
