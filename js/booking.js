@@ -1,26 +1,32 @@
 // booking.js — multi-service + add-ons submission to Formspree
 // supports auto-prefill from services page buttons
-// upgraded with flatpickr date/time + Google address autocomplete
+// upgraded with flatpickr date/time
 
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
   const submitBtn = document.getElementById('submitBooking') || document.getElementById('submitBookingBtn');
   const status = document.getElementById('bookingStatus');
-  const addressInput = document.getElementById('address');
 
   // -------------------------------
   // 0) Enhanced date + time pickers
   // -------------------------------
-  if (window.flatpickr) {
-    flatpickr('#date', {
+  const dateInput = document.getElementById('date');
+  const timeInput = document.getElementById('time');
+
+  if (window.flatpickr && dateInput) {
+    flatpickr(dateInput, {
       altInput: true,
       altFormat: 'F j, Y',
       dateFormat: 'Y-m-d',
       minDate: 'today',
-      disableMobile: false
+      disableMobile: true,
+      clickOpens: true,
+      allowInput: false
     });
+  }
 
-    flatpickr('#time', {
+  if (window.flatpickr && timeInput) {
+    flatpickr(timeInput, {
       enableTime: true,
       noCalendar: true,
       dateFormat: 'H:i',
@@ -28,30 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
       altFormat: 'h:i K',
       minuteIncrement: 15,
       time_24hr: false,
-      disableMobile: false
-    });
-  }
-
-  // -----------------------------------
-  // 0.5) Google address autocomplete
-  // -----------------------------------
-  if (
-    addressInput &&
-    window.google &&
-    google.maps &&
-    google.maps.places
-  ) {
-    const autocomplete = new google.maps.places.Autocomplete(addressInput, {
-      types: ['address'],
-      componentRestrictions: { country: 'us' },
-      fields: ['formatted_address']
-    });
-
-    autocomplete.addListener('place_changed', () => {
-      const place = autocomplete.getPlace();
-      if (place && place.formatted_address) {
-        addressInput.value = place.formatted_address;
-      }
+      disableMobile: true,
+      clickOpens: true,
+      allowInput: false
     });
   }
 
@@ -65,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const href = link.getAttribute('href') || 'contact.html';
 
-      // only modify contact page links
       if (!href.includes('contact.html')) return;
 
       e.preventDefault();
@@ -146,15 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fd = new FormData(bookingForm);
 
-    // make multi-select fields readable in Formspree email
     fd.set('services', serviceChecks.map(x => x.value).join(', '));
     fd.set('addons', addonChecks.map(x => x.value).join(', '));
 
-    // ensure nice readable values are submitted
     if (address) fd.set('address', address.value.trim());
     if (message) fd.set('message', message.value.trim());
 
-    // remove raw checkbox arrays so email stays clean
     fd.delete('services[]');
     fd.delete('addons[]');
 
@@ -172,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showStatus('Request sent — we will contact you shortly. Thank you!', false);
         bookingForm.reset();
 
-        // optional: remove service param after successful submit
         const cleanUrl = window.location.pathname;
         window.history.replaceState({}, document.title, cleanUrl);
       } else {
