@@ -1,6 +1,6 @@
 // booking.js — multi-service + add-ons submission to Formspree
-// keeps flatpickr for date only
-// uses native time picker for cleaner time selection
+// flatpickr for date
+// native time picker with business hours limited to 7:00 AM–8:00 PM
 
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
@@ -25,9 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // improve native time picker behavior
+  // -------------------------------
+  // 0.5) Time input business hours
+  // -------------------------------
   if (timeInput) {
-    timeInput.step = 900; // 15 minute intervals
+    timeInput.step = 900;     // 15-minute intervals
+    timeInput.min = '07:00';  // 7:00 AM
+    timeInput.max = '20:00';  // 8:00 PM
 
     timeInput.addEventListener('focus', () => {
       if (typeof timeInput.showPicker === 'function') {
@@ -132,6 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!date?.value || !time?.value) {
       showStatus('Please choose a preferred date and time.', true);
+      return;
+    }
+
+    if (time.value < '07:00' || time.value > '20:00') {
+      showStatus('Preferred time must be between 7:00 AM and 8:00 PM.', true);
       return;
     }
 
