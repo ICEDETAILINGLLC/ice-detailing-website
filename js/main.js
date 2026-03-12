@@ -1,64 +1,85 @@
 // main.js — reveal on scroll, prefill, parallax, sticky CTA
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => io.observe(r));
+  const reveals = document.querySelectorAll(".reveal");
+
+  if (reveals.length) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach((r) => io.observe(r));
+  }
 
   // Save prefill when clicking any element with data-prefill
-  document.querySelectorAll('[data-prefill]').forEach(el => {
-    el.addEventListener('click', () => {
-      const pref = (el.dataset.prefill || '').trim();
+  document.querySelectorAll("[data-prefill]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const pref = (el.dataset.prefill || "").trim();
       if (!pref) return;
-      try { sessionStorage.setItem('prefillService', pref); } catch (err) {}
+
+      try {
+        sessionStorage.setItem("prefillService", pref);
+      } catch (err) {}
     });
   });
 
   // Apply prefill on contact page (checkbox chips)
-  const isContact = document.body.classList.contains('contact-page');
+  const isContact = document.body.classList.contains("contact-page");
+
   if (isContact) {
     const url = new URL(window.location.href);
-    const fromUrl = (url.searchParams.get('service') || '').trim();
-    let fromStorage = '';
-    try { fromStorage = (sessionStorage.getItem('prefillService') || '').trim(); } catch {}
+    const fromUrl = (url.searchParams.get("service") || "").trim();
+
+    let fromStorage = "";
+    try {
+      fromStorage = (sessionStorage.getItem("prefillService") || "").trim();
+    } catch (err) {}
 
     const pref = fromUrl || fromStorage;
 
     if (pref) {
       const targets = document.querySelectorAll('input[type="checkbox"][data-prefill-target]');
-      targets.forEach(cb => {
-        if ((cb.value || '').toLowerCase() === pref.toLowerCase()) cb.checked = true;
+
+      targets.forEach((cb) => {
+        if ((cb.value || "").toLowerCase() === pref.toLowerCase()) {
+          cb.checked = true;
+        }
       });
 
-      try { sessionStorage.removeItem('prefillService'); } catch {}
+      try {
+        sessionStorage.removeItem("prefillService");
+      } catch (err) {}
     }
   }
 
   // Parallax hero (subtle)
-  const hero = document.querySelector('.hero[data-parallax]');
+  const hero = document.querySelector(".hero[data-parallax]");
   if (hero) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const speed = 0.22;
       const y = window.scrollY * speed;
       hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
-    }, { passive:true });
+    }, { passive: true });
   }
 
   // Sticky Book button visibility
-  const bookSticky = document.getElementById('bookSticky');
+  const bookSticky = document.getElementById("bookSticky");
+
   if (bookSticky) {
-    function updateBookVisible(){
-      if (window.scrollY > 420) bookSticky.classList.add('visible');
-      else bookSticky.classList.remove('visible');
+    function updateBookVisible() {
+      if (window.scrollY > 420) {
+        bookSticky.classList.add("visible");
+      } else {
+        bookSticky.classList.remove("visible");
+      }
     }
+
     updateBookVisible();
-    window.addEventListener('scroll', updateBookVisible, { passive:true });
+    window.addEventListener("scroll", updateBookVisible, { passive: true });
   }
 });
