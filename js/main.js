@@ -1,6 +1,5 @@
 // main.js — reveal on scroll, prefill, parallax, sticky CTA
 document.addEventListener("DOMContentLoaded", () => {
-  // Reveal on scroll
   const reveals = document.querySelectorAll(".reveal");
 
   if (reveals.length) {
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((r) => io.observe(r));
   }
 
-  // Save prefill when clicking any element with data-prefill
   document.querySelectorAll("[data-prefill]").forEach((el) => {
     el.addEventListener("click", () => {
       const pref = (el.dataset.prefill || "").trim();
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Apply prefill on contact page (checkbox chips)
   const isContact = document.body.classList.contains("contact-page");
 
   if (isContact) {
@@ -57,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Parallax hero (subtle)
   const hero = document.querySelector(".hero[data-parallax]");
   if (hero) {
     window.addEventListener("scroll", () => {
@@ -67,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  // Sticky Book button visibility
   const bookSticky = document.getElementById("bookSticky");
 
   if (bookSticky) {
