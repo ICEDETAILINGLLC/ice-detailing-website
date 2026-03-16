@@ -2637,79 +2637,79 @@ body.lightbox-open{
   inset 0 0 15px rgba(0,160,255,.15);
 }
 /* =========================================
-   ABOUT PAGE — Our Story final override
+   ABOUT PAGE — Our Story
    ========================================= */
 
 .about-page .about-story-section{
-  padding: 110px 0 110px !important;
-  text-align: center !important;
+  padding: 110px 0;
+  text-align: center;
   background:
     radial-gradient(900px 380px at 50% 0%, rgba(0,160,255,0.20), transparent 70%),
-    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0)) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .about-page .about-story-header{
-  max-width: 920px !important;
-  margin: 0 auto 42px !important;
-  text-align: center !important;
+  max-width: 920px;
+  margin: 0 auto 42px;
+  text-align: center;
 }
 
 .about-page .about-story-title{
-  font-size: clamp(3rem, 5vw, 4.2rem) !important;
-  font-weight: 950 !important;
-  letter-spacing: -0.05em !important;
-  line-height: 0.98 !important;
-  margin-bottom: 16px !important;
-  color: #f4fbff !important;
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  font-weight: 950;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+  margin-bottom: 16px;
+  color: #f4fbff;
   text-shadow:
     0 0 12px rgba(0,160,255,.50),
-    0 0 28px rgba(0,160,255,.24) !important;
+    0 0 28px rgba(0,160,255,.24);
 }
 
 .about-page .about-story-subtitle{
-  max-width: 760px !important;
-  margin: 0 auto !important;
-  font-size: 1.18rem !important;
-  line-height: 1.85 !important;
-  color: rgba(214,226,235,.86) !important;
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.18rem;
+  line-height: 1.85;
+  color: rgba(214,226,235,.86);
 }
 
 .about-page .about-story-main{
-  max-width: 900px !important;
-  margin: 0 auto !important;
-  padding: 42px 42px 36px !important;
-  border-radius: 24px !important;
-  text-align: left !important;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 42px 42px 36px;
+  border-radius: 24px;
+  text-align: left;
   background:
     radial-gradient(700px 260px at 50% 0%, rgba(0,160,255,.12), transparent 72%),
-    linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.16)) !important;
-  border: 1px solid rgba(0,160,255,.30) !important;
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,.16));
+  border: 1px solid rgba(0,160,255,.30);
   box-shadow:
     0 0 40px rgba(0,160,255,.12),
-    0 26px 90px rgba(0,0,0,.42) !important;
+    0 26px 90px rgba(0,0,0,.42);
 }
 
 .about-page .about-story-main p{
-  font-size: 1.14rem !important;
-  line-height: 1.9 !important;
-  color: rgba(235,245,255,.92) !important;
-  margin-bottom: 22px !important;
+  font-size: 1.14rem;
+  line-height: 1.9;
+  color: rgba(235,245,255,.92);
+  margin-bottom: 22px;
 }
 
 .about-page .story-accent{
-  font-size: 1.3rem !important;
-  font-weight: 900 !important;
-  line-height: 1.6 !important;
-  color: #ffffff !important;
-  letter-spacing: -0.015em !important;
-  text-shadow: 0 0 10px rgba(0,160,255,.38) !important;
+  font-size: 1.3rem;
+  font-weight: 900;
+  line-height: 1.6;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  text-shadow: 0 0 10px rgba(0,160,255,.38);
 }
 
 .about-page .story-divider{
-  width: 170px !important;
-  height: 2px !important;
-  margin: 28px auto 34px !important;
+  width: 170px;
+  height: 2px;
+  margin: 28px auto 34px;
   background: linear-gradient(
     90deg,
     transparent,
@@ -2717,49 +2717,49 @@ body.lightbox-open{
     #6aefff,
     #00A0FF,
     transparent
-  ) !important;
+  );
   box-shadow:
     0 0 18px rgba(0,160,255,.85),
-    0 0 30px rgba(0,160,255,.35) !important;
+    0 0 30px rgba(0,160,255,.35);
 }
 
 .about-page .story-quote{
-  margin-top: 34px !important;
-  padding: 28px 28px !important;
-  border-radius: 20px !important;
-  background: rgba(255,255,255,.05) !important;
-  border: 1px solid rgba(0,160,255,.45) !important;
+  margin-top: 34px;
+  padding: 28px 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(0,160,255,.45);
   box-shadow:
     0 0 30px rgba(0,160,255,.18),
-    inset 0 0 18px rgba(0,160,255,.10) !important;
-  font-size: 1.16rem !important;
-  line-height: 1.85 !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  text-align: center !important;
+    inset 0 0 18px rgba(0,160,255,.10);
+  font-size: 1.16rem;
+  line-height: 1.85;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
 }
 
 @media (max-width: 820px){
   .about-page .about-story-section{
-    padding: 72px 0 76px !important;
+    padding: 72px 0 76px;
   }
 
   .about-page .about-story-main{
-    padding: 26px 20px 24px !important;
-    border-radius: 18px !important;
+    padding: 26px 20px 24px;
+    border-radius: 18px;
   }
 
   .about-page .about-story-main p{
-    font-size: 1rem !important;
-    line-height: 1.8 !important;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
   .about-page .story-accent{
-    font-size: 1.12rem !important;
+    font-size: 1.12rem;
   }
 
   .about-page .story-quote{
-    padding: 22px 18px !important;
-    font-size: 1rem !important;
+    padding: 22px 18px;
+    font-size: 1rem;
   }
 }
