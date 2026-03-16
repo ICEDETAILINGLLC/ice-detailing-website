@@ -2496,86 +2496,205 @@ body.lightbox-open{
     right:10px;
   }
 }
-<main>
+/* =========================================
+   ABOUT PAGE — polished hero + story
+   ========================================= */
 
-  <section class="section about-story-section about-story-top">
-    <div class="wrap">
-      <div class="section-head reveal about-story-head">
-        <h1 class="section-title about-story-title">Our Story</h1>
-        <p class="section-sub muted">The standard behind the name.</p>
-      </div>
+.about-page .about-hero{
+  position: relative;
+  overflow: hidden;
+  min-height: 58vh;
+  display: flex;
+  align-items: flex-start;
+}
 
-      <div class="about-story-feature reveal">
-        <div class="about-story-accent"></div>
+.about-page .about-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(37,168,255,0.16), transparent 32%),
+    linear-gradient(180deg, rgba(5,10,18,0.18), rgba(5,10,18,0.48));
+  pointer-events: none;
+}
 
-        <div class="about-story-card centered-story-card">
-          <p class="story-lead centered-story-lead">
-            ICE Detailing LLC was built from experience on the customer side of the industry.
-          </p>
+.about-page .hero-inner{
+  align-items: flex-start;
+  padding: 84px 0 40px;
+}
 
-          <div class="story-divider"></div>
+.about-page .about-hero-card{
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 30px 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.24);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
 
-          <div class="about-story-content centered-story-content">
-            <p>
-              As a car enthusiast who has owned multiple vehicles and spent thousands of dollars on professional detailing over the years, I kept noticing the same thing. The results rarely matched the price. Cars would look good at first glance, but the deeper quality just wasn’t there. Missed spots, rushed work, and details that only the owner would notice were constantly overlooked.
-            </p>
+.about-page .about-hero-kicker{
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234,246,255,0.72);
+}
 
-            <p>
-              At 22 years old, I started ICE Detailing with a simple mindset: if I wouldn’t be satisfied with the result on my own car, it’s not leaving our hands.
-            </p>
+.about-page .about-hero-title{
+  margin: 0 0 10px;
+  font-size: clamp(2.4rem, 4.4vw, 3.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 950;
+  color: #ffffff;
+  text-shadow: 0 10px 50px rgba(0,0,0,0.20);
+}
 
-            <p>
-              ICE Detailing focuses on the things most detailers skip. Proper techniques, attention to the smallest areas, and results that actually last. Every vehicle is treated like it is our own, because I know exactly what it feels like to pay for a service and expect real quality in return.
-            </p>
+.about-page .about-hero-sub{
+  margin: 0;
+  max-width: 620px;
+  color: rgba(234,246,255,0.88);
+  font-size: 1.06rem;
+  line-height: 1.75;
+}
 
-            <p>
-              Being a local business means reputation matters. Every car that leaves ICE Detailing represents the standard I want my name associated with.
-            </p>
+/* STORY */
+.about-page .about-story-section{
+  position: relative;
+  padding-top: 36px;
+  padding-bottom: 82px;
+}
 
-            <blockquote class="story-quote centered-story-quote">
-              This isn’t just about making cars look clean.<br>
-              It’s about delivering the level of detail car owners expect, but rarely receive.
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+.about-page .about-story-head{
+  text-align: center;
+  margin-bottom: 24px;
+}
 
-  <section class="section light-block about-standard-section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2 class="section-title">Our Standard</h2>
-        <p class="section-sub muted">The principles behind every service.</p>
-      </div>
+.about-page .about-story-head .section-sub{
+  margin-bottom: 0;
+}
 
-      <div class="why-grid reveal">
-        <div class="why-card">
-          <div class="why-icon">★</div>
-          <h3>Attention to the Details</h3>
-          <p>Every vehicle is approached with the mindset that the smallest areas matter. Trim edges, vents, seams, and hard-to-reach spots are treated with the same care as the main surfaces.</p>
-        </div>
+.about-page .about-story-feature{
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+}
 
-        <div class="why-card featured">
-          <div class="why-icon">⚡</div>
-          <h3>Proper Techniques</h3>
-          <p>Safe wash methods, professional tools, and proven detailing processes are used to protect the vehicle while achieving the best possible finish.</p>
-        </div>
+.about-page .about-story-accent{
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0,160,255,0), rgba(0,160,255,0.95), rgba(0,160,255,0));
+  box-shadow: 0 0 20px rgba(0,160,255,0.22);
+  z-index: 2;
+}
 
-        <div class="why-card">
-          <div class="why-icon">✓</div>
-          <h3>No Rushed Work</h3>
-          <p>Quality takes time. Every service is performed with patience and care so the final result reflects the standard ICE Detailing stands for.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+.about-page .centered-story-card{
+  position: relative;
+  z-index: 1;
+  padding: 44px 42px 38px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+  box-shadow: 0 22px 60px rgba(0,0,0,0.24);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
 
-  <section class="cta-strip">
-    <div class="wrap cta-wrap reveal">
-      <h3>Ready for a showroom finish?</h3>
-      <a class="btn primary" href="contact.html">Get a Quote</a>
-    </div>
-  </section>
+.about-page .centered-story-lead{
+  max-width: 760px;
+  margin: 0 auto 18px;
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.42rem);
+  line-height: 1.6;
+  font-weight: 700;
+  color: #ffffff;
+}
 
-</main>
+.about-page .story-divider{
+  width: 72px;
+  height: 2px;
+  margin: 0 auto 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(0,160,255,0), rgba(0,160,255,0.85), rgba(0,160,255,0));
+}
+
+.about-page .centered-story-content{
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.about-page .centered-story-content p{
+  margin: 0 0 18px;
+  line-height: 1.9;
+  color: rgba(214,226,235,0.9);
+}
+
+.about-page .centered-story-quote{
+  margin: 30px auto 0;
+  max-width: 760px;
+  padding: 22px 24px;
+  border-left: none;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 0 1px rgba(37,168,255,0.12);
+  color: #f4fbff;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+/* STANDARD / CTA */
+.about-page .about-standard-section{
+  padding-top: 70px;
+  padding-bottom: 82px;
+}
+
+.about-page .about-standard-section .section-head{
+  margin-bottom: 28px;
+}
+
+.about-page .cta-strip{
+  padding-top: 0;
+  padding-bottom: 56px;
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+  .about-page .hero-inner{
+    padding: 66px 0 30px;
+  }
+
+  .about-page .about-hero-card{
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .about-page .about-story-section{
+    padding-top: 28px;
+    padding-bottom: 60px;
+  }
+
+  .about-page .centered-story-card{
+    padding: 30px 20px 26px;
+    border-radius: 20px;
+  }
+
+  .about-page .centered-story-content p{
+    line-height: 1.8;
+  }
+
+  .about-page .about-standard-section{
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+}
