@@ -2764,3 +2764,6 @@ body.about-page .story-quote{
     0 0 40px rgba(0,160,255,.25),
     inset 0 0 18px rgba(0,160,255,.15) !important;
 }
+body.about-page .about-story-main{
+  outline: 4px solid red !important;
+}
