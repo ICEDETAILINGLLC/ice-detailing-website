@@ -2496,19 +2496,19 @@ body.lightbox-open{
     right:10px;
   }
 /* =========================================
-ABOUT PAGE — STORY PRESENTATION
+ABOUT PAGE — FINAL STORY DESIGN
 ========================================= */
 
 .about-page .about-story-section{
 
-padding:90px 0 105px;
+padding:90px 0 100px;
 
 background:
 radial-gradient(900px 320px at 50% -10%, rgba(0,160,255,0.10), transparent 65%);
 
 }
 
-/* TITLE + HEADER */
+/* HEADER */
 
 .about-page .about-story-header{
 
@@ -2518,6 +2518,8 @@ margin:auto;
 margin-bottom:60px;
 
 }
+
+/* TITLE */
 
 .about-page .about-story-title{
 
@@ -2541,156 +2543,3 @@ text-shadow:
 
 max-width:760px;
 margin:auto;
-
-font-size:1.35rem;
-line-height:1.9;
-
-color:rgba(214,226,235,0.9);
-
-}
-
-/* STORY COLUMN */
-
-.about-page .about-story-main{
-
-max-width:780px;
-margin:auto;
-
-font-size:1.2rem;
-line-height:2.1;
-
-}
-
-/* ACCENT SENTENCE */
-
-.story-accent{
-
-font-size:1.7rem;
-font-weight:700;
-line-height:1.8;
-
-text-align:center;
-
-margin-bottom:30px;
-
-color:#ffffff;
-
-}
-
-/* DIVIDER */
-
-.story-divider{
-
-width:120px;
-height:3px;
-
-border-radius:999px;
-
-margin:30px auto 50px;
-
-background:linear-gradient(
-90deg,
-rgba(0,160,255,0),
-rgba(0,160,255,0.9),
-rgba(90,245,255,0.6),
-rgba(0,160,255,0)
-);
-
-box-shadow:0 0 24px rgba(0,160,255,0.35);
-
-}
-
-/* BODY PARAGRAPHS */
-
-.about-page .about-story-main p{
-
-margin-bottom:28px;
-
-color:rgba(214,226,235,0.95);
-
-}
-
-/* QUOTE */
-
-.story-quote{
-
-margin-top:46px;
-
-padding-left:28px;
-
-border-left:3px solid rgba(0,160,255,0.9);
-
-font-size:1.35rem;
-font-weight:600;
-
-line-height:2;
-
-color:#eaf6ff;
-
-}
-
-/* OUR STANDARD SECTION */
-
-.about-page .about-standard-section{
-
-padding-top:70px;
-padding-bottom:82px;
-
-}
-
-.about-page .about-standard-section .section-head{
-
-margin-bottom:28px;
-
-}
-
-/* CTA */
-
-.about-page .cta-strip{
-
-padding-top:0;
-padding-bottom:56px;
-
-}
-
-/* MOBILE */
-
-@media (max-width:768px){
-
-.about-page .about-story-section{
-
-padding-top:50px;
-
-}
-
-.about-page .about-story-title{
-
-font-size:clamp(2.4rem,9vw,3.4rem);
-
-}
-
-.about-page .about-story-subtitle{
-
-font-size:1.1rem;
-
-}
-
-.about-page .about-story-main{
-
-font-size:1.05rem;
-
-}
-
-.story-accent{
-
-font-size:1.35rem;
-
-}
-
-.story-quote{
-
-font-size:1.15rem;
-
-}
-
-}
