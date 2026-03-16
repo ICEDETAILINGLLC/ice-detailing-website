@@ -2496,50 +2496,151 @@ body.lightbox-open{
     right:10px;
   }
 /* =========================================
-ABOUT PAGE — FINAL STORY DESIGN
-========================================= */
+   ABOUT PAGE — FINAL STORY DESIGN
+   ========================================= */
 
 .about-page .about-story-section{
-
-padding:90px 0 100px;
-
-background:
-radial-gradient(900px 320px at 50% -10%, rgba(0,160,255,0.10), transparent 65%);
-
+  padding: 90px 0 100px;
+  background:
+    radial-gradient(900px 320px at 50% -10%, rgba(0,160,255,0.10), transparent 65%);
 }
-
-/* HEADER */
 
 .about-page .about-story-header{
-
-text-align:center;
-max-width:900px;
-margin:auto;
-margin-bottom:60px;
-
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
 }
-
-/* TITLE */
 
 .about-page .about-story-title{
-
-font-size:clamp(3.2rem,6vw,5rem);
-font-weight:900;
-letter-spacing:-0.05em;
-margin-bottom:16px;
-
-color:#eaf6ff;
-
-text-shadow:
-0 0 6px rgba(0,160,255,0.5),
-0 0 18px rgba(0,160,255,0.35),
-0 0 40px rgba(0,160,255,0.25);
-
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  margin-bottom: 16px;
+  color: #eaf6ff;
+  text-shadow:
+    0 0 6px rgba(0,160,255,0.5),
+    0 0 18px rgba(0,160,255,0.35),
+    0 0 40px rgba(0,160,255,0.25);
 }
 
-/* SUBTITLE */
-
 .about-page .about-story-subtitle{
+  max-width: 760px;
+  margin: auto;
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: rgba(214,226,235,0.9);
+}
 
-max-width:760px;
-margin:auto;
+.about-page .about-story-main{
+  max-width: 780px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 2.1;
+}
+
+.about-page .story-accent{
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.about-page .story-divider{
+  width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  margin: 30px auto 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(0,160,255,0),
+    rgba(0,160,255,0.9),
+    rgba(90,245,255,0.6),
+    rgba(0,160,255,0)
+  );
+  box-shadow: 0 0 24px rgba(0,160,255,0.35);
+}
+
+.about-page .about-story-main p{
+  margin-bottom: 28px;
+  color: rgba(214,226,235,0.95);
+}
+
+.about-page .story-quote{
+  margin-top: 46px;
+  padding-left: 28px;
+  border-left: 3px solid rgba(0,160,255,0.9);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 2;
+  color: #eaf6ff;
+}
+
+.about-page .about-standard-section{
+  padding-top: 70px;
+  padding-bottom: 82px;
+}
+
+.about-page .about-standard-section .section-head{
+  margin-bottom: 28px;
+}
+
+.about-page .cta-strip{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 40px;
+}
+
+.about-page .cta-wrap{
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-page .cta-wrap h3{
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+@media (max-width:768px){
+  .about-page .about-story-section{
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .about-page .about-story-title{
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+  }
+
+  .about-page .about-story-subtitle{
+    font-size: 1.1rem;
+  }
+
+  .about-page .about-story-main{
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .about-page .story-accent{
+    font-size: 1.35rem;
+    line-height: 1.7;
+  }
+
+  .about-page .story-quote{
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .about-page .cta-strip{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-top: 20px;
+  }
+
+  .about-page .cta-wrap h3{
+    font-size: 1.45rem;
+    margin-bottom: 16px;
+  }
+}
