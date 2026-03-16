@@ -2494,26 +2494,48 @@ body.lightbox-open{
 
   .before-after .ba-side-label.right{
     right:10px;
-/* =========================
-   ABOUT PAGE — ICE DETAILING
-   ========================= */
+/* =========================================
+   ABOUT PAGE — FINISHED PREMIUM STYLING
+   ICE DETAILING LLC
+========================================= */
 
 .about-page {
   background:
-    radial-gradient(circle at top center, rgba(61, 167, 255, 0.08), transparent 34%),
-    linear-gradient(180deg, #f8fbff 0%, #ffffff 24%, #f7f9fc 100%);
+    radial-gradient(circle at top center, rgba(63, 168, 255, 0.09), transparent 30%),
+    linear-gradient(180deg, #f6faff 0%, #ffffff 28%, #f4f8fc 100%);
+  color: #12202d;
 }
 
 .about-page .section {
   position: relative;
 }
 
+.about-page .wrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
 .about-hero {
-  min-height: 78vh;
+  min-height: 84vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4, 11, 18, 0.30) 0%, rgba(4, 11, 18, 0.55) 55%, rgba(4, 11, 18, 0.72) 100%);
+  z-index: 1;
 }
 
 .about-hero::after {
@@ -2521,8 +2543,9 @@ body.lightbox-open{
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 35%, rgba(67, 173, 255, 0.18), transparent 32%),
-    linear-gradient(180deg, rgba(3, 10, 18, 0.24) 0%, rgba(3, 10, 18, 0.58) 100%);
+    radial-gradient(circle at 50% 30%, rgba(90, 190, 255, 0.16), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(90, 190, 255, 0.10), transparent 24%);
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -2530,11 +2553,12 @@ body.lightbox-open{
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 70px 70px;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 75%);
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
   opacity: 0.28;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent 72%);
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -2544,168 +2568,192 @@ body.lightbox-open{
 }
 
 .about-hero .hero-copy {
-  max-width: 850px;
+  max-width: 860px;
 }
 
 .eyebrow {
-  display: inline-block;
-  margin-bottom: 16px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255,255,255,0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  padding: 9px 16px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.92);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.94);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.20em;
   text-transform: uppercase;
-  box-shadow: 0 0 30px rgba(74, 183, 255, 0.10);
-  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.02) inset,
+    0 0 28px rgba(77, 183, 255, 0.12);
+  backdrop-filter: blur(10px);
 }
 
 .about-hero .super {
-  max-width: 760px;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  max-width: 780px;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 10px 35px rgba(0,0,0,0.26);
+  letter-spacing: -0.03em;
 }
 
 .about-hero .accent {
-  color: #86d3ff;
+  color: #8fd7ff;
   text-shadow:
-    0 0 14px rgba(100, 196, 255, 0.50),
-    0 0 34px rgba(100, 196, 255, 0.24);
+    0 0 14px rgba(92, 191, 255, 0.45),
+    0 0 34px rgba(92, 191, 255, 0.20);
 }
 
 .about-hero .lead {
   max-width: 700px;
-  color: rgba(255,255,255,0.88);
+  margin-top: 20px;
   font-size: 18px;
-  line-height: 1.8;
-  margin-top: 18px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.86);
 }
 
 .about-hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
+
+/* =========================================
+   BUTTON REFINEMENT
+========================================= */
 
 .btn.ghost-light,
 .btn.ghost-dark {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 22px;
+  min-height: 50px;
+  padding: 0 24px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 700;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .btn.ghost-light {
   color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.28);
-  background: rgba(255,255,255,0.06);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
 }
 
 .btn.ghost-light:hover {
   transform: translateY(-2px);
   background: rgba(255,255,255,0.12);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.16);
 }
 
 .btn.ghost-dark {
-  color: #0d1620;
-  border: 1px solid rgba(13,22,32,0.12);
-  background: rgba(255,255,255,0.62);
-  box-shadow: 0 12px 24px rgba(12, 26, 42, 0.08);
+  color: #0e1720;
+  border: 1px solid rgba(16,23,32,0.10);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 12px 26px rgba(13, 27, 42, 0.08);
 }
 
 .btn.ghost-dark:hover {
   transform: translateY(-2px);
   background: #ffffff;
-  box-shadow: 0 16px 34px rgba(12, 26, 42, 0.14);
+  box-shadow: 0 18px 36px rgba(13, 27, 42, 0.14);
 }
 
+/* =========================================
+   INTRO STATEMENT
+========================================= */
+
 .about-intro {
-  padding-top: 92px;
-  padding-bottom: 28px;
+  padding-top: 100px;
+  padding-bottom: 18px;
 }
 
 .about-intro-shell {
   position: relative;
   max-width: 980px;
   margin: 0 auto;
-  padding: 36px 26px 10px;
+  padding: 44px 30px 14px;
   text-align: center;
 }
 
 .about-intro-glow {
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 320px;
+  height: 320px;
+  top: -6px;
   left: 50%;
-  top: 10px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(80, 183, 255, 0.24), rgba(80, 183, 255, 0.08), transparent 72%);
-  filter: blur(20px);
+  background: radial-gradient(circle, rgba(71, 180, 255, 0.22), rgba(71, 180, 255, 0.07), transparent 72%);
+  filter: blur(22px);
   pointer-events: none;
   z-index: 0;
 }
 
 .about-kicker,
 .section-kicker {
-  display: block;
-  margin-bottom: 14px;
-  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #329eff;
+  color: #2d9eff;
 }
 
 .about-statement {
   position: relative;
   z-index: 2;
-  max-width: 880px;
+  max-width: 900px;
   margin: 0 auto;
-  font-size: clamp(28px, 4vw, 48px);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.16;
   font-weight: 700;
-  color: #101822;
+  letter-spacing: -0.03em;
+  color: #0e1822;
   text-wrap: balance;
 }
 
 .about-divider {
-  width: 92px;
+  width: 100px;
   height: 4px;
-  margin: 28px auto 0;
+  margin: 30px auto 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(50,158,255,0), rgba(50,158,255,1), rgba(50,158,255,0));
-  box-shadow: 0 0 20px rgba(50, 158, 255, 0.45);
+  background: linear-gradient(90deg, rgba(45,158,255,0), rgba(45,158,255,1), rgba(45,158,255,0));
+  box-shadow: 0 0 22px rgba(45, 158, 255, 0.42);
 }
 
+/* =========================================
+   STORY SECTION
+========================================= */
+
 .about-story {
-  padding-top: 34px;
-  padding-bottom: 110px;
+  padding-top: 36px;
+  padding-bottom: 112px;
 }
 
 .about-story-card {
   position: relative;
-  max-width: 920px;
+  max-width: 940px;
   margin: 0 auto;
-  padding: 56px 42px;
-  border-radius: 30px;
+  padding: 62px 46px;
+  border-radius: 32px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.94), rgba(250,252,255,0.94));
-  border: 1px solid rgba(80, 110, 140, 0.10);
+    linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,251,255,0.96));
+  border: 1px solid rgba(90, 112, 138, 0.10);
   box-shadow:
-    0 24px 60px rgba(10, 24, 40, 0.10),
-    inset 0 1px 0 rgba(255,255,255,0.80);
+    0 26px 60px rgba(8, 22, 38, 0.10),
+    0 0 0 1px rgba(255,255,255,0.50) inset;
   overflow: hidden;
 }
 
@@ -2714,8 +2762,19 @@ body.lightbox-open{
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(59,167,255,0.09), transparent 28%, transparent 68%, rgba(59,167,255,0.05));
+    linear-gradient(135deg, rgba(61,167,255,0.08), transparent 25%, transparent 72%, rgba(61,167,255,0.05));
   pointer-events: none;
+}
+
+.about-story-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 76%;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(89, 186, 255, 0.40), transparent);
 }
 
 .story-accent-orb {
@@ -2723,27 +2782,26 @@ body.lightbox-open{
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  filter: blur(26px);
-  opacity: 0.65;
+  filter: blur(28px);
   pointer-events: none;
 }
 
 .orb-left {
-  top: -80px;
-  left: -70px;
-  background: radial-gradient(circle, rgba(91, 187, 255, 0.28), transparent 68%);
+  top: -90px;
+  left: -75px;
+  background: radial-gradient(circle, rgba(91, 191, 255, 0.24), transparent 68%);
 }
 
 .orb-right {
-  bottom: -90px;
   right: -70px;
-  background: radial-gradient(circle, rgba(91, 187, 255, 0.18), transparent 68%);
+  bottom: -90px;
+  background: radial-gradient(circle, rgba(91, 191, 255, 0.16), transparent 68%);
 }
 
 .about-story-content {
   position: relative;
   z-index: 2;
-  max-width: 740px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
 }
@@ -2752,30 +2810,27 @@ body.lightbox-open{
   margin: 0 0 24px;
   font-size: 17px;
   line-height: 1.95;
-  color: #3b4857;
+  color: #3d4c5c;
 }
 
 .about-story-content p:last-child {
   margin-bottom: 0;
 }
 
-.about-values {
-  padding-top: 98px;
-  padding-bottom: 110px;
-  background:
-    linear-gradient(180deg, rgba(248,251,255,0.92) 0%, rgba(240,246,252,0.96) 100%);
-}
+/* =========================================
+   SECTION HEADINGS
+========================================= */
 
 .section-head {
-  max-width: 820px;
-  margin: 0 auto 48px;
+  max-width: 840px;
+  margin: 0 auto 52px;
   text-align: center;
 }
 
 .section-title {
   margin: 0;
-  color: #0f1822;
-  letter-spacing: -0.02em;
+  color: #0e1822;
+  letter-spacing: -0.03em;
 }
 
 .section-title.left-align {
@@ -2783,42 +2838,65 @@ body.lightbox-open{
 }
 
 .section-sub {
-  max-width: 720px;
+  max-width: 740px;
   margin: 14px auto 0;
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.85;
+  color: #5a6775;
+}
+
+/* =========================================
+   VALUES SECTION
+========================================= */
+
+.about-values {
+  padding-top: 104px;
+  padding-bottom: 116px;
+  background:
+    linear-gradient(180deg, rgba(246,250,255,0.95) 0%, rgba(238,245,252,0.96) 100%);
 }
 
 .about-values-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
 .about-value-card {
   position: relative;
-  padding: 32px 24px 26px;
-  border-radius: 24px;
-  background: rgba(255,255,255,0.88);
-  border: 1px solid rgba(84, 108, 132, 0.10);
-  box-shadow: 0 16px 38px rgba(14, 27, 42, 0.08);
-  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  padding: 34px 26px 28px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.90);
+  border: 1px solid rgba(80, 104, 128, 0.10);
+  box-shadow: 0 18px 40px rgba(14, 27, 42, 0.08);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
   overflow: hidden;
+}
+
+.about-value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent 36%);
+  pointer-events: none;
 }
 
 .about-value-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(14, 27, 42, 0.13);
-  border-color: rgba(50,158,255,0.24);
+  box-shadow: 0 26px 52px rgba(14, 27, 42, 0.13);
+  border-color: rgba(45, 158, 255, 0.22);
 }
 
 .about-value-card.featured {
   background:
-    linear-gradient(180deg, rgba(15, 28, 42, 0.97), rgba(10, 18, 28, 0.98));
-  border-color: rgba(105, 198, 255, 0.16);
+    linear-gradient(180deg, rgba(12, 24, 36, 0.98), rgba(8, 15, 25, 1));
+  border-color: rgba(96, 192, 255, 0.16);
   box-shadow:
-    0 20px 44px rgba(8, 18, 30, 0.22),
-    0 0 24px rgba(56, 171, 255, 0.10);
+    0 22px 52px rgba(6, 14, 24, 0.24),
+    0 0 22px rgba(52, 170, 255, 0.10);
 }
 
 .about-value-card.featured h3,
@@ -2828,41 +2906,45 @@ body.lightbox-open{
 }
 
 .value-topline {
-  width: 54px;
+  width: 56px;
   height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #2d9cff, #7ed0ff);
-  box-shadow: 0 0 16px rgba(70, 177, 255, 0.42);
   margin-bottom: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2899ff, #88d7ff);
+  box-shadow: 0 0 16px rgba(73, 180, 255, 0.40);
 }
 
 .value-icon {
   font-size: 22px;
-  color: #1b7fd8;
+  color: #1b83de;
   margin-bottom: 14px;
 }
 
 .about-value-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 21px;
-  color: #101a24;
+  color: #111b24;
 }
 
 .about-value-card p {
   margin: 0;
-  line-height: 1.85;
-  color: #425162;
+  line-height: 1.86;
+  color: #445363;
 }
 
+/* =========================================
+   EXPERIENCE SECTION
+========================================= */
+
 .about-experience {
-  padding-top: 104px;
-  padding-bottom: 104px;
+  padding-top: 108px;
+  padding-bottom: 108px;
 }
 
 .about-experience-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 30px;
   align-items: stretch;
 }
 
@@ -2875,13 +2957,13 @@ body.lightbox-open{
   margin-top: 14px;
   font-size: 19px;
   line-height: 1.9;
-  color: #1f3142;
+  color: #1c2f41;
 }
 
 .about-experience-copy p {
   font-size: 16.5px;
   line-height: 1.9;
-  color: #44505f;
+  color: #44515f;
 }
 
 .about-experience-panel {
@@ -2891,15 +2973,15 @@ body.lightbox-open{
 .experience-panel-inner {
   position: relative;
   width: 100%;
-  padding: 32px 28px;
-  border-radius: 28px;
+  padding: 34px 30px;
+  border-radius: 30px;
   background:
-    linear-gradient(180deg, rgba(11, 22, 34, 0.98), rgba(8, 15, 25, 1));
-  border: 1px solid rgba(95, 184, 255, 0.16);
+    linear-gradient(180deg, rgba(11, 22, 34, 0.99), rgba(7, 14, 24, 1));
+  border: 1px solid rgba(96, 192, 255, 0.14);
   box-shadow:
-    0 24px 52px rgba(8, 15, 24, 0.24),
+    0 28px 56px rgba(8, 15, 24, 0.26),
     0 0 22px rgba(50,158,255,0.08);
-  color: #edf6ff;
+  color: #eef7ff;
   overflow: hidden;
 }
 
@@ -2913,12 +2995,12 @@ body.lightbox-open{
 }
 
 .experience-line {
-  width: 62px;
+  width: 64px;
   height: 3px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #52b9ff, #8ad8ff);
-  box-shadow: 0 0 18px rgba(82, 185, 255, 0.55);
   margin-bottom: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #56bcff, #93ddff);
+  box-shadow: 0 0 18px rgba(82, 185, 255, 0.55);
 }
 
 .experience-panel-inner h3 {
@@ -2937,8 +3019,8 @@ body.lightbox-open{
   position: relative;
   padding-left: 24px;
   margin-bottom: 14px;
-  line-height: 1.8;
-  color: rgba(236, 246, 255, 0.92);
+  line-height: 1.84;
+  color: rgba(236,246,255,0.92);
 }
 
 .experience-list li:last-child {
@@ -2948,42 +3030,50 @@ body.lightbox-open{
 .experience-list li::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 11px;
+  left: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #64c4ff;
-  box-shadow: 0 0 12px rgba(100, 196, 255, 0.68);
+  background: #65c7ff;
+  box-shadow: 0 0 12px rgba(101, 199, 255, 0.66);
 }
 
+/* =========================================
+   QUOTE BAND
+========================================= */
+
 .about-quote-band {
-  padding: 34px 0 90px;
+  padding: 34px 0 96px;
 }
 
 .about-quote-shell {
   max-width: 980px;
   margin: 0 auto;
-  padding: 34px 24px;
+  padding: 38px 24px;
   text-align: center;
 }
 
 .about-quote {
   margin: 0;
-  font-size: clamp(26px, 3.6vw, 44px);
+  font-size: clamp(28px, 3.8vw, 46px);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
   color: #101922;
 }
 
 .about-quote-sub {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   font-size: clamp(18px, 2vw, 24px);
-  line-height: 1.6;
-  color: #2e8fe6;
-  text-shadow: 0 0 18px rgba(58, 168, 255, 0.12);
+  line-height: 1.65;
+  color: #2f97ee;
+  text-shadow: 0 0 16px rgba(57, 170, 255, 0.12);
 }
+
+/* =========================================
+   CTA STRIP
+========================================= */
 
 .about-cta-strip {
   position: relative;
@@ -3004,21 +3094,21 @@ body.lightbox-open{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 26px;
+  gap: 28px;
 }
 
 .cta-copy {
-  max-width: 620px;
+  max-width: 640px;
 }
 
 .cta-copy h3 {
-  margin: 6px 0 10px;
+  margin: 8px 0 10px;
 }
 
 .cta-copy p {
   margin: 0;
   color: rgba(255,255,255,0.82);
-  line-height: 1.8;
+  line-height: 1.85;
 }
 
 .cta-actions {
@@ -3027,9 +3117,27 @@ body.lightbox-open{
   gap: 14px;
 }
 
-/* =========================
+/* =========================================
+   POLISH
+========================================= */
+
+.about-story-card,
+.about-value-card,
+.experience-panel-inner {
+  backdrop-filter: blur(6px);
+}
+
+.about-value-card h3,
+.experience-panel-inner h3,
+.section-title,
+.about-statement,
+.about-quote {
+  text-wrap: balance;
+}
+
+/* =========================================
    RESPONSIVE
-   ========================= */
+========================================= */
 
 @media (max-width: 1080px) {
   .about-values-grid {
@@ -3048,7 +3156,7 @@ body.lightbox-open{
 
 @media (max-width: 768px) {
   .about-hero {
-    min-height: 70vh;
+    min-height: 72vh;
   }
 
   .about-hero .lead {
@@ -3056,12 +3164,12 @@ body.lightbox-open{
   }
 
   .about-intro {
-    padding-top: 72px;
-    padding-bottom: 16px;
+    padding-top: 76px;
+    padding-bottom: 10px;
   }
 
   .about-statement {
-    font-size: clamp(25px, 7vw, 38px);
+    font-size: clamp(26px, 7vw, 38px);
   }
 
   .about-story {
@@ -3069,19 +3177,19 @@ body.lightbox-open{
   }
 
   .about-story-card {
-    padding: 36px 22px;
+    padding: 40px 22px;
     border-radius: 24px;
   }
 
   .about-story-content p {
     font-size: 16px;
-    line-height: 1.85;
+    line-height: 1.88;
   }
 
   .about-values,
   .about-experience {
-    padding-top: 82px;
-    padding-bottom: 82px;
+    padding-top: 84px;
+    padding-bottom: 84px;
   }
 
   .experience-panel-inner {
@@ -3090,7 +3198,7 @@ body.lightbox-open{
   }
 
   .about-quote-band {
-    padding: 18px 0 72px;
+    padding: 20px 0 72px;
   }
 }
 
@@ -3101,7 +3209,7 @@ body.lightbox-open{
 
   .eyebrow {
     letter-spacing: 0.14em;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .about-hero-actions,
@@ -3121,7 +3229,7 @@ body.lightbox-open{
   }
 
   .about-story-card {
-    padding: 32px 18px;
+    padding: 34px 18px;
   }
 
   .about-value-card {
