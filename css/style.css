@@ -2494,3 +2494,58 @@ body.lightbox-open{
 
   .before-after .ba-side-label.right{
     right:10px;
+/* =========================
+   ABOUT PAGE STORY SECTION
+========================= */
+
+.about-page-card{
+max-width:900px;
+margin:60px auto 0 auto;
+background:white;
+padding:70px 80px;
+border-radius:14px;
+box-shadow:0 30px 80px rgba(0,0,0,.08);
+position:relative;
+}
+
+.about-page-content{
+max-width:640px;
+margin:0 auto;
+font-size:17px;
+line-height:1.9;
+color:#444;
+}
+
+.about-page-content p{
+margin-bottom:28px;
+}
+
+.about-page-content p:last-child{
+margin-bottom:0;
+}
+
+.about-page-content p:first-child{
+font-size:20px;
+font-weight:500;
+color:#111;
+}
+
+/* subtle top accent line */
+
+.about-page-card::before{
+content:"";
+position:absolute;
+top:0;
+left:50%;
+transform:translateX(-50%);
+width:80px;
+height:3px;
+background:#1c6cff;
+border-radius:2px;
+}
+
+/* better section spacing */
+
+.about-page .section{
+padding:110px 0;
+}
