@@ -2758,3 +2758,7 @@ body.lightbox-open{
     margin-bottom: 16px;
   }
 }
+.about-page .about-story-title{
+  color: red !important;
+  font-size: 80px !important;
+}
