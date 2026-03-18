@@ -2636,3 +2636,125 @@ body.lightbox-open{
     font-size:1.05rem;
   }
 }
+/* =========================================
+   ABOUT PAGE — OUR STANDARD
+========================================= */
+
+.about-page .about-standard-section{
+  padding:110px 0 120px;
+  text-align:center;
+  position:relative;
+
+  background:
+  radial-gradient(800px 300px at 50% 0%, rgba(0,160,255,.12), transparent 70%);
+}
+
+/* section header */
+
+.about-page .about-standard-section .section-title{
+  font-size: clamp(2.6rem,4vw,3.4rem);
+  font-weight:950;
+  letter-spacing:-.04em;
+  margin-bottom:14px;
+  color:#f4fbff;
+
+  text-shadow:
+  0 0 10px rgba(0,160,255,.35);
+}
+
+.about-page .about-standard-section .section-sub{
+  max-width:680px;
+  margin:0 auto 60px;
+
+  font-size:1.15rem;
+  line-height:1.8;
+
+  color:rgba(214,226,235,.85);
+}
+
+/* grid */
+
+.about-page .why-grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* cards */
+
+.about-page .why-card{
+
+  padding:32px 28px;
+
+  border-radius:20px;
+
+  background:
+  radial-gradient(300px 120px at 50% 0%, rgba(0,160,255,.10), transparent 80%),
+  rgba(255,255,255,.04);
+
+  border:1px solid rgba(0,160,255,.25);
+
+  box-shadow:
+  0 0 20px rgba(0,160,255,.08),
+  0 20px 50px rgba(0,0,0,.35);
+
+  text-align:center;
+
+  transition:.3s ease;
+}
+
+/* hover */
+
+.about-page .why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:
+    0 0 30px rgba(0,160,255,.25),
+    0 25px 70px rgba(0,0,0,.5);
+}
+
+/* featured */
+
+.about-page .why-card.featured{
+  border:1px solid rgba(0,160,255,.45);
+  box-shadow:
+    0 0 40px rgba(0,160,255,.25),
+    0 30px 90px rgba(0,0,0,.5);
+}
+
+/* icon */
+
+.about-page .why-icon{
+  font-size:22px;
+  margin-bottom:14px;
+  color:#00A0FF;
+
+  text-shadow:
+  0 0 12px rgba(0,160,255,.6);
+}
+
+/* title */
+
+.about-page .why-card h3{
+  font-size:1.25rem;
+  font-weight:900;
+  margin-bottom:10px;
+  color:#ffffff;
+}
+
+/* text */
+
+.about-page .why-card p{
+  font-size:1rem;
+  line-height:1.7;
+  color:rgba(214,226,235,.82);
+}
+
+/* mobile */
+
+@media (max-width:900px){
+  .about-page .why-grid{
+    grid-template-columns:1fr;
+  }
+}
