@@ -18,11 +18,11 @@
   <link rel="preload" as="image" href="images/cars/porsche_red.jpg">
 
   <!-- bump this v number anytime you change CSS so cache never tricks you -->
-  <link rel="stylesheet" href="css/style.css?v=ice8" />
-  <link rel="stylesheet" href="css/animations.css?v=ice8" />
+  <link rel="stylesheet" href="css/style.css?v=ice33" />
+  <link rel="stylesheet" href="css/animations.css?v=ice33" />
 </head>
 
-<body class="hybrid">
+<body class="hybrid home-page">
 
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
@@ -50,14 +50,14 @@
 <main>
 
   <!-- HERO -->
-  <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
+  <section id="home" class="hero" style="background-image:url('images/cars/porsche_red.jpg');">
     <div class="hero-gradient"></div>
 
     <div class="wrap hero-inner">
       <div class="hero-copy reveal">
         <h1 class="super">Perfection is not optional, <span class="accent">it's the standard.</span></h1>
-        <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston &amp; Middlesex County.</p>
-        <p class="muted" style="margin-top:10px;">Trusted by hundreds of vehicle owners for luxury-level results.</p>
+        <p class="lead">Premium mobile detailing delivered to your home, apartment, or workplace across Boston &amp; Middlesex County.</p>
+        <p class="muted hero-proof">Luxury-level results, professional methods, and the kind of detail most others overlook.</p>
 
         <div class="hero-ctas">
           <a class="btn primary" href="services.html">Explore Services</a>
@@ -65,12 +65,12 @@
         </div>
       </div>
 
-      <!-- INDEX ADDITION: hero image tiles (this uses .thumb-grid in your CSS) -->
       <div class="hero-side reveal" aria-hidden="true">
-        <div class="thumb-grid">
-          <img loading="lazy" decoding="async" src="images/cars/amg_luxury_interior1.jpg" alt="Interior detailing">
-          <img loading="lazy" decoding="async" src="images/cars/porsche_718_interior.jpg" alt="Luxury interior">
-          <img loading="lazy" decoding="async" src="images/cars/bmw_interior_open_door.jpg" alt="Detail finish">
+        <div class="hero-video-card">
+          <video class="hero-card-video" autoplay muted loop playsinline preload="metadata" poster="images/cars/porsche_red.jpg">
+            <source src="videos/hero-detail.mp4" type="video/mp4">
+          </video>
+          <div class="hero-card-overlay"></div>
         </div>
       </div>
     </div>
@@ -156,19 +156,19 @@
     <div class="why-grid reveal">
 
       <div class="why-card">
-        <div class="why-icon">★</div>
+        <div class="why-icon star">★</div>
         <h3>100% Client Satisfaction</h3>
         <p>Every service ends with a walkthrough to ensure the vehicle meets the client’s expectations. We do not leave until the results meet the ICE Detailing standard.</p>
       </div>
 
       <div class="why-card featured">
-        <div class="why-icon">⚡</div>
+        <div class="why-icon bolt">⚡</div>
         <h3>Precision-Level Attention to Detail</h3>
         <p>ICE Detailing focuses on the areas many detailers overlook — from interior seams to trim edges and finishing touches that complete the result.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon">✓</div>
+        <div class="why-icon check">✓</div>
         <h3>Professional Methods & Premium Products</h3>
         <p>Proper techniques and high-quality detailing products are used on every vehicle to ensure safe processes and results that last beyond the day of service.</p>
       </div>
@@ -280,6 +280,13 @@
         </div>
 
         <div class="faq-item">
+          <button class="faq-question" type="button">How long does ceramic coating last?</button>
+          <div class="faq-answer">
+            <p>Ceramic coating longevity depends on the product used, how the vehicle is maintained, and how often it is exposed to the elements. With proper care, it can provide long-term protection, enhanced gloss, and easier maintenance beyond traditional waxes or sealants.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
           <button class="faq-question" type="button">What happens if weather changes?</button>
           <div class="faq-answer">
             <p>We monitor weather and will reschedule if needed to ensure results meet our standards.</p>
@@ -375,7 +382,10 @@
   <!-- CTA -->
   <section class="cta-strip">
     <div class="wrap cta-wrap reveal">
-      <h3>Ready for a showroom finish?</h3>
+      <div class="cta-copy">
+        <h3>Ready for a showroom finish?</h3>
+        <p class="muted">Professional mobile detailing brought directly to your location across Boston and Middlesex County.</p>
+      </div>
       <a class="btn primary" href="contact.html">Get a Quote</a>
     </div>
   </section>
@@ -409,8 +419,8 @@
   });
 </script>
 
-<script src="js/slider.js" defer></script>
-<script src="js/main.js" defer></script>
-<script src="js/booking.js" defer></script>
+<script src="js/slider.js?v=ice33" defer></script>
+<script src="js/main.js?v=ice33" defer></script>
+<script src="js/booking.js?v=ice33" defer></script>
 </body>
 </html>
