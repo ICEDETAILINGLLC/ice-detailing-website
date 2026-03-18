@@ -18,8 +18,8 @@
   <link rel="preload" as="image" href="images/cars/porsche_red.jpg">
 
   <!-- bump this v number anytime you change CSS so cache never tricks you -->
-  <link rel="stylesheet" href="css/style.css?v=ice33" />
-  <link rel="stylesheet" href="css/animations.css?v=ice33" />
+  <link rel="stylesheet" href="css/style.css?v=ice34" />
+  <link rel="stylesheet" href="css/animations.css?v=ice34" />
 </head>
 
 <body class="hybrid home-page">
@@ -31,14 +31,20 @@
       <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
     </a>
 
-<nav class="primary-nav" aria-label="Primary navigation">
-  <a href="index.html#home" class="nav-link active">Home</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="gallery.html" class="nav-link">Gallery</a>
-  <a href="reviews.html" class="nav-link">Reviews</a>
-  <a href="about.html" class="nav-link">About</a>
-  <a href="contact.html" class="nav-link">Contact</a>
-</nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#home" class="nav-link active">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="reviews.html" class="nav-link">Reviews</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
     <div class="header-actions">
       <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
@@ -50,21 +56,20 @@
 <main>
 
   <!-- HERO -->
-  <section id="home" class="hero" style="background-image:url('images/cars/porsche_red.jpg');">
+  <section id="home" class="hero" data-parallax style="background-image:url('images/cars/porsche_red.jpg');">
     <div class="hero-gradient"></div>
 
     <div class="wrap hero-inner">
       <div class="hero-copy reveal">
         <h1 class="super">Perfection is not optional, <span class="accent">it's the standard.</span></h1>
-        <p class="lead">Premium mobile detailing delivered to your home, apartment, or workplace across Boston &amp; Middlesex County.</p>
-        <p class="muted hero-proof">Luxury-level results, professional methods, and the kind of detail most others overlook.</p>
+        <p class="lead">Premium mobile detailing — showroom finishes delivered to your door across Boston &amp; Middlesex County.</p>
+        <p class="muted" style="margin-top:10px;">Trusted by hundreds of vehicle owners for luxury-level results.</p>
 
         <div class="hero-ctas">
           <a class="btn primary" href="services.html">Explore Services</a>
           <a class="btn ghost" href="contact.html">Book Now</a>
         </div>
       </div>
-
       <div class="hero-side reveal" aria-hidden="true">
         <div class="hero-video-card">
           <video class="hero-card-video" autoplay muted loop playsinline preload="metadata" poster="images/cars/porsche_red.jpg">
@@ -156,19 +161,19 @@
     <div class="why-grid reveal">
 
       <div class="why-card">
-        <div class="why-icon star">★</div>
+        <div class="why-icon">★</div>
         <h3>100% Client Satisfaction</h3>
         <p>Every service ends with a walkthrough to ensure the vehicle meets the client’s expectations. We do not leave until the results meet the ICE Detailing standard.</p>
       </div>
 
       <div class="why-card featured">
-        <div class="why-icon bolt">⚡</div>
+        <div class="why-icon">⚡</div>
         <h3>Precision-Level Attention to Detail</h3>
         <p>ICE Detailing focuses on the areas many detailers overlook — from interior seams to trim edges and finishing touches that complete the result.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon check">✓</div>
+        <div class="why-icon">✓</div>
         <h3>Professional Methods & Premium Products</h3>
         <p>Proper techniques and high-quality detailing products are used on every vehicle to ensure safe processes and results that last beyond the day of service.</p>
       </div>
@@ -259,6 +264,13 @@
 
       <div class="faq">
         <div class="faq-item">
+          <button class="faq-question" type="button">What is a ceramic coating?</button>
+          <div class="faq-answer">
+            <p>A ceramic coating is a long-term protective layer applied to your vehicle’s paint. It enhances gloss, adds hydrophobic protection, and makes routine washing easier while helping defend against the elements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
           <button class="faq-question" type="button">Do you need water or power?</button>
           <div class="faq-answer">
             <p>We arrive fully equipped. If water and power are available, it can improve efficiency — but it’s not required for every appointment.</p>
@@ -276,13 +288,6 @@
           <button class="faq-question" type="button">Do prices vary?</button>
           <div class="faq-answer">
             <p>Yes — size and condition can affect final pricing. We confirm expectations and pricing before we begin.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button">How long does ceramic coating last?</button>
-          <div class="faq-answer">
-            <p>Ceramic coating longevity depends on the product used, how the vehicle is maintained, and how often it is exposed to the elements. With proper care, it can provide long-term protection, enhanced gloss, and easier maintenance beyond traditional waxes or sealants.</p>
           </div>
         </div>
 
@@ -382,10 +387,7 @@
   <!-- CTA -->
   <section class="cta-strip">
     <div class="wrap cta-wrap reveal">
-      <div class="cta-copy">
-        <h3>Ready for a showroom finish?</h3>
-        <p class="muted">Professional mobile detailing brought directly to your location across Boston and Middlesex County.</p>
-      </div>
+      <h3>Ready for a showroom finish?</h3>
       <a class="btn primary" href="contact.html">Get a Quote</a>
     </div>
   </section>
@@ -417,10 +419,28 @@
   document.querySelectorAll('.faq-question').forEach(btn=>{
     btn.addEventListener('click',()=> btn.parentElement.classList.toggle('open'));
   });
+
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primaryNav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = primaryNav.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    primaryNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        primaryNav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 </script>
 
-<script src="js/slider.js?v=ice33" defer></script>
-<script src="js/main.js?v=ice33" defer></script>
-<script src="js/booking.js?v=ice33" defer></script>
+<script src="js/slider.js?v=ice34" defer></script>
+<script src="js/main.js?v=ice34" defer></script>
+<script src="js/booking.js?v=ice34" defer></script>
 </body>
 </html>
