@@ -3896,76 +3896,47 @@ body.lightbox-open{
 }
 
 
-/* SAFE SERVICES UPDATE PATCH */
-.services-page .svc-trust{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-.services-page .trust-pill{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:10px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.10);
-  color:rgba(234,246,255,0.90);
-}
-.services-page .svc-title{
-  font-size:clamp(2.55rem,4.2vw,3.7rem);
-  line-height:1.0;
-  letter-spacing:-0.04em;
-}
+/* =========================================
+   SERVICES PAGE — STABLE CONVERSION PATCH
+   ========================================= */
+
 .services-page .svc-sub-strong,
 .services-page .svc-lead-strong{
-  max-width:68ch;
-  line-height:1.82;
+  max-width: 68ch;
 }
-.services-page .svc-grid-packages{
-  align-items:stretch;
+
+.services-page .svc-package-summary{
+  max-width: 34ch;
 }
-.services-page .svc-card-package{
-  display:flex;
-  flex-direction:column;
+
+.services-page .svc-trust{
+  margin-top: 18px;
 }
-.services-page .svc-card-package .svc-actions{
-  margin-top:auto;
+
+.services-page .trust-pill{
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(255,255,255,0.10);
+  color: rgba(234,246,255,0.92);
 }
+
 .services-page .elite-card{
-  border-color:rgba(0,160,255,0.38);
+  border-color: rgba(0,160,255,0.42);
   box-shadow:
     0 0 0 1px rgba(0,160,255,0.08) inset,
     0 26px 92px rgba(0,160,255,0.08),
     0 36px 110px rgba(0,0,0,0.42);
 }
-.services-page .svc-toggle{
-  width:100%;
-  justify-content:space-between;
-  border:1px solid rgba(0,160,255,0.18);
-  background:rgba(0,160,255,0.06);
-}
-.services-page .svc-toggle:hover{
-  border-color:rgba(0,160,255,0.34);
-  background:rgba(0,160,255,0.08);
-  box-shadow:0 0 26px rgba(0,160,255,0.12);
-}
-.services-page .addon-row{
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:22px;
-  align-items:center;
-}
-.services-page .addon-name{
-  font-weight:900;
-  letter-spacing:-0.01em;
-}
+
 .services-page .addon-desc{
-  max-width:58ch;
+  max-width: 58ch;
 }
-@media (max-width:980px){
-  .services-page .addon-row{
-    grid-template-columns:1fr;
+
+.services-page .svc-note strong{
+  color: #f4fbff;
+}
+
+@media (max-width:720px){
+  .services-page .svc-package-summary{
+    max-width: none;
   }
 }
