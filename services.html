@@ -68,7 +68,7 @@
             <li>Helps protect against contamination</li>
             <li>Ask about coating bundles</li>
           </ul>
-          <a class="panel-cta" href="contact.html" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
+          <a class="panel-cta" href="contact.html?service=Ceramic%20Protection" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
         </div>
       </aside>
     </div>
@@ -229,9 +229,9 @@
       <div class="svc-package-question reveal">
         <div class="svc-package-question-copy">
           <strong>Not sure which package fits your vehicle?</strong>
-          <span>Send us a quick message and we’ll point you to the right option before you book.</span>
+          <span>Have a question before booking? Reach out and we’ll help you choose the right service for your vehicle.</span>
         </div>
-        <a class="btn primary" href="contact.html">Ask Us a Question</a>
+        <a class="btn primary" href="contact.html?service=General%20Question">Ask Us a Question</a>
       </div>
 
       <div class="svc-note reveal">
@@ -276,8 +276,8 @@
           </ul>
 
           <div class="svc-actions">
-            <a class="btn primary" href="contact.html" data-prefill="Exterior Detail">Book Exterior Detail</a>
-            <a class="btn ghost" href="contact.html" data-prefill="Exterior Detail">Ask a Question</a>
+            <a class="btn primary" href="contact.html?service=Exterior%20Detail" data-prefill="Exterior Detail">Book Exterior Detail</a>
+            <a class="btn ghost" href="contact.html?service=Exterior%20Detail" data-prefill="Exterior Detail">Ask a Question</a>
           </div>
         </article>
 
@@ -306,8 +306,8 @@
           </ul>
 
           <div class="svc-actions">
-            <a class="btn primary" href="contact.html" data-prefill="Interior Detail">Book Interior Detail</a>
-            <a class="btn ghost" href="contact.html" data-prefill="Interior Detail">Ask a Question</a>
+            <a class="btn primary" href="contact.html?service=Interior%20Detail" data-prefill="Interior Detail">Book Interior Detail</a>
+            <a class="btn ghost" href="contact.html?service=Interior%20Detail" data-prefill="Interior Detail">Ask a Question</a>
           </div>
         </article>
 
@@ -336,7 +336,7 @@
           </div>
           <div class="svc-feature-meta">
             <div class="svc-feature-price">Starting at $299</div>
-            <a class="btn ghost" href="contact.html" data-prefill="Paint Correction">Book Paint Correction</a>
+            <a class="btn ghost" href="contact.html?service=Paint%20Correction" data-prefill="Paint Correction">Book Paint Correction</a>
           </div>
         </article>
 
@@ -347,7 +347,7 @@
           </div>
           <div class="svc-feature-meta">
             <div class="svc-feature-price">Starting at $699</div>
-            <a class="btn ghost" href="contact.html" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
+            <a class="btn ghost" href="contact.html?service=Ceramic%20Protection" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
           </div>
         </article>
       </div>
@@ -357,7 +357,7 @@
           <h3>Not sure what your vehicle needs?</h3>
           <p class="muted">Send photos and we’ll recommend the right package, correction, or protection option.</p>
         </div>
-        <a class="btn primary" href="contact.html">Get a Recommendation</a>
+        <a class="btn primary" href="contact.html?service=Service%20Recommendation">Get a Recommendation</a>
       </div>
     </div>
   </section>
@@ -382,7 +382,7 @@
           <div class="addon-desc">A gloss-focused upgrade that smooths the paint, removes bonded contamination, and sharpens the finish.</div>
         </article>
 
-        <article class="addon-card" role="listitem">
+        <article class="addon-card glow" role="listitem">
           <div class="addon-card-top">
             <div class="addon-name">Trim Restoration</div>
             <div class="addon-price">From $50</div>
@@ -398,7 +398,7 @@
           <div class="addon-desc">Improves clarity, brightness, and overall appearance on oxidized headlights.</div>
         </article>
 
-        <article class="addon-card" role="listitem">
+        <article class="addon-card glow" role="listitem">
           <div class="addon-card-top">
             <div class="addon-name">Engine Bay Detail</div>
             <div class="addon-price">From $50</div>
@@ -414,7 +414,7 @@
           <div class="addon-desc">Targets lingering odors to leave the cabin noticeably fresher and more comfortable.</div>
         </article>
 
-        <article class="addon-card" role="listitem">
+        <article class="addon-card glow" role="listitem">
           <div class="addon-card-top">
             <div class="addon-name">Extractor Spot Treatment</div>
             <div class="addon-price">From $25</div>
@@ -450,7 +450,7 @@
           </p>
         </div>
 
-        <a class="btn primary" href="contact.html" data-prefill="Fleet Maintenance">
+        <a class="btn primary" href="contact.html?service=Fleet%20Maintenance" data-prefill="Fleet Maintenance">
           Get a Quote
         </a>
       </div>
@@ -571,6 +571,21 @@
       }
     });
   });
+
+  document.querySelectorAll('[data-prefill]').forEach(link => {
+    link.addEventListener('click', () => {
+      const service = link.getAttribute('data-prefill') || '';
+      try {
+        localStorage.setItem('selectedService', service);
+        localStorage.setItem('selected_service', service);
+        localStorage.setItem('service', service);
+        sessionStorage.setItem('selectedService', service);
+        sessionStorage.setItem('selected_service', service);
+        sessionStorage.setItem('service', service);
+      } catch (e) {}
+    });
+  });
+
 </script>
 
 <script src="js/main.js?v=ice36" defer></script>
