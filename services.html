@@ -106,7 +106,7 @@
 
           <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
 
-          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon">+</span></button>
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
             <div class="svc-detail-block">
@@ -146,7 +146,7 @@
 
           <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
 
-          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon">+</span></button>
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
             <div class="svc-detail-block">
@@ -192,7 +192,7 @@
 
           <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
 
-          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon">+</span></button>
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
             <div class="svc-detail-block">
@@ -551,10 +551,14 @@
     hidden.style.maxHeight = '0px';
     hidden.style.opacity = '0';
 
+    btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+
     btn.addEventListener('click', () => {
       const isOpen = card.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      btn.textContent = isOpen ? "Hide what's included" : "View what's included <span class="toggle-icon">+</span>";
+      btn.innerHTML = isOpen
+        ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
+        : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
       if (isOpen) {
         hidden.style.maxHeight = hidden.scrollHeight + 'px';
