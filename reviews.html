@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Reviews — ICE Detailing LLC</title>
+  <title>Services — ICE Detailing LLC</title>
+  <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice7" />
-  <link rel="stylesheet" href="css/animations.css?v=ice7" />
+  <link rel="stylesheet" href="css/style.css?v=ice36" />
+  <link rel="stylesheet" href="css/animations.css?v=ice36" />
 </head>
 
-<body class="hybrid">
+<body class="hybrid services-page">
 
 <header class="site-header" role="banner">
   <div class="wrap header-inner">
@@ -18,14 +19,14 @@
       <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
     </a>
 
-<nav class="primary-nav" aria-label="Primary navigation">
-  <a href="index.html#home" class="nav-link active">Home</a>
-  <a href="services.html" class="nav-link">Services</a>
-  <a href="gallery.html" class="nav-link">Gallery</a>
-  <a href="reviews.html" class="nav-link">Reviews</a>
-  <a href="about.html" class="nav-link">About</a>
-  <a href="contact.html" class="nav-link">Contact</a>
-</nav>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link active">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="reviews.html" class="nav-link">Reviews</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
     <div class="header-actions">
       <a href="tel:16179702329" class="cta-call">Call (617) 970-2329</a>
@@ -34,56 +35,564 @@
   </div>
 </header>
 
-<main>
-  <section class="section light-block">
+
+<main id="main">
+
+  <!-- HERO -->
+  
+<section class="svc-hero">
+    <div class="wrap svc-hero-inner">
+      <div class="svc-hero-copy reveal">
+        <span class="svc-kicker">Mobile Detailing • Boston &amp; Middlesex County</span>
+        <h1 class="svc-title">Our Services</h1>
+        <p class="svc-sub muted svc-sub-strong">
+          Choose from three main detailing packages, or book exterior-only, interior-only, paint correction, and ceramic protection based on your vehicle’s condition and your goals.
+        </p>
+
+        <div class="svc-hero-ctas">
+          <a class="btn primary" href="contact.html">Get a Quote</a>
+          <a class="btn ghost" href="#packages">See Packages</a>
+        </div>
+
+      </div>
+
+      <aside class="svc-hero-side reveal" aria-label="Ceramic coating offer">
+        <div class="svc-mini-panel svc-offer-panel">
+          <span class="svc-offer-kicker">Featured Upgrade</span>
+          <div class="panel-title">Ceramic Protection</div>
+          <p class="svc-offer-copy">
+            Add longer-lasting gloss, easier maintenance, and stronger surface protection when bundled with the right detail.
+          </p>
+          <ul class="svc-offer-points">
+            <li>Deeper shine and water behavior</li>
+            <li>Helps protect against contamination</li>
+            <li>Ask about coating bundles</li>
+          </ul>
+          <a class="panel-cta" href="contact.html?service=Ceramic%20Protection" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="section svc-section">
     <div class="wrap">
-      <h1 class="section-title reveal">Customer Reviews</h1>
-      <p class="section-sub muted reveal">Real feedback from clients — premium results, every time.</p>
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Choose the Right Level of Detail</h2>
+          <p class="muted svc-lead svc-lead-strong">
+            New to detailing? No problem. Start with a full package or choose exactly what your vehicle needs — interior cleaning, exterior cleaning, paint correction, or ceramic protection. We keep the options clear so it is easy to choose the right service without knowing detailing terms.
+          </p>
+        </div>
+      </div>
 
-      <div class="review-grid reveal">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <h3>“My car looks brand new again.”</h3>
-          <p>ICE Detailing went above and beyond. The interior looks brand new.</p>
-          <span class="author">– Jason R.</span>
+<div class="svc-grid reveal svc-grid-packages">
+
+        <!-- Maintenance Detail -->
+        <article class="svc-card svc-card-package">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Maintenance Detail</h3>
+              <p class="svc-bestfor">Best for well-kept vehicles that need a clean reset</p>
+            </div>
+            <span class="svc-badge">Essential</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$249</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$299</span></div>
+            <div class="svc-time muted">Ideal for vehicles already in decent shape</div>
+          </div>
+
+          <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
+
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
+
+          <div class="svc-hidden">
+            <div class="svc-detail-block">
+              <h4>Exterior</h4>
+              <ul class="svc-list">
+                <li>Exterior paintwork, glass, emblems, and plastics are properly cleaned, decontaminated, and hand dried.</li>
+                <li>Tires and wheels are power washed, and tires are dressed to a satin finish.</li>
+              </ul>
+            </div>
+
+            <div class="svc-detail-block">
+              <h4>Interior</h4>
+              <ul class="svc-list">
+                <li>All carpets, mats, and upholstery are vacuumed.</li>
+                <li>Dash, console, and all vinyl are dusted and wiped down with a professional-grade cleaner.</li>
+                <li>Interior glass is cleaned.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Elite Detail -->
+        <article class="svc-card featured elite-card svc-card-package" aria-label="Elite Detail featured package">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Elite Detail</h3>
+              <p class="svc-bestfor">Most popular — recommended for most daily drivers</p>
+            </div>
+            <span class="svc-badge strong">Most Popular</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$399</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$449</span></div>
+            <div class="svc-time muted">The strongest overall value for most clients</div>
+          </div>
+
+          <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
+
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
+
+          <div class="svc-hidden">
+            <div class="svc-detail-block">
+              <h4>Exterior</h4>
+              <ul class="svc-list">
+                <li>Paintwork, glass, emblems, and plastics are properly cleaned, decontaminated, and hand dried.</li>
+                <li>Tires and wheels are power washed, and tires are dressed to a satin finish.</li>
+                <li>Tires, wheels, and wheel arches are deep cleaned.</li>
+                <li>Ceramic spray wax is applied for a 2–3 month protective finish.</li>
+              </ul>
+            </div>
+
+            <div class="svc-detail-block">
+              <h4>Interior</h4>
+              <ul class="svc-list">
+                <li>All carpets, mats, and upholstery are vacuumed.</li>
+                <li>Carpet and upholstery stains are spot treated.</li>
+                <li>Dash, console, and all vinyl are dusted and wiped down with a professional-grade cleaner.</li>
+                <li>Dash, console, and all vinyl are protected with a restoring UV protectant.</li>
+                <li>Leather is treated with a specialized leather cleaner and conditioner.</li>
+                <li>Interior glass is cleaned.</li>
+                <li>Trunk is vacuumed.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Platinum Detail -->
+        <article class="svc-card svc-card-package">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Platinum Detail</h3>
+              <p class="svc-bestfor">Best for clients who want our most complete detail, highest level of refinement, and strongest overall finish</p>
+            </div>
+            <span class="svc-badge">Premium</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$499</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$549</span></div>
+            <div class="svc-time muted">Our deepest reset with stronger restoration work</div>
+          </div>
+
+          <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
+
+          <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
+
+          <div class="svc-hidden">
+            <div class="svc-detail-block">
+              <h4>Exterior</h4>
+              <ul class="svc-list">
+                <li>Paintwork, glass, emblems, and plastics are properly cleaned, decontaminated, and hand dried.</li>
+                <li>Tires and wheels are power washed, and tires are dressed to a satin finish.</li>
+                <li>Tires, wheels, and wheel arches are deep cleaned.</li>
+                <li>Black textured plastics are treated with a restoring protectant.</li>
+                <li>Hybrid ceramic liquid wax is machine applied for up to 6 months of protection.</li>
+              </ul>
+            </div>
+
+            <div class="svc-detail-block">
+              <h4>Interior</h4>
+              <ul class="svc-list">
+                <li>All carpets, mats, and any cloth upholstery are vacuumed.</li>
+                <li>All carpets, mats, and cloth upholstery are scrubbed and steam cleaned.</li>
+                <li>Remaining stains are treated with a hot water extraction process.</li>
+                <li>Dash, console, and all vinyl are dusted and wiped down with a professional-grade cleaner.</li>
+                <li>Dash, console, and all vinyl are protected with a restoring UV protectant.</li>
+                <li>Leather is gently scrubbed, steamed, and conditioned.</li>
+                <li>All crevices are blown out with compressed air, and vents are deep cleaned.</li>
+                <li>Interior glass is cleaned.</li>
+                <li>High-touch areas such as the steering wheel, dash, armrests, center console, and door handles are steam cleaned, disinfected, and sanitized with 220° steam.</li>
+                <li>Trunk is vacuumed.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="svc-package-question reveal">
+        <div class="svc-package-question-copy">
+          <strong>Have a question before booking?</strong>
+          <span>Schedule your appointment today and get the right service for your vehicle!</span>
+        </div>
+        <a class="btn primary" href="contact.html?service=General%20Question">Ask Us a Question</a>
+      </div>
+
+      <div class="svc-note reveal">
+        <strong>Pricing note:</strong> Heavier staining, excessive pet hair, or extreme buildup may affect final pricing. We confirm everything before work begins.
+      </div>
+    </div>
+  </section>
+
+  <!-- SINGLE-SERVICE PACKAGES -->
+  <section class="section svc-section svc-alt">
+    <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Interior &amp; Exterior Only Options</h2>
+          <p class="muted svc-lead">
+            For vehicles that only need one side of the detail handled.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-grid reveal">
+
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Exterior Detail</h3>
+              <p class="svc-bestfor">Best for exterior-only protection and cleanup</p>
+            </div>
+            <span class="svc-badge">Exterior</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$125</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$175</span></div>
+          </div>
+
+          <ul class="svc-list">
+            <li>Exterior paintwork, glass, emblems, and plastics are properly cleaned, decontaminated, and hand dried.</li>
+            <li>Tires, wheels, and wheel arches are deep cleaned, and tires are dressed to a satin finish.</li>
+            <li>Black textured plastics are treated with a restoring protectant.</li>
+            <li>Hybrid ceramic liquid wax is machine applied for up to 6 months of protection.</li>
+          </ul>
+
+          <div class="svc-actions">
+            <a class="btn primary" href="contact.html?service=Exterior%20Detail" data-prefill="Exterior Detail">Book Exterior Detail</a>
+            <a class="btn ghost" href="contact.html?service=Exterior%20Detail" data-prefill="Exterior Detail">Ask a Question</a>
+          </div>
+        </article>
+
+        <article class="svc-card">
+          <header class="svc-card-top">
+            <div>
+              <h3 class="svc-card-title">Interior Detail</h3>
+              <p class="svc-bestfor">Best for interior-only deep cleaning and sanitation</p>
+            </div>
+            <span class="svc-badge">Interior</span>
+          </header>
+
+          <div class="svc-price">
+            <div class="svc-price-line"><strong>Sedan</strong> <span>$199</span></div>
+            <div class="svc-price-line"><strong>SUV/Truck</strong> <span>$249</span></div>
+          </div>
+
+          <ul class="svc-list">
+            <li>All carpets, mats, and cloth upholstery are vacuumed, scrubbed, and steam cleaned.</li>
+            <li>Remaining stains are treated with a hot water extraction process.</li>
+            <li>Dash, console, and all vinyl are cleaned and protected with a restoring UV protectant.</li>
+            <li>Leather is gently scrubbed, steamed, and conditioned.</li>
+            <li>All crevices are blown out with compressed air, and vents are deep cleaned.</li>
+            <li>High-touch surfaces are steam cleaned, disinfected, and sanitized with 220° steam.</li>
+            <li>Interior glass is cleaned, and the trunk is vacuumed.</li>
+          </ul>
+
+          <div class="svc-actions">
+            <a class="btn primary" href="contact.html?service=Interior%20Detail" data-prefill="Interior Detail">Book Interior Detail</a>
+            <a class="btn ghost" href="contact.html?service=Interior%20Detail" data-prefill="Interior Detail">Ask a Question</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIALTY SERVICES -->
+  <section class="section svc-section svc-specialty-shell">
+    <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <span class="svc-specialty-kicker">High-Impact Upgrade</span>
+          <h2 class="svc-h2">Specialty Services</h2>
+          <p class="muted svc-lead svc-lead-strong">
+            High-impact correction and protection services for clients who want a bigger transformation, stronger shine, and longer-lasting results.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-feature-list reveal">
+        <article class="svc-feature-row svc-feature-row-special">
+          <div class="svc-feature-copy">
+            <h3>Paint Correction</h3>
+            <p>Paint correction reduces swirls, oxidation, and light defects while restoring depth, clarity, and gloss. This is the right option when your paint needs more than a standard detail.</p>
+          </div>
+          <div class="svc-feature-meta">
+            <div class="svc-feature-price">Starting at $299</div>
+            <a class="btn ghost" href="contact.html?service=Paint%20Correction" data-prefill="Paint Correction">Book Paint Correction</a>
+          </div>
+        </article>
+
+        <article class="svc-feature-row svc-feature-row-special">
+          <div class="svc-feature-copy">
+            <h3>Ceramic Protection</h3>
+            <p>Ceramic protection adds gloss, water behavior, and easier maintenance while helping defend the finish over time. Paint prep is recommended before application for the best result.</p>
+          </div>
+          <div class="svc-feature-meta">
+            <div class="svc-feature-price">Starting at $699</div>
+            <a class="btn ghost" href="contact.html?service=Ceramic%20Protection" data-prefill="Ceramic Protection">Book Ceramic Protection</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="svc-cta reveal">
+        <div class="svc-cta-copy">
+          <h3>Not sure what your vehicle needs?</h3>
+          <p class="muted">Send photos and we’ll recommend the right package, correction, or protection option.</p>
+        </div>
+        <a class="btn primary" href="contact.html?service=Service%20Recommendation">Get a Recommendation</a>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- ADD-ONS -->
+  <section class="section svc-section">
+    <div class="wrap">
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Popular Upgrades</h2>
+          <p class="muted svc-lead svc-lead-strong">Enhance the final result with premium add-ons that boost gloss, improve clarity, and make the detail feel more complete.</p>
+        </div>
+      </div>
+
+      <div class="addon-grid reveal" role="list">
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Clay Bar &amp; Polish</div>
+            <div class="addon-price">$199</div>
+          </div>
+          <div class="addon-desc">A gloss-focused upgrade that smooths the paint, removes bonded contamination, and sharpens the finish.</div>
+        </article>
+
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Trim Restoration</div>
+            <div class="addon-price">From $50</div>
+          </div>
+          <div class="addon-desc">Restores faded exterior trim and textured plastics with a darker, richer finish.</div>
+        </article>
+
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Headlight Restoration</div>
+            <div class="addon-price">From $80</div>
+          </div>
+          <div class="addon-desc">Improves clarity, brightness, and overall appearance on oxidized headlights.</div>
+        </article>
+
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Engine Bay Detail</div>
+            <div class="addon-price">From $50</div>
+          </div>
+          <div class="addon-desc">Safely cleans and refines the engine bay for a cleaner, more complete finish.</div>
+        </article>
+
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Odor Removal</div>
+            <div class="addon-price">From $75</div>
+          </div>
+          <div class="addon-desc">Targets lingering odors to leave the cabin noticeably fresher and more comfortable.</div>
+        </article>
+
+        <article class="addon-card glow" role="listitem">
+          <div class="addon-card-top">
+            <div class="addon-name">Extractor Spot Treatment</div>
+            <div class="addon-price">From $25</div>
+          </div>
+          <div class="addon-desc">Focused treatment for isolated stains that need more than standard vacuuming or steam cleaning.</div>
+        </article>
+      </div>
+
+      <div class="svc-note reveal">
+        Add-on pricing depends on vehicle size and condition. Final pricing is confirmed before work begins.
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET MAINTENANCE -->
+  <section class="section svc-section svc-alt">
+    <div class="wrap">
+
+      <div class="svc-head reveal">
+        <div>
+          <h2 class="svc-h2">Fleet Maintenance</h2>
+          <p class="muted svc-lead">
+            Recurring detailing for business vehicles that need to stay clean, professional, and road-ready.
+          </p>
+        </div>
+      </div>
+
+      <div class="svc-cta reveal">
+        <div class="svc-cta-copy">
+          <h3>Simple, consistent fleet care.</h3>
+          <p class="muted">
+            Great for contractors, service vehicles, real estate teams, and commercial fleets.
+          </p>
         </div>
 
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <h3>“Best detailing service in the area.”</h3>
-          <p>Premium package was worth every penny. Insane quality.</p>
-          <span class="author">– Sarah M.</span>
+        <a class="btn primary" href="contact.html?service=Fleet%20Maintenance" data-prefill="Fleet Maintenance">
+          Get a Quote
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section light-block">
+    <div class="wrap reveal">
+      <h2 class="section-title">Service FAQ</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">What is a ceramic coating?</button>
+          <div class="faq-answer">
+            <p>A ceramic coating is a longer-term protective layer applied to your vehicle’s paint. It helps add gloss, creates hydrophobic behavior, and makes regular washing and maintenance easier over time.</p>
+          </div>
         </div>
 
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <h3>“Deep clean like I’ve never seen.”</h3>
-          <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
-          <span class="author">– Daniel K.</span>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Do you come to homes and workplaces?</button>
+          <div class="faq-answer">
+            <p>Yes. We’re fully mobile and can service vehicles at homes, apartments, and workplaces.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Do I need to know which package to book?</button>
+          <div class="faq-answer">
+            <p>No. If you are unsure, send photos and a quick description of the vehicle’s condition. We’ll help you choose the right service before the appointment is confirmed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Do you need water or power?</button>
+          <div class="faq-answer">
+            <p>We arrive prepared. If water or power is available, it can help, but it is not required for every appointment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">What affects pricing?</button>
+          <div class="faq-answer">
+            <p>Vehicle size, condition, pet hair, staining, sand, and overall buildup can affect final pricing.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-strip">
+    <div class="wrap cta-wrap reveal">
+      <h3>Ready to book your detail?</h3>
+        <p class="muted">Schedule your appointment today and get the right service for your vehicle.</p>
+      <a class="btn primary" href="contact.html">Schedule Appointment</a>
+    </div>
+  </section>
+
 </main>
+
 
 <footer class="site-footer sleek-footer">
   <div class="wrap footer-flex">
     <div class="footer-brand">
-<img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
+      <img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
       <div class="footer-name">ICE Detailing LLC</div>
+      <div class="footer-loc">Boston • Middlesex County</div>
     </div>
 
     <div class="footer-links">
+      <a href="mailto:icedetailingllc@gmail.com">Email</a>
+      <a href="tel:16179702329">Call</a>
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
     </div>
 
-    <div class="footer-copy">© <span id="footerYearRev"></span> ICE Detailing LLC</div>
+    <div class="footer-copy">© <span id="footerYearSvc"></span> ICE Detailing LLC</div>
   </div>
 </footer>
 
-<script>document.getElementById('footerYearRev').textContent = new Date().getFullYear();</script>
-<script src="js/main.js" defer></script>
+<script>
+  document.getElementById('footerYearSvc').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  document.querySelectorAll('.svc-card-package').forEach(card => {
+    const btn = card.querySelector('.svc-toggle');
+    const hidden = card.querySelector('.svc-hidden');
+    if (!btn || !hidden) return;
+
+    hidden.style.maxHeight = '0px';
+    hidden.style.opacity = '0';
+
+    btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+
+    btn.addEventListener('click', () => {
+      const isOpen = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.innerHTML = isOpen
+        ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
+        : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+
+      if (isOpen) {
+        hidden.style.maxHeight = hidden.scrollHeight + 'px';
+        hidden.style.opacity = '1';
+      } else {
+        hidden.style.maxHeight = '0px';
+        hidden.style.opacity = '0';
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (card.classList.contains('open')) {
+        hidden.style.maxHeight = hidden.scrollHeight + 'px';
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-prefill]').forEach(link => {
+    link.addEventListener('click', () => {
+      const service = link.getAttribute('data-prefill') || '';
+      try {
+        localStorage.setItem('selectedService', service);
+        localStorage.setItem('selected_service', service);
+        localStorage.setItem('service', service);
+        sessionStorage.setItem('selectedService', service);
+        sessionStorage.setItem('selected_service', service);
+        sessionStorage.setItem('service', service);
+      } catch (e) {}
+    });
+  });
+
+</script>
+
+<script src="js/main.js?v=ice36" defer></script>
+<script src="js/booking.js?v=ice36" defer></script>
 </body>
 </html>
