@@ -3896,407 +3896,76 @@ body.lightbox-open{
 }
 
 
-
-
-/* =========================================
-   ICE SERVICES PAGE — PERFECTED PATCH
-   ========================================= */
-
-.services-page .svc-hero {
-  padding: 104px 0 56px;
-  background:
-    radial-gradient(1120px 440px at 16% 10%, rgba(0,160,255,0.22), transparent 58%),
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0));
+/* SAFE SERVICES UPDATE PATCH */
+.services-page .svc-trust{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:18px;
 }
-
-.services-page .svc-title {
-  font-size: clamp(2.8rem, 4.8vw, 4.05rem);
-  line-height: 0.98;
-  letter-spacing: -0.05em;
-  margin-bottom: 14px;
+.services-page .trust-pill{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:10px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.10);
+  color:rgba(234,246,255,0.90);
 }
-
-.services-page .svc-sub,
-.services-page .svc-lead,
-.services-page .svc-note,
-.services-page .addon-desc,
-.services-page .svc-feature-copy p,
-.services-page .svc-package-summary {
-  color: rgba(222,234,242,0.9);
+.services-page .svc-title{
+  font-size:clamp(2.55rem,4.2vw,3.7rem);
+  line-height:1.0;
+  letter-spacing:-0.04em;
 }
-
 .services-page .svc-sub-strong,
-.services-page .svc-lead-strong {
-  max-width: 68ch;
-  font-size: 1.08rem;
-  line-height: 1.84;
+.services-page .svc-lead-strong{
+  max-width:68ch;
+  line-height:1.82;
 }
-
-.services-page .svc-hero-ctas {
-  margin-top: 18px;
+.services-page .svc-grid-packages{
+  align-items:stretch;
 }
-
-.services-page .svc-trust {
-  margin-top: 18px;
+.services-page .svc-card-package{
+  display:flex;
+  flex-direction:column;
 }
-
-.services-page .trust-pill {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.12);
-  color: rgba(234,246,255,0.9);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+.services-page .svc-card-package .svc-actions{
+  margin-top:auto;
 }
-
-.services-page .svc-offer-panel {
-  height: 100%;
-  padding: 22px;
-  border-radius: 22px;
-  background:
-    radial-gradient(580px 180px at 12% 0%, rgba(0,160,255,0.16), transparent 58%),
-    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.18));
-  border: 1px solid rgba(0,160,255,0.18);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.03) inset,
-    0 28px 88px rgba(0,0,0,0.34);
-}
-
-.services-page .svc-offer-kicker {
-  display: inline-flex;
-  padding: 8px 10px;
-  margin-bottom: 10px;
-  border-radius: 999px;
-  font-size: .74rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  color: rgba(234,246,255,0.94);
-  background: rgba(0,160,255,0.08);
-  border: 1px solid rgba(0,160,255,0.22);
-}
-
-.services-page .svc-offer-copy {
-  margin: 0 0 14px;
-  line-height: 1.8;
-  color: rgba(222,234,242,0.86);
-}
-
-.services-page .svc-offer-points {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.services-page .svc-offer-points li {
-  position: relative;
-  padding-left: 18px;
-  color: rgba(234,246,255,0.9);
-  font-weight: 700;
-}
-
-.services-page .svc-offer-points li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--ice);
-}
-
-.services-page .svc-section {
-  padding: 94px 0;
-}
-
-.services-page .svc-head {
-  margin-bottom: 28px;
-}
-
-.services-page .svc-h2 {
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1.04;
-  letter-spacing: -0.03em;
-}
-
-.services-page .svc-grid-packages {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  align-items: stretch;
-}
-
-.services-page .svc-card-package {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding: 26px 24px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.18));
-}
-
-.services-page .svc-card-package .svc-actions {
-  margin-top: auto;
-}
-
-.services-page .svc-card-package:hover {
-  transform: translateY(-6px);
-}
-
-.services-page .elite-card {
-  border-color: rgba(0,160,255,0.38);
+.services-page .elite-card{
+  border-color:rgba(0,160,255,0.38);
   box-shadow:
     0 0 0 1px rgba(0,160,255,0.08) inset,
     0 26px 92px rgba(0,160,255,0.08),
     0 36px 110px rgba(0,0,0,0.42);
 }
-
-.services-page .svc-package-summary {
-  margin: 2px 0 2px;
-  font-size: .98rem;
-  line-height: 1.76;
-  max-width: 31ch;
+.services-page .svc-toggle{
+  width:100%;
+  justify-content:space-between;
+  border:1px solid rgba(0,160,255,0.18);
+  background:rgba(0,160,255,0.06);
 }
-
-.services-page .svc-toggle {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
-  margin-top: 12px;
-  padding: 13px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,160,255,0.18);
-  background: rgba(0,160,255,0.06);
-  color: rgba(234,246,255,0.95);
-  font-weight: 900;
-  text-align: left;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+.services-page .svc-toggle:hover{
+  border-color:rgba(0,160,255,0.34);
+  background:rgba(0,160,255,0.08);
+  box-shadow:0 0 26px rgba(0,160,255,0.12);
 }
-
-.services-page .svc-toggle::after {
-  content: "+";
-  font-size: 1.08rem;
-  line-height: 1;
+.services-page .addon-row{
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:22px;
+  align-items:center;
 }
-
-.services-page .svc-card-package.open .svc-toggle::after {
-  content: "−";
+.services-page .addon-name{
+  font-weight:900;
+  letter-spacing:-0.01em;
 }
-
-.services-page .svc-toggle:hover {
-  border-color: rgba(0,160,255,0.34);
-  background: rgba(0,160,255,0.08);
-  text-shadow: none;
-  box-shadow: 0 0 26px rgba(0,160,255,0.12);
+.services-page .addon-desc{
+  max-width:58ch;
 }
-
-.services-page .svc-hidden {
-  transition: max-height .38s ease, opacity .28s ease, margin-top .28s ease;
-}
-
-.services-page .svc-card-package.open .svc-hidden {
-  margin-top: 16px;
-}
-
-.services-page .svc-detail-block h4 {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 10px;
-  margin-bottom: 10px;
-  border-radius: 999px;
-  background: rgba(0,160,255,0.09);
-  border: 1px solid rgba(0,160,255,0.18);
-  color: rgba(234,246,255,0.93);
-  font-size: .78rem;
-  font-weight: 900;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.services-page .svc-list {
-  gap: 10px;
-}
-
-.services-page .svc-list li {
-  line-height: 1.72;
-}
-
-.services-page .svc-split-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.services-page .svc-only-card {
-  min-height: 100%;
-}
-
-.services-page .addon-list {
-  display: grid;
-  gap: 0;
-  margin-top: 8px;
-}
-
-.services-page .addon-row {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) auto;
-  gap: 20px;
-  align-items: center;
-  padding: 18px 0;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  border-radius: 0;
-  background: transparent;
-}
-
-.services-page .addon-row:first-child {
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.services-page .addon-copy {
-  display: grid;
-  gap: 6px;
-}
-
-.services-page .addon-name {
-  font-size: 1.06rem;
-  font-weight: 900;
-  color: #f4fbff;
-  letter-spacing: -0.01em;
-}
-
-.services-page .addon-desc {
-  max-width: 58ch;
-  font-size: .96rem;
-  line-height: 1.75;
-}
-
-.services-page .addon-price {
-  color: rgba(234,246,255,0.95);
-  font-weight: 900;
-  white-space: nowrap;
-}
-
-.services-page .svc-feature-list {
-  display: grid;
-  gap: 0;
-  margin-top: 8px;
-}
-
-.services-page .svc-feature-row {
-  display: grid;
-  grid-template-columns: minmax(0,1fr) auto;
-  gap: 22px;
-  align-items: center;
-  padding: 22px 0;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: transparent;
-  box-shadow: none;
-}
-
-.services-page .svc-feature-row:first-child {
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-
-.services-page .svc-feature-copy h3 {
-  font-size: 1.38rem;
-  margin-bottom: 8px;
-  letter-spacing: -0.02em;
-}
-
-.services-page .svc-feature-copy p {
-  line-height: 1.84;
-  max-width: 64ch;
-}
-
-.services-page .svc-feature-meta {
-  justify-items: end;
-  gap: 12px;
-}
-
-.services-page .svc-feature-price {
-  font-size: 1.34rem;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-  color: #f4fbff;
-}
-
-.services-page .svc-cta {
-  margin-top: 26px;
-  padding: 22px;
-  border-radius: 22px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background:
-    radial-gradient(620px 200px at 14% 0%, rgba(0,160,255,0.10), transparent 62%),
-    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(0,0,0,0.16));
-}
-
-.services-page .faq-question {
-  font-weight: 900;
-}
-
-.services-page .cta-strip {
-  padding: 66px 0;
-}
-
-.services-page .cta-strip .cta-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.services-page .cta-strip .cta-wrap p {
-  max-width: 560px;
-}
-
-@media (max-width: 980px) {
-  .services-page .svc-grid-packages,
-  .services-page .svc-split-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .services-page .svc-hero-inner,
-  .services-page .svc-feature-row,
-  .services-page .addon-row {
-    grid-template-columns: 1fr;
-  }
-
-  .services-page .svc-feature-meta {
-    justify-items: start;
-  }
-}
-
-@media (max-width: 720px) {
-  .services-page .svc-hero {
-    padding: 86px 0 44px;
-  }
-
-  .services-page .svc-title {
-    font-size: clamp(2.15rem, 8vw, 3.05rem);
-  }
-
-  .services-page .svc-sub-strong,
-  .services-page .svc-lead-strong {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .services-page .svc-card-package,
-  .services-page .svc-only-card,
-  .services-page .svc-offer-panel,
-  .services-page .svc-cta {
-    padding: 20px;
-  }
-
-  .services-page .svc-feature-row {
-    padding: 18px 0;
-  }
-
-  .services-page .addon-row {
-    padding: 16px 0;
-  }
-
-  .services-page .svc-section {
-    padding: 76px 0;
+@media (max-width:980px){
+  .services-page .addon-row{
+    grid-template-columns:1fr;
   }
 }
