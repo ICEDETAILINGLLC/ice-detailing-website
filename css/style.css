@@ -5722,3 +5722,15 @@ body.lightbox-open{
     transparent
   );
 }
+
+/* ===== MAINTENANCE: no sweep + solid black border ===== */
+.services-page .svc-grid-packages .svc-card.svc-card-package:not(.featured):not(.platinum-card){
+  border:2px solid #000 !important;
+}
+.services-page .svc-grid-packages .svc-card.svc-card-package:not(.featured):not(.platinum-card)::after{
+  display:none !important;
+}
+
+/* ===== Accordion behavior: only one open ===== */
+
+.services-page .svc-hidden{ display:none; }
