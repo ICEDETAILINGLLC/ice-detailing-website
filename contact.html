@@ -125,7 +125,7 @@
 
             <div class="inline-alert muted" id="servicesHelp">
               If you clicked over from the Services page, your selection should auto-check here.
-              <br>Only one of these can be selected at a time: Maintenance, Elite, Platinum, Exterior, or Interior.
+              
             </div>
           </div>
 
@@ -283,6 +283,7 @@
 
 
 
+
 <script>
   (() => {
     const vehicleSelect = document.getElementById('vehicle');
@@ -314,47 +315,39 @@
     };
 
     function formatMoney(num) {
-      return `$${num.toFixed(0)}`;
+      return `$${Number(num).toFixed(0)}`;
     }
 
     function getVehicleKey() {
       const v = vehicleSelect?.value || "";
       if (v === "SUV") return "SUV";
       if (v === "Truck") return "Truck";
-      return "Sedan";
+      if (v === "Sedan") return "Sedan";
+      return "";
     }
 
     function refreshCoreServiceState() {
       const active = coreChecks.find(cb => cb.checked);
       coreChecks.forEach(cb => {
-        if (active && cb !== active) {
-          cb.disabled = true;
-          cb.closest('.chip')?.setAttribute('aria-disabled', 'true');
-          cb.closest('.chip')?.style.opacity = '0.56';
-        } else {
-          cb.disabled = false;
-          cb.closest('.chip')?.removeAttribute('aria-disabled');
-          cb.closest('.chip')?.style.opacity = '';
+        const chip = cb.closest('.chip');
+        const shouldDisable = Boolean(active && cb !== active);
+        cb.disabled = shouldDisable;
+        if (chip) {
+          chip.classList.toggle('is-disabled', shouldDisable);
+          chip.setAttribute('aria-disabled', shouldDisable ? 'true' : 'false');
         }
-      });
-    }
-
-    function enforceSingleCoreService(changed) {
-      if (!changed.checked || changed.dataset.coreService !== "true") return;
-      serviceChecks.forEach(cb => {
-        if (cb !== changed && cb.dataset.coreService === "true") cb.checked = false;
       });
     }
 
     function renderEstimate() {
       const selectedServices = serviceChecks.filter(cb => cb.checked).map(cb => cb.value);
       const selectedAddons = addonChecks.filter(cb => cb.checked).map(cb => cb.value);
-      const vehicle = vehicleSelect?.value || "";
       const vehicleKey = getVehicleKey();
 
       let total = 0;
       let hasStartingOnly = false;
       let hasQuoteOnly = false;
+      let needsVehicle = false;
       const rows = [];
 
       selectedServices.forEach(name => {
@@ -364,16 +357,25 @@
         if (priceData.quote) {
           hasQuoteOnly = true;
           rows.push(`<div><strong>${name}</strong><span class="muted">Custom quote</span></div>`);
-        } else if (priceData.starting) {
+          return;
+        }
+
+        if (priceData.starting) {
           total += priceData.starting;
           hasStartingOnly = true;
           rows.push(`<div><strong>${name}</strong><span class="muted">Starting at ${formatMoney(priceData.starting)}</span></div>`);
-        } else if (vehicle) {
-          total += priceData[vehicleKey];
-          rows.push(`<div><strong>${name}</strong><span class="muted">${formatMoney(priceData[vehicleKey])}</span></div>`);
-        } else {
-          rows.push(`<div><strong>${name}</strong><span class="muted">Select vehicle for estimate</span></div>`);
+          return;
         }
+
+        if (!vehicleKey) {
+          needsVehicle = true;
+          rows.push(`<div><strong>${name}</strong><span class="muted">Select vehicle for estimate</span></div>`);
+          return;
+        }
+
+        const servicePrice = priceData[vehicleKey];
+        total += servicePrice;
+        rows.push(`<div><strong>${name}</strong><span class="muted">${formatMoney(servicePrice)}</span></div>`);
       });
 
       selectedAddons.forEach(name => {
@@ -391,24 +393,38 @@
       }
 
       selectionsEl.innerHTML = rows.join('');
-      if (!vehicle && selectedServices.some(name => prices.services[name] && !prices.services[name].starting && !prices.services[name].quote)) {
+
+      if (needsVehicle && total === 0) {
         totalEl.textContent = 'Estimated Total: Select vehicle type';
+      } else if (needsVehicle) {
+        totalEl.textContent = `Estimated Total: ${formatMoney(total)}+`;
+      } else if (hasQuoteOnly && total > 0) {
+        totalEl.textContent = `Estimated Total: ${formatMoney(total)}+ / custom quote`;
       } else if (hasQuoteOnly) {
-        totalEl.textContent = total > 0 ? `Estimated Total: ${formatMoney(total)}+ / custom quote` : 'Estimated Total: Custom quote';
+        totalEl.textContent = 'Estimated Total: Custom quote';
       } else if (hasStartingOnly) {
         totalEl.textContent = `Estimated Total: ${formatMoney(total)}+`;
       } else {
         totalEl.textContent = `Estimated Total: ${formatMoney(total)}`;
       }
+
       refreshCoreServiceState();
     }
 
-    serviceChecks.forEach(cb => {
+    coreChecks.forEach(cb => {
       cb.addEventListener('change', () => {
-        enforceSingleCoreService(cb);
+        if (cb.checked) {
+          coreChecks.forEach(other => {
+            if (other !== cb) other.checked = false;
+          });
+        }
         renderEstimate();
       });
     });
+
+    serviceChecks
+      .filter(cb => cb.dataset.coreService !== "true")
+      .forEach(cb => cb.addEventListener('change', renderEstimate));
 
     addonChecks.forEach(cb => cb.addEventListener('change', renderEstimate));
     if (vehicleSelect) vehicleSelect.addEventListener('change', renderEstimate);
@@ -430,18 +446,16 @@
       const paramService = url.searchParams.get('service');
       const target = paramService || selected;
 
-      if (!target) {
-        renderEstimate();
-        return;
+      if (target) {
+        const match = serviceChecks.find(cb => cb.value === target);
+        if (match) {
+          if (match.dataset.coreService === "true") {
+            coreChecks.forEach(cb => cb.checked = false);
+          }
+          match.checked = true;
+        }
       }
 
-      const match = serviceChecks.find(cb => cb.value === target);
-      if (match) {
-        if (match.dataset.coreService === "true") {
-          coreChecks.forEach(cb => cb.checked = false);
-        }
-        match.checked = true;
-      }
       renderEstimate();
     }
 
