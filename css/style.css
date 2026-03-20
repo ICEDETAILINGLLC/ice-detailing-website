@@ -5523,3 +5523,49 @@ body.lightbox-open{
     animation:none !important;
   }
 }
+
+
+/* =========================================
+   BUTTON POSITION + BULLET RESET
+   ========================================= */
+
+/* Keep toggle buttons anchored in place */
+.services-page .svc-grid-packages .svc-card{
+  justify-content:flex-start;
+}
+
+.services-page .svc-grid-packages .svc-toggle{
+  margin-top: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+
+.services-page .svc-grid-packages .svc-package-summary{
+  min-height: 72px;
+  margin-bottom: 16px;
+}
+
+/* Details open below the button without moving the button itself */
+.services-page .svc-grid-packages .svc-hidden{
+  order: 99;
+  margin-top: 14px;
+}
+
+.services-page .svc-grid-packages .svc-card.open .svc-hidden{
+  margin-top: 14px;
+}
+
+/* Remove green checks and go back to small ice-blue bullets */
+.services-page .svc-grid-packages .svc-hidden .svc-list li{
+  padding-left: 18px !important;
+}
+
+.services-page .svc-grid-packages .svc-hidden .svc-list li::before{
+  content: "•" !important;
+  color: var(--ice) !important;
+  font-weight: 950 !important;
+  font-size: 1rem !important;
+  left: 0 !important;
+  top: 0 !important;
+  position: absolute !important;
+}
