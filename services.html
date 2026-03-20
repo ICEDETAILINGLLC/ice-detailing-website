@@ -532,6 +532,8 @@
   </div>
 </footer>
 
+
+
 <script>
   document.getElementById('footerYearSvc').textContent = new Date().getFullYear();
 
@@ -543,38 +545,45 @@
     });
   });
 
-  document.querySelectorAll('.svc-card-package').forEach(card => {
-    const btn = card.querySelector('.svc-toggle');
-    const hidden = card.querySelector('.svc-hidden');
-    if (!btn || !hidden) return;
+  (() => {
+    const cards = Array.from(document.querySelectorAll('.svc-card-package'));
 
-    hidden.style.maxHeight = '0px';
-    hidden.style.opacity = '0';
+    cards.forEach(card => {
+      const btn = card.querySelector('.svc-toggle');
+      const hidden = card.querySelector('.svc-hidden');
+      if (!btn || !hidden) return;
 
-    btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+      hidden.style.maxHeight = '0px';
+      hidden.style.opacity = '0';
+      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+      btn.setAttribute('aria-expanded', 'false');
 
-    btn.addEventListener('click', () => {
-      const isOpen = card.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      btn.innerHTML = isOpen
-        ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
-        : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+      btn.addEventListener('click', () => {
+        const isOpen = card.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        btn.innerHTML = isOpen
+          ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
+          : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
-      if (isOpen) {
-        hidden.style.maxHeight = hidden.scrollHeight + 'px';
-        hidden.style.opacity = '1';
-      } else {
-        hidden.style.maxHeight = '0px';
-        hidden.style.opacity = '0';
-      }
+        if (isOpen) {
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
+          hidden.style.opacity = '1';
+        } else {
+          hidden.style.maxHeight = '0px';
+          hidden.style.opacity = '0';
+        }
+      });
     });
 
     window.addEventListener('resize', () => {
-      if (card.classList.contains('open')) {
-        hidden.style.maxHeight = hidden.scrollHeight + 'px';
-      }
+      cards.forEach(card => {
+        const hidden = card.querySelector('.svc-hidden');
+        if (card.classList.contains('open') && hidden) {
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
+        }
+      });
     });
-  });
+  })();
 
   document.querySelectorAll('[data-prefill]').forEach(link => {
     link.addEventListener('click', () => {
@@ -589,35 +598,11 @@
       } catch (e) {}
     });
   });
-
 </script>
+
+
 
 <script src="js/main.js?v=ice36" defer></script>
 <script src="js/booking.js?v=ice36" defer></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  const buttons = document.querySelectorAll('.svc-toggle');
-  buttons.forEach(btn=>{
-    btn.addEventListener('click', function(){
-      const card = this.closest('.svc-card');
-      const list = card.querySelector('.svc-hidden');
-
-      document.querySelectorAll('.svc-hidden').forEach(el=>{
-        if(el !== list){
-          el.style.display = 'none';
-        }
-      });
-
-      if(list.style.display === 'block'){
-        list.style.display = 'none';
-      } else {
-        list.style.display = 'block';
-      }
-    });
-  });
-});
-</script>
-
 </body>
 </html>
