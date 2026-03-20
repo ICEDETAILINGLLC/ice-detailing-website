@@ -594,5 +594,30 @@
 
 <script src="js/main.js?v=ice36" defer></script>
 <script src="js/booking.js?v=ice36" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const buttons = document.querySelectorAll('.svc-toggle');
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', function(){
+      const card = this.closest('.svc-card');
+      const list = card.querySelector('.svc-hidden');
+
+      document.querySelectorAll('.svc-hidden').forEach(el=>{
+        if(el !== list){
+          el.style.display = 'none';
+        }
+      });
+
+      if(list.style.display === 'block'){
+        list.style.display = 'none';
+      } else {
+        list.style.display = 'block';
+      }
+    });
+  });
+});
+</script>
+
 </body>
 </html>
