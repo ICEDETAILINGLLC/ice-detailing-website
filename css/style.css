@@ -5625,3 +5625,44 @@ body.lightbox-open{
 .services-page .svc-grid-packages .svc-card.svc-card-package.platinum-card .svc-price-line span{
   color:inherit;
 }
+
+
+/* =========================================
+   ATTENTION BORDER SWEEP (ELITE + PLATINUM)
+   cleaner, directional, premium
+   ========================================= */
+
+/* moving gradient border for elite */
+.services-page .svc-card.featured::before{
+  background: linear-gradient(
+    120deg,
+    rgba(0,160,255,0.9),
+    rgba(200,250,255,1),
+    rgba(0,160,255,0.9)
+  );
+  background-size: 200% 200%;
+  animation: eliteBorderFlow 3s linear infinite;
+}
+
+@keyframes eliteBorderFlow{
+  0%{background-position:0% 50%;}
+  100%{background-position:200% 50%;}
+}
+
+/* platinum directional chrome shimmer */
+.services-page .svc-card.platinum-card::before{
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #cfd6dc,
+    #7f8c97,
+    #ffffff
+  );
+  background-size: 250% 250%;
+  animation: chromeFlow 4s linear infinite;
+}
+
+@keyframes chromeFlow{
+  0%{background-position:0% 50%;}
+  100%{background-position:200% 50%;}
+}
