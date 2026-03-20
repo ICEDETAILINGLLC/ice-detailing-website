@@ -5214,3 +5214,171 @@ body.lightbox-open{
   color:#35df7a;
   font-weight:900;
 }
+
+
+/* =========================
+   MAIN 3 CARD HIERARCHY FIX
+   ========================= */
+
+/* make middle card dominant */
+.services-page .svc-card.featured {
+  transform: translateY(-18px) scale(1.04);
+  z-index: 2;
+
+  border-color: rgba(0,160,255,0.75);
+
+  box-shadow:
+    0 40px 120px rgba(0,160,255,0.18),
+    0 60px 140px rgba(0,0,0,0.55);
+}
+
+/* subtle lift on hover but not overpowering */
+.services-page .svc-card.featured:hover {
+  transform: translateY(-22px) scale(1.05);
+}
+
+/* reduce emphasis on side cards */
+.services-page .svc-grid-packages .svc-card:not(.featured) {
+  opacity: 0.88;
+  transform: scale(0.98);
+}
+
+/* bring them back on hover */
+.services-page .svc-grid-packages .svc-card:not(.featured):hover {
+  opacity: 1;
+  transform: translateY(-6px) scale(1);
+}
+
+/* stronger title hierarchy */
+.services-page .svc-card-title {
+  font-size: 1.2rem;
+}
+
+.services-page .svc-card.featured .svc-card-title {
+  font-size: 1.35rem;
+}
+
+/* PRICE = PRIMARY VISUAL */
+.services-page .svc-price-line span {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.services-page .svc-card.featured .svc-price-line span {
+  font-size: 1.2rem;
+  color: var(--ice);
+  text-shadow: 0 0 10px rgba(0,160,255,0.35);
+}
+
+/* improve spacing so eye flows top → price → summary */
+.services-page .svc-card-top {
+  margin-bottom: 14px;
+}
+
+.services-page .svc-price {
+  margin: 14px 0 16px;
+}
+
+.services-page .svc-package-summary {
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+/* badge pop for featured */
+.services-page .svc-card.featured .svc-badge {
+  background: rgba(0,160,255,0.18);
+  border-color: rgba(0,160,255,0.55);
+  box-shadow: 0 0 18px rgba(0,160,255,0.25);
+}
+
+
+/* =========================
+   PLATINUM CARD — AMEX STYLE SHINE
+   ========================= */
+
+.services-page .svc-card.platinum-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #e6e9ed 0%,
+    #cfd6dc 25%,
+    #f5f7fa 45%,
+    #c0c7ce 65%,
+    #e8edf2 100%
+  );
+
+  color: #0a0f14;
+
+  border: 1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 10px 40px rgba(255,255,255,0.15),
+    0 25px 80px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* text inside platinum */
+.services-page .svc-card.platinum-card * {
+  color: #0a0f14 !important;
+}
+
+/* metallic shine sweep */
+.services-page .svc-card.platinum-card::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -60%;
+  width: 60%;
+  height: 160%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.8),
+    transparent
+  );
+
+  transform: rotate(18deg);
+  opacity: 0.0;
+}
+
+/* animate shine on hover */
+.services-page .svc-card.platinum-card:hover::after {
+  animation: platinumShine 1.2s ease-out;
+  opacity: 0.8;
+}
+
+@keyframes platinumShine {
+  0% { left: -60%; opacity: 0; }
+  30% { opacity: 0.9; }
+  100% { left: 140%; opacity: 0; }
+}
+
+/* stronger edge highlight */
+.services-page .svc-card.platinum-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.9),
+    rgba(200,210,220,0.5),
+    rgba(255,255,255,0.9)
+  );
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+/* keep featured still dominant over platinum */
+.services-page .svc-card.featured {
+  z-index: 3;
+}
