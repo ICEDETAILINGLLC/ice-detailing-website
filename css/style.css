@@ -3037,3 +3037,78 @@ position:absolute !important}
     gap:4px;
   }
 }
+
+
+/* ===== CONTACT FORM / ESTIMATE POLISH ===== */
+
+/* remove white autofill / focus fill */
+.contact-page .form input,
+.contact-page .form select,
+.contact-page .form textarea{
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+}
+.contact-page .form input:focus,
+.contact-page .form select:focus,
+.contact-page .form textarea:focus{
+  outline: none;
+  border-color: rgba(0,160,255,0.32);
+  box-shadow: 0 0 0 3px rgba(0,160,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+.contact-page .form input:-webkit-autofill,
+.contact-page .form input:-webkit-autofill:hover,
+.contact-page .form input:-webkit-autofill:focus,
+.contact-page .form textarea:-webkit-autofill,
+.contact-page .form textarea:-webkit-autofill:hover,
+.contact-page .form textarea:-webkit-autofill:focus,
+.contact-page .form select:-webkit-autofill,
+.contact-page .form select:-webkit-autofill:hover,
+.contact-page .form select:-webkit-autofill:focus{
+  -webkit-text-fill-color: #eaf6ff;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(14,18,23,1) inset;
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: #eaf6ff;
+}
+
+/* physically limit one core service by disabling others */
+.contact-page .chip.is-disabled{
+  opacity: .48 !important;
+  filter: grayscale(.12);
+  cursor: not-allowed;
+}
+.contact-page .chip.is-disabled input{
+  pointer-events: none;
+}
+.contact-page .chip.is-disabled:hover{
+  transform: none;
+  box-shadow: none;
+}
+
+/* estimate block spacing and hierarchy */
+.contact-page #estimateCard{
+  margin-top: 24px !important;
+}
+.contact-page #estimateSelections{
+  margin-top: 10px;
+}
+.contact-page .form-actions{
+  margin-top: 18px;
+}
+.contact-page .contact-next{
+  margin-top: 16px;
+}
+
+/* cleaner estimate row spacing */
+.contact-page #estimateSelections > div{
+  padding: 12px 14px;
+}
+.contact-page #estimateTotal{
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+/* slight premium emphasis on total */
+.contact-page #estimateTotal{
+  color: #f3fbff;
+}
