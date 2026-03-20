@@ -5216,125 +5216,48 @@ body.lightbox-open{
 }
 
 
-/* =========================================
-   FIX: correct targeting of cards
-   ISSUE: Maintenance had 'platinum-card' class in HTML
-   SOLUTION: target by position instead of class
-   ========================================= */
+/* ===== SAFE PACKAGE CARD ENHANCEMENTS ===== */
 
-/* reset any previous platinum-card misuse */
-.services-page .svc-card.platinum-card{
-  all: unset;
+/* Align buttons */
+.services-page .svc-grid-packages .svc-toggle{
+  margin-top:auto;
 }
 
-/* reapply base card styles */
-.services-page .svc-grid-packages .svc-card{
-  display:flex;
-  flex-direction:column;
+/* Green checkmarks */
+.services-page .svc-grid-packages .svc-list li{
   position:relative;
-  overflow:hidden;
-  border-radius:18px;
+  padding-left:20px;
 }
-
-/* -------------------------
-   TARGET CARDS BY POSITION
-   1 = Maintenance
-   2 = Elite
-   3 = Platinum
-   ------------------------- */
-
-/* MAINTENANCE (1st card) */
-.services-page .svc-grid-packages .svc-card:nth-child(1){
-  border:2px solid rgba(0,160,255,0.35);
-  background: linear-gradient(145deg, #0f1116, #151922);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-}
-
-.services-page .svc-grid-packages .svc-card:nth-child(1)::before{
-  content:"";
+.services-page .svc-grid-packages .svc-list li::before{
+  content:"✔";
+  color:#22c55e;
   position:absolute;
-  inset:0;
-  border-radius:18px;
-  padding:2px;
-  background: linear-gradient(135deg, rgba(0,160,255,0.5), rgba(0,160,255,0.3));
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  left:0;
 }
 
-/* ELITE (2nd card) */
-.services-page .svc-grid-packages .svc-card:nth-child(2){
-  border:2px solid rgba(0,160,255,0.8);
+/* Elite glow */
+.services-page .svc-card.featured{
   box-shadow:
-    0 0 30px rgba(0,160,255,0.4),
-    0 0 80px rgba(0,160,255,0.25),
-    0 30px 100px rgba(0,0,0,0.5);
+    0 0 20px rgba(0,160,255,0.35),
+    0 0 60px rgba(0,160,255,0.2);
 }
 
-.services-page .svc-grid-packages .svc-card:nth-child(2)::before{
+/* Platinum chrome border */
+.services-page .svc-card.platinum-card{
+  position:relative;
+}
+.services-page .svc-card.platinum-card::before{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:18px;
+  border-radius:inherit;
   padding:2px;
-  background: linear-gradient(
-    135deg,
-    rgba(0,160,255,1),
-    rgba(180,240,255,1),
-    rgba(0,160,255,1)
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-}
-
-/* PLATINUM (3rd card) */
-.services-page .svc-grid-packages .svc-card:nth-child(3){
-  border:2px solid rgba(255,255,255,0.6);
-  background: linear-gradient(145deg, #101319, #161b23);
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.05) inset,
-    0 25px 90px rgba(0,0,0,0.45);
-}
-
-.services-page .svc-grid-packages .svc-card:nth-child(3)::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:18px;
-  padding:2px;
-  background: linear-gradient(
+  background:linear-gradient(
     120deg,
     #ffffff,
     #cfd6dc,
     #7f8c97,
-    #ffffff,
-    #c0c7ce,
     #ffffff
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-}
-
-/* sweep for all */
-.services-page .svc-grid-packages .svc-card::after{
-  content:"";
-  position:absolute;
-  top:-20%;
-  left:-50%;
-  width:40%;
-  height:150%;
-  transform:rotate(18deg);
-  background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.2),
-    transparent
-  );
-  opacity:0;
-}
-
-.services-page .svc-grid-packages .svc-card:hover::after{
-  animation:sweep 1s ease-out;
-  opacity:1;
-}
-
-@keyframes sweep{
-  0%{left:-50%;}
-  100%{left:120%;}
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
 }
