@@ -5458,3 +5458,173 @@ body.lightbox-open{
     opacity:0;
   }
 }
+
+
+/* =========================================
+   SERVICES CARDS — premium separation pass
+   - Platinum more premium
+   - Elite more glow
+   - Maintenance less close to Platinum
+   - Level the toggle buttons
+   ========================================= */
+
+/* Keep all package cards aligned nicely */
+.services-page .svc-grid-packages{
+  align-items: stretch;
+}
+
+.services-page .svc-grid-packages .svc-card{
+  display: flex;
+  flex-direction: column;
+}
+
+.services-page .svc-grid-packages .svc-package-summary{
+  min-height: 72px;
+}
+
+.services-page .svc-grid-packages .svc-toggle{
+  margin-top: auto;
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* -------------------------
+   Maintenance: simpler, cleaner, lower tier
+   ------------------------- */
+.services-page .svc-grid-packages .svc-card:not(.featured):not(.platinum-card){
+  background: linear-gradient(145deg, #0f1116, #151922);
+  border-color: rgba(0,160,255,0.28);
+  box-shadow: 0 22px 70px rgba(0,0,0,0.26);
+}
+
+.services-page .svc-grid-packages .svc-card:not(.featured):not(.platinum-card)::before{
+  background: linear-gradient(
+    135deg,
+    rgba(0,160,255,0.56),
+    rgba(76,196,255,0.34),
+    rgba(0,160,255,0.48)
+  );
+  box-shadow: none;
+}
+
+.services-page .svc-grid-packages .svc-card:not(.featured):not(.platinum-card)::after{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.04),
+    rgba(126,214,255,0.12),
+    rgba(255,255,255,0.04),
+    transparent
+  );
+}
+
+/* -------------------------
+   Elite: stronger glow + stronger main-card status
+   ------------------------- */
+.services-page .svc-card.featured{
+  border-color: rgba(0,160,255,0.82);
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.14) inset,
+    0 0 26px rgba(0,160,255,0.34),
+    0 0 64px rgba(0,160,255,0.30),
+    0 0 110px rgba(0,160,255,0.12),
+    0 34px 110px rgba(0,0,0,0.50);
+}
+
+.services-page .svc-card.featured:hover{
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.18) inset,
+    0 0 34px rgba(0,160,255,0.42),
+    0 0 86px rgba(0,160,255,0.38),
+    0 0 130px rgba(0,160,255,0.16),
+    0 38px 120px rgba(0,0,0,0.54);
+}
+
+.services-page .svc-card.featured::before{
+  background: linear-gradient(
+    135deg,
+    rgba(0,160,255,0.92),
+    rgba(176,244,255,1),
+    rgba(0,160,255,0.86),
+    rgba(205,250,255,0.98),
+    rgba(0,160,255,0.92)
+  );
+  box-shadow:
+    0 0 24px rgba(0,160,255,0.28),
+    0 0 42px rgba(0,160,255,0.24);
+}
+
+.services-page .svc-card.featured .svc-badge{
+  background: rgba(0,160,255,0.16);
+  border-color: rgba(0,160,255,0.54);
+  box-shadow:
+    0 0 18px rgba(0,160,255,0.18),
+    0 0 28px rgba(0,160,255,0.10);
+}
+
+/* -------------------------
+   Platinum: more premium chrome border
+   ------------------------- */
+.services-page .svc-card.platinum-card{
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.04), transparent 48%),
+    linear-gradient(145deg, #0f1319, #161b23 52%, #10141a);
+  border-color: rgba(236,242,247,0.46);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 16px 50px rgba(0,0,0,0.20),
+    0 30px 90px rgba(0,0,0,0.42);
+}
+
+.services-page .svc-card.platinum-card::before{
+  padding: 2.5px;
+  background: linear-gradient(
+    115deg,
+    rgba(255,255,255,1) 0%,
+    rgba(226,232,238,1) 8%,
+    rgba(150,159,168,0.98) 16%,
+    rgba(247,249,251,1) 24%,
+    rgba(182,191,200,0.98) 34%,
+    rgba(103,111,120,0.98) 44%,
+    rgba(252,253,254,1) 54%,
+    rgba(199,207,215,0.98) 64%,
+    rgba(118,127,136,0.98) 74%,
+    rgba(244,247,249,1) 84%,
+    rgba(214,221,228,1) 92%,
+    rgba(255,255,255,1) 100%
+  );
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.10),
+    0 0 18px rgba(214,224,234,0.10);
+}
+
+.services-page .svc-card.platinum-card::after{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.16),
+    rgba(255,255,255,0.48),
+    rgba(255,255,255,0.20),
+    rgba(255,255,255,0.05),
+    transparent
+  );
+}
+
+.services-page .svc-card.platinum-card .svc-badge{
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(236,242,247,0.36);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.services-page .svc-card.platinum-card .svc-card-title{
+  letter-spacing: -0.015em;
+}
+
