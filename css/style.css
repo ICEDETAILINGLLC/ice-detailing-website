@@ -5430,3 +5430,96 @@ body.lightbox-open{
     animation:none !important;
   }
 }
+
+
+/* =========================================
+   PACKAGE CARD TUNE
+   - one hover sweep on Elite + Platinum only
+   - dropdown motion feels attached and downward
+   ========================================= */
+
+/* smoother dropdown feel */
+.services-page .svc-grid-packages .svc-hidden{
+  display:block !important;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transform:translateY(-6px);
+  transition:
+    max-height .30s cubic-bezier(.22,1,.36,1),
+    opacity .20s ease,
+    transform .30s cubic-bezier(.22,1,.36,1);
+}
+
+.services-page .svc-grid-packages .svc-toggle{
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.services-page .svc-grid-packages .svc-card.open .svc-toggle{
+  transform: translateY(0);
+}
+
+/* kill all default card sweeps first */
+.services-page .svc-grid-packages .svc-card::after{
+  content:none !important;
+  display:none !important;
+  animation:none !important;
+}
+
+/* single hover sweep only on Elite + Platinum */
+.services-page .svc-grid-packages .svc-card.featured::after,
+.services-page .svc-grid-packages .svc-card.platinum-card::after{
+  content:"";
+  display:block !important;
+  position:absolute;
+  top:-8%;
+  left:-18%;
+  width:10%;
+  height:108%;
+  transform:rotate(14deg);
+  opacity:0;
+  pointer-events:none;
+}
+
+.services-page .svc-grid-packages .svc-card.featured::after{
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(190,245,255,0.03),
+    rgba(0,160,255,0.16),
+    rgba(190,245,255,0.06),
+    transparent
+  );
+}
+
+.services-page .svc-grid-packages .svc-card.platinum-card::after{
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.05),
+    transparent
+  );
+}
+
+.services-page .svc-grid-packages .svc-card.featured:hover::after,
+.services-page .svc-grid-packages .svc-card.platinum-card:hover::after{
+  animation: oneCardSweep .52s ease-out 1;
+  opacity:.95;
+}
+
+@keyframes oneCardSweep{
+  0%{ left:-18%; opacity:0; }
+  18%{ opacity:.9; }
+  100%{ left:102%; opacity:0; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .services-page .svc-grid-packages .svc-hidden,
+  .services-page .svc-grid-packages .svc-card.featured::after,
+  .services-page .svc-grid-packages .svc-card.platinum-card::after{
+    transition:none !important;
+    animation:none !important;
+  }
+}
