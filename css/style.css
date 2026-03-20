@@ -826,7 +826,13 @@ body{
 .services-page .svc-card{
   padding: 24px;
 }
-
+.services-page .svc-card.platinum-card{
+  border-color: rgba(90,245,255,0.26);
+  box-shadow:
+    0 0 0 1px rgba(90,245,255,0.08) inset,
+    0 26px 92px rgba(0,160,255,0.08),
+    0 36px 110px rgba(0,0,0,0.44);
+}
 .services-page .svc-detail-group + .svc-detail-group{
   margin-top: 14px;
 }
@@ -5129,110 +5135,25 @@ body.lightbox-open{
 
 
 
-
-
-
-  40%{ opacity:.7; }
-  100%{ left:140%; opacity:0; }
-}
-
-.services-page .elite-card{
-  background: linear-gradient(145deg, #0f1116, #151922) !important;
-}
-
-
-
-/* ===== refinement patch: deep chrome platinum, leveled single-service CTAs, green specialty numbers ===== */
-
-/* Platinum: deep chrome, not white */
-.services-page .svc-card.platinum-card{
-  position: relative;
-  border: 1px solid rgba(210,218,224,0.52);
-  background: linear-gradient(145deg, #0f1116, #151922);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.03),
-    0 18px 70px rgba(0,0,0,0.32),
-    0 0 20px rgba(170,180,190,0.14);
-}
-
-.services-page .svc-card.platinum-card::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  border-radius:18px;
-  padding:1.2px;
-  background: linear-gradient(
-    128deg,
-    rgba(245,248,250,0.98) 0%,
-    rgba(166,175,183,0.82) 14%,
-    rgba(252,253,254,0.98) 28%,
-    rgba(120,130,138,0.88) 44%,
-    rgba(236,241,244,0.98) 58%,
-    rgba(98,108,116,0.90) 73%,
-    rgba(255,255,255,0.98) 87%,
-    rgba(165,174,182,0.84) 100%
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events:none;
-  filter:
-    drop-shadow(0 0 5px rgba(255,255,255,0.30))
-    drop-shadow(0 0 12px rgba(180,190,198,0.22))
-    drop-shadow(0 0 22px rgba(120,130,138,0.16));
-}
-
-.services-page .svc-card.platinum-card:hover{
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.04),
-    0 24px 86px rgba(0,0,0,0.36),
-    0 0 26px rgba(180,188,196,0.18);
-}
-
-/* Level the CTA/button positions for interior/exterior cards */
-.services-page .svc-only-card{
-  display:flex;
-  flex-direction:column;
-  min-height:100%;
-}
-.services-page .svc-only-card .svc-list{
-  flex:1 1 auto;
-  margin-bottom:18px;
-}
-.services-page .svc-only-card .svc-actions{
-  margin-top:auto;
-}
-
-/* Only the specialty price numbers are green */
-.services-page .svc-feature-price span{
-  color:#35df7a;
-  font-weight:950;
-  text-shadow:0 0 8px rgba(53,223,122,0.22);
-}
-
-
 /* ===== FINAL CARD HIERARCHY ===== */
-
-/* Maintenance */
 .services-page .svc-card-package{
-  border:1px solid rgba(0,160,255,0.25);
+  border: 1px solid rgba(0,160,255,0.25);
 }
 
-/* Elite */
 .services-page .elite-card{
-  border:1px solid rgba(0,160,255,0.55);
+  border: 1px solid rgba(0,160,255,0.6);
   box-shadow:
     0 0 0 1px rgba(0,160,255,0.25),
-    0 0 18px rgba(0,160,255,0.35),
+    0 0 20px rgba(0,160,255,0.45),
+    0 0 45px rgba(0,160,255,0.25),
     0 25px 80px rgba(0,0,0,0.45);
   background: linear-gradient(145deg, #0f1116, #151922) !important;
 }
 
-/* Platinum Chrome */
 .services-page .svc-card.platinum-card{
   position: relative;
   background: linear-gradient(145deg, #0f1116, #151922);
-  border:1px solid transparent;
+  border: 1px solid transparent;
 }
 
 .services-page .svc-card.platinum-card::before{
@@ -5241,27 +5162,22 @@ body.lightbox-open{
   inset:0;
   border-radius:18px;
   padding:1.4px;
-
   background: linear-gradient(
     135deg,
-    #ffffff 0%,
-    #c8c8c8 10%,
-    #ffffff 20%,
-    #8a8f94 35%,
-    #ffffff 50%,
-    #bfc3c7 65%,
-    #ffffff 80%,
-    #9aa0a6 100%
+    #F5F7FA 0%,
+    #D9DEE3 20%,
+    #AEB4BA 40%,
+    #F5F7FA 55%,
+    #6E757C 75%,
+    #F5F7FA 100%
   );
-
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-
   filter:
     drop-shadow(0 0 6px rgba(255,255,255,0.6))
-    drop-shadow(0 0 14px rgba(200,200,200,0.4))
-    drop-shadow(0 0 28px rgba(150,150,150,0.25));
+    drop-shadow(0 0 18px rgba(200,200,200,0.35))
+    drop-shadow(0 0 30px rgba(150,150,150,0.25));
 }
 
 .services-page .svc-card.platinum-card::after{
@@ -5271,20 +5187,13 @@ body.lightbox-open{
   left:-60%;
   width:60%;
   height:200%;
-  transform:rotate(20deg);
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.9),
-    transparent
-  );
-
+  transform: rotate(20deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
   opacity:0;
 }
 
 .services-page .svc-card.platinum-card:hover::after{
-  opacity:0.9;
+  opacity:1;
   animation: chromeSweep 1s ease;
 }
 
@@ -5294,7 +5203,6 @@ body.lightbox-open{
   100%{ left:140%; opacity:0; }
 }
 
-/* Level CTAs */
 .services-page .svc-only-card{
   display:flex;
   flex-direction:column;
@@ -5306,7 +5214,6 @@ body.lightbox-open{
   margin-top:auto;
 }
 
-/* Green numbers */
 .services-page .svc-feature-price span{
   color:#35df7a;
   font-weight:900;
