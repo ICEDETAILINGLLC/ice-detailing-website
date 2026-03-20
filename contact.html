@@ -83,27 +83,27 @@
 
             <div class="chip-grid" role="group" aria-label="Main services">
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Maintenance Detail" data-prefill-target>
+                <input type="checkbox" name="services[]" value="Maintenance Detail" data-prefill-target data-core-service="true">
                 <span>Maintenance Detail</span>
               </label>
 
               <label class="chip featured">
-                <input type="checkbox" name="services[]" value="Elite Detail" data-prefill-target>
+                <input type="checkbox" name="services[]" value="Elite Detail" data-prefill-target data-core-service="true">
                 <span>Elite Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Platinum Detail" data-prefill-target>
+                <input type="checkbox" name="services[]" value="Platinum Detail" data-prefill-target data-core-service="true" data-premium-chip="true">
                 <span>Platinum Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Exterior Detail" data-prefill-target>
+                <input type="checkbox" name="services[]" value="Exterior Detail" data-prefill-target data-core-service="true">
                 <span>Exterior Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Interior Detail" data-prefill-target>
+                <input type="checkbox" name="services[]" value="Interior Detail" data-prefill-target data-core-service="true">
                 <span>Interior Detail</span>
               </label>
 
@@ -125,6 +125,7 @@
 
             <div class="inline-alert muted" id="servicesHelp">
               If you clicked over from the Services page, your selection should auto-check here.
+              <br>Only one of these can be selected at a time: Maintenance, Elite, Platinum, Exterior, or Interior.
             </div>
           </div>
 
@@ -213,6 +214,16 @@
           <label for="photos">Photos (optional)</label>
           <input id="photos" name="photos" type="file" accept="image/*" multiple>
 
+
+          <div class="contact-card" id="estimateCard" style="margin-top:18px;">
+            <h4 style="margin-bottom:8px;">Selected Services & Estimated Total</h4>
+            <div id="estimateSelections" class="muted">Select a vehicle type and services to see an estimate.</div>
+            <div id="estimateTotal" style="margin-top:10px;font-weight:900;font-size:1.1rem;">Estimated Total: —</div>
+            <div class="muted" style="margin-top:8px;font-size:.95rem;">
+              This is an estimate only. Final pricing is confirmed based on vehicle size, condition, buildup, staining, pet hair, and service scope.
+            </div>
+          </div>
+
           <div class="form-actions">
             <button class="btn primary" id="submitBooking" type="submit">Send Request</button>
             <a class="btn ghost" href="tel:16179702329">Call (617) 970-2329</a>
@@ -268,6 +279,174 @@
 
 <script>
   document.getElementById('footerYearContact').textContent = new Date().getFullYear();
+</script>
+
+
+
+<script>
+  (() => {
+    const vehicleSelect = document.getElementById('vehicle');
+    const serviceChecks = Array.from(document.querySelectorAll('input[name="services[]"]'));
+    const addonChecks = Array.from(document.querySelectorAll('input[name="addons[]"]'));
+    const selectionsEl = document.getElementById('estimateSelections');
+    const totalEl = document.getElementById('estimateTotal');
+    const coreChecks = serviceChecks.filter(cb => cb.dataset.coreService === "true");
+
+    const prices = {
+      services: {
+        "Maintenance Detail": { Sedan: 249, SUV: 299, Truck: 299 },
+        "Elite Detail": { Sedan: 399, SUV: 449, Truck: 449 },
+        "Platinum Detail": { Sedan: 499, SUV: 549, Truck: 549 },
+        "Exterior Detail": { Sedan: 125, SUV: 175, Truck: 175 },
+        "Interior Detail": { Sedan: 199, SUV: 249, Truck: 249 },
+        "Paint Correction": { starting: 299 },
+        "Ceramic Protection": { starting: 699 },
+        "Fleet Maintenance": { quote: true }
+      },
+      addons: {
+        "Clay Bar & Polish": 199,
+        "Trim Restoration": 50,
+        "Headlight Restoration": 80,
+        "Engine Bay Detail": 50,
+        "Odor Removal": 75,
+        "Extractor Spot Treatment": 25
+      }
+    };
+
+    function formatMoney(num) {
+      return `$${num.toFixed(0)}`;
+    }
+
+    function getVehicleKey() {
+      const v = vehicleSelect?.value || "";
+      if (v === "SUV") return "SUV";
+      if (v === "Truck") return "Truck";
+      return "Sedan";
+    }
+
+    function refreshCoreServiceState() {
+      const active = coreChecks.find(cb => cb.checked);
+      coreChecks.forEach(cb => {
+        if (active && cb !== active) {
+          cb.disabled = true;
+          cb.closest('.chip')?.setAttribute('aria-disabled', 'true');
+          cb.closest('.chip')?.style.opacity = '0.56';
+        } else {
+          cb.disabled = false;
+          cb.closest('.chip')?.removeAttribute('aria-disabled');
+          cb.closest('.chip')?.style.opacity = '';
+        }
+      });
+    }
+
+    function enforceSingleCoreService(changed) {
+      if (!changed.checked || changed.dataset.coreService !== "true") return;
+      serviceChecks.forEach(cb => {
+        if (cb !== changed && cb.dataset.coreService === "true") cb.checked = false;
+      });
+    }
+
+    function renderEstimate() {
+      const selectedServices = serviceChecks.filter(cb => cb.checked).map(cb => cb.value);
+      const selectedAddons = addonChecks.filter(cb => cb.checked).map(cb => cb.value);
+      const vehicle = vehicleSelect?.value || "";
+      const vehicleKey = getVehicleKey();
+
+      let total = 0;
+      let hasStartingOnly = false;
+      let hasQuoteOnly = false;
+      const rows = [];
+
+      selectedServices.forEach(name => {
+        const priceData = prices.services[name];
+        if (!priceData) return;
+
+        if (priceData.quote) {
+          hasQuoteOnly = true;
+          rows.push(`<div><strong>${name}</strong><span class="muted">Custom quote</span></div>`);
+        } else if (priceData.starting) {
+          total += priceData.starting;
+          hasStartingOnly = true;
+          rows.push(`<div><strong>${name}</strong><span class="muted">Starting at ${formatMoney(priceData.starting)}</span></div>`);
+        } else if (vehicle) {
+          total += priceData[vehicleKey];
+          rows.push(`<div><strong>${name}</strong><span class="muted">${formatMoney(priceData[vehicleKey])}</span></div>`);
+        } else {
+          rows.push(`<div><strong>${name}</strong><span class="muted">Select vehicle for estimate</span></div>`);
+        }
+      });
+
+      selectedAddons.forEach(name => {
+        const addonPrice = prices.addons[name];
+        if (addonPrice == null) return;
+        total += addonPrice;
+        rows.push(`<div><strong>${name}</strong><span class="muted">From ${formatMoney(addonPrice)}</span></div>`);
+      });
+
+      if (!rows.length) {
+        selectionsEl.innerHTML = '<span class="muted">Select a vehicle type and services to see an estimate.</span>';
+        totalEl.textContent = 'Estimated Total: —';
+        refreshCoreServiceState();
+        return;
+      }
+
+      selectionsEl.innerHTML = rows.join('');
+      if (!vehicle && selectedServices.some(name => prices.services[name] && !prices.services[name].starting && !prices.services[name].quote)) {
+        totalEl.textContent = 'Estimated Total: Select vehicle type';
+      } else if (hasQuoteOnly) {
+        totalEl.textContent = total > 0 ? `Estimated Total: ${formatMoney(total)}+ / custom quote` : 'Estimated Total: Custom quote';
+      } else if (hasStartingOnly) {
+        totalEl.textContent = `Estimated Total: ${formatMoney(total)}+`;
+      } else {
+        totalEl.textContent = `Estimated Total: ${formatMoney(total)}`;
+      }
+      refreshCoreServiceState();
+    }
+
+    serviceChecks.forEach(cb => {
+      cb.addEventListener('change', () => {
+        enforceSingleCoreService(cb);
+        renderEstimate();
+      });
+    });
+
+    addonChecks.forEach(cb => cb.addEventListener('change', renderEstimate));
+    if (vehicleSelect) vehicleSelect.addEventListener('change', renderEstimate);
+
+    function applyPrefill() {
+      let selected = '';
+      try {
+        selected =
+          localStorage.getItem('selectedService') ||
+          localStorage.getItem('selected_service') ||
+          localStorage.getItem('service') ||
+          sessionStorage.getItem('selectedService') ||
+          sessionStorage.getItem('selected_service') ||
+          sessionStorage.getItem('service') ||
+          '';
+      } catch (e) {}
+
+      const url = new URL(window.location.href);
+      const paramService = url.searchParams.get('service');
+      const target = paramService || selected;
+
+      if (!target) {
+        renderEstimate();
+        return;
+      }
+
+      const match = serviceChecks.find(cb => cb.value === target);
+      if (match) {
+        if (match.dataset.coreService === "true") {
+          coreChecks.forEach(cb => cb.checked = false);
+        }
+        match.checked = true;
+      }
+      renderEstimate();
+    }
+
+    applyPrefill();
+  })();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
