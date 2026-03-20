@@ -2922,3 +2922,118 @@ font-size:1rem !important;
 left:0 !important;
 top:0 !important;
 position:absolute !important}
+
+
+/* ===== CONTACT ESTIMATOR / CART ===== */
+.contact-page #estimateCard{
+  margin-top:18px;
+  border-radius:20px;
+  background:
+    radial-gradient(760px 240px at 12% 0%, rgba(0,160,255,0.10), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,0.045), rgba(0,0,0,0.18));
+  border:1px solid rgba(255,255,255,0.10);
+  box-shadow:0 22px 70px rgba(0,0,0,0.30);
+}
+.contact-page #estimateCard h4{
+  margin-bottom:10px;
+  font-size:1.05rem;
+  font-weight:950;
+  letter-spacing:-0.01em;
+}
+.contact-page #estimateSelections{
+  display:grid;
+  gap:8px;
+}
+.contact-page #estimateSelections > div{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.contact-page #estimateSelections strong{
+  color:#eaf6ff;
+}
+.contact-page #estimateTotal{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,0.10);
+  font-weight:950;
+  font-size:1.08rem;
+  color:#eaf6ff;
+}
+
+/* ===== CONTACT SERVICE CHIP STATES ===== */
+.contact-page .chip input:checked + span{
+  color:#fff;
+}
+.contact-page .chip:has(input:checked){
+  border-color:rgba(0,160,255,0.55);
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.12) inset,
+    0 0 22px rgba(0,160,255,0.12);
+  background:rgba(0,160,255,0.06);
+}
+.contact-page .chip.featured:has(input:checked){
+  border-color:rgba(0,160,255,0.70);
+  box-shadow:
+    0 0 0 1px rgba(0,160,255,0.14) inset,
+    0 0 28px rgba(0,160,255,0.18),
+    0 0 52px rgba(0,160,255,0.10);
+}
+
+/* Platinum chip = chrome glow */
+.contact-page .chip:has(input[data-premium-chip="true"]){
+  position:relative;
+  overflow:hidden;
+}
+.contact-page .chip:has(input[data-premium-chip="true"])::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  padding:1.5px;
+  background:linear-gradient(
+    115deg,
+    rgba(255,255,255,0.98) 0%,
+    rgba(229,235,241,0.96) 10%,
+    rgba(150,160,170,0.92) 18%,
+    rgba(250,252,253,0.98) 28%,
+    rgba(191,199,207,0.94) 38%,
+    rgba(109,118,128,0.90) 48%,
+    rgba(255,255,255,0.98) 58%,
+    rgba(205,213,221,0.95) 68%,
+    rgba(126,136,146,0.92) 78%,
+    rgba(247,249,251,0.98) 88%,
+    rgba(255,255,255,0.98) 100%
+  );
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  opacity:.92;
+}
+.contact-page .chip:has(input[data-premium-chip="true"]):has(input:checked){
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.05), transparent 52%),
+    linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border-color:rgba(220,228,236,0.42);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.06) inset,
+    0 0 16px rgba(220,228,236,0.08),
+    0 0 36px rgba(220,228,236,0.05);
+}
+.contact-page .chip:has(input[data-premium-chip="true"]):has(input:checked) span{
+  color:#f6fbff;
+}
+
+/* tighter responsive estimate rows */
+@media (max-width: 640px){
+  .contact-page #estimateSelections > div{
+    flex-direction:column;
+    gap:4px;
+  }
+}
