@@ -4,14 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact & Booking — ICE Detailing LLC</title>
-  <meta name="description" content="Book ICE Detailing LLC — premium mobile detailing serving Boston & Middlesex County. Choose services and add-ons, request a quote, and we’ll confirm." />
+  <meta name="description" content="Request a quote or book ICE Detailing LLC — premium mobile detailing serving Boston & Middlesex County. Select services, add-ons, and your preferred appointment details." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css?v=ice10" />
-  <link rel="stylesheet" href="css/animations.css?v=ice10" />
+  <link rel="stylesheet" href="css/style.css?v=ice36" />
+  <link rel="stylesheet" href="css/animations.css?v=ice36" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
 </head>
 
@@ -25,12 +21,12 @@
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="index.html#home" class="nav-link active">Home</a>
+      <a href="index.html#home" class="nav-link">Home</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
       <a href="reviews.html" class="nav-link">Reviews</a>
       <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -47,7 +43,7 @@
         <span class="contact-kicker">Mobile Detailing • Boston & Middlesex County</span>
         <h1 class="contact-title">Request a Quote / Book</h1>
         <p class="muted contact-sub">
-          Select one or more services and any add-ons. We’ll confirm timing, scope, and pricing before we begin.
+          Choose the package or service that fits your vehicle, add any upgrades you want, and send over your preferred date, time, and vehicle details. We’ll confirm final scope, timing, and pricing before anything begins.
         </p>
       </div>
 
@@ -81,19 +77,14 @@
 
           <div class="field-block">
             <div class="field-top">
-              <label class="field-label">Services (select all that apply) *</label>
-              <div class="field-hint muted">Choose one or more services.</div>
+              <label class="field-label">Main Services (select all that apply) *</label>
+              <div class="field-hint muted">Choose one or more options.</div>
             </div>
 
-            <div class="chip-grid" role="group" aria-label="Services">
+            <div class="chip-grid" role="group" aria-label="Main services">
               <label class="chip">
                 <input type="checkbox" name="services[]" value="Maintenance Detail" data-prefill-target>
                 <span>Maintenance Detail</span>
-              </label>
-
-              <label class="chip">
-                <input type="checkbox" name="services[]" value="Interior Detail" data-prefill-target>
-                <span>Interior Detail</span>
               </label>
 
               <label class="chip featured">
@@ -102,38 +93,53 @@
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="Ceramic Coating" data-prefill-target>
-                <span>Ceramic Coating</span>
+                <input type="checkbox" name="services[]" value="Platinum Detail" data-prefill-target>
+                <span>Platinum Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="1-Step Polish" data-prefill-target>
-                <span>1-Step Polish</span>
+                <input type="checkbox" name="services[]" value="Exterior Detail" data-prefill-target>
+                <span>Exterior Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="2-Step Correction" data-prefill-target>
-                <span>2-Step Correction</span>
+                <input type="checkbox" name="services[]" value="Interior Detail" data-prefill-target>
+                <span>Interior Detail</span>
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="services[]" value="3-Step Correction" data-prefill-target>
-                <span>3-Step Correction</span>
+                <input type="checkbox" name="services[]" value="Paint Correction" data-prefill-target>
+                <span>Paint Correction</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Ceramic Protection" data-prefill-target>
+                <span>Ceramic Protection</span>
+              </label>
+
+              <label class="chip">
+                <input type="checkbox" name="services[]" value="Fleet Maintenance" data-prefill-target>
+                <span>Fleet Maintenance</span>
               </label>
             </div>
 
             <div class="inline-alert muted" id="servicesHelp">
-              Tip: If you clicked from Services, your selection will auto-check here.
+              If you clicked over from the Services page, your selection should auto-check here.
             </div>
           </div>
 
           <div class="field-block">
             <div class="field-top">
-              <label class="field-label">Add-Ons (optional)</label>
-              <div class="field-hint muted">Add-ons can be selected with any package.</div>
+              <label class="field-label">Popular Upgrades (optional)</label>
+              <div class="field-hint muted">Add-ons can be selected with any package or service.</div>
             </div>
 
             <div class="chip-grid" role="group" aria-label="Add-ons">
+              <label class="chip">
+                <input type="checkbox" name="addons[]" value="Clay Bar &amp; Polish">
+                <span>Clay Bar &amp; Polish</span>
+              </label>
+
               <label class="chip">
                 <input type="checkbox" name="addons[]" value="Trim Restoration">
                 <span>Trim Restoration</span>
@@ -150,27 +156,13 @@
               </label>
 
               <label class="chip">
-                <input type="checkbox" name="addons[]" value="Ozone Treatment">
-                <span>Ozone Treatment</span>
+                <input type="checkbox" name="addons[]" value="Odor Removal">
+                <span>Odor Removal</span>
               </label>
 
               <label class="chip">
                 <input type="checkbox" name="addons[]" value="Extractor Spot Treatment">
                 <span>Extractor Spot Treatment</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="field-block">
-            <div class="field-top">
-              <label class="field-label">Fleet Maintenance</label>
-              <div class="field-hint muted">For business, commercial, or multi-vehicle recurring service.</div>
-            </div>
-
-            <div class="chip-grid" role="group" aria-label="Fleet Maintenance">
-              <label class="chip">
-                <input type="checkbox" name="services[]" value="Fleet Maintenance" data-prefill-target>
-                <span>Fleet Maintenance</span>
               </label>
             </div>
           </div>
@@ -187,14 +179,8 @@
             </div>
 
             <div>
-              <label for="vehicleDetails">Year, Make & Model *</label>
-              <input
-                id="vehicleDetails"
-                name="vehicleDetails"
-                type="text"
-                placeholder="2018 Honda Accord"
-                required
-              >
+              <label for="vehicleDetails">Year, Make &amp; Model *</label>
+              <input id="vehicleDetails" name="vehicleDetails" type="text" placeholder="2018 Honda Accord" required>
             </div>
           </div>
 
@@ -206,13 +192,7 @@
 
             <div>
               <label for="address">Service Address (optional)</label>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                placeholder="Street address"
-                autocomplete="street-address"
-              >
+              <input id="address" name="address" type="text" placeholder="Street address" autocomplete="street-address">
             </div>
           </div>
 
@@ -228,7 +208,7 @@
           </div>
 
           <label for="message">Notes</label>
-          <textarea id="message" name="message" rows="6" placeholder="Condition notes, stains, pet hair, parking, key handoff, etc."></textarea>
+          <textarea id="message" name="message" rows="6" placeholder="Vehicle condition, stains, pet hair, parking info, access notes, key handoff, or anything else we should know."></textarea>
 
           <label for="photos">Photos (optional)</label>
           <input id="photos" name="photos" type="file" accept="image/*" multiple>
@@ -239,7 +219,7 @@
           </div>
 
           <div class="contact-next muted">
-            After you submit, we’ll confirm the service(s), timing, and pricing.
+            After you submit, we’ll confirm the services, timing, and final pricing before your appointment.
           </div>
 
           <div id="bookingStatus" class="muted" style="margin-top:10px"></div>
@@ -248,15 +228,19 @@
 
       <aside class="contact-aside">
         <div class="contact-card">
-          <h4 style="margin-bottom:8px;">Square Booking</h4>
-          <p class="muted">Paste your Square booking iframe below if you want live availability + Apple Pay.</p>
-          <div id="square-embed" class="square-placeholder">Square booking placeholder — paste iframe here.</div>
+          <h4 style="margin-bottom:8px;">Need help choosing?</h4>
+          <p class="muted">Not sure which package fits your vehicle? Send photos and a few condition notes, and we’ll recommend the right service before booking.</p>
 
           <hr class="panel-divider">
 
-          <h5>Contact</h5>
+          <h5 style="margin-bottom:8px;">Contact</h5>
           <a href="mailto:icedetailingllc@gmail.com">icedetailingllc@gmail.com</a><br>
           <a href="tel:16179702329">(617) 970-2329</a>
+
+          <div class="contact-next" style="margin-top:16px;">
+            <strong>Service Area</strong><br>
+            Boston • Middlesex County
+          </div>
         </div>
       </aside>
 
@@ -287,7 +271,7 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="js/main.js" defer></script>
-<script src="js/booking.js" defer></script>
+<script src="js/main.js?v=ice36" defer></script>
+<script src="js/booking.js?v=ice36" defer></script>
 </body>
 </html>
