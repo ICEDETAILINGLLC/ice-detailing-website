@@ -555,6 +555,8 @@
 
       hidden.style.maxHeight = '0px';
       hidden.style.opacity = '0';
+      hidden.style.overflow = 'hidden';
+      hidden.style.transform = 'translateY(-6px)';
       btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
       btn.setAttribute('aria-expanded', 'false');
 
@@ -568,9 +570,11 @@
         if (isOpen) {
           hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
+          hidden.style.transform = 'translateY(0)';
         } else {
           hidden.style.maxHeight = '0px';
           hidden.style.opacity = '0';
+          hidden.style.transform = 'translateY(-6px)';
         }
       });
     });
