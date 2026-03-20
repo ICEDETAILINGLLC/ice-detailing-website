@@ -5666,3 +5666,59 @@ body.lightbox-open{
   0%{background-position:0% 50%;}
   100%{background-position:200% 50%;}
 }
+
+
+/* =========================================
+   BOOSTED ELITE GLOW + STRONGER CHROME
+   ========================================= */
+
+/* ELITE — stronger glow + aura */
+.services-page .svc-card.featured{
+  box-shadow:
+    0 0 30px rgba(0,160,255,0.45),
+    0 0 80px rgba(0,160,255,0.35),
+    0 0 140px rgba(0,160,255,0.18),
+    0 30px 100px rgba(0,0,0,0.5);
+}
+
+.services-page .svc-card.featured::before{
+  box-shadow:
+    0 0 30px rgba(0,160,255,0.35),
+    0 0 60px rgba(0,160,255,0.25);
+}
+
+/* PLATINUM — more chrome contrast + sharper reflections */
+.services-page .svc-card.platinum-card::before{
+  background: linear-gradient(
+    110deg,
+    #ffffff 0%,
+    #dfe6ec 8%,
+    #8c97a3 16%,
+    #ffffff 24%,
+    #c7d0d8 34%,
+    #5f6b78 44%,
+    #ffffff 54%,
+    #bfc8d1 64%,
+    #7a8692 74%,
+    #ffffff 84%,
+    #dfe6ec 92%,
+    #ffffff 100%
+  );
+  box-shadow:
+    0 0 8px rgba(255,255,255,0.25),
+    0 0 20px rgba(210,220,230,0.18);
+}
+
+/* stronger chrome sweep highlight */
+.services-page .svc-card.platinum-card::after{
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.55),
+    rgba(255,255,255,0.20),
+    rgba(255,255,255,0.05),
+    transparent
+  );
+}
