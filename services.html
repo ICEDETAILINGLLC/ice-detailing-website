@@ -566,6 +566,7 @@
       const hidden = card.querySelector('.svc-hidden');
       if (!btn || !hidden) return;
 
+      hidden.style.display = 'none';
       hidden.style.maxHeight = '0px';
       hidden.style.opacity = '0';
       hidden.style.overflow = 'hidden';
@@ -576,26 +577,52 @@
       btn.setAttribute('aria-expanded', 'false');
       btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
-      btn.addEventListener('click', () => {
-        const isOpen = card.classList.toggle('open');
+      const openPanel = () => {
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
 
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        btn.innerHTML = isOpen
-          ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
-          : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+        hidden.style.display = 'block';
+        hidden.style.visibility = 'visible';
+        hidden.style.pointerEvents = 'auto';
+        hidden.style.marginTop = '12px';
+        hidden.style.maxHeight = '0px';
+        hidden.style.opacity = '0';
 
-        if (isOpen) {
-          hidden.style.visibility = 'visible';
-          hidden.style.pointerEvents = 'auto';
-          hidden.style.marginTop = '12px';
+        requestAnimationFrame(() => {
           hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
-        } else {
+        });
+      };
+
+      const closePanel = () => {
+        card.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+
+        hidden.style.maxHeight = hidden.scrollHeight + 'px';
+        requestAnimationFrame(() => {
           hidden.style.maxHeight = '0px';
           hidden.style.opacity = '0';
           hidden.style.marginTop = '0px';
           hidden.style.pointerEvents = 'none';
+        });
+      };
+
+      hidden.addEventListener('transitionend', (e) => {
+        if (e.propertyName !== 'max-height') return;
+        if (!card.classList.contains('open')) {
+          hidden.style.display = 'none';
           hidden.style.visibility = 'hidden';
+        }
+      });
+
+      btn.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+        if (isOpen) {
+          closePanel();
+        } else {
+          openPanel();
         }
       });
     });
