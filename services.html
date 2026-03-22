@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42m2" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42m2" />
+  <link rel="stylesheet" href="css/style.css?v=ice42b" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42b" />
 </head>
 
 <body class="hybrid services-page">
@@ -566,64 +566,36 @@
       const hidden = card.querySelector('.svc-hidden');
       if (!btn || !hidden) return;
 
-      const isMobile = () => window.innerWidth <= 768;
+      hidden.style.maxHeight = '0px';
+      hidden.style.opacity = '0';
+      hidden.style.overflow = 'hidden';
+      hidden.style.visibility = 'hidden';
+      hidden.style.pointerEvents = 'none';
+      hidden.style.marginTop = '0px';
 
-      const setClosed = () => {
-        card.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
-        if (isMobile()) {
-          hidden.style.display = 'none';
-          hidden.style.maxHeight = '';
-          hidden.style.opacity = '';
-          hidden.style.marginTop = '0px';
-          hidden.style.overflow = '';
-          hidden.style.visibility = '';
-          hidden.style.pointerEvents = '';
-          hidden.style.transform = '';
-        } else {
-          hidden.style.display = 'block';
-          hidden.style.maxHeight = '0px';
-          hidden.style.opacity = '0';
-          hidden.style.overflow = 'hidden';
-          hidden.style.transform = 'translateY(-6px)';
-          hidden.style.marginTop = '0px';
-        }
-      };
+      btn.addEventListener('click', () => {
+        const isOpen = card.classList.toggle('open');
 
-      const setOpen = () => {
-        card.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        btn.innerHTML = isOpen
+          ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
+          : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
-        if (isMobile()) {
-          hidden.style.display = 'block';
-          hidden.style.maxHeight = '';
-          hidden.style.opacity = '';
-          hidden.style.marginTop = '12px';
-          hidden.style.overflow = '';
-          hidden.style.visibility = '';
-          hidden.style.pointerEvents = '';
-          hidden.style.transform = '';
-        } else {
-          hidden.style.display = 'block';
-          hidden.style.overflow = 'hidden';
+        if (isOpen) {
+          hidden.style.visibility = 'visible';
+          hidden.style.pointerEvents = 'auto';
           hidden.style.marginTop = '12px';
           hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
-          hidden.style.transform = 'translateY(0)';
-        }
-      };
-
-      setClosed();
-
-      btn.addEventListener('click', () => {
-        const open = card.classList.contains('open');
-        if (open) {
-          setClosed();
         } else {
-          setOpen();
+          hidden.style.maxHeight = '0px';
+          hidden.style.opacity = '0';
+          hidden.style.marginTop = '0px';
+          hidden.style.pointerEvents = 'none';
+          hidden.style.visibility = 'hidden';
         }
       });
     });
@@ -631,42 +603,8 @@
     window.addEventListener('resize', () => {
       cards.forEach(card => {
         const hidden = card.querySelector('.svc-hidden');
-        const btn = card.querySelector('.svc-toggle');
-        if (!hidden || !btn) return;
-
-        const mobile = window.innerWidth <= 768;
-        const open = card.classList.contains('open');
-
-        if (mobile) {
-          if (open) {
-            hidden.style.display = 'block';
-            hidden.style.maxHeight = '';
-            hidden.style.opacity = '';
-            hidden.style.marginTop = '12px';
-            hidden.style.overflow = '';
-            hidden.style.transform = '';
-          } else {
-            hidden.style.display = 'none';
-            hidden.style.maxHeight = '';
-            hidden.style.opacity = '';
-            hidden.style.marginTop = '0px';
-            hidden.style.overflow = '';
-            hidden.style.transform = '';
-          }
-        } else {
-          hidden.style.display = 'block';
-          hidden.style.overflow = 'hidden';
-          if (open) {
-            hidden.style.maxHeight = hidden.scrollHeight + 'px';
-            hidden.style.opacity = '1';
-            hidden.style.marginTop = '12px';
-            hidden.style.transform = 'translateY(0)';
-          } else {
-            hidden.style.maxHeight = '0px';
-            hidden.style.opacity = '0';
-            hidden.style.marginTop = '0px';
-            hidden.style.transform = 'translateY(-6px)';
-          }
+        if (card.classList.contains('open') && hidden) {
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
         }
       });
     });
@@ -690,7 +628,7 @@
 
 
 
-<script src="js/main.js?v=ice42m2" defer></script>
-<script src="js/booking.js?v=ice42m2" defer></script>
+<script src="js/main.js?v=ice42b" defer></script>
+<script src="js/booking.js?v=ice42b" defer></script>
 </body>
 </html>
