@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42d" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42d" />
+  <link rel="stylesheet" href="css/style.css?v=ice42m1" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42m1" />
 </head>
 
 <body class="hybrid services-page">
@@ -112,8 +112,6 @@
 
           <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
 
-          <a class="btn primary svc-main-book" href="contact.html?service=Maintenance%20Detail" data-prefill="Maintenance Detail">Book Maintenance Detail</a>
-
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
@@ -153,8 +151,6 @@
           </div>
 
           <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
-
-          <a class="btn primary svc-main-book" href="contact.html?service=Elite%20Detail" data-prefill="Elite Detail">Book Elite Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -201,8 +197,6 @@
           </div>
 
           <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
-
-          <a class="btn primary svc-main-book" href="contact.html?service=Platinum%20Detail" data-prefill="Platinum Detail">Book Platinum Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -566,32 +560,107 @@
       const hidden = card.querySelector('.svc-hidden');
       if (!btn || !hidden) return;
 
-      hidden.style.display = 'none';
-      hidden.style.maxHeight = '0px';
-      hidden.style.opacity = '0';
-      hidden.style.marginTop = '0px';
-      btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+      const isMobile = () => window.innerWidth <= 768;
 
-      btn.addEventListener('click', () => {
-        const isOpen = card.classList.contains('open');
+      const setClosed = () => {
+        card.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
-        if (isOpen) {
-          card.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+        if (isMobile()) {
           hidden.style.display = 'none';
+          hidden.style.maxHeight = '';
+          hidden.style.opacity = '';
+          hidden.style.marginTop = '0px';
+          hidden.style.overflow = '';
+          hidden.style.visibility = '';
+          hidden.style.pointerEvents = '';
+          hidden.style.transform = '';
+        } else {
+          hidden.style.display = 'block';
           hidden.style.maxHeight = '0px';
           hidden.style.opacity = '0';
+          hidden.style.overflow = 'hidden';
+          hidden.style.transform = 'translateY(-6px)';
           hidden.style.marginTop = '0px';
-        } else {
-          card.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-          btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
+        }
+      };
+
+      const setOpen = () => {
+        card.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
+
+        if (isMobile()) {
           hidden.style.display = 'block';
+          hidden.style.maxHeight = '';
+          hidden.style.opacity = '';
           hidden.style.marginTop = '12px';
-          hidden.style.maxHeight = 'none';
+          hidden.style.overflow = '';
+          hidden.style.visibility = '';
+          hidden.style.pointerEvents = '';
+          hidden.style.transform = '';
+        } else {
+          hidden.style.display = 'block';
+          hidden.style.overflow = 'hidden';
+          hidden.style.marginTop = '12px';
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
+          hidden.style.transform = 'translateY(0)';
+        }
+      };
+
+      setClosed();
+
+      btn.addEventListener('click', () => {
+        const open = card.classList.contains('open');
+        if (open) {
+          setClosed();
+        } else {
+          setOpen();
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      cards.forEach(card => {
+        const hidden = card.querySelector('.svc-hidden');
+        const btn = card.querySelector('.svc-toggle');
+        if (!hidden || !btn) return;
+
+        const mobile = window.innerWidth <= 768;
+        const open = card.classList.contains('open');
+
+        if (mobile) {
+          if (open) {
+            hidden.style.display = 'block';
+            hidden.style.maxHeight = '';
+            hidden.style.opacity = '';
+            hidden.style.marginTop = '12px';
+            hidden.style.overflow = '';
+            hidden.style.transform = '';
+          } else {
+            hidden.style.display = 'none';
+            hidden.style.maxHeight = '';
+            hidden.style.opacity = '';
+            hidden.style.marginTop = '0px';
+            hidden.style.overflow = '';
+            hidden.style.transform = '';
+          }
+        } else {
+          hidden.style.display = 'block';
+          hidden.style.overflow = 'hidden';
+          if (open) {
+            hidden.style.maxHeight = hidden.scrollHeight + 'px';
+            hidden.style.opacity = '1';
+            hidden.style.marginTop = '12px';
+            hidden.style.transform = 'translateY(0)';
+          } else {
+            hidden.style.maxHeight = '0px';
+            hidden.style.opacity = '0';
+            hidden.style.marginTop = '0px';
+            hidden.style.transform = 'translateY(-6px)';
+          }
         }
       });
     });
@@ -604,9 +673,6 @@
         sessionStorage.setItem('selectedService', service);
         sessionStorage.setItem('selected_service', service);
         sessionStorage.setItem('service', service);
-        localStorage.removeItem('selectedService');
-        localStorage.removeItem('selected_service');
-        localStorage.removeItem('service');
       } catch (e) {}
     });
   });
@@ -615,7 +681,7 @@
 
 
 
-<script src="js/main.js?v=ice42d" defer></script>
-<script src="js/booking.js?v=ice42d" defer></script>
+<script src="js/main.js?v=ice42m1" defer></script>
+<script src="js/booking.js?v=ice42m1" defer></script>
 </body>
 </html>
