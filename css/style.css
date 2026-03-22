@@ -3114,8 +3114,17 @@ position:absolute !important}
 }
 
 
-/* ===== ICE42 UNIVERSAL HEADER/NAV FIX ===== */
+/* ===== ICE50 CLEAN GLOBAL HEADER / NAV / MOBILE PATCH ===== */
 html,body{max-width:100%;overflow-x:hidden}
+img,video{max-width:100%;height:auto}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:3000;
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
 .nav-toggle{
   display:none;
   width:52px;
@@ -3129,7 +3138,7 @@ html,body{max-width:100%;overflow-x:hidden}
   flex-direction:column;
   cursor:pointer;
   position:relative;
-  z-index:1202;
+  z-index:3003;
   -webkit-tap-highlight-color:transparent;
   touch-action:manipulation;
 }
@@ -3139,11 +3148,13 @@ html,body{max-width:100%;overflow-x:hidden}
   height:2px;
   border-radius:999px;
   background:#eaf6ff;
-  transition:transform .22s ease,opacity .22s ease;
+  transition:transform .22s ease, opacity .22s ease;
 }
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.header-actions .cta-call{white-space:nowrap}
 
 @media (max-width:980px){
   .header-inner{
@@ -3153,12 +3164,13 @@ html,body{max-width:100%;overflow-x:hidden}
     gap:12px;
     padding:14px 0;
   }
-  .brand{min-width:0}
+  .brand{grid-column:1;grid-row:1;min-width:0}
   .brand-text{display:none}
-  .nav-toggle{display:flex}
+  .nav-toggle{display:flex;grid-column:2;grid-row:1}
   .primary-nav{
     display:none;
     grid-column:1 / -1;
+    grid-row:3;
     width:100%;
     margin-left:0;
     background:rgba(2,3,5,0.96);
@@ -3167,7 +3179,7 @@ html,body{max-width:100%;overflow-x:hidden}
     padding:10px;
     box-shadow:0 18px 48px rgba(0,0,0,0.36);
     position:relative;
-    z-index:1201;
+    z-index:3002;
   }
   .primary-nav.open{
     display:grid !important;
@@ -3183,27 +3195,24 @@ html,body{max-width:100%;overflow-x:hidden}
     padding:12px 14px;
     font-size:.98rem;
   }
-
-  /* mobile header call/book row in place of single book area */
   .header-actions{
     display:grid !important;
     grid-column:1 / -1;
+    grid-row:2;
     grid-template-columns:1fr 1fr;
     gap:10px;
     width:100%;
-    margin-top:2px;
-    padding-inline:2px;
+    padding-inline:8px;
   }
   .header-actions .cta-call,
   .header-actions .cta-book{
     display:flex !important;
     align-items:center;
     justify-content:center;
-    min-height:48px;
     width:100%;
-    text-align:center;
-    white-space:nowrap;
+    min-height:48px;
     padding:12px 14px;
+    text-align:center;
     border-radius:14px;
     margin:0;
   }
@@ -3212,20 +3221,13 @@ html,body{max-width:100%;overflow-x:hidden}
     border:1px solid rgba(255,255,255,0.08);
     color:rgba(234,246,255,0.92);
   }
-
-  /* move home hero buttons down on mobile */
-  .home-page .hero-ctas{
-    margin-top:28px;
-  }
 }
 
 @media (min-width:981px){
   .header-actions{
     display:flex;
-    gap:10px;
     align-items:center;
-    flex:0 0 auto;
-    white-space:nowrap;
+    gap:10px;
   }
   .header-actions .cta-call,
   .header-actions .cta-book{
@@ -3235,96 +3237,17 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 
-
-/* ===== HOME HERO CTA DESKTOP+MOBILE SPACING ===== */
+/* homepage hero CTA spacing desktop + mobile */
 .home-page .hero-ctas{
   margin-top:28px !important;
 }
-@media (max-width:720px){
-  .home-page .hero-ctas{
-    margin-top:28px !important;
-  }
-}
 
-
-/* ===== HOME/ALL MOBILE NAV CLICK FIX ===== */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:3000 !important;
+/* services page fixes */
+.services-page .svc-main-book{
+  width:100%;
+  text-align:center;
+  margin:0 0 14px 0;
 }
-.nav-toggle{
-  pointer-events:auto !important;
-}
-@media (max-width:980px){
-  .site-header,
-  .header-inner,
-  .nav-toggle,
-  .primary-nav,
-  .header-actions{
-    position:relative;
-  }
-  .header-inner{z-index:3001}
-  .nav-toggle{
-    z-index:3004 !important;
-    grid-column:2;
-    grid-row:1;
-  }
-  .brand{
-    grid-column:1;
-    grid-row:1;
-  }
-  .header-actions{
-    z-index:3002;
-    grid-row:2;
-  }
-  .primary-nav{
-    z-index:3003 !important;
-    grid-row:3;
-  }
-  /* prevent hero/media overlays from stealing taps near header */
-  .home-page .hero,
-  .home-page .hero-gradient,
-  .home-page .hero-inner,
-  .home-page .hero-side{
-    position:relative;
-    z-index:auto;
-  }
-}
-
-
-/* ===== ICE43B HEADER + ACCORDION FIX ===== */
-@media (max-width:980px){
-  .site-header{
-    position:fixed !important;
-    top:0;
-    left:0;
-    right:0;
-    z-index:4000 !important;
-  }
-  body.hybrid{
-    padding-top:126px;
-  }
-  .nav-toggle{
-    z-index:4003 !important;
-    pointer-events:auto !important;
-  }
-  .primary-nav{
-    z-index:4002 !important;
-  }
-  .header-actions{
-    z-index:4001 !important;
-  }
-}
-
-/* desktop keeps header immediately visible too */
-.site-header{
-  transform:none !important;
-  opacity:1 !important;
-  visibility:visible !important;
-}
-
-/* services accordion reliable close/open */
 .services-page .svc-hidden{
   max-height:0;
   opacity:0;
@@ -3338,9 +3261,4 @@ html,body{max-width:100%;overflow-x:hidden}
   visibility:visible;
   pointer-events:auto;
   margin-top:12px;
-}
-
-/* keep hero CTA lowered on desktop and mobile */
-.home-page .hero-ctas{
-  margin-top:28px !important;
 }
