@@ -439,12 +439,12 @@
       let selected = '';
       try {
         selected =
-          localStorage.getItem('selectedService') ||
-          localStorage.getItem('selected_service') ||
-          localStorage.getItem('service') ||
           sessionStorage.getItem('selectedService') ||
           sessionStorage.getItem('selected_service') ||
           sessionStorage.getItem('service') ||
+          localStorage.getItem('selectedService') ||
+          localStorage.getItem('selected_service') ||
+          localStorage.getItem('service') ||
           '';
       } catch (e) {}
 
@@ -461,6 +461,15 @@
           match.checked = true;
         }
       }
+
+      try {
+        sessionStorage.removeItem('selectedService');
+        sessionStorage.removeItem('selected_service');
+        sessionStorage.removeItem('service');
+        localStorage.removeItem('selectedService');
+        localStorage.removeItem('selected_service');
+        localStorage.removeItem('service');
+      } catch (e) {}
 
       renderEstimate();
     }
