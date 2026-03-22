@@ -112,6 +112,8 @@
 
           <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
 
+          <a class="btn primary svc-main-book" href="contact.html?service=Maintenance%20Detail" data-prefill="Maintenance Detail">Book Maintenance Detail</a>
+
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
@@ -151,6 +153,8 @@
           </div>
 
           <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
+
+          <a class="btn primary svc-main-book" href="contact.html?service=Elite%20Detail" data-prefill="Elite Detail">Book Elite Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -197,6 +201,8 @@
           </div>
 
           <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
+
+          <a class="btn primary svc-main-book" href="contact.html?service=Platinum%20Detail" data-prefill="Platinum Detail">Book Platinum Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -546,28 +552,6 @@
 
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  });
-
-  (() => {
-    const cards = Array.from(document.querySelectorAll('.svc-card-package'));
-
-    cards.forEach(card => {
-      const btn = card.querySelector('.svc-toggle');
-      const hidden = card.querySelector('.svc-hidden');
-      if (!btn || !hidden) return;
-
-      hidden.style.maxHeight = '0px';
-      hidden.style.opacity = '0';
-      hidden.style.overflow = 'hidden';
-      hidden.style.transform = 'translateY(-6px)';
-      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
-      btn.setAttribute('aria-expanded', 'false');
-
-      btn.addEventListener('click', () => {
         const isOpen = card.classList.toggle('open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         btn.innerHTML = isOpen
@@ -578,10 +562,16 @@
           hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
           hidden.style.transform = 'translateY(0)';
+          hidden.style.visibility = 'visible';
+          hidden.style.pointerEvents = 'auto';
+          hidden.style.marginTop = '12px';
         } else {
           hidden.style.maxHeight = '0px';
           hidden.style.opacity = '0';
           hidden.style.transform = 'translateY(-6px)';
+          hidden.style.visibility = 'hidden';
+          hidden.style.pointerEvents = 'none';
+          hidden.style.marginTop = '0px';
         }
       });
     });
@@ -600,12 +590,12 @@
     link.addEventListener('click', () => {
       const service = link.getAttribute('data-prefill') || '';
       try {
-        localStorage.setItem('selectedService', service);
-        localStorage.setItem('selected_service', service);
-        localStorage.setItem('service', service);
         sessionStorage.setItem('selectedService', service);
         sessionStorage.setItem('selected_service', service);
         sessionStorage.setItem('service', service);
+        localStorage.removeItem('selectedService');
+        localStorage.removeItem('selected_service');
+        localStorage.removeItem('service');
       } catch (e) {}
     });
   });
