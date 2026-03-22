@@ -3112,3 +3112,147 @@ position:absolute !important}
 .contact-page #estimateTotal{
   color: #f3fbff;
 }
+
+
+/* =========================================
+   MOBILE FRIENDLY SYSTEM PATCH
+   ========================================= */
+html,body{max-width:100%;overflow-x:hidden}
+img,video,iframe{max-width:100%;height:auto}
+.wrap{width:min(100%,var(--maxw));padding-inline:22px}
+.nav-toggle{display:none}
+
+@media (max-width:980px){
+  .nav-toggle{display:flex}
+  .header-inner{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:12px;
+    padding:14px 0;
+  }
+  .brand{min-width:0}
+  .brand-text{display:none}
+  .primary-nav{
+    display:none;
+    grid-column:1 / -1;
+    width:100%;
+    margin-left:0;
+    background:rgba(2,3,5,0.94);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:10px;
+    box-shadow:0 18px 48px rgba(0,0,0,0.36);
+  }
+  .primary-nav.open{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .primary-nav a{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    min-height:46px;
+    text-align:left;
+    padding:12px 14px;
+    font-size:.98rem;
+  }
+  .header-actions{
+    grid-column:1 / -1;
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .cta-call{display:none}
+  .cta-book{width:100%;text-align:center}
+}
+
+/* Home */
+@media (max-width:980px){
+  .hero{min-height:auto}
+  .hero-inner{flex-direction:column;align-items:flex-start;padding:56px 0}
+  .home-page .hero-side,.home-page .hero-video-card{width:100%;flex:1 1 auto}
+  .home-page .hero-video-card{min-height:320px}
+  .hero-copy,.lead{max-width:100%}
+  .hero-ctas,.hero-stats{width:100%}
+  .hero-ctas .btn{flex:1 1 220px;text-align:center}
+  .home-page .service-grid,
+  .why-grid,
+  .review-grid,
+  .process-grid,
+  .ba-gallery,
+  .before-after-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .wrap{padding-inline:16px}
+  .hero-inner{padding:42px 0}
+  .super{font-size:clamp(2rem,9vw,2.7rem)}
+  .lead{font-size:1rem;line-height:1.7}
+  .hero-ctas{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero-ctas .btn,.section-actions .btn,.cta-wrap .btn{width:100%;text-align:center}
+  .thumb-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .thumb-grid img{height:94px}
+  .thumb-grid img:nth-child(1){height:128px}
+  .section,.light-block,.cta-strip{padding:58px 0}
+}
+
+/* Gallery */
+@media (max-width:980px){
+  .results-hero-inner{grid-template-columns:1fr;gap:18px}
+  .results-hero-visual{order:2}
+  .results-hero-copy{order:1}
+}
+@media (max-width:720px){
+  .results-hero{padding:54px 0 28px}
+  .results-title{font-size:clamp(2rem,9vw,2.7rem)}
+  .gallery-album-grid,.gallery-grid,.album-grid{grid-template-columns:1fr !important}
+  .gallery-album-card,.gallery-card{padding:16px}
+  .gallery-lightbox-content{width:min(100%,94vw)}
+  .gallery-lightbox-meta{padding:12px}
+  .gallery-lightbox-nav{width:48px;height:48px}
+}
+
+/* Contact */
+@media (max-width:980px){
+  .contact-wrap{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .contact-hero{padding:52px 0 26px}
+  .contact-hero-inner{align-items:flex-start}
+  .contact-title{font-size:clamp(2rem,8.5vw,2.6rem)}
+  .contact-sub{font-size:1rem}
+  .contact-grid,.chip-grid{grid-template-columns:1fr !important}
+  .contact-card{padding:16px}
+  .form-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .form-actions .btn{width:100%;text-align:center}
+  .contact-page .form input,
+  .contact-page .form select,
+  .contact-page .form textarea{font-size:16px}
+  .contact-page #estimateSelections>div{flex-direction:column;gap:4px}
+}
+
+/* About */
+@media (max-width:980px){
+  .about-page .about-story-section{padding:88px 0}
+  .about-page .why-grid,
+  .about-page .standards-grid,
+  .about-page .about-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .about-page .about-story-section{padding:64px 0}
+  .about-page .about-story-title{font-size:clamp(2.2rem,10vw,3rem);line-height:1.04}
+  .about-page .about-story-subtitle{font-size:1rem;line-height:1.75}
+  .about-page .about-story-header{margin-bottom:28px}
+  .about-page .why-card,.about-page .standard-card,.about-page .about-card{padding:18px}
+}
+
+/* Generic mobile rhythm */
+@media (max-width:720px){
+  .section-title,.svc-h2{line-height:1.08}
+  .section-sub,.muted,.svc-lead{font-size:1rem;line-height:1.7}
+  .cta-wrap{justify-content:flex-start}
+  .cta-wrap h3{font-size:1.25rem}
+  .footer-flex{align-items:flex-start}
+  .footer-links{flex-wrap:wrap}
+}
