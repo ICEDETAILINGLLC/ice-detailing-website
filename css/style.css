@@ -3291,3 +3291,24 @@ html,body{max-width:100%;overflow-x:hidden}
     z-index:auto;
   }
 }
+
+
+/* ===== SERVICES BOOK BUTTONS + DROPDOWN RETRACT FIX ===== */
+.services-page .svc-main-book{
+  width:100%;
+  text-align:center;
+  margin: 0 0 14px 0;
+}
+.services-page .svc-hidden{
+  visibility:hidden;
+  pointer-events:none;
+}
+.services-page .svc-card-package.open .svc-hidden{
+  visibility:visible;
+  pointer-events:auto;
+}
+@media (max-width:720px){
+  .services-page .svc-main-book{
+    min-height:50px;
+  }
+}
