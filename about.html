@@ -1,8 +1,14 @@
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/cars/porsche_red.jpg">
-
-<link rel="stylesheet" href="css/style.css?v=ice31" />
-<link rel="stylesheet" href="css/animations.css?v=ice31" />
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About ICE Detailing LLC</title>
+  <meta name="description" content="Learn more about ICE Detailing LLC, our standards, and our approach to premium mobile detailing." />
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/cars/porsche_red.jpg">
+  <link rel="stylesheet" href="css/style.css?v=ice40" />
+  <link rel="stylesheet" href="css/animations.css?v=ice40" />
 </head>
 
 <body class="hybrid about-page">
@@ -14,7 +20,13 @@
       <span class="brand-text">ICE Detailing LLC</span>
     </a>
 
-    <nav class="primary-nav">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="primaryNav" class="primary-nav">
       <a href="index.html#home" class="nav-link">Home</a>
       <a href="services.html" class="nav-link">Services</a>
       <a href="gallery.html" class="nav-link">Gallery</a>
@@ -144,7 +156,7 @@
   document.getElementById('footerYearAbout').textContent = new Date().getFullYear();
 </script>
 
-<script src="js/main.js?v=ice31" defer></script>
+<script src="js/main.js?v=ice40" defer></script>
 
 </body>
 </html>
