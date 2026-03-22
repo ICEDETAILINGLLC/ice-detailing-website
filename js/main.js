@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// mobile nav toggle
+// global mobile nav toggle
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
@@ -176,7 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
       primaryNav.classList.remove("open");
     };
 
-    navToggle.addEventListener("click", () => {
+    navToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const isOpen = navToggle.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       primaryNav.classList.toggle("open", isOpen);
@@ -186,6 +188,13 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 980) closeNav();
       });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (window.innerWidth > 980) return;
+      if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+        closeNav();
+      }
     });
 
     window.addEventListener("resize", () => {
