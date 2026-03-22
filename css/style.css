@@ -3375,3 +3375,21 @@ html,body{max-width:100%;overflow-x:hidden}
   visibility:visible;
   pointer-events:auto;
 }
+
+
+/* ===== SAFE SERVICES DROPDOWN RETRACT OVERRIDE ===== */
+body.services-page .svc-card-package > .svc-hidden{
+  display:none !important;
+  max-height:0 !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+  overflow:hidden !important;
+  margin-top:0 !important;
+}
+
+body.services-page .svc-card-package.open > .svc-hidden{
+  display:block !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
