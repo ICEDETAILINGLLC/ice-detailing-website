@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42b" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42b" />
+  <link rel="stylesheet" href="css/style.css?v=ice42c" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42c" />
 </head>
 
 <body class="hybrid services-page">
@@ -566,73 +566,57 @@
       const hidden = card.querySelector('.svc-hidden');
       if (!btn || !hidden) return;
 
-      hidden.style.display = 'none';
-      hidden.style.maxHeight = '0px';
-      hidden.style.opacity = '0';
-      hidden.style.overflow = 'hidden';
-      hidden.style.visibility = 'hidden';
-      hidden.style.pointerEvents = 'none';
-      hidden.style.marginTop = '0px';
+      const setClosed = () => {
+        card.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+        hidden.style.display = 'none';
+        hidden.style.maxHeight = '0px';
+        hidden.style.opacity = '0';
+        hidden.style.visibility = 'hidden';
+        hidden.style.pointerEvents = 'none';
+        hidden.style.marginTop = '0px';
+        hidden.style.overflow = 'hidden';
+      };
 
-      btn.setAttribute('aria-expanded', 'false');
-      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
-
-      const openPanel = () => {
+      const setOpen = () => {
         card.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
         btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
-
         hidden.style.display = 'block';
         hidden.style.visibility = 'visible';
         hidden.style.pointerEvents = 'auto';
         hidden.style.marginTop = '12px';
+        hidden.style.overflow = 'hidden';
         hidden.style.maxHeight = '0px';
         hidden.style.opacity = '0';
-
         requestAnimationFrame(() => {
           hidden.style.maxHeight = hidden.scrollHeight + 'px';
           hidden.style.opacity = '1';
         });
       };
 
-      const closePanel = () => {
-        card.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
-
-        hidden.style.maxHeight = hidden.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          hidden.style.maxHeight = '0px';
-          hidden.style.opacity = '0';
-          hidden.style.marginTop = '0px';
-          hidden.style.pointerEvents = 'none';
-        });
-      };
-
-      hidden.addEventListener('transitionend', (e) => {
-        if (e.propertyName !== 'max-height') return;
-        if (!card.classList.contains('open')) {
-          hidden.style.display = 'none';
-          hidden.style.visibility = 'hidden';
-        }
-      });
+      setClosed();
 
       btn.addEventListener('click', () => {
         const isOpen = card.classList.contains('open');
         if (isOpen) {
-          closePanel();
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            hidden.style.maxHeight = '0px';
+            hidden.style.opacity = '0';
+            hidden.style.marginTop = '0px';
+          });
+          window.setTimeout(setClosed, 300);
         } else {
-          openPanel();
+          setOpen();
         }
       });
     });
 
     window.addEventListener('resize', () => {
-      cards.forEach(card => {
-        const hidden = card.querySelector('.svc-hidden');
-        if (card.classList.contains('open') && hidden) {
-          hidden.style.maxHeight = hidden.scrollHeight + 'px';
-        }
+      document.querySelectorAll('.svc-card-package.open .svc-hidden').forEach(hidden => {
+        hidden.style.maxHeight = hidden.scrollHeight + 'px';
       });
     });
   })();
@@ -655,7 +639,7 @@
 
 
 
-<script src="js/main.js?v=ice42b" defer></script>
-<script src="js/booking.js?v=ice42b" defer></script>
+<script src="js/main.js?v=ice42c" defer></script>
+<script src="js/booking.js?v=ice42c" defer></script>
 </body>
 </html>
