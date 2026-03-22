@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42c" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42c" />
+  <link rel="stylesheet" href="css/style.css?v=ice42d" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42d" />
 </head>
 
 <body class="hybrid services-page">
@@ -566,57 +566,33 @@
       const hidden = card.querySelector('.svc-hidden');
       if (!btn || !hidden) return;
 
-      const setClosed = () => {
-        card.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
-        hidden.style.display = 'none';
-        hidden.style.maxHeight = '0px';
-        hidden.style.opacity = '0';
-        hidden.style.visibility = 'hidden';
-        hidden.style.pointerEvents = 'none';
-        hidden.style.marginTop = '0px';
-        hidden.style.overflow = 'hidden';
-      };
-
-      const setOpen = () => {
-        card.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
-        hidden.style.display = 'block';
-        hidden.style.visibility = 'visible';
-        hidden.style.pointerEvents = 'auto';
-        hidden.style.marginTop = '12px';
-        hidden.style.overflow = 'hidden';
-        hidden.style.maxHeight = '0px';
-        hidden.style.opacity = '0';
-        requestAnimationFrame(() => {
-          hidden.style.maxHeight = hidden.scrollHeight + 'px';
-          hidden.style.opacity = '1';
-        });
-      };
-
-      setClosed();
+      hidden.style.display = 'none';
+      hidden.style.maxHeight = '0px';
+      hidden.style.opacity = '0';
+      hidden.style.marginTop = '0px';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
       btn.addEventListener('click', () => {
         const isOpen = card.classList.contains('open');
-        if (isOpen) {
-          hidden.style.maxHeight = hidden.scrollHeight + 'px';
-          requestAnimationFrame(() => {
-            hidden.style.maxHeight = '0px';
-            hidden.style.opacity = '0';
-            hidden.style.marginTop = '0px';
-          });
-          window.setTimeout(setClosed, 300);
-        } else {
-          setOpen();
-        }
-      });
-    });
 
-    window.addEventListener('resize', () => {
-      document.querySelectorAll('.svc-card-package.open .svc-hidden').forEach(hidden => {
-        hidden.style.maxHeight = hidden.scrollHeight + 'px';
+        if (isOpen) {
+          card.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+          hidden.style.display = 'none';
+          hidden.style.maxHeight = '0px';
+          hidden.style.opacity = '0';
+          hidden.style.marginTop = '0px';
+        } else {
+          card.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.innerHTML = `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`;
+          hidden.style.display = 'block';
+          hidden.style.marginTop = '12px';
+          hidden.style.maxHeight = 'none';
+          hidden.style.opacity = '1';
+        }
       });
     });
   })();
@@ -639,7 +615,7 @@
 
 
 
-<script src="js/main.js?v=ice42c" defer></script>
-<script src="js/booking.js?v=ice42c" defer></script>
+<script src="js/main.js?v=ice42d" defer></script>
+<script src="js/booking.js?v=ice42d" defer></script>
 </body>
 </html>
