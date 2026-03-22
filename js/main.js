@@ -202,3 +202,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth > 980) closeNav();
   });
 });
+
+
+// ICE43 pointerdown nav assist
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
+  if (!navToggle || !primaryNav) return;
+
+  const setNav = (open) => {
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    primaryNav.classList.toggle("open", open);
+  };
+
+  const toggleNav = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setNav(!primaryNav.classList.contains("open"));
+  };
+
+  navToggle.addEventListener("pointerdown", toggleNav);
+});
