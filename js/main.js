@@ -164,11 +164,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// universal mobile nav toggle
+// ICE42 universal mobile nav toggle
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
-
   if (!navToggle || !primaryNav) return;
 
   const closeNav = () => {
@@ -181,10 +180,10 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     e.stopPropagation();
     const isOpen = !primaryNav.classList.contains("open");
-    primaryNav.classList.toggle("open", isOpen);
     navToggle.classList.toggle("open", isOpen);
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  }, { passive: false });
+    primaryNav.classList.toggle("open", isOpen);
+  });
 
   primaryNav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
