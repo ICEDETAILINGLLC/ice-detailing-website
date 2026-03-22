@@ -1,198 +1,211 @@
-// booking.js — multi-service + add-ons submission to Formspree
-// flatpickr for date
-// native time picker with business hours limited to 7:00 AM–8:00 PM
+// main.js — reveal on scroll, prefill, parallax, sticky CTA, gallery lightbox
+document.addEventListener("DOMContentLoaded", () => {
+  const reveals = document.querySelectorAll(".reveal");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const bookingForm = document.getElementById('bookingForm');
-  const submitBtn = document.getElementById('submitBooking') || document.getElementById('submitBookingBtn');
-  const status = document.getElementById('bookingStatus');
+  if (reveals.length) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
-  // -------------------------------
-  // 0) Enhanced date picker only
-  // -------------------------------
-  const dateInput = document.getElementById('date');
-  const timeInput = document.getElementById('time');
-
-  if (window.flatpickr && dateInput) {
-    flatpickr(dateInput, {
-      altInput: true,
-      altFormat: 'F j, Y',
-      dateFormat: 'Y-m-d',
-      minDate: 'today',
-      disableMobile: true,
-      clickOpens: true,
-      allowInput: false
-    });
+    reveals.forEach((r) => io.observe(r));
   }
 
-  // -------------------------------
-  // 0.5) Time input business hours
-  // -------------------------------
-  if (timeInput) {
-    timeInput.step = 900;     // 15-minute intervals
-    timeInput.min = '07:00';  // 7:00 AM
-    timeInput.max = '20:00';  // 8:00 PM
+  document.querySelectorAll("[data-prefill]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const pref = (el.dataset.prefill || "").trim();
+      if (!pref) return;
 
-    timeInput.addEventListener('focus', () => {
-      if (typeof timeInput.showPicker === 'function') {
-        timeInput.showPicker();
-      }
-    });
-
-    timeInput.addEventListener('click', () => {
-      if (typeof timeInput.showPicker === 'function') {
-        timeInput.showPicker();
-      }
-    });
-  }
-
-  // -------------------------------
-  // 1) Service button prefill links
-  // -------------------------------
-  document.querySelectorAll('[data-prefill]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const service = link.getAttribute('data-prefill');
-      if (!service) return;
-
-      const href = link.getAttribute('href') || 'contact.html';
-      if (!href.includes('contact.html')) return;
-
-      e.preventDefault();
-
-      const url = new URL(href, window.location.origin);
-      url.searchParams.set('service', service);
-      window.location.href = url.pathname + url.search;
+      try {
+        sessionStorage.setItem("prefillService", pref);
+      } catch (err) {}
     });
   });
 
-  // ----------------------------------------
-  // 2) Auto-check service if coming from URL
-  // ----------------------------------------
-  const params = new URLSearchParams(window.location.search);
-  const requestedService = params.get('service');
+  const isContact = document.body.classList.contains("contact-page");
 
-  if (requestedService && bookingForm) {
-    const matchingService = bookingForm.querySelector(
-      `input[name="services[]"][value="${cssEscape(requestedService)}"]`
-    );
+  if (isContact) {
+    const url = new URL(window.location.href);
+    const fromUrl = (url.searchParams.get("service") || "").trim();
 
-    if (matchingService) {
-      matchingService.checked = true;
-    }
-  }
-
-  // -------------------------------
-  // 3) Form submission to Formspree
-  // -------------------------------
-  if (!bookingForm || !submitBtn) return;
-
-  const FORMSPREE_URL = 'https://formspree.io/f/manaykpb';
-
-  bookingForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const name = bookingForm.querySelector('#name');
-    const email = bookingForm.querySelector('#email');
-    const phone = bookingForm.querySelector('#phone');
-    const vehicle = bookingForm.querySelector('#vehicle');
-    const vehicleDetails = bookingForm.querySelector('#vehicleDetails');
-    const zip = bookingForm.querySelector('#zip');
-    const date = bookingForm.querySelector('#date');
-    const time = bookingForm.querySelector('#time');
-    const address = bookingForm.querySelector('#address');
-    const message = bookingForm.querySelector('#message');
-
-    const serviceChecks = Array.from(
-      bookingForm.querySelectorAll('input[name="services[]"]:checked')
-    );
-    const addonChecks = Array.from(
-      bookingForm.querySelectorAll('input[name="addons[]"]:checked')
-    );
-
-    if (!name?.value.trim() || !email?.value.trim() || !phone?.value.trim()) {
-      showStatus('Please complete required fields (name, email, phone).', true);
-      return;
-    }
-
-    if (serviceChecks.length === 0) {
-      showStatus('Please select at least one service.', true);
-      return;
-    }
-
-    if (!vehicle?.value.trim()) {
-      showStatus('Please select your vehicle type.', true);
-      return;
-    }
-
-    if (!vehicleDetails?.value.trim()) {
-      showStatus('Please enter your vehicle year, make, and model.', true);
-      return;
-    }
-
-    if (!zip?.value.trim()) {
-      showStatus('Please enter your ZIP code.', true);
-      return;
-    }
-
-    if (!date?.value || !time?.value) {
-      showStatus('Please choose a preferred date and time.', true);
-      return;
-    }
-
-    if (time.value < '07:00' || time.value > '20:00') {
-      showStatus('Preferred time must be between 7:00 AM and 8:00 PM.', true);
-      return;
-    }
-
-    const fd = new FormData(bookingForm);
-
-    fd.set('services', serviceChecks.map(x => x.value).join(', '));
-    fd.set('addons', addonChecks.map(x => x.value).join(', '));
-    fd.set('vehicleDetails', vehicleDetails.value.trim());
-
-    if (address) fd.set('address', address.value.trim());
-    if (message) fd.set('message', message.value.trim());
-
-    fd.delete('services[]');
-    fd.delete('addons[]');
-
-    showStatus('Sending request...', false);
-    submitBtn.disabled = true;
-
+    let fromStorage = "";
     try {
-      const res = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        body: fd,
-        headers: { Accept: 'application/json' }
+      fromStorage = (sessionStorage.getItem("prefillService") || "").trim();
+    } catch (err) {}
+
+    const pref = fromUrl || fromStorage;
+
+    if (pref) {
+      const targets = document.querySelectorAll('input[type="checkbox"][data-prefill-target]');
+
+      targets.forEach((cb) => {
+        if ((cb.value || "").toLowerCase() === pref.toLowerCase()) {
+          cb.checked = true;
+        }
       });
 
-      if (res.ok) {
-        showStatus('Request sent — we will contact you shortly. Thank you!', false);
-        bookingForm.reset();
+      try {
+        sessionStorage.removeItem("prefillService");
+      } catch (err) {}
+    }
+  }
 
-        const cleanUrl = window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
+  const hero = document.querySelector(".hero[data-parallax]");
+  if (hero) {
+    window.addEventListener("scroll", () => {
+      const speed = 0.22;
+      const y = window.scrollY * speed;
+      hero.style.backgroundPosition = `center calc(50% + ${y}px)`;
+    }, { passive: true });
+  }
+
+  const bookSticky = document.getElementById("bookSticky");
+
+  if (bookSticky) {
+    function updateBookVisible() {
+      if (window.scrollY > 420) {
+        bookSticky.classList.add("visible");
       } else {
-        const data = await res.json().catch(() => ({}));
-        showStatus(data.error || 'Failed to send. Please try again or call us.', true);
+        bookSticky.classList.remove("visible");
       }
-    } catch (err) {
-      showStatus('Network error — please try again or call (617) 970-2329.', true);
-    } finally {
-      submitBtn.disabled = false;
+    }
+
+    updateBookVisible();
+    window.addEventListener("scroll", updateBookVisible, { passive: true });
+  }
+
+  // gallery lightbox
+  const albumCards = document.querySelectorAll(".gallery-album-card");
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxTitle = document.getElementById("lightboxTitle");
+  const lightboxMeta = document.getElementById("lightboxMeta");
+  const prevBtn = document.getElementById("lightboxPrev");
+  const nextBtn = document.getElementById("lightboxNext");
+  const closeEls = document.querySelectorAll("[data-lightbox-close]");
+
+  let activeGallery = [];
+  let activeTitle = "";
+  let activeIndex = 0;
+
+  function renderLightbox() {
+    if (!activeGallery.length) return;
+
+    lightboxImage.src = activeGallery[activeIndex];
+    lightboxImage.alt = `${activeTitle} image ${activeIndex + 1}`;
+    lightboxTitle.textContent = activeTitle;
+    lightboxMeta.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
+  }
+
+  function openLightbox(title, images, startIndex = 0) {
+    activeTitle = title;
+    activeGallery = images;
+    activeIndex = startIndex;
+
+    renderLightbox();
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
+    lightboxImage.src = "";
+  }
+
+  function showNext() {
+    if (!activeGallery.length) return;
+    activeIndex = (activeIndex + 1) % activeGallery.length;
+    renderLightbox();
+  }
+
+  function showPrev() {
+    if (!activeGallery.length) return;
+    activeIndex = (activeIndex - 1 + activeGallery.length) % activeGallery.length;
+    renderLightbox();
+  }
+
+  albumCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const title = (card.dataset.galleryTitle || "Gallery").trim();
+      let images = [];
+
+      try {
+        images = JSON.parse(card.dataset.galleryImages || "[]");
+      } catch (err) {
+        images = [];
+      }
+
+      if (!images.length) return;
+      openLightbox(title, images, 0);
+    });
+  });
+
+  if (prevBtn) prevBtn.addEventListener("click", showPrev);
+  if (nextBtn) nextBtn.addEventListener("click", showNext);
+
+  closeEls.forEach((el) => {
+    el.addEventListener("click", closeLightbox);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox || !lightbox.classList.contains("open")) return;
+
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+  });
+});
+
+
+// ICE50 universal mobile nav toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
+  if (!navToggle || !primaryNav) return;
+
+  let lock = false;
+
+  const setNav = (open) => {
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    primaryNav.classList.toggle("open", open);
+  };
+
+  const toggleNav = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (lock) return;
+    lock = true;
+    setNav(!primaryNav.classList.contains("open"));
+    window.setTimeout(() => { lock = false; }, 120);
+  };
+
+  navToggle.addEventListener("click", toggleNav);
+  navToggle.addEventListener("touchstart", toggleNav, { passive: false });
+
+  primaryNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 980) setNav(false);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth > 980) return;
+    if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+      setNav(false);
     }
   });
 
-  function showStatus(msg, isError) {
-    if (!status) return;
-    status.textContent = msg;
-    status.style.color = isError ? '#ffb3b3' : '#bfefff';
-  }
-
-  function cssEscape(value) {
-    if (window.CSS && typeof window.CSS.escape === 'function') {
-      return window.CSS.escape(value);
-    }
-    return String(value).replace(/["\\]/g, '\\$&');
-  }
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) setNav(false);
+  });
 });
