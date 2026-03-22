@@ -164,18 +164,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ICE50 universal mobile nav toggle
+
+// ICE42B robust mobile nav toggle
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
+
   if (!navToggle || !primaryNav) return;
 
-  let lock = false;
+  let justToggled = false;
 
   const setNav = (open) => {
+    primaryNav.classList.toggle("open", open);
     navToggle.classList.toggle("open", open);
     navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    primaryNav.classList.toggle("open", open);
   };
 
   const toggleNav = (e) => {
@@ -183,10 +185,9 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
     }
-    if (lock) return;
-    lock = true;
     setNav(!primaryNav.classList.contains("open"));
-    window.setTimeout(() => { lock = false; }, 120);
+    justToggled = true;
+    window.setTimeout(() => { justToggled = false; }, 80);
   };
 
   navToggle.addEventListener("click", toggleNav);
@@ -200,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("click", (e) => {
     if (window.innerWidth > 980) return;
+    if (justToggled) return;
     if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
       setNav(false);
     }
