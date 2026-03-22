@@ -3293,22 +3293,54 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 
-/* ===== SERVICES BOOK BUTTONS + DROPDOWN RETRACT FIX ===== */
-.services-page .svc-main-book{
-  width:100%;
-  text-align:center;
-  margin: 0 0 14px 0;
+/* ===== ICE43B HEADER + ACCORDION FIX ===== */
+@media (max-width:980px){
+  .site-header{
+    position:fixed !important;
+    top:0;
+    left:0;
+    right:0;
+    z-index:4000 !important;
+  }
+  body.hybrid{
+    padding-top:126px;
+  }
+  .nav-toggle{
+    z-index:4003 !important;
+    pointer-events:auto !important;
+  }
+  .primary-nav{
+    z-index:4002 !important;
+  }
+  .header-actions{
+    z-index:4001 !important;
+  }
 }
+
+/* desktop keeps header immediately visible too */
+.site-header{
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+/* services accordion reliable close/open */
 .services-page .svc-hidden{
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
   visibility:hidden;
   pointer-events:none;
+  margin-top:0;
+  transition:max-height .28s ease, opacity .18s ease, margin-top .18s ease;
 }
 .services-page .svc-card-package.open .svc-hidden{
   visibility:visible;
   pointer-events:auto;
+  margin-top:12px;
 }
-@media (max-width:720px){
-  .services-page .svc-main-book{
-    min-height:50px;
-  }
+
+/* keep hero CTA lowered on desktop and mobile */
+.home-page .hero-ctas{
+  margin-top:28px !important;
 }
