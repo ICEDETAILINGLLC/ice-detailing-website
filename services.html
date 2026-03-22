@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42m1" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42m1" />
+  <link rel="stylesheet" href="css/style.css?v=ice42m2" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42m2" />
 </head>
 
 <body class="hybrid services-page">
@@ -112,6 +112,8 @@
 
           <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
 
+          <a class="btn primary svc-main-book" href="contact.html?service=Maintenance%20Detail" data-prefill="Maintenance Detail">Book Maintenance Detail</a>
+
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
@@ -151,6 +153,8 @@
           </div>
 
           <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
+
+          <a class="btn primary svc-main-book" href="contact.html?service=Elite%20Detail" data-prefill="Elite Detail">Book Elite Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -197,6 +201,8 @@
           </div>
 
           <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
+
+          <a class="btn primary svc-main-book" href="contact.html?service=Platinum%20Detail" data-prefill="Platinum Detail">Book Platinum Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -673,6 +679,9 @@
         sessionStorage.setItem('selectedService', service);
         sessionStorage.setItem('selected_service', service);
         sessionStorage.setItem('service', service);
+        localStorage.removeItem('selectedService');
+        localStorage.removeItem('selected_service');
+        localStorage.removeItem('service');
       } catch (e) {}
     });
   });
@@ -681,7 +690,7 @@
 
 
 
-<script src="js/main.js?v=ice42m1" defer></script>
-<script src="js/booking.js?v=ice42m1" defer></script>
+<script src="js/main.js?v=ice42m2" defer></script>
+<script src="js/booking.js?v=ice42m2" defer></script>
 </body>
 </html>
