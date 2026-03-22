@@ -3373,3 +3373,20 @@ body.services-page .svc-card-package.open > .svc-hidden{
   opacity:1 !important;
   margin-top:12px !important;
 }
+/* ===== MOBILE ONLY: FORCE CLEAN DROPDOWN ===== */
+@media (max-width: 768px){
+
+  .services-page .svc-hidden{
+    display: none !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    margin-top: 0 !important;
+  }
+
+  .services-page .svc-card-package.open .svc-hidden{
+    display: block !important;
+    margin-top: 12px !important;
+  }
+
+}
