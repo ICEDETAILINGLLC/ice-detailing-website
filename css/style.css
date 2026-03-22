@@ -3234,3 +3234,60 @@ html,body{max-width:100%;overflow-x:hidden}
     justify-content:center;
   }
 }
+
+
+/* ===== HOME HERO CTA DESKTOP+MOBILE SPACING ===== */
+.home-page .hero-ctas{
+  margin-top:28px !important;
+}
+@media (max-width:720px){
+  .home-page .hero-ctas{
+    margin-top:28px !important;
+  }
+}
+
+
+/* ===== HOME/ALL MOBILE NAV CLICK FIX ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:3000 !important;
+}
+.nav-toggle{
+  pointer-events:auto !important;
+}
+@media (max-width:980px){
+  .site-header,
+  .header-inner,
+  .nav-toggle,
+  .primary-nav,
+  .header-actions{
+    position:relative;
+  }
+  .header-inner{z-index:3001}
+  .nav-toggle{
+    z-index:3004 !important;
+    grid-column:2;
+    grid-row:1;
+  }
+  .brand{
+    grid-column:1;
+    grid-row:1;
+  }
+  .header-actions{
+    z-index:3002;
+    grid-row:2;
+  }
+  .primary-nav{
+    z-index:3003 !important;
+    grid-row:3;
+  }
+  /* prevent hero/media overlays from stealing taps near header */
+  .home-page .hero,
+  .home-page .hero-gradient,
+  .home-page .hero-inner,
+  .home-page .hero-side{
+    position:relative;
+    z-index:auto;
+  }
+}
