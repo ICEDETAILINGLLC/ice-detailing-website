@@ -3,65 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Results — ICE Detailing LLC</title>
+  <title>Reviews — ICE Detailing LLC</title>
 
-  <link rel="stylesheet" href="css/style.css?v=ice42r2" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42r2" />
+  <link rel="stylesheet" href="css/style.css?v=ice42b" />
+  <link rel="stylesheet" href="css/animations.css?v=ice42b" />
 </head>
 
-<body class="hybrid reviews-page">
+<body class="hybrid">
 
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="wrap header-inner">
-    <a href="index.html" class="brand">
-      <img src="images/iced_blue.png" class="logo-horizontal" />
-      <span class="brand-text">ICE Detailing LLC</span>
+    <a href="index.html" class="brand" aria-label="ICE Detailing home">
+      <img src="images/iced_blue.png" alt="ICE Detailing LLC" class="logo-horizontal" />
+      <span class="brand-text" aria-hidden="true">ICE Detailing LLC</span>
     </a>
 
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav">
-      <span></span><span></span><span></span>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
-    <nav id="primaryNav" class="primary-nav">
-      <a href="index.html#home">Home</a>
-      <a href="services.html">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="reviews.html" class="active">Reviews</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+    <nav id="primaryNav" class="primary-nav" aria-label="Primary navigation">
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="reviews.html" class="nav-link active">Reviews</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
 
     <div class="header-actions">
       <a href="tel:16179702329" class="cta-call">Call Now – Fast Response</a>
-      <a class="cta-book" href="contact.html">Book</a>
+      <a id="bookSticky" class="cta-book" href="contact.html">Book</a>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="section">
+  <section class="section light-block">
     <div class="wrap">
+      <h1 class="section-title reveal">Customer Reviews</h1>
+      <p class="section-sub muted reveal">Real feedback from clients — premium results, every time.</p>
 
-      <span class="results-kicker">Results • Standards • Experience</span>
-
-      <div class="review-hero-simple">
-        <h1>What to expect</h1>
-        <h3>High-end care from first message to final wipe-down.</h3>
-
-        <ul class="reviews-points">
-          <li>Fast response and clear booking communication</li>
-          <li>Professional-grade tools and premium products</li>
-          <li>Services tailored to your vehicle’s condition</li>
-          <li>Mobile convenience at your home or location</li>
-        </ul>
-
-        <div class="cta-row">
-          <a href="contact.html" class="btn primary">Book Now</a>
-          <a href="tel:16179702329" class="btn ghost">Call Now</a>
+      <div class="review-grid reveal">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“My car looks brand new again.”</h3>
+          <p>ICE Detailing went above and beyond. The interior looks brand new.</p>
+          <span class="author">– Jason R.</span>
         </div>
 
-      </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“Best detailing service in the area.”</h3>
+          <p>Premium package was worth every penny. Insane quality.</p>
+          <span class="author">– Sarah M.</span>
+        </div>
 
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>“Deep clean like I’ve never seen.”</h3>
+          <p>They removed stains I thought were permanent. Unreal attention to detail.</p>
+          <span class="author">– Daniel K.</span>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -69,7 +75,7 @@
 <footer class="site-footer sleek-footer">
   <div class="wrap footer-flex">
     <div class="footer-brand">
-      <img src="images/iced_blue.png" class="footer-logo" />
+<img src="images/iced_blue.png" alt="ICE Detailing" class="footer-logo" />
       <div class="footer-name">ICE Detailing LLC</div>
     </div>
 
@@ -84,6 +90,6 @@
 </footer>
 
 <script>document.getElementById('footerYearRev').textContent = new Date().getFullYear();</script>
-<script src="js/main.js?v=ice42r2" defer></script>
+<script src="js/main.js?v=ice42b" defer></script>
 </body>
 </html>
