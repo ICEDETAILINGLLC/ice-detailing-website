@@ -3357,3 +3357,21 @@ html,body{max-width:100%;overflow-x:hidden}
     padding-top:6px;
   }
 }
+
+
+/* ===== SERVICES HIDE/RETRACT FIX ===== */
+.services-page .svc-hidden{
+  display:none;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  visibility:hidden;
+  pointer-events:none;
+  margin-top:0;
+  transition:max-height .28s ease, opacity .18s ease, margin-top .18s ease;
+}
+.services-page .svc-card-package.open .svc-hidden{
+  display:block;
+  visibility:visible;
+  pointer-events:auto;
+}
