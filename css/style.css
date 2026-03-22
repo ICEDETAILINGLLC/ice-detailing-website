@@ -3359,37 +3359,17 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 
-/* ===== SERVICES HIDE/RETRACT FIX ===== */
-.services-page .svc-hidden{
-  display:none;
-  max-height:0;
-  opacity:0;
-  overflow:hidden;
-  visibility:hidden;
-  pointer-events:none;
-  margin-top:0;
-  transition:max-height .28s ease, opacity .18s ease, margin-top .18s ease;
-}
-.services-page .svc-card-package.open .svc-hidden{
-  display:block;
-  visibility:visible;
-  pointer-events:auto;
-}
-
-
-/* ===== SAFE SERVICES DROPDOWN RETRACT OVERRIDE ===== */
+/* ===== REALLY SAFE SERVICES DROPDOWN FIX ===== */
 body.services-page .svc-card-package > .svc-hidden{
   display:none !important;
   max-height:0 !important;
   opacity:0 !important;
-  visibility:hidden !important;
-  pointer-events:none !important;
-  overflow:hidden !important;
   margin-top:0 !important;
+  overflow:hidden !important;
 }
-
 body.services-page .svc-card-package.open > .svc-hidden{
   display:block !important;
-  visibility:visible !important;
-  pointer-events:auto !important;
+  max-height:none !important;
+  opacity:1 !important;
+  margin-top:12px !important;
 }
