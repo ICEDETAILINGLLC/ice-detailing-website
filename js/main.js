@@ -164,41 +164,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// global mobile nav toggle
+// universal mobile nav toggle
 document.addEventListener("DOMContentLoaded", () => {
   const navToggle = document.querySelector(".nav-toggle");
   const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
 
-  if (navToggle && primaryNav) {
-    const closeNav = () => {
-      navToggle.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      primaryNav.classList.remove("open");
-    };
+  if (!navToggle || !primaryNav) return;
 
-    navToggle.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = navToggle.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      primaryNav.classList.toggle("open", isOpen);
-    });
+  const closeNav = () => {
+    navToggle.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+    primaryNav.classList.remove("open");
+  };
 
-    primaryNav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 980) closeNav();
-      });
-    });
+  navToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = !primaryNav.classList.contains("open");
+    primaryNav.classList.toggle("open", isOpen);
+    navToggle.classList.toggle("open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }, { passive: false });
 
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth > 980) return;
-      if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
-        closeNav();
-      }
+  primaryNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 980) closeNav();
     });
+  });
 
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 980) closeNav();
-    });
-  }
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth > 980) return;
+    if (!primaryNav.contains(e.target) && !navToggle.contains(e.target)) {
+      closeNav();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) closeNav();
+  });
 });
