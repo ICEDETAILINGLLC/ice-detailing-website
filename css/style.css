@@ -3319,3 +3319,107 @@ img,video,iframe{max-width:100%;height:auto}
     line-height:1.65;
   }
 }
+
+
+/* ===== CONVERSION / UX IMPROVEMENTS ===== */
+.cta-call{
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+.svc-card-book{
+  width:100%;
+  text-align:center;
+  margin-top:12px;
+}
+
+@media (hover:none){
+  .btn:active,
+  .svc-card:active,
+  .chip:active,
+  .gallery-album-card:active{
+    transform:scale(.985);
+  }
+}
+
+/* sticky mobile CTA */
+.mobile-cta-bar{
+  display:none;
+}
+@media (max-width:720px){
+  body{
+    padding-bottom:78px;
+  }
+  .mobile-cta-bar{
+    position:fixed;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    z-index:1200;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .mobile-cta-bar a{
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border-radius:16px;
+    text-decoration:none;
+    font-weight:900;
+    box-shadow:0 16px 38px rgba(0,0,0,0.34);
+  }
+  .mobile-cta-call{
+    color:#eaf6ff;
+    background:rgba(10,14,20,0.94);
+    border:1px solid rgba(255,255,255,0.10);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .mobile-cta-book{
+    color:#031018;
+    background:var(--ice);
+    border:1px solid rgba(0,160,255,0.40);
+  }
+}
+
+/* package cards conversion rhythm */
+.services-page .svc-grid-packages .svc-card{
+  display:flex;
+  flex-direction:column;
+}
+.services-page .svc-grid-packages .svc-hidden{
+  margin-top:14px;
+}
+.services-page .svc-grid-packages .svc-toggle{
+  margin-top:8px;
+}
+.services-page .svc-grid-packages .svc-card .svc-card-book{
+  margin-top:10px;
+}
+@media (max-width:720px){
+  .services-page .svc-grid-packages .svc-toggle,
+  .services-page .svc-grid-packages .svc-card .svc-card-book{
+    min-height:52px;
+  }
+}
+
+/* mobile spacing polish */
+@media (max-width:720px){
+  .section{padding:60px 0}
+  .contact-page #estimateCard{margin-top:22px !important}
+  .contact-page .form-actions{margin-top:18px}
+  .contact-page .contact-next{margin-top:14px}
+}
+
+/* keep effects light on touch devices */
+@media (hover:none) and (pointer:coarse){
+  .services-page .svc-card.featured::before,
+  .services-page .svc-card.platinum-card::before,
+  .services-page .svc-card.featured::after,
+  .services-page .svc-card.platinum-card::after{
+    animation:none !important;
+  }
+}
