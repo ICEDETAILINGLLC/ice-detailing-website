@@ -162,3 +162,34 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowLeft") showPrev();
   });
 });
+
+
+// mobile nav toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const primaryNav = document.getElementById("primaryNav") || document.querySelector(".primary-nav");
+
+  if (navToggle && primaryNav) {
+    const closeNav = () => {
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      primaryNav.classList.remove("open");
+    };
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navToggle.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      primaryNav.classList.toggle("open", isOpen);
+    });
+
+    primaryNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 980) closeNav();
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980) closeNav();
+    });
+  }
+});
