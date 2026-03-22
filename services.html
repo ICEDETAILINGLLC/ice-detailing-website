@@ -6,8 +6,8 @@
   <title>Services — ICE Detailing LLC</title>
   <meta name="description" content="Premium mobile detailing packages, paint correction, ceramic coating, and add-ons — ICE Detailing LLC serving Boston & Middlesex County." />
 
-  <link rel="stylesheet" href="css/style.css?v=ice42" />
-  <link rel="stylesheet" href="css/animations.css?v=ice42" />
+  <link rel="stylesheet" href="css/style.css?v=ice43b" />
+  <link rel="stylesheet" href="css/animations.css?v=ice43b" />
 </head>
 
 <body class="hybrid services-page">
@@ -112,8 +112,6 @@
 
           <p class="svc-package-summary">A lighter full detail that restores cleanliness, gloss, and overall presentation without heavy restoration work.</p>
 
-          <a class="btn primary svc-main-book" href="contact.html?service=Maintenance%20Detail" data-prefill="Maintenance Detail">Book Maintenance Detail</a>
-
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
           <div class="svc-hidden">
@@ -153,8 +151,6 @@
           </div>
 
           <p class="svc-package-summary">Our most balanced full detail. This is the right choice when your vehicle needs a noticeable interior and exterior reset with added protection.</p>
-
-          <a class="btn primary svc-main-book" href="contact.html?service=Elite%20Detail" data-prefill="Elite Detail">Book Elite Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -201,8 +197,6 @@
           </div>
 
           <p class="svc-package-summary">Our most complete package for clients who want the fullest interior and exterior detail, a more refined finish, and stronger long-lasting protection.</p>
-
-          <a class="btn primary svc-main-book" href="contact.html?service=Platinum%20Detail" data-prefill="Platinum Detail">Book Platinum Detail</a>
 
           <button class="svc-toggle" type="button" aria-expanded="false">View what's included <span class="toggle-icon" aria-hidden="true">+</span></button>
 
@@ -552,26 +546,50 @@
 
   document.querySelectorAll('.faq-question').forEach(btn => {
     btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  (() => {
+    const cards = Array.from(document.querySelectorAll('.svc-card-package'));
+
+    cards.forEach(card => {
+      const btn = card.querySelector('.svc-toggle');
+      const hidden = card.querySelector('.svc-hidden');
+      if (!btn || !hidden) return;
+
+      hidden.style.maxHeight = '0px';
+      hidden.style.opacity = '0';
+      hidden.style.overflow = 'hidden';
+      hidden.style.visibility = 'hidden';
+      hidden.style.pointerEvents = 'none';
+      hidden.style.marginTop = '0px';
+
+      btn.setAttribute('aria-expanded', 'false');
+      btn.innerHTML = `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
+
+      btn.addEventListener('click', () => {
         const isOpen = card.classList.toggle('open');
+
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         btn.innerHTML = isOpen
           ? `Hide what's included <span class="toggle-icon" aria-hidden="true">−</span>`
           : `View what's included <span class="toggle-icon" aria-hidden="true">+</span>`;
 
         if (isOpen) {
-          hidden.style.maxHeight = hidden.scrollHeight + 'px';
-          hidden.style.opacity = '1';
-          hidden.style.transform = 'translateY(0)';
           hidden.style.visibility = 'visible';
           hidden.style.pointerEvents = 'auto';
           hidden.style.marginTop = '12px';
+          hidden.style.maxHeight = hidden.scrollHeight + 'px';
+          hidden.style.opacity = '1';
         } else {
           hidden.style.maxHeight = '0px';
           hidden.style.opacity = '0';
-          hidden.style.transform = 'translateY(-6px)';
-          hidden.style.visibility = 'hidden';
-          hidden.style.pointerEvents = 'none';
           hidden.style.marginTop = '0px';
+          hidden.style.pointerEvents = 'none';
+          hidden.style.visibility = 'hidden';
         }
       });
     });
@@ -604,7 +622,7 @@
 
 
 
-<script src="js/main.js?v=ice42" defer></script>
-<script src="js/booking.js?v=ice42" defer></script>
+<script src="js/main.js?v=ice43b" defer></script>
+<script src="js/booking.js?v=ice43b" defer></script>
 </body>
 </html>
