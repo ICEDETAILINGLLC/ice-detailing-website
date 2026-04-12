@@ -3357,3 +3357,170 @@ html,body{max-width:100%;overflow-x:hidden}
     padding-top:6px;
   }
 }
+
+
+/* ===== CONTACT BOOKING WIZARD ===== */
+.contact-page .booking-wizard{
+  display:grid;
+  gap:18px;
+}
+.contact-page .wizard-progress{
+  padding:16px 16px 14px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(0,0,0,0.12));
+  border:1px solid rgba(255,255,255,0.08);
+}
+.contact-page .wizard-progress-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+.contact-page .wizard-progress-kicker{
+  font-size:.8rem;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:rgba(154,174,185,0.92);
+  font-weight:900;
+}
+.contact-page .wizard-progress-count{
+  font-weight:900;
+  color:#eaf6ff;
+}
+.contact-page .wizard-progress-bar{
+  height:10px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.06);
+  overflow:hidden;
+}
+.contact-page .wizard-progress-bar span{
+  display:block;
+  width:20%;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(0,160,255,0.72), rgba(90,245,255,0.9));
+  box-shadow:0 0 18px rgba(0,160,255,0.25);
+  transition:width .24s ease;
+}
+.contact-page .wizard-progress-label{
+  margin-top:10px;
+  font-weight:900;
+  letter-spacing:-0.01em;
+}
+.contact-page .form-step{
+  display:none;
+}
+.contact-page .form-step.active{
+  display:block;
+}
+.contact-page .step-heading{
+  margin-bottom:12px;
+}
+.contact-page .step-heading h3{
+  font-size:1.3rem;
+  font-weight:950;
+  letter-spacing:-0.01em;
+  margin-bottom:4px;
+}
+.contact-page .wizard-actions{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  margin-top:2px;
+}
+.contact-page .wizard-btn{
+  min-width:120px;
+  justify-content:center;
+}
+.contact-page .estimate-card{
+  margin-top:0 !important;
+}
+.contact-page .estimate-note{
+  margin-top:8px;
+  font-size:.95rem;
+}
+.contact-page .booking-status{
+  margin-top:10px;
+}
+.contact-page .review-actions{
+  margin-top:8px;
+}
+.contact-page .booking-wizard.is-review-step .wizard-actions{
+  margin-top:0;
+}
+
+@media (max-width: 720px){
+  .contact-page .contact-hero{
+    padding:56px 0 24px;
+  }
+  .contact-page .contact-shell{
+    padding:42px 0;
+  }
+  .contact-page .contact-card{
+    padding:16px;
+  }
+  .contact-page .booking-wizard{
+    gap:16px;
+  }
+  .contact-page .wizard-progress{
+    padding:14px;
+  }
+  .contact-page .step-heading h3{
+    font-size:1.15rem;
+  }
+  .contact-page .form input[type="text"],
+  .contact-page .form input[type="email"],
+  .contact-page .form input[type="tel"],
+  .contact-page .form input[type="time"],
+  .contact-page .form select,
+  .contact-page .form textarea,
+  .contact-page .form .flatpickr-input[readonly]{
+    min-height:48px;
+    padding:12px 14px;
+    font-size:15px;
+  }
+  .contact-page .form textarea{
+    min-height:120px;
+  }
+  .contact-page .form input,
+  .contact-page .form select,
+  .contact-page .form textarea{
+    margin-bottom:12px;
+  }
+  .contact-page .chip{
+    padding:10px 12px;
+  }
+  .contact-page .inline-alert,
+  .contact-page .contact-next{
+    padding:10px 12px;
+  }
+  .contact-page .wizard-actions{
+    position:sticky;
+    bottom:12px;
+    padding:12px;
+    border-radius:18px;
+    background:rgba(2,3,5,0.92);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 16px 40px rgba(0,0,0,0.34);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .contact-page .wizard-btn{
+    flex:1 1 0;
+    min-width:0;
+  }
+}
+
+@media (max-width: 520px){
+  .contact-page .chip-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width: 380px){
+  .contact-page .chip-grid{
+    grid-template-columns:1fr;
+  }
+}
