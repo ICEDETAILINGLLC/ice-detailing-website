@@ -152,15 +152,12 @@
                 </label>
               </div>
 
-              <div class="inline-alert muted" id="servicesHelp">
-                If you clicked over from the Services page, your selection should auto-check here.
-              </div>
             </div>
 
             <div class="field-block">
               <div class="field-top">
-                <label class="field-label">Popular Upgrades (optional)</label>
-                <div class="field-hint muted">Add-ons can be selected with any package or service.</div>
+                <label class="field-label">Popular Upgrades</label>
+                <div class="field-hint muted">Some of these upgrades may already be included with higher-level packages.</div>
               </div>
 
               <div class="chip-grid" role="group" aria-label="Add-ons">
@@ -246,7 +243,8 @@
               </div>
               <div>
                 <label for="time">Preferred time *</label>
-                <input id="time" name="time" type="time" min="07:00" max="20:00" step="900" required>
+                <input id="time" name="time" type="time" min="07:00" max="20:00" step="1800" required>
+                <div class="field-help muted">30-minute booking increments only.</div>
               </div>
             </div>
 
@@ -273,7 +271,7 @@
             </div>
 
             <div class="form-actions review-actions">
-              <button class="btn primary" id="submitBooking" type="submit">Send Request</button>
+              <button class="btn primary" id="submitBooking" type="submit">Request Booking</button>
               <a class="btn ghost" href="tel:617-777-7569">Call 617-777-7569</a>
             </div>
 
@@ -286,7 +284,7 @@
 
           <div class="wizard-actions" aria-label="Step navigation">
             <button type="button" class="btn ghost wizard-btn wizard-prev" id="wizardPrev">Back</button>
-            <button type="button" class="btn primary wizard-btn wizard-next" id="wizardNext">Next</button>
+            <button type="button" class="btn primary wizard-btn wizard-next" id="wizardNext">Continue</button>
           </div>
         </form>
       </div>
