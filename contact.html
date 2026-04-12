@@ -357,20 +357,42 @@
       });
     }
 
+    function getFieldLabel(field) {
+      const labelText = field.closest('div')?.querySelector('label')?.textContent
+        || field.closest('label')?.textContent
+        || field.name
+        || 'This field';
+      return labelText.replace('*', '').trim();
+    }
+
     function getStepError(field) {
       const type = (field.type || '').toLowerCase();
-      const labelText = field.closest('div')?.querySelector('label')?.textContent || field.closest('label')?.textContent || field.name || 'This field';
+      const label = getFieldLabel(field);
+      const value = typeof field.value === 'string' ? field.value.trim() : field.value;
 
       if (type === 'checkbox' && field.name === 'services[]') {
         return 'Choose at least one main service.';
       }
-      if (field.validity.valueMissing) {
-        return `${labelText.replace('*', '').trim()} is required.`;
+      if (field.required && !value) {
+        return `${label} is required.`;
       }
-      if (field.validity.typeMismatch) {
-        return `Enter a valid ${labelText.replace('*', '').trim().toLowerCase()}.`;
+      if (type === 'email' && value && !field.checkValidity()) {
+        return `Enter a valid ${label.toLowerCase()}.`;
       }
-      return 'Please check this field.';
+      return `Check ${label.toLowerCase()} and try again.`;
+    }
+
+    function validateField(field) {
+      const type = (field.type || '').toLowerCase();
+      const value = typeof field.value === 'string' ? field.value.trim() : field.value;
+
+      if (field.required && !value) {
+        return false;
+      }
+      if (type === 'email' && value) {
+        return field.checkValidity();
+      }
+      return true;
     }
 
     function validateCurrentStep() {
@@ -391,8 +413,7 @@
       }
 
       for (const field of fields) {
-        if (!field.checkValidity()) {
-          field.reportValidity();
+        if (!validateField(field)) {
           alert(getStepError(field));
           field.focus();
           return false;
@@ -412,7 +433,8 @@
       currentStepEl.textContent = String(currentStep + 1);
       stepLabelEl.textContent = current.dataset.stepLabel || `Step ${currentStep + 1}`;
       progressFill.style.width = `${percent}%`;
-      prevBtn.style.visibility = currentStep === 0 ? 'hidden' : 'visible';
+      prevBtn.disabled = currentStep === 0;
+      prevBtn.setAttribute('aria-disabled', String(currentStep === 0));
       nextBtn.style.display = currentStep === steps.length - 1 ? 'none' : 'inline-flex';
 
       if (currentStep === steps.length - 1) {
