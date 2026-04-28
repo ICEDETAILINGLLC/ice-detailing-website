@@ -64,7 +64,18 @@
     <div class="wrap contact-wrap">
 
       <div class="contact-main">
-        <form id="bookingForm" class="form contact-card booking-wizard" autocomplete="on" novalidate>
+        <!-- IMPORTANT: Replace REPLACE_WITH_YOUR_FORMSPREE_ID with your real Formspree ID. Example: https://formspree.io/f/xabcdeyz -->
+        <form
+          id="bookingForm"
+          class="form contact-card booking-wizard"
+          action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID"
+          method="POST"
+          enctype="multipart/form-data"
+          autocomplete="on"
+        >
+          <input type="hidden" name="_subject" value="New ICE Detailing Booking Request">
+          <input type="hidden" name="business" value="ICE Detailing LLC">
+
           <div class="wizard-progress" aria-label="Booking progress">
             <div class="wizard-progress-top">
               <span class="wizard-progress-kicker">Booking Steps</span>
@@ -105,9 +116,7 @@
             </div>
 
             <div class="field-block">
-              <div class="field-top">
-                
-              </div>
+              <div class="field-top"></div>
 
               <div class="chip-grid" role="group" aria-label="Main services">
                 <label class="chip">
@@ -150,7 +159,6 @@
                   <span>Fleet Maintenance</span>
                 </label>
               </div>
-
             </div>
 
             <div class="field-block">
@@ -455,6 +463,20 @@
         currentStep += 1;
         updateWizard();
         form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    form.addEventListener('submit', (event) => {
+      if (!validateCurrentStep()) {
+        event.preventDefault();
+        return;
+      }
+
+      const action = form.getAttribute('action') || '';
+      if (action.includes('REPLACE_WITH_YOUR_FORMSPREE_ID')) {
+        event.preventDefault();
+        alert('Add your real Formspree form ID to the form action before this can send.');
+        return;
       }
     });
 
