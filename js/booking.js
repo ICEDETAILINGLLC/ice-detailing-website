@@ -1,4 +1,4 @@
-// booking.js — CLEAN WORKING VERSION (Formspree + no redirect)
+// booking.js — FINAL FIX (only submission, nothing else touched)
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('bookingForm');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // check at least one service
+    // require at least one service
     const services = form.querySelectorAll('input[name="services[]"]:checked');
     if (services.length === 0) {
       showStatus('Please select at least one service.', true);
@@ -19,34 +19,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formData = new FormData(form);
 
+    // 🔥 THIS IS YOUR FORMSPREE ENDPOINT
+    const URL = 'https://formspree.io/f/manaykpb';
+
     showStatus('Sending request...', false);
     if (button) button.disabled = true;
 
     try {
-      const response = await fetch('https://formspree.io/f/manaykpb', {
+      const res = await fetch(URL, {
         method: 'POST',
         body: formData,
-        headers: {
-          Accept: 'application/json'
-        }
+        headers: { Accept: 'application/json' }
       });
 
-      if (response.ok) {
+      if (res.ok) {
         showStatus('Request sent — we will contact you shortly.', false);
         form.reset();
       } else {
-        showStatus('Error sending. Please call or text 617-777-7569.', true);
+        showStatus('Error sending. Call or text 617-777-7569.', true);
       }
-    } catch (error) {
+    } catch (err) {
       showStatus('Network error. Please try again.', true);
     }
 
     if (button) button.disabled = false;
   });
 
-  function showStatus(message, isError) {
+  function showStatus(msg, isError) {
     if (!status) return;
-    status.textContent = message;
+    status.textContent = msg;
     status.style.color = isError ? '#ff4d4d' : '#00e0ff';
   }
 });
