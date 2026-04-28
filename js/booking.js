@@ -1,157 +1,65 @@
-// booking.js — multi-service + add-ons submission to Formspree
-// flatpickr for date
-// native time picker with business hours limited to 7:00 AM–8:00 PM
+// booking.js — FIXED Formspree submission + 30 min time
 
 document.addEventListener('DOMContentLoaded', () => {
   const bookingForm = document.getElementById('bookingForm');
-  const submitBtn = document.getElementById('submitBooking') || document.getElementById('submitBookingBtn');
+  const submitBtn = document.getElementById('submitBooking');
   const status = document.getElementById('bookingStatus');
 
   // -------------------------------
-  // 0) Enhanced date picker only
+  // Date Picker
   // -------------------------------
   const dateInput = document.getElementById('date');
-  const timeInput = document.getElementById('time');
-
   if (window.flatpickr && dateInput) {
     flatpickr(dateInput, {
       altInput: true,
       altFormat: 'F j, Y',
       dateFormat: 'Y-m-d',
-      minDate: 'today',
-      disableMobile: true,
-      clickOpens: true,
-      allowInput: false
+      minDate: 'today'
     });
   }
 
   // -------------------------------
-  // 0.5) Time input business hours
+  // Time (30 min increments)
   // -------------------------------
+  const timeInput = document.getElementById('time');
   if (timeInput) {
-    timeInput.step = 900;     // 15-minute intervals
-    timeInput.min = '07:00';  // 7:00 AM
-    timeInput.max = '20:00';  // 8:00 PM
-
-    timeInput.addEventListener('focus', () => {
-      if (typeof timeInput.showPicker === 'function') {
-        timeInput.showPicker();
-      }
-    });
-
-    timeInput.addEventListener('click', () => {
-      if (typeof timeInput.showPicker === 'function') {
-        timeInput.showPicker();
-      }
-    });
+    timeInput.step = 1800; // 30 minutes
+    timeInput.min = '07:00';
+    timeInput.max = '20:00';
   }
 
   // -------------------------------
-  // 1) Service button prefill links
-  // -------------------------------
-  document.querySelectorAll('[data-prefill]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const service = link.getAttribute('data-prefill');
-      if (!service) return;
-
-      const href = link.getAttribute('href') || 'contact.html';
-      if (!href.includes('contact.html')) return;
-
-      e.preventDefault();
-
-      const url = new URL(href, window.location.origin);
-      url.searchParams.set('service', service);
-      window.location.href = url.pathname + url.search;
-    });
-  });
-
-  // ----------------------------------------
-  // 2) Auto-check service if coming from URL
-  // ----------------------------------------
-  const params = new URLSearchParams(window.location.search);
-  const requestedService = params.get('service');
-
-  if (requestedService && bookingForm) {
-    const matchingService = bookingForm.querySelector(
-      `input[name="services[]"][value="${cssEscape(requestedService)}"]`
-    );
-
-    if (matchingService) {
-      matchingService.checked = true;
-    }
-  }
-
-  // -------------------------------
-  // 3) Form submission to Formspree
+  // STOP if form missing
   // -------------------------------
   if (!bookingForm || !submitBtn) return;
 
+  // ✅ YOUR REAL FORMSPREE LINK
   const FORMSPREE_URL = 'https://formspree.io/f/manaykpb';
 
+  // -------------------------------
+  // SUBMIT HANDLER
+  // -------------------------------
   bookingForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = bookingForm.querySelector('#name');
-    const email = bookingForm.querySelector('#email');
-    const phone = bookingForm.querySelector('#phone');
-    const vehicle = bookingForm.querySelector('#vehicle');
-    const vehicleDetails = bookingForm.querySelector('#vehicleDetails');
-    const zip = bookingForm.querySelector('#zip');
-    const date = bookingForm.querySelector('#date');
-    const time = bookingForm.querySelector('#time');
-    const address = bookingForm.querySelector('#address');
-    const message = bookingForm.querySelector('#message');
+    const fd = new FormData(bookingForm);
 
-    const serviceChecks = Array.from(
+    // collect services
+    const services = Array.from(
       bookingForm.querySelectorAll('input[name="services[]"]:checked')
-    );
-    const addonChecks = Array.from(
+    ).map(x => x.value);
+
+    const addons = Array.from(
       bookingForm.querySelectorAll('input[name="addons[]"]:checked')
-    );
+    ).map(x => x.value);
 
-    if (!name?.value.trim() || !email?.value.trim() || !phone?.value.trim()) {
-      showStatus('Please complete required fields (name, email, phone).', true);
-      return;
-    }
-
-    if (serviceChecks.length === 0) {
+    if (services.length === 0) {
       showStatus('Please select at least one service.', true);
       return;
     }
 
-    if (!vehicle?.value.trim()) {
-      showStatus('Please select your vehicle type.', true);
-      return;
-    }
-
-    if (!vehicleDetails?.value.trim()) {
-      showStatus('Please enter your vehicle year, make, and model.', true);
-      return;
-    }
-
-    if (!zip?.value.trim()) {
-      showStatus('Please enter your ZIP code.', true);
-      return;
-    }
-
-    if (!date?.value || !time?.value) {
-      showStatus('Please choose a preferred date and time.', true);
-      return;
-    }
-
-    if (time.value < '07:00' || time.value > '20:00') {
-      showStatus('Preferred time must be between 7:00 AM and 8:00 PM.', true);
-      return;
-    }
-
-    const fd = new FormData(bookingForm);
-
-    fd.set('services', serviceChecks.map(x => x.value).join(', '));
-    fd.set('addons', addonChecks.map(x => x.value).join(', '));
-    fd.set('vehicleDetails', vehicleDetails.value.trim());
-
-    if (address) fd.set('address', address.value.trim());
-    if (message) fd.set('message', message.value.trim());
+    fd.set('services', services.join(', '));
+    fd.set('addons', addons.join(', '));
 
     fd.delete('services[]');
     fd.delete('addons[]');
@@ -167,32 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (res.ok) {
-        showStatus('Request sent — we will contact you shortly. Thank you!', false);
+        showStatus('Request sent — we will contact you shortly.', false);
         bookingForm.reset();
-
-        const cleanUrl = window.location.pathname;
-        window.history.replaceState({}, document.title, cleanUrl);
       } else {
-        const data = await res.json().catch(() => ({}));
-        showStatus(data.error || 'Failed to send. Please try again or call us.', true);
+        showStatus('Failed to send. Try again or call 617-777-7569.', true);
       }
     } catch (err) {
-      showStatus('Network error — please try again or call (617) 970-2329.', true);
-    } finally {
-      submitBtn.disabled = false;
+      showStatus('Network error — please try again.', true);
     }
+
+    submitBtn.disabled = false;
   });
 
   function showStatus(msg, isError) {
     if (!status) return;
     status.textContent = msg;
-    status.style.color = isError ? '#ffb3b3' : '#bfefff';
-  }
-
-  function cssEscape(value) {
-    if (window.CSS && typeof window.CSS.escape === 'function') {
-      return window.CSS.escape(value);
-    }
-    return String(value).replace(/["\\]/g, '\\$&');
+    status.style.color = isError ? '#ff4d4d' : '#00e0ff';
   }
 });
