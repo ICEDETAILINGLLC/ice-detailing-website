@@ -63,12 +63,10 @@
   <section class="contact-shell">
     <div class="wrap contact-wrap">
 
-      <div class="contact-main">
-        <!-- IMPORTANT: Replace REPLACE_WITH_YOUR_FORMSPREE_ID with your real Formspree ID. Example: https://formspree.io/f/xabcdeyz -->
-        <form
+      <div class="contact-main">        <form
           id="bookingForm"
           class="form contact-card booking-wizard"
-          action="https://formspree.io/f/REPLACE_WITH_YOUR_FORMSPREE_ID"
+          action="https://formspree.io/f/manaykpb"
           method="POST"
           enctype="multipart/form-data"
           autocomplete="on"
@@ -473,9 +471,9 @@
       }
 
       const action = form.getAttribute('action') || '';
-      if (action.includes('REPLACE_WITH_YOUR_FORMSPREE_ID')) {
+      if (!action || !action.includes('formspree.io/f/')) {
         event.preventDefault();
-        alert('Add your real Formspree form ID to the form action before this can send.');
+        alert('The booking form is missing a valid Formspree action URL.');
         return;
       }
     });
@@ -674,6 +672,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/main.js?v=ice42b" defer></script>
-<script src="js/booking.js?v=ice42b" defer></script>
+<script src="js/booking.js?v=ice43" defer></script>
 </body>
 </html>
