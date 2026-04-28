@@ -63,7 +63,8 @@
   <section class="contact-shell">
     <div class="wrap contact-wrap">
 
-      <div class="contact-main">        <form
+      <div class="contact-main">
+        <form
           id="bookingForm"
           class="form contact-card booking-wizard"
           action="https://formspree.io/f/manaykpb"
@@ -248,8 +249,7 @@
               </div>
               <div>
                 <label for="time">Preferred time *</label>
-                <input id="time" name="time" type="time" min="07:00" max="20:00" step="1800" required>
-                <div class="field-help muted">30-minute booking increments only.</div>
+                <select id="time" name="time" required></select>
               </div>
             </div>
 
@@ -471,9 +471,9 @@
       }
 
       const action = form.getAttribute('action') || '';
-      if (!action || !action.includes('formspree.io/f/')) {
+      if (action.includes('REPLACE_WITH_YOUR_FORMSPREE_ID')) {
         event.preventDefault();
-        alert('The booking form is missing a valid Formspree action URL.');
+        alert('Add your real Formspree form ID to the form action before this can send.');
         return;
       }
     });
@@ -672,6 +672,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/main.js?v=ice42b" defer></script>
-<script src="js/booking.js?v=ice44" defer></script>
+<script src="js/booking.js?v=ice42b" defer></script>
 </body>
 </html>
