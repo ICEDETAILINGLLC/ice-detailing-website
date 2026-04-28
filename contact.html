@@ -248,10 +248,8 @@
               </div>
               <div>
                 <label for="time">Preferred time *</label>
-                <select id="time" name="time" required>
-                  <option value="" selected disabled>Select a time</option>
-                </select>
-                <div class="field-help muted">Available times are shown in clean 30-minute increments.</div>
+                <input id="time" name="time" type="time" min="07:00" max="20:00" step="1800" required>
+                <div class="field-help muted">30-minute booking increments only.</div>
               </div>
             </div>
 
