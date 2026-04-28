@@ -248,8 +248,10 @@
               </div>
               <div>
                 <label for="time">Preferred time *</label>
-                <input id="time" name="time" type="time" min="07:00" max="20:00" step="1800" required>
-                <div class="field-help muted">30-minute booking increments only.</div>
+                <select id="time" name="time" required>
+                  <option value="" selected disabled>Select a time</option>
+                </select>
+                <div class="field-help muted">Available times are shown in clean 30-minute increments.</div>
               </div>
             </div>
 
@@ -672,6 +674,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/main.js?v=ice42b" defer></script>
-<script src="js/booking.js?v=ice43" defer></script>
+<script src="js/booking.js?v=ice44" defer></script>
 </body>
 </html>
