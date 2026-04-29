@@ -1,14 +1,14 @@
-// booking.js — date picker + 30-minute time picker + clean Formspree submit
+// booking.js — stay on page + request sent message
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('bookingForm');
   const status = document.getElementById('bookingStatus');
   const dateInput = document.getElementById('date');
   const timeSelect = document.getElementById('time');
+  const submitButton = document.getElementById('submitBooking');
 
   if (!form) return;
 
-  // Nice calendar
   if (dateInput && window.flatpickr) {
     flatpickr(dateInput, {
       minDate: 'today',
@@ -17,21 +17,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 30-minute times from 7:00 AM to 8:00 PM
   if (timeSelect) {
     buildTimeOptions(timeSelect, 7, 20);
   }
 
-  form.addEventListener('submit', (e) => {
-    const services = form.querySelectorAll('input[name="services[]"]:checked');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const services = form.querySelectorAll('input[name="services[]"]:checked');
     if (services.length === 0) {
-      e.preventDefault();
       showStatus('Please select at least one service.', true);
       return;
     }
 
-    showStatus('Sending request...', false);
+    showStatus('Sending...', false);
+    if (submitButton) submitButton.disabled = true;
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('https://formspree.io/f/manaykpb', {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        showStatus('Request sent.', false);
+        form.reset();
+
+        if (timeSelect) {
+          buildTimeOptions(timeSelect, 7, 20);
+        }
+      } else {
+        showStatus('Something went wrong. Call or text 617-777-7569.', true);
+      }
+    } catch (err) {
+      showStatus('Network error. Please try again.', true);
+    }
+
+    if (submitButton) submitButton.disabled = false;
   });
 
   function buildTimeOptions(select, openHour, closeHour) {
