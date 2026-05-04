@@ -4077,7 +4077,34 @@ input[type="file"]#vehiclePhotos {
 }
 
 
-/* REMOVE DEFAULT FILE INPUT BAR */
-input[type="file"] {
-  display: none !important;
+/* REAL UPLOAD BAR FIX: hide default browser file button, use paperclip bar only */
+#photos,
+input#photos[type="file"] {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+label[for="photos"].file-upload-label {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 18px;
+  border: 1px solid rgba(0, 160, 255, 0.75);
+  border-radius: 14px;
+  background: rgba(0, 160, 255, 0.04);
+  color: #eaf7ff;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(0, 160, 255, 0.16);
+}
+
+label[for="photos"].file-upload-label:hover {
+  border-color: rgba(0, 160, 255, 1);
+  box-shadow: 0 0 26px rgba(0, 160, 255, 0.28);
 }
