@@ -3867,3 +3867,105 @@ html,body{max-width:100%;overflow-x:hidden}
     max-width:185px !important;
   }
 }
+
+/* ===== ICE DETAILING — FINAL TIGHT HEADER + UNIFORM LOGO SIZE =====
+   Keeps the logo enlarged while bringing the header height back down.
+   Applies to every page through the shared stylesheet. */
+.site-header{
+  padding:10px 0 !important;
+  overflow:visible !important;
+}
+.header-inner,
+.home-page .header-inner,
+.services-page .header-inner{
+  min-height:96px !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+}
+.brand{
+  width:280px !important;
+  min-width:280px !important;
+  flex:0 0 280px !important;
+  max-width:none !important;
+  overflow:visible !important;
+}
+.logo-horizontal{
+  width:260px !important;
+  max-width:260px !important;
+  height:auto !important;
+  max-height:none !important;
+  display:block !important;
+  object-fit:contain !important;
+  filter:brightness(1.08) contrast(1.18) saturate(1.08) drop-shadow(0 0 8px rgba(0,160,255,.36)) drop-shadow(0 10px 20px rgba(0,0,0,.48)) !important;
+}
+.site-header .brand::before{
+  width:260px !important;
+  height:86px !important;
+  left:-18px !important;
+  opacity:.18 !important;
+  filter:blur(34px) !important;
+}
+.footer-logo{
+  width:250px !important;
+  max-width:250px !important;
+  height:auto !important;
+  max-height:none !important;
+  display:block !important;
+  object-fit:contain !important;
+  filter:brightness(1.08) contrast(1.16) saturate(1.08) drop-shadow(0 0 8px rgba(0,160,255,.32)) !important;
+}
+@media (max-width:1100px){
+  .header-inner,
+  .home-page .header-inner,
+  .services-page .header-inner{
+    min-height:90px !important;
+  }
+  .brand{
+    width:220px !important;
+    min-width:220px !important;
+    flex-basis:220px !important;
+  }
+  .logo-horizontal{
+    width:210px !important;
+    max-width:210px !important;
+  }
+  .site-header .brand::before{
+    width:220px !important;
+    height:78px !important;
+  }
+}
+@media (max-width:720px){
+  .site-header{
+    padding:8px 0 !important;
+  }
+  .header-inner,
+  .home-page .header-inner,
+  .services-page .header-inner{
+    min-height:82px !important;
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    gap:12px !important;
+  }
+  .brand{
+    width:170px !important;
+    min-width:170px !important;
+    flex-basis:170px !important;
+  }
+  .logo-horizontal{
+    width:165px !important;
+    max-width:165px !important;
+  }
+  .site-header .brand::before{
+    width:175px !important;
+    height:70px !important;
+    left:-14px !important;
+    opacity:.16 !important;
+  }
+  .footer-logo{
+    width:200px !important;
+    max-width:200px !important;
+  }
+}
