@@ -3868,6 +3868,16 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 }
 
+/* CALL BUTTON GLOW */
+.cta-call {
+  border: 2px solid #00A0FF;
+  color: #00A0FF;
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 0 12px rgba(0,160,255,0.6);
+  transition: all 0.3s ease;
+}
 
-/* STICKY HEADER FIX */
-.site-header { position: sticky; top: 0; z-index: 1000; background: rgba(0,0,0,0.95); backdrop-filter: blur(6px); }
+.cta-call:hover {
+  box-shadow: 0 0 20px rgba(0,160,255,0.9);
+}
