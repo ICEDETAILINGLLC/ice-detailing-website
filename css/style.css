@@ -3653,319 +3653,113 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 
-/* ===== FULL-SITE HEADER LOGO FIX - MAY 3 ===== */
-.brand-text{display:none !important;}
-.brand{gap:0 !important; min-width:0 !important;}
-.logo-horizontal{
-  height:92px !important;
-  width:auto !important;
-  max-width:260px !important;
-  object-fit:contain !important;
-  display:block !important;
-  position:relative !important;
-  z-index:2 !important;
-  filter:brightness(1.65) contrast(1.35) drop-shadow(0 0 14px rgba(0,160,255,.55)) !important;
-}
-.site-header .brand::before{
-  width:260px !important;
-  height:98px !important;
-  opacity:1 !important;
-}
-.footer-logo{
-  filter:brightness(1.35) contrast(1.2) drop-shadow(0 0 10px rgba(0,160,255,.35)) !important;
-}
-@media (max-width:980px){
-  .logo-horizontal{height:76px !important; max-width:220px !important;}
-}
-@media (max-width:720px){
-  .logo-horizontal{height:66px !important; max-width:190px !important;}
-}
-
-
-/* ===== PREMIUM HEADER LOGO UPGRADE - MAY 3 FINAL =====
-   Purpose: make iced_blue_v2.png larger, cleaner, and more visible without washing out the blue. */
+/* ===== ICE LOGO FINAL UNIFORM FIX - MAY 3 =====
+   Applied last so earlier page/mobile rules cannot override it.
+   Goal: larger visible logo, tighter header height, softer glow, enlarged footer logo. */
 .site-header{
-  background:rgba(2,3,5,0.90) !important;
-  border-bottom:1px solid rgba(0,160,255,0.14) !important;
-  box-shadow:0 18px 48px rgba(0,0,0,0.28) !important;
+  transform:none !important;
+  opacity:1 !important;
+  visibility:visible !important;
 }
 .header-inner{
-  min-height:112px !important;
-  padding:12px 0 !important;
-  gap:24px !important;
-}
-.brand{
-  min-width:170px !important;
-  width:170px !important;
-  flex:0 0 170px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:flex-start !important;
-  overflow:visible !important;
-}
-.brand-text{display:none !important;}
-.logo-horizontal{
-  height:104px !important;
-  max-width:170px !important;
-  width:auto !important;
-  object-fit:contain !important;
-  display:block !important;
-  position:relative !important;
-  z-index:3 !important;
-  opacity:1 !important;
-  filter:contrast(1.14) saturate(1.08) drop-shadow(0 0 10px rgba(0,160,255,0.58)) drop-shadow(0 10px 22px rgba(0,0,0,0.45)) !important;
-}
-.site-header .brand::before{
-  left:-26px !important;
-  width:205px !important;
-  height:112px !important;
-  opacity:.58 !important;
-  filter:blur(16px) !important;
-  background:radial-gradient(circle at 38% 50%,rgba(0,160,255,0.34),rgba(0,160,255,0.10) 42%,transparent 72%) !important;
-}
-.primary-nav{
-  margin-left:0 !important;
-  gap:14px !important;
-}
-.header-actions{
-  margin-left:auto !important;
-}
-.footer-logo{
-  filter:contrast(1.10) saturate(1.05) drop-shadow(0 0 8px rgba(0,160,255,.36)) !important;
-}
-@media (max-width:1100px){
-  .header-inner{gap:18px !important;}
-  .brand{min-width:150px !important;width:150px !important;flex-basis:150px !important;}
-  .logo-horizontal{height:92px !important;max-width:150px !important;}
-  .primary-nav{gap:8px !important;}
-}
-@media (max-width:820px){
-  .header-inner{min-height:92px !important;}
-  .brand{min-width:135px !important;width:135px !important;flex-basis:135px !important;}
-  .logo-horizontal{height:82px !important;max-width:135px !important;}
-  .site-header .brand::before{width:165px !important;height:92px !important;left:-18px !important;}
-}
-@media (max-width:720px){
-  .header-inner,.home-page .header-inner,.services-page .header-inner{
-    min-height:88px !important;
-    padding:10px 0 !important;
-    display:grid !important;
-    grid-template-columns:1fr auto !important;
-    gap:12px !important;
-  }
-  .brand{
-    min-width:132px !important;
-    width:132px !important;
-    flex-basis:132px !important;
-  }
-  .logo-horizontal{
-    height:78px !important;
-    max-width:132px !important;
-  }
-  .site-header .brand::before{
-    width:158px !important;
-    height:88px !important;
-    left:-18px !important;
-    opacity:.52 !important;
-  }
-}
-
-/* ===== ICE DETAILING — UNIFORM LARGE LOGO FINAL FIX =====
-   Applies to every page because all pages share this stylesheet. */
-.site-header{
-  overflow:visible !important;
-}
-.header-inner,
-.home-page .header-inner,
-.services-page .header-inner{
-  min-height:132px !important;
-  padding-top:16px !important;
-  padding-bottom:16px !important;
-  align-items:center !important;
-}
-.brand{
-  width:280px !important;
-  min-width:280px !important;
-  flex:0 0 280px !important;
-  max-width:none !important;
-  overflow:visible !important;
-}
-.logo-horizontal{
-  width:260px !important;
-  max-width:260px !important;
-  height:auto !important;
-  max-height:none !important;
-  display:block !important;
-  object-fit:contain !important;
-  opacity:1 !important;
-  filter:contrast(1.16) saturate(1.10) drop-shadow(0 0 9px rgba(0,160,255,.45)) drop-shadow(0 12px 24px rgba(0,0,0,.5)) !important;
-}
-.site-header .brand::before{
-  width:285px !important;
-  height:120px !important;
-  left:-24px !important;
-  opacity:.25 !important;
-  filter:blur(40px) !important;
-}
-.footer-logo{
-  width:230px !important;
-  max-width:230px !important;
-  height:auto !important;
-  max-height:none !important;
-  display:block !important;
-  object-fit:contain !important;
-  filter:contrast(1.12) saturate(1.08) drop-shadow(0 0 8px rgba(0,160,255,.35)) !important;
-}
-.footer-brand{
-  overflow:visible !important;
-}
-@media (max-width:1100px){
-  .header-inner,
-  .home-page .header-inner,
-  .services-page .header-inner{
-    min-height:118px !important;
-  }
-  .brand{
-    width:220px !important;
-    min-width:220px !important;
-    flex-basis:220px !important;
-  }
-  .logo-horizontal{
-    width:210px !important;
-    max-width:210px !important;
-  }
-  .site-header .brand::before{
-    width:235px !important;
-    height:108px !important;
-  }
-}
-@media (max-width:720px){
-  .header-inner,
-  .home-page .header-inner,
-  .services-page .header-inner{
-    min-height:104px !important;
-    padding-top:12px !important;
-    padding-bottom:12px !important;
-  }
-  .brand{
-    width:176px !important;
-    min-width:176px !important;
-    flex-basis:176px !important;
-  }
-  .logo-horizontal{
-    width:170px !important;
-    max-width:170px !important;
-  }
-  .site-header .brand::before{
-    width:190px !important;
-    height:92px !important;
-    left:-16px !important;
-    opacity:.22 !important;
-  }
-  .footer-logo{
-    width:185px !important;
-    max-width:185px !important;
-  }
-}
-
-/* ===== ICE DETAILING — FINAL TIGHT HEADER + UNIFORM LOGO SIZE =====
-   Keeps the logo enlarged while bringing the header height back down.
-   Applies to every page through the shared stylesheet. */
-.site-header{
-  padding:10px 0 !important;
-  overflow:visible !important;
-}
-.header-inner,
-.home-page .header-inner,
-.services-page .header-inner{
-  min-height:96px !important;
-  padding-top:0 !important;
-  padding-bottom:0 !important;
   display:flex !important;
   align-items:center !important;
   justify-content:space-between !important;
+  gap:18px !important;
 }
 .brand{
-  width:280px !important;
-  min-width:280px !important;
-  flex:0 0 280px !important;
-  max-width:none !important;
-  overflow:visible !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  min-width:0 !important;
+  flex:0 0 auto !important;
 }
-.logo-horizontal{
-  width:260px !important;
-  max-width:260px !important;
-  height:auto !important;
+.brand-text{
+  display:none !important;
+}
+.logo-horizontal,
+.home-page .logo-horizontal,
+.services-page .logo-horizontal{
+  height:105px !important;
   max-height:none !important;
-  display:block !important;
+  width:auto !important;
+  max-width:260px !important;
   object-fit:contain !important;
-  filter:brightness(1.08) contrast(1.18) saturate(1.08) drop-shadow(0 0 8px rgba(0,160,255,.36)) drop-shadow(0 10px 20px rgba(0,0,0,.48)) !important;
+  display:block !important;
+  filter:brightness(1.08) contrast(1.16) drop-shadow(0 10px 24px rgba(0,160,255,0.22)) !important;
 }
-.site-header .brand::before{
-  width:260px !important;
-  height:86px !important;
-  left:-18px !important;
-  opacity:.18 !important;
-  filter:blur(34px) !important;
+.brand::before{
+  width:285px !important;
+  height:108px !important;
+  opacity:.28 !important;
+  filter:blur(24px) !important;
+  background:radial-gradient(circle at 36% 50%, rgba(0,160,255,0.42), transparent 66%) !important;
 }
 .footer-logo{
-  width:250px !important;
-  max-width:250px !important;
-  height:auto !important;
+  height:88px !important;
   max-height:none !important;
-  display:block !important;
+  width:auto !important;
+  max-width:260px !important;
   object-fit:contain !important;
-  filter:brightness(1.08) contrast(1.16) saturate(1.08) drop-shadow(0 0 8px rgba(0,160,255,.32)) !important;
+  display:block !important;
+  filter:brightness(1.08) contrast(1.14) drop-shadow(0 10px 22px rgba(0,160,255,0.20)) !important;
 }
-@media (max-width:1100px){
-  .header-inner,
-  .home-page .header-inner,
-  .services-page .header-inner{
-    min-height:90px !important;
-  }
-  .brand{
-    width:220px !important;
-    min-width:220px !important;
-    flex-basis:220px !important;
-  }
-  .logo-horizontal{
-    width:210px !important;
-    max-width:210px !important;
-  }
-  .site-header .brand::before{
-    width:220px !important;
-    height:78px !important;
-  }
-}
-@media (max-width:720px){
-  .site-header{
+
+@media (min-width:981px){
+  .header-inner{
     padding:8px 0 !important;
   }
+  .site-header .wrap{
+    padding-left:28px !important;
+    padding-right:28px !important;
+  }
+  .primary-nav{
+    margin-left:18px !important;
+  }
+}
+
+@media (max-width:980px){
   .header-inner,
   .home-page .header-inner,
   .services-page .header-inner{
-    min-height:82px !important;
     display:grid !important;
     grid-template-columns:1fr auto !important;
+    align-items:center !important;
     gap:12px !important;
+    padding:10px 0 !important;
   }
-  .brand{
-    width:170px !important;
-    min-width:170px !important;
-    flex-basis:170px !important;
+  .logo-horizontal,
+  .home-page .logo-horizontal,
+  .services-page .logo-horizontal{
+    height:82px !important;
+    max-width:210px !important;
   }
-  .logo-horizontal{
-    width:165px !important;
-    max-width:165px !important;
-  }
-  .site-header .brand::before{
-    width:175px !important;
-    height:70px !important;
-    left:-14px !important;
-    opacity:.16 !important;
+  .brand::before{
+    width:220px !important;
+    height:82px !important;
+    opacity:.24 !important;
+    filter:blur(20px) !important;
   }
   .footer-logo{
-    width:200px !important;
-    max-width:200px !important;
+    height:76px !important;
+    max-width:220px !important;
+  }
+}
+
+@media (max-width:520px){
+  .logo-horizontal,
+  .home-page .logo-horizontal,
+  .services-page .logo-horizontal{
+    height:70px !important;
+    max-width:180px !important;
+  }
+  .brand::before{
+    width:185px !important;
+    height:70px !important;
+    opacity:.22 !important;
+  }
+  .footer-logo{
+    height:68px !important;
+    max-width:190px !important;
   }
 }
