@@ -3680,3 +3680,92 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width:720px){
   .logo-horizontal{height:66px !important; max-width:190px !important;}
 }
+
+
+/* ===== PREMIUM HEADER LOGO UPGRADE - MAY 3 FINAL =====
+   Purpose: make iced_blue_v2.png larger, cleaner, and more visible without washing out the blue. */
+.site-header{
+  background:rgba(2,3,5,0.90) !important;
+  border-bottom:1px solid rgba(0,160,255,0.14) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,0.28) !important;
+}
+.header-inner{
+  min-height:112px !important;
+  padding:12px 0 !important;
+  gap:24px !important;
+}
+.brand{
+  min-width:170px !important;
+  width:170px !important;
+  flex:0 0 170px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  overflow:visible !important;
+}
+.brand-text{display:none !important;}
+.logo-horizontal{
+  height:104px !important;
+  max-width:170px !important;
+  width:auto !important;
+  object-fit:contain !important;
+  display:block !important;
+  position:relative !important;
+  z-index:3 !important;
+  opacity:1 !important;
+  filter:contrast(1.14) saturate(1.08) drop-shadow(0 0 10px rgba(0,160,255,0.58)) drop-shadow(0 10px 22px rgba(0,0,0,0.45)) !important;
+}
+.site-header .brand::before{
+  left:-26px !important;
+  width:205px !important;
+  height:112px !important;
+  opacity:.58 !important;
+  filter:blur(16px) !important;
+  background:radial-gradient(circle at 38% 50%,rgba(0,160,255,0.34),rgba(0,160,255,0.10) 42%,transparent 72%) !important;
+}
+.primary-nav{
+  margin-left:0 !important;
+  gap:14px !important;
+}
+.header-actions{
+  margin-left:auto !important;
+}
+.footer-logo{
+  filter:contrast(1.10) saturate(1.05) drop-shadow(0 0 8px rgba(0,160,255,.36)) !important;
+}
+@media (max-width:1100px){
+  .header-inner{gap:18px !important;}
+  .brand{min-width:150px !important;width:150px !important;flex-basis:150px !important;}
+  .logo-horizontal{height:92px !important;max-width:150px !important;}
+  .primary-nav{gap:8px !important;}
+}
+@media (max-width:820px){
+  .header-inner{min-height:92px !important;}
+  .brand{min-width:135px !important;width:135px !important;flex-basis:135px !important;}
+  .logo-horizontal{height:82px !important;max-width:135px !important;}
+  .site-header .brand::before{width:165px !important;height:92px !important;left:-18px !important;}
+}
+@media (max-width:720px){
+  .header-inner,.home-page .header-inner,.services-page .header-inner{
+    min-height:88px !important;
+    padding:10px 0 !important;
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    gap:12px !important;
+  }
+  .brand{
+    min-width:132px !important;
+    width:132px !important;
+    flex-basis:132px !important;
+  }
+  .logo-horizontal{
+    height:78px !important;
+    max-width:132px !important;
+  }
+  .site-header .brand::before{
+    width:158px !important;
+    height:88px !important;
+    left:-18px !important;
+    opacity:.52 !important;
+  }
+}
