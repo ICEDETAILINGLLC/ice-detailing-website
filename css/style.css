@@ -3881,3 +3881,21 @@ html,body{max-width:100%;overflow-x:hidden}
 .cta-call:hover {
   box-shadow: 0 0 20px rgba(0,160,255,0.9);
 }
+
+/* PREMIUM SERVICES HEADER */
+.premium-title {
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00A0FF, #66ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.premium-sub {
+  text-align: center;
+  color: #cfd8dc;
+  margin-top: 12px;
+  font-size: 16px;
+}
