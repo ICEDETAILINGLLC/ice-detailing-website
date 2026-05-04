@@ -4135,3 +4135,77 @@ button:hover, .btn:hover, .wizard-next:hover, .wizard-prev:hover {
 .wizard-prev {
   background: transparent;
 }
+
+
+/* CONTACT WIZARD BUTTON REDESIGN */
+.wizard-actions,
+.form-actions,
+.booking-actions {
+  gap: 14px;
+}
+
+/* Shared box style for Back, Continue, Submit */
+#wizardPrev,
+#wizardNext,
+button[type="submit"],
+.submit-btn,
+.request-booking,
+.booking-submit {
+  min-height: 52px;
+  padding: 14px 24px !important;
+  border-radius: 16px !important;
+  font-weight: 900 !important;
+  letter-spacing: .02em;
+  border: 1px solid rgba(0, 160, 255, .45) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.08);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+
+/* Green style for Continue + Submit */
+#wizardNext,
+button[type="submit"],
+.submit-btn,
+.request-booking,
+.booking-submit {
+  background: linear-gradient(135deg, #00d66f, #43f29a) !important;
+  color: #03140b !important;
+  border-color: rgba(67, 242, 154, .75) !important;
+  box-shadow: 0 0 20px rgba(0, 214, 111, .28), 0 12px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.35) !important;
+}
+
+/* Back stays dark/premium */
+#wizardPrev {
+  background: rgba(255,255,255,.035) !important;
+  color: #eaf7ff !important;
+  border-color: rgba(255,255,255,.16) !important;
+}
+
+/* Hover states */
+#wizardNext:hover,
+button[type="submit"]:hover,
+.submit-btn:hover,
+.request-booking:hover,
+.booking-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 28px rgba(0, 214, 111, .45), 0 16px 34px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.42) !important;
+}
+
+#wizardPrev:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0,160,255,.55) !important;
+  background: rgba(0,160,255,.08) !important;
+  box-shadow: 0 0 20px rgba(0,160,255,.18), 0 14px 30px rgba(0,0,0,.32) !important;
+}
+
+@media (max-width: 768px) {
+  #wizardPrev,
+  #wizardNext,
+  button[type="submit"],
+  .submit-btn,
+  .request-booking,
+  .booking-submit {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 18px !important;
+  }
+}
