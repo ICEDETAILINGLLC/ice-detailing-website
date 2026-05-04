@@ -709,5 +709,42 @@
   }
 </script>
 
+
+
+
+<script>
+  // Scroll to the top of the booking steps bar after Continue/Back.
+  document.addEventListener('DOMContentLoaded', () => {
+    const nextBtn = document.getElementById('wizardNext');
+    const prevBtn = document.getElementById('wizardPrev');
+
+    function scrollToStepsTop() {
+      const wizard =
+        document.querySelector('.booking-wizard') ||
+        document.querySelector('#bookingWizard') ||
+        document.querySelector('.wizard');
+
+      if (!wizard) return;
+
+      const header = document.querySelector('.site-header');
+      const headerOffset = header ? header.offsetHeight + 8 : 8;
+
+      const top = wizard.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: 'smooth'
+      });
+    }
+
+    [nextBtn, prevBtn].forEach(btn => {
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        setTimeout(scrollToStepsTop, 120);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
