@@ -3763,3 +3763,30 @@ html,body{max-width:100%;overflow-x:hidden}
     max-width:190px !important;
   }
 }
+/* FORCE LARGE LOGO WITHOUT TALL HEADER */
+.logo-horizontal {
+  height: 115px !important;
+  width: auto !important;
+  max-height: none !important;
+  display: block;
+}
+
+/* KILL ANY IMAGE SIZE LIMITS */
+.header-inner img,
+.brand img {
+  max-height: none !important;
+  height: auto;
+}
+
+/* KEEP HEADER TIGHT */
+.site-header {
+  padding: 8px 0 !important;
+  min-height: unset !important;
+}
+
+/* ALIGN CONTENT CLEAN */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
