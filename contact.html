@@ -256,11 +256,11 @@
             <textarea id="message" name="message" rows="6" placeholder="Vehicle condition, stains, pet hair, parking info, access notes, key handoff, or anything else we should know."></textarea>
 
             <label for="photos">Photos (optional)</label>
-            <label class="file-upload-label" for="vehiclePhotos">
+            <label class="file-upload-label" for="photos">
             <span class="file-upload-icon" aria-hidden="true">📎</span>
             <span class="file-upload-text">Attach photos or files</span>
           </label>
-          <input id="photos" name="photos" type="file" accept="image/*" multiple>
+          <input id="photos" name="photos" type="file" accept="image/*,video/*,.pdf" multiple>
           <div id="selectedFileName" class="file-upload-name">No file selected</div>
           <div class="file-upload-warning-note">Photos, PDFs, and videos accepted. Videos over 10MB should be sent by text.</div>
           </section>
@@ -680,16 +680,17 @@
 <script src="js/booking.js?v=ice43" defer></script>
 
 <script>
-  const vehiclePhotos = document.getElementById('vehiclePhotos');
+  const uploadInput = document.getElementById('photos');
   const selectedFileName = document.getElementById('selectedFileName');
-  if (vehiclePhotos && selectedFileName) {
-    vehiclePhotos.addEventListener('change', () => {
-      if (!vehiclePhotos.files || vehiclePhotos.files.length === 0) {
+
+  if (uploadInput && selectedFileName) {
+    uploadInput.addEventListener('change', () => {
+      if (!uploadInput.files || uploadInput.files.length === 0) {
         selectedFileName.textContent = 'No file selected';
         return;
       }
 
-      const oversizedVideos = Array.from(vehiclePhotos.files).filter(file => {
+      const oversizedVideos = Array.from(uploadInput.files).filter(file => {
         const isVideo = file.type && file.type.startsWith('video/');
         const over10MB = file.size > 10 * 1024 * 1024;
         return isVideo && over10MB;
@@ -697,12 +698,12 @@
 
       if (oversizedVideos.length > 0) {
         alert('For videos larger than 10MB, please send them by text to 617-777-7569.');
-        vehiclePhotos.value = '';
+        uploadInput.value = '';
         selectedFileName.textContent = 'No file selected';
         return;
       }
 
-      const names = Array.from(vehiclePhotos.files).map(file => file.name);
+      const names = Array.from(uploadInput.files).map(file => file.name);
       selectedFileName.textContent = names.length === 1 ? names[0] : `${names.length} files selected`;
     });
   }
