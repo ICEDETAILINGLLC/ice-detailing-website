@@ -3899,3 +3899,39 @@ html,body{max-width:100%;overflow-x:hidden}
   margin-top: 12px;
   font-size: 16px;
 }
+
+/* PREMIUM HEADER REDESIGN */
+.premium-services {
+  display: flex;
+  justify-content: center;
+}
+
+.premium-card {
+  border: 1px solid rgba(0,160,255,0.4);
+  border-radius: 18px;
+  padding: 60px 40px;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(0,160,255,0.1), transparent 70%);
+  box-shadow: 0 0 40px rgba(0,160,255,0.15);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.premium-card h2 {
+  font-size: 34px;
+  letter-spacing: 3px;
+  color: #00A0FF;
+  margin-bottom: 16px;
+}
+
+.premium-card p {
+  color: #cfd8dc;
+  font-size: 16px;
+}
+
+.premium-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00A0FF, transparent);
+  margin: 0 auto 20px auto;
+}
