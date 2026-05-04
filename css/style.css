@@ -4209,3 +4209,45 @@ button[type="submit"]:hover,
     padding: 13px 18px !important;
   }
 }
+
+
+/* FORCE NEW BUTTON STYLE (OVERRIDES EVERYTHING) */
+#wizardPrev,
+#wizardNext,
+button[type="submit"],
+button,
+.btn {
+  border-radius: 18px !important;
+  padding: 16px 26px !important;
+  font-weight: 800 !important;
+  letter-spacing: .03em !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+}
+
+/* STRONG GREEN (BETTER COLOR) */
+#wizardNext,
+button[type="submit"] {
+  background: linear-gradient(135deg, #00ff88, #00c853) !important;
+  color: #002b1a !important;
+  box-shadow: 0 0 25px rgba(0,255,136,0.45), 0 10px 25px rgba(0,0,0,0.4) !important;
+}
+
+/* HOVER STRONGER */
+#wizardNext:hover,
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(0,255,136,0.7), 0 14px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* BACK BUTTON CLEAN DARK */
+#wizardPrev {
+  background: rgba(255,255,255,0.05) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+#wizardPrev:hover {
+  border-color: #00A0FF !important;
+  box-shadow: 0 0 18px rgba(0,160,255,0.4) !important;
+}
