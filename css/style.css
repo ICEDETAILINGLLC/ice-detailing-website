@@ -4108,3 +4108,30 @@ label[for="photos"].file-upload-label:hover {
   border-color: rgba(0, 160, 255, 1);
   box-shadow: 0 0 26px rgba(0, 160, 255, 0.28);
 }
+
+
+/* BUTTON STYLE FIX */
+button, .btn, .wizard-next, .wizard-prev {
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 700;
+  border: 1px solid rgba(0,160,255,0.6);
+  background: rgba(0,160,255,0.08);
+  color: #eaf7ff;
+  transition: all 0.25s ease;
+}
+
+button:hover, .btn:hover, .wizard-next:hover, .wizard-prev:hover {
+  background: rgba(0,160,255,0.18);
+  box-shadow: 0 0 18px rgba(0,160,255,0.3);
+}
+
+.wizard-next {
+  background: linear-gradient(90deg, #00A0FF, #4cc3ff);
+  border: none;
+  color: #000;
+}
+
+.wizard-prev {
+  background: transparent;
+}
