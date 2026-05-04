@@ -4075,3 +4075,9 @@ input[type="file"]#vehiclePhotos {
   font-size: 12px;
   line-height: 1.35;
 }
+
+
+/* REMOVE DEFAULT FILE INPUT BAR */
+input[type="file"] {
+  display: none !important;
+}
