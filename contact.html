@@ -709,5 +709,46 @@
   }
 </script>
 
+
+<script>
+  // Keep each booking wizard step starting at the top after Continue/Back.
+  document.addEventListener('DOMContentLoaded', () => {
+    const wizard =
+      document.querySelector('.booking-wizard') ||
+      document.querySelector('.wizard') ||
+      document.querySelector('[data-booking-wizard]') ||
+      document.querySelector('#bookingWizard');
+
+    const nextBtn = document.getElementById('wizardNext');
+    const prevBtn = document.getElementById('wizardPrev');
+
+    function scrollToCurrentWizardStep() {
+      const target =
+        document.querySelector('.wizard-step.active') ||
+        document.querySelector('.booking-step.active') ||
+        document.querySelector('.step.active') ||
+        wizard;
+
+      if (!target) return;
+
+      const header = document.querySelector('.site-header');
+      const headerOffset = header ? header.offsetHeight + 16 : 16;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: Math.max(0, top),
+        behavior: 'smooth'
+      });
+    }
+
+    [nextBtn, prevBtn].forEach(btn => {
+      if (!btn) return;
+      btn.addEventListener('click', () => {
+        setTimeout(scrollToCurrentWizardStep, 90);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
