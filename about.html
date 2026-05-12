@@ -19,6 +19,19 @@
   });
 </script>
 
+
+<script>
+  // Always start pages at the top on direct load/refresh.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('pageshow', () => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+      setTimeout(() => window.scrollTo(0, 0), 80);
+      setTimeout(() => window.scrollTo(0, 0), 220);
+    }
+  });
+</script>
+
 </head>
 
 <body class="hybrid about-page">
