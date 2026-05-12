@@ -8,31 +8,6 @@
 
   <link rel="stylesheet" href="css/style.css?v=ICELOGO-BIG-FINAL" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
-
-<script>
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.addEventListener('load', () => {
-    if (!window.location.hash) {
-      setTimeout(() => window.scrollTo(0, 0), 0);
-      setTimeout(() => window.scrollTo(0, 0), 80);
-      setTimeout(() => window.scrollTo(0, 0), 250);
-    }
-  });
-</script>
-
-
-<script>
-  // Always start pages at the top on direct load/refresh.
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.addEventListener('pageshow', () => {
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-      setTimeout(() => window.scrollTo(0, 0), 80);
-      setTimeout(() => window.scrollTo(0, 0), 220);
-    }
-  });
-</script>
-
 </head>
 
 <body class="hybrid services-page">
@@ -654,7 +629,5 @@
 
 <script src="js/main.js?v=ice42b" defer></script>
 <script src="js/booking.js?v=ice42b" defer></script>
-
-
 </body>
 </html>
