@@ -4485,3 +4485,85 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* ===== ICE MOBILE HEADER CTA SIDE-BY-SIDE FIX - MAY 12 =====
+   Keeps the existing header/dropdown. Only changes mobile Call + Book sizing on
+   Home, Services, Gallery, Reviews, and About so they stay side by side and fit the screen. */
+@media (max-width: 980px) {
+  body.home-page .header-actions,
+  body.services-page .header-actions,
+  body.gallery-page .header-actions,
+  body.reviews-page .header-actions,
+  body.about-page .header-actions {
+    display: grid !important;
+    grid-template-columns: minmax(0, 2.05fr) minmax(64px, .85fr) !important;
+    gap: clamp(6px, 2vw, 10px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-items: stretch !important;
+  }
+
+  body.home-page .header-actions .cta-call,
+  body.services-page .header-actions .cta-call,
+  body.gallery-page .header-actions .cta-call,
+  body.reviews-page .header-actions .cta-call,
+  body.about-page .header-actions .cta-call,
+  body.home-page .header-actions .cta-book,
+  body.services-page .header-actions .cta-book,
+  body.gallery-page .header-actions .cta-book,
+  body.reviews-page .header-actions .cta-book,
+  body.about-page .header-actions .cta-book {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    min-height: clamp(42px, 10.5vw, 48px) !important;
+    padding: 10px clamp(7px, 2.2vw, 14px) !important;
+    font-size: clamp(.72rem, 3.25vw, .96rem) !important;
+    line-height: 1.05 !important;
+  }
+
+  body.home-page .header-actions .cta-book,
+  body.services-page .header-actions .cta-book,
+  body.gallery-page .header-actions .cta-book,
+  body.reviews-page .header-actions .cta-book,
+  body.about-page .header-actions .cta-book {
+    justify-self: stretch !important;
+  }
+}
+
+@media (max-width: 360px) {
+  body.home-page .header-actions,
+  body.services-page .header-actions,
+  body.gallery-page .header-actions,
+  body.reviews-page .header-actions,
+  body.about-page .header-actions {
+    grid-template-columns: minmax(0, 2.25fr) minmax(54px, .75fr) !important;
+    gap: 6px !important;
+  }
+
+  body.home-page .header-actions .cta-call,
+  body.services-page .header-actions .cta-call,
+  body.gallery-page .header-actions .cta-call,
+  body.reviews-page .header-actions .cta-call,
+  body.about-page .header-actions .cta-call,
+  body.home-page .header-actions .cta-book,
+  body.services-page .header-actions .cta-book,
+  body.gallery-page .header-actions .cta-book,
+  body.reviews-page .header-actions .cta-book,
+  body.about-page .header-actions .cta-book {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    font-size: .7rem !important;
+  }
+}
