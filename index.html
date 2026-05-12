@@ -34,18 +34,48 @@
   </script>
 
 
-  <!-- ICE top-load guard -->
+  <!-- ICE homepage top-load lock: runs before CSS/images/scripts so the home page cannot restore halfway down. -->
+  <style>
+    html { scroll-behavior: auto !important; overflow-anchor: none !important; }
+  </style>
   <script>
     (function () {
-      try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
-      if (!location.hash || location.hash === '#home') {
-        window.scrollTo(0, 0);
+      var isHomePage = /(^|\/)index\.html$/.test(location.pathname) || location.pathname === '/' || location.pathname.endsWith('/ice-detailing-website/');
+      if (!isHomePage) return;
+
+      try {
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      } catch (e) {}
+
+      function forceTop() {
+        try {
+          document.documentElement.scrollTop = 0;
+          document.body && (document.body.scrollTop = 0);
+          window.scrollTo(0, 0);
+        } catch (e) {}
       }
+
+      // Remove only the homepage anchor that causes browsers to jump below the true top.
+      if (location.hash === '#home') {
+        try { history.replaceState(null, document.title, location.pathname + location.search); } catch (e) {}
+      }
+
+      forceTop();
+      document.addEventListener('DOMContentLoaded', forceTop, { once: true });
+      window.addEventListener('load', function () {
+        forceTop();
+        [50, 150, 300, 700, 1200, 2000].forEach(function (ms) { setTimeout(forceTop, ms); });
+      });
+      window.addEventListener('pageshow', function () {
+        forceTop();
+        setTimeout(forceTop, 80);
+      });
+      window.addEventListener('beforeunload', forceTop);
     })();
   </script>
 
   <!-- bump this v number anytime you change CSS so cache never tricks you -->
-  <link rel="stylesheet" href="css/style.css?v=ICE-TOP-FIX-2" />
+  <link rel="stylesheet" href="css/style.css?v=ICE-HOME-TOP-FIX-3" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
 </head>
 
