@@ -4330,3 +4330,134 @@ html {
 }
 
 
+
+
+/* === TOP LOAD + MOBILE HEADER ALIGNMENT REPAIR === */
+/* Keeps existing header animation/dropdown setup; fixes overflow, alignment, and call button centering. */
+html {
+  scroll-padding-top: 110px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-header,
+.header-inner {
+  max-width: 100%;
+}
+
+.header-inner {
+  box-sizing: border-box;
+}
+
+.primary-nav,
+.header-actions,
+.cta-call,
+.cta-book {
+  box-sizing: border-box;
+}
+
+/* Stop mobile dropdown from overflowing/stacking off-screen */
+@media (max-width: 900px) {
+  .site-header {
+    overflow: visible !important;
+  }
+
+  .header-inner {
+    position: relative;
+    width: 100%;
+  }
+
+  .primary-nav.open,
+  .primary-nav.is-open,
+  .primary-nav.active,
+  #primaryNav.open,
+  #primaryNav.is-open,
+  #primaryNav.active {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100vw - 28px) !important;
+    max-width: 420px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .primary-nav a,
+  .primary-nav .nav-link {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  /* Keep Call/Book centered and inside screen when visible in mobile menu/header */
+  .header-actions {
+    max-width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .cta-call,
+  .cta-book {
+    max-width: calc(100vw - 40px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: normal !important;
+  }
+}
+
+/* Specific repair for inner pages where Call Now was half off-screen */
+@media (max-width: 768px) {
+  body:not(.home-page) .header-actions {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  body:not(.home-page) .cta-call {
+    display: inline-flex !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  .primary-nav.open,
+  .primary-nav.is-open,
+  .primary-nav.active,
+  #primaryNav.open,
+  #primaryNav.is-open,
+  #primaryNav.active {
+    width: calc(100vw - 24px) !important;
+    max-width: 390px !important;
+  }
+}
+
+/* Make page heads on gallery/reviews/about/contact line up consistently on mobile */
+@media (max-width: 768px) {
+  .page-hero,
+  .gallery-hero,
+  .reviews-hero,
+  .about-hero,
+  .contact-hero,
+  .hero-inner,
+  .section-head {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .page-hero .wrap,
+  .gallery-hero .wrap,
+  .reviews-hero .wrap,
+  .about-hero .wrap,
+  .contact-hero .wrap {
+    text-align: center !important;
+  }
+}
