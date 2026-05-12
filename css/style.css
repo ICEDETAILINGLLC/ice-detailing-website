@@ -4567,3 +4567,28 @@ body {
     font-size: .7rem !important;
   }
 }
+
+/* ===== ICE LOGO VISUAL ENLARGE ONLY - MAY 12 =====
+   Enlarges only the logo artwork inside the existing header space.
+   Does not change header height, padding, nav layout, dropdown, or CTA setup. */
+.site-header .brand {
+  overflow: visible !important;
+}
+
+.site-header .logo-horizontal {
+  transform: scale(1.14) !important;
+  transform-origin: left center !important;
+}
+
+@media (max-width: 980px) {
+  .site-header .logo-horizontal {
+    transform: scale(1.10) !important;
+    transform-origin: left center !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-header .logo-horizontal {
+    transform: scale(1.08) !important;
+  }
+}
