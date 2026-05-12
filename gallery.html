@@ -232,38 +232,6 @@
 <script src="js/slider.js?v=ice42b" defer></script>
 <script src="js/main.js?v=ice42b" defer></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navToggle = document.querySelector('.nav-toggle');
-    const primaryNav = document.getElementById('primaryNav') || document.querySelector('.primary-nav');
-
-    if (navToggle && primaryNav && !navToggle.dataset.iceMenuBound) {
-      navToggle.dataset.iceMenuBound = 'true';
-
-      navToggle.addEventListener('click', () => {
-        const isOpen = primaryNav.classList.toggle('open');
-        navToggle.classList.toggle('open', isOpen);
-        navToggle.setAttribute('aria-expanded', String(isOpen));
-      });
-
-      primaryNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          primaryNav.classList.remove('open');
-          navToggle.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      document.addEventListener('click', (event) => {
-        if (!primaryNav.classList.contains('open')) return;
-        if (primaryNav.contains(event.target) || navToggle.contains(event.target)) return;
-        primaryNav.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
-</script>
 
 </body>
 </html>
