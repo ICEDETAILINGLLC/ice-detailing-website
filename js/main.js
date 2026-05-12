@@ -1,3 +1,28 @@
+
+// ICE final top-load repair: prevent browsers from restoring pages halfway down.
+(() => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  const scrollTopUnlessAnchor = () => {
+    // Keep real section anchors working, but treat #home as the top of the homepage.
+    if (window.location.hash && window.location.hash !== '#home') return;
+    window.scrollTo(0, 0);
+  };
+
+  window.addEventListener('pageshow', scrollTopUnlessAnchor);
+  window.addEventListener('load', () => {
+    scrollTopUnlessAnchor();
+    setTimeout(scrollTopUnlessAnchor, 60);
+    setTimeout(scrollTopUnlessAnchor, 250);
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    scrollTopUnlessAnchor();
+    requestAnimationFrame(scrollTopUnlessAnchor);
+  });
+})();
+
 // main.js — reveal on scroll, prefill, parallax, sticky CTA, gallery lightbox
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
