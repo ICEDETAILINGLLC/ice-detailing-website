@@ -1,26 +1,39 @@
 
-// ICE final top-load repair: prevent browsers from restoring pages halfway down.
+// ICE homepage top-load repair: prevents browser/history restoration from opening the home page halfway down.
 (() => {
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
+  const isHomePage = document.body?.classList?.contains('home-page') || /(^|\/)index\.html$/.test(location.pathname) || location.pathname === '/';
+  if (!isHomePage) return;
 
-  const scrollTopUnlessAnchor = () => {
-    // Keep real section anchors working, but treat #home as the top of the homepage.
-    if (window.location.hash && window.location.hash !== '#home') return;
-    window.scrollTo(0, 0);
+  try {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  } catch (e) {}
+
+  const forceHomeTop = () => {
+    try {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo(0, 0);
+    } catch (e) {}
   };
 
-  window.addEventListener('pageshow', scrollTopUnlessAnchor);
+  if (location.hash === '#home') {
+    try { history.replaceState(null, document.title, location.pathname + location.search); } catch (e) {}
+  }
+
+  forceHomeTop();
+  window.addEventListener('pageshow', () => {
+    forceHomeTop();
+    setTimeout(forceHomeTop, 80);
+  });
   window.addEventListener('load', () => {
-    scrollTopUnlessAnchor();
-    setTimeout(scrollTopUnlessAnchor, 60);
-    setTimeout(scrollTopUnlessAnchor, 250);
+    forceHomeTop();
+    [50, 150, 300, 700, 1200, 2000].forEach((ms) => setTimeout(forceHomeTop, ms));
   });
   document.addEventListener('DOMContentLoaded', () => {
-    scrollTopUnlessAnchor();
-    requestAnimationFrame(scrollTopUnlessAnchor);
+    forceHomeTop();
+    requestAnimationFrame(forceHomeTop);
   });
+  window.addEventListener('beforeunload', forceHomeTop);
 })();
 
 // main.js — reveal on scroll, prefill, parallax, sticky CTA, gallery lightbox
