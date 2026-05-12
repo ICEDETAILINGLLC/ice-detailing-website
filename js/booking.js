@@ -22,13 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
     const services = form.querySelectorAll('input[name="services[]"]:checked');
     if (services.length === 0) {
+      e.preventDefault();
       showStatus('Please select at least one service.', true);
       return;
     }
+
+    const fileInput = form.querySelector('input[type="file"]');
+    const hasAttachment = Boolean(fileInput && fileInput.files && fileInput.files.length > 0);
+
+    // Important: Formspree file attachments are more reliable with a normal
+    // multipart browser submit than with the AJAX/fetch submit below.
+    // When a photo/video/PDF is attached, do NOT prevent the default submit.
+    if (hasAttachment) {
+      showStatus('Sending with attachment...', false);
+      if (submitButton) submitButton.disabled = true;
+      return;
+    }
+
+    e.preventDefault();
 
     showStatus('Sending...', false);
     if (submitButton) submitButton.disabled = true;
