@@ -8,6 +8,13 @@
 
   <link rel="stylesheet" href="css/style.css?v=ICE-MOBILE-CTA-SIDE-BY-SIDE-1" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
+<style>
+.gallery-page .featured-slider-wrap { width:100%; max-width:560px; justify-self:center; }
+.gallery-page .featured-slider-wrap .before-after { height:auto; min-height:0; aspect-ratio: 696 / 960; }
+.gallery-page .before-after .ba-overlay { width:100% !important; }
+.gallery-page .hero-stack-main img { object-position:50% 70%; }
+.gallery-page .hero-stack-card img { object-position:50% 65%; }
+</style>
 </head>
 
 <body class="hybrid gallery-page">
@@ -61,16 +68,16 @@
         </div>
       </div>
 
-      <div class="hero-visual-stack" aria-hidden="true">
+      <div class="hero-visual-stack">
         <div class="hero-stack-main">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400&auto=format&fit=crop" alt="">
+          <img src="images/gallery/dodge-and-mustang.jpg" alt="Dodge and Mustang">
         </div>
         <div class="hero-stack-side">
           <div class="hero-stack-card">
-            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1000&auto=format&fit=crop" alt="">
+            <img src="images/gallery/mustang-interior.jpg" alt="Mustang Interior">
           </div>
           <div class="hero-stack-card">
-            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1000&auto=format&fit=crop" alt="">
+            <img src="images/gallery/mustang-exterior.jpg" alt="Mustang Exterior">
           </div>
         </div>
       </div>
@@ -102,8 +109,8 @@
           <div class="featured-slider-wrap">
             <div
               class="before-after"
-              data-before="https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1600&auto=format&fit=crop"
-              data-after="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1600&auto=format&fit=crop"
+              data-before="images/gallery/interior-before.jpg"
+              data-after="images/gallery/interior-after.jpg"
               data-before-label="Before"
               data-after-label="After">
             </div>
@@ -132,8 +139,8 @@
       <div class="detail-row reveal">
         <figure class="detail-card detail-morph-card" style="--swap-delay:0s;">
           <div class="detail-morph-stage">
-            <img class="detail-morph-base" src="https://images.unsplash.com/photo-1542365887-4d1d1b6d0f8c?q=80&w=1200&auto=format&fit=crop" alt="Interior before">
-            <img class="detail-morph-top" src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=1200&auto=format&fit=crop" alt="Interior after">
+            <img class="detail-morph-base" src="images/gallery/jeep-before.jpg" alt="Jeep interior before detailing" loading="lazy">
+            <img class="detail-morph-top" src="images/gallery/jeep-after.jpg" alt="Jeep interior after detailing" loading="lazy">
           </div>
           <span>Interior</span>
         </figure>
@@ -217,7 +224,7 @@
 <script>
   document.getElementById('footerYearGal').textContent = new Date().getFullYear();
 </script>
-<script src="js/slider.js?v=ice42b" defer></script>
+<script src="js/slider.js?v=gallery-real-photos-1" defer></script>
 <script src="js/main.js?v=ICE-TOP-FIX-2" defer></script>
 </body>
 </html>

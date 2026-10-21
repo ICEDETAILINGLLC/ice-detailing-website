@@ -110,7 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setPercent(overlay, handle, pct) {
     const clamped = Math.max(0, Math.min(pct, 100));
-    overlay.style.width = clamped + "%";
+    overlay.style.width = "100%";
+    overlay.style.clipPath = `inset(0 ${100 - clamped}% 0 0)`;
     handle.style.left = clamped + "%";
     handle.dataset.pct = String(clamped);
     handle.setAttribute("aria-valuenow", String(Math.round(clamped)));
