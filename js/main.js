@@ -127,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeEls = document.querySelectorAll("[data-lightbox-close]");
 
   let activeGallery = [];
+  let activeCaptions = [];
+  let albumTrigger = null;
   let activeTitle = "";
   let activeIndex = 0;
 
@@ -134,6 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!activeGallery.length) return;
 
     lightboxImage.src = activeGallery[activeIndex];
+    const caption = document.getElementById("lightboxCaption");
+    if (caption) caption.textContent = activeCaptions[activeIndex] || "";
     lightboxImage.alt = `${activeTitle} image ${activeIndex + 1}`;
     lightboxTitle.textContent = activeTitle;
     lightboxMeta.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
@@ -148,13 +152,15 @@ document.addEventListener("DOMContentLoaded", () => {
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
+    lightbox.querySelector("[data-lightbox-close].gallery-lightbox-close")?.focus();
   }
 
   function closeLightbox() {
     lightbox.classList.remove("open");
     lightbox.setAttribute("aria-hidden", "true");
     document.body.classList.remove("lightbox-open");
-    lightboxImage.src = "";
+    lightboxImage.removeAttribute("src");
+    albumTrigger?.focus();
   }
 
   function showNext() {
@@ -181,10 +187,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (!images.length) return;
+      albumTrigger = card;
+      try { activeCaptions = JSON.parse(card.dataset.galleryCaptions || "[]"); } catch { activeCaptions = []; }
       openLightbox(title, images, 0);
     });
   });
 
+  if (lightboxImage) {
+    let touchX = null;
+    lightboxImage.addEventListener("touchstart", e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+    lightboxImage.addEventListener("touchend", e => {
+      if (touchX === null) return;
+      const delta = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(delta) > 45) { if (delta < 0) showNext(); else showPrev(); }
+      touchX = null;
+    }, {passive:true});
+  }
+  if (lightbox) lightbox.addEventListener("keydown", e => {
+    if (e.key !== "Tab" || !lightbox.classList.contains("open")) return;
+    const buttons = [...lightbox.querySelectorAll("button")];
+    const first = buttons[0], last = buttons[buttons.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
   if (prevBtn) prevBtn.addEventListener("click", showPrev);
   if (nextBtn) nextBtn.addEventListener("click", showNext);
 

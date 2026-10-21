@@ -48,6 +48,20 @@
   .gallery-page .featured-stage { padding: 12px 16px 16px; }
   .gallery-page .featured-slider-wrap { max-width: 280px; }
 }
+
+.gallery-page .gallery-album-card { width:100%; padding:0; text-align:left; color:#eaf6ff; cursor:pointer; font:inherit; }
+.gallery-page .gallery-album-card img { display:block; width:100%; height:280px; min-height:0; object-fit:cover; object-position:50% 65%; }
+.jeep-album-title,.jeep-album-meta { display:block; padding:12px 16px 0; }
+.jeep-album-title { font-weight:800; }
+.jeep-album-meta { font-size:.85rem; color:#9aaeb9; padding-top:6px; padding-bottom:16px; }
+#lightboxCaption { text-align:center; margin:10px 0; color:#eaf6ff; }
+.gallery-page .gallery-lightbox-image-wrap { touch-action:pan-y; }
+.gallery-page .gallery-lightbox-panel { max-height:95svh; overflow:auto; }
+@media(max-width:720px) {
+ .gallery-page .gallery-lightbox-body { grid-template-columns:44px minmax(0,1fr) 44px; gap:6px; }
+ .gallery-page .gallery-lightbox-nav { width:40px; height:44px; }
+ .gallery-page .gallery-lightbox-image-wrap img { max-height:65svh; }
+}
 </style>
 </head>
 
@@ -159,6 +173,13 @@
       <div class="section-copy reveal">
         <h2>More Work</h2>
       </div>
+      <div class="gallery-albums-grid">
+        <button type="button" class="gallery-album-card" data-gallery-title="Jeep Grand Cherokee" data-gallery-images='[&quot;images/gallery/jeep/exterior-before.jpg&quot;, &quot;images/gallery/jeep/exterior-after.jpg&quot;, &quot;images/gallery/jeep/wheel-before.jpg&quot;, &quot;images/gallery/jeep/wheel-after.jpg&quot;, &quot;images/gallery/jeep/front-interior-before.jpg&quot;, &quot;images/gallery/jeep/front-interior-after.jpg&quot;, &quot;images/gallery/jeep/rear-interior-before.jpg&quot;, &quot;images/gallery/jeep/rear-interior-after.jpg&quot;, &quot;images/gallery/jeep/rear-seats-before.jpg&quot;, &quot;images/gallery/jeep/rear-seats-after.jpg&quot;, &quot;images/gallery/jeep/cargo-before.jpg&quot;, &quot;images/gallery/jeep/cargo-after.jpg&quot;]' data-gallery-captions='[&quot;Exterior Before&quot;, &quot;Exterior After&quot;, &quot;Wheel Before&quot;, &quot;Wheel After&quot;, &quot;Front Interior Before&quot;, &quot;Front Interior After&quot;, &quot;Rear Interior Before&quot;, &quot;Rear Interior After&quot;, &quot;Rear Seats Before&quot;, &quot;Rear Seats After&quot;, &quot;Cargo Before&quot;, &quot;Cargo After&quot;]'>
+          <img src="images/gallery/jeep/exterior-after.jpg" alt="Jeep Grand Cherokee after detailing" loading="lazy">
+          <span class="jeep-album-title">Jeep Grand Cherokee</span>
+          <span class="jeep-album-meta">Before &amp; After · 12 Photos</span>
+        </button>
+      </div>
 
       
     </div>
@@ -232,6 +253,11 @@
 
       <button type="button" class="gallery-lightbox-close" data-lightbox-close aria-label="Close gallery">Close</button>
     </div>
+    <div class="gallery-lightbox-body">
+      <button type="button" id="lightboxPrev" class="gallery-lightbox-nav" aria-label="Previous photo">‹</button>
+      <div class="gallery-lightbox-image-wrap"><img id="lightboxImage" alt=""><p id="lightboxCaption" aria-live="polite"></p></div>
+      <button type="button" id="lightboxNext" class="gallery-lightbox-nav" aria-label="Next photo">›</button>
+    </div>
 
     
   </div>
@@ -259,6 +285,6 @@
   document.getElementById('footerYearGal').textContent = new Date().getFullYear();
 </script>
 <script src="js/slider.js?v=gallery-real-photos-1" defer></script>
-<script src="js/main.js?v=ICE-TOP-FIX-2" defer></script>
+<script src="js/main.js?v=GALLERY-JEEP-ALBUM-1" defer></script>
 </body>
 </html>
