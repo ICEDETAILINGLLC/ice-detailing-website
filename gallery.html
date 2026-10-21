@@ -9,11 +9,30 @@
   <link rel="stylesheet" href="css/style.css?v=ICE-MOBILE-CTA-SIDE-BY-SIDE-1" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
 <style>
-.gallery-page .featured-slider-wrap { width:100%; max-width:560px; justify-self:center; }
+.gallery-page .featured-slider-wrap { width:100%; max-width:270px; justify-self:center; }
 .gallery-page .featured-slider-wrap .before-after { height:auto; min-height:0; aspect-ratio: 696 / 960; }
 .gallery-page .before-after .ba-overlay { width:100% !important; }
 .gallery-page .hero-stack-main img { object-position:50% 70%; }
 .gallery-page .hero-stack-card img { object-position:50% 65%; }
+
+.gallery-page .hero-stack-main,
+.gallery-page .hero-stack-card {
+  border: 1px solid rgba(35, 172, 255, .9);
+  box-shadow: 0 0 0 1px rgba(35, 172, 255, .16), 0 0 18px rgba(0, 160, 255, .32), 0 16px 40px rgba(0, 0, 0, .35);
+}
+.gallery-page .featured-work { padding: 20px 0 18px; }
+.gallery-page .featured-shell { max-width: 900px; margin-inline: auto; }
+.gallery-page .featured-stage { grid-template-columns: 1fr 270px; gap: 24px; align-items: center; padding: 16px 22px 22px; }
+.gallery-page .featured-heading { padding: 18px 22px 0; }
+.gallery-page .featured-heading h2 { margin-bottom: 0; font-size: clamp(1.6rem, 2.5vw, 2rem); }
+.gallery-page .featured-copy { padding: 0; }
+@media (max-width: 720px) {
+  .gallery-page .featured-stage { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
+  .gallery-page .featured-copy { text-align: center; }
+  .gallery-page .featured-copy p { margin-bottom: 10px; }
+  .gallery-page .featured-points { justify-content: center; }
+  .gallery-page .featured-slider-wrap { max-width: 240px; }
+}
 </style>
 </head>
 
