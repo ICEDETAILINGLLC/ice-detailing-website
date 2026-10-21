@@ -62,6 +62,17 @@
  .gallery-page .gallery-lightbox-nav { width:40px; height:44px; }
  .gallery-page .gallery-lightbox-image-wrap img { max-height:65svh; }
 }
+
+.gallery-page .comparison-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:stretch; }
+.gallery-page .comparison-grid .featured-shell { width:100%; max-width:none; margin:0; min-width:0; }
+.gallery-page .comparison-grid .featured-stage { min-height:460px; justify-content:center; }
+.gallery-page .wheel-comparison .before-after { aspect-ratio:1134 / 1013; }
+.gallery-page .wheel-comparison .featured-slider-wrap { max-width:400px; }
+@media(max-width:800px) {
+ .gallery-page .comparison-grid { grid-template-columns:1fr; }
+ .gallery-page .comparison-grid .featured-stage { min-height:0; }
+ .gallery-page .comparison-grid .featured-shell { max-width:560px; justify-self:center; }
+}
 </style>
 </head>
 
@@ -134,6 +145,7 @@
 
   <section class="featured-work">
     <div class="wrap">
+      <div class="comparison-grid">
       <div class="featured-shell reveal">
         <div class="featured-heading">
           <div>
@@ -164,6 +176,38 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="featured-shell wheel-comparison reveal">
+        <div class="featured-heading">
+          <div>
+            <div class="featured-label">Wheel &amp; Rim Transformation</div>
+            <h2>Before &amp; After</h2>
+          </div>
+          <a class="btn ghost" href="contact.html">Request a Quote</a>
+        </div>
+
+        <div class="featured-stage">
+          <div class="featured-copy">
+            <p>One side before. One side finished.</p>
+
+            <div class="featured-points">
+              <span>Reset</span>
+              <span>Refined</span>
+              <span>Finished</span>
+            </div>
+          </div>
+
+          <div class="featured-slider-wrap">
+            <div
+              class="before-after"
+              data-before="images/gallery/wheel-slider-before.jpg?v=ford1"
+              data-after="images/gallery/wheel-slider-after.jpg?v=ford1"
+              data-before-label="Before"
+              data-after-label="After">
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </section>
