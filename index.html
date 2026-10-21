@@ -77,6 +77,11 @@
   <!-- bump this v number anytime you change CSS so cache never tricks you -->
   <link rel="stylesheet" href="css/style.css?v=ICE-MOBILE-CTA-SIDE-BY-SIDE-1" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
+  <style>
+    /* Preserve the complete portrait video within the existing homepage card. */
+    .home-page .hero-video-card { height: clamp(320px, 62vh, 560px); min-height: 0; }
+    .home-page .hero-card-video { height: 100%; min-height: 0; object-fit: contain; }
+  </style>
 </head>
 
 <body class="hybrid home-page">
@@ -128,7 +133,7 @@
       </div>
       <div class="hero-side reveal" aria-hidden="true">
         <div class="hero-video-card">
-          <video class="hero-card-video" autoplay muted loop playsinline preload="metadata" poster="images/cars/porsche_red.jpg">
+          <video class="hero-card-video" autoplay muted loop playsinline preload="auto" poster="images/hero-detail-poster.jpg">
             <source src="videos/hero-detail.mp4" type="video/mp4">
           </video>
           <div class="hero-card-overlay"></div>
