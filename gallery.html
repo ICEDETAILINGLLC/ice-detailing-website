@@ -65,13 +65,22 @@
 
 .gallery-page .comparison-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:stretch; }
 .gallery-page .comparison-grid .featured-shell { width:100%; max-width:none; margin:0; min-width:0; }
-.gallery-page .comparison-grid .featured-stage { min-height:460px; justify-content:center; }
-.gallery-page .wheel-comparison .before-after { aspect-ratio: 1094 / 972; }
-.gallery-page .wheel-comparison .featured-slider-wrap { max-width:400px; }
+.gallery-page .comparison-grid .featured-stage { min-height:0; justify-content:flex-start; }
+.gallery-page .wheel-comparison .before-after { aspect-ratio: 3 / 4; }
+.gallery-page .wheel-comparison .featured-slider-wrap { max-width:300px; }
 @media(max-width:800px) {
  .gallery-page .comparison-grid { grid-template-columns:1fr; }
  .gallery-page .comparison-grid .featured-stage { min-height:0; }
  .gallery-page .comparison-grid .featured-shell { max-width:560px; justify-self:center; }
+}
+
+.gallery-page .comparison-grid .featured-shell { display:flex; flex-direction:column; }
+.gallery-page .comparison-grid .featured-heading { min-height:82px; }
+.gallery-page .comparison-grid .featured-slider-wrap { width:100%; max-width:300px; }
+.gallery-page .comparison-grid .before-after { aspect-ratio:3 / 4; min-height:0; height:auto; }
+.gallery-page .comparison-grid .before-after img { object-fit:contain; }
+@media(max-width:720px) {
+ .gallery-page .comparison-grid .featured-slider-wrap { max-width:280px; }
 }
 </style>
 </head>
@@ -169,8 +178,8 @@
           <div class="featured-slider-wrap">
             <div
               class="before-after"
-              data-before="images/gallery/interior-before.jpg?v=wide1"
-              data-after="images/gallery/interior-after.jpg?v=wide1"
+              data-before="images/gallery/interior-before.jpg?v=aligned2"
+              data-after="images/gallery/interior-after.jpg?v=aligned2"
               data-before-label="Before"
               data-after-label="After">
             </div>
@@ -200,8 +209,8 @@
           <div class="featured-slider-wrap">
             <div
               class="before-after"
-              data-before="images/gallery/wheel-slider-before.jpg?v=bmw1"
-              data-after="images/gallery/wheel-slider-after.jpg?v=bmw1"
+              data-before="images/gallery/wheel-slider-before.jpg?v=aligned2"
+              data-after="images/gallery/wheel-slider-after.jpg?v=aligned2"
               data-before-label="Before"
               data-after-label="After">
             </div>
