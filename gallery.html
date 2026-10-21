@@ -9,29 +9,44 @@
   <link rel="stylesheet" href="css/style.css?v=ICE-MOBILE-CTA-SIDE-BY-SIDE-1" />
   <link rel="stylesheet" href="css/animations.css?v=ice43premium" />
 <style>
-.gallery-page .featured-slider-wrap { width:100%; max-width:270px; justify-self:center; }
-.gallery-page .featured-slider-wrap .before-after { height:auto; min-height:0; aspect-ratio: 696 / 960; }
-.gallery-page .before-after .ba-overlay { width:100% !important; }
-.gallery-page .hero-stack-main img { object-position:50% 70%; }
-.gallery-page .hero-stack-card img { object-position:50% 65%; }
-
+/* Fixed grid tracks prevent portrait photos from stretching the header. */
+.gallery-page .results-hero { padding: 32px 0; }
+.gallery-page .hero-visual-stack { height: clamp(340px, calc(100svh - 250px), 450px); min-height: 0; grid-template-columns: 1.1fr .65fr; grid-template-rows: minmax(0, 1fr); }
+.gallery-page .hero-stack-side { min-height: 0; grid-template-rows: repeat(2, minmax(0, 1fr)); }
 .gallery-page .hero-stack-main,
 .gallery-page .hero-stack-card {
-  border: 1px solid rgba(35, 172, 255, .9);
-  box-shadow: 0 0 0 1px rgba(35, 172, 255, .16), 0 0 18px rgba(0, 160, 255, .32), 0 16px 40px rgba(0, 0, 0, .35);
+  min-height: 0; min-width: 0; position: relative;
+  border: 1px solid rgba(35,172,255,.9);
+  box-shadow: 0 0 0 1px rgba(35,172,255,.16), 0 0 18px rgba(0,160,255,.32), 0 16px 40px rgba(0,0,0,.35);
 }
-.gallery-page .featured-work { padding: 20px 0 18px; }
-.gallery-page .featured-shell { max-width: 900px; margin-inline: auto; }
-.gallery-page .featured-stage { grid-template-columns: 1fr 270px; gap: 24px; align-items: center; padding: 16px 22px 22px; }
-.gallery-page .featured-heading { padding: 18px 22px 0; }
-.gallery-page .featured-heading h2 { margin-bottom: 0; font-size: clamp(1.6rem, 2.5vw, 2rem); }
-.gallery-page .featured-copy { padding: 0; }
+.gallery-page .hero-stack-main img,
+.gallery-page .hero-stack-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gallery-page .hero-stack-main img { object-position: 50% 70%; }
+.gallery-page .hero-stack-card img { object-position: 50% 65%; }
+/* Center the comparison inside a card sized to its content. */
+.gallery-page .featured-work { padding: 24px 0; }
+.gallery-page .featured-shell { max-width: 560px; margin-inline: auto; }
+.gallery-page .featured-heading { padding: 18px 20px 0; align-items: center; gap: 12px; }
+.gallery-page .featured-heading h2 { margin: 0; font-size: clamp(1.5rem, 2.5vw, 2rem); }
+.gallery-page .featured-heading .btn { font-size: .85rem; padding: 10px 12px; }
+.gallery-page .featured-stage { display: flex; flex-direction: column; gap: 14px; padding: 14px 20px 20px; align-items: center; }
+.gallery-page .featured-copy { padding: 0; text-align: center; }
+.gallery-page .featured-copy p { margin: 0; }
+.gallery-page .featured-points { display: none; }
+.gallery-page .featured-slider-wrap { width: 100%; max-width: 300px; }
+.gallery-page .featured-slider-wrap .before-after { height: auto; min-height: 0; aspect-ratio: 696 / 960; }
+.gallery-page .before-after .ba-overlay { width: 100% !important; }
+@media (max-width: 1080px) {
+  .gallery-page .results-hero-inner { gap: 24px; }
+  .gallery-page .hero-visual-stack { width: 100%; max-width: 640px; justify-self: center; height: 400px; }
+}
 @media (max-width: 720px) {
-  .gallery-page .featured-stage { grid-template-columns: 1fr; gap: 14px; padding: 16px; }
-  .gallery-page .featured-copy { text-align: center; }
-  .gallery-page .featured-copy p { margin-bottom: 10px; }
-  .gallery-page .featured-points { justify-content: center; }
-  .gallery-page .featured-slider-wrap { max-width: 240px; }
+  .gallery-page .results-hero { padding: 28px 0; }
+  .gallery-page .hero-visual-stack { height: 330px; gap: 10px; }
+  .gallery-page .hero-stack-side { gap: 10px; }
+  .gallery-page .featured-heading { padding: 16px 16px 0; }
+  .gallery-page .featured-stage { padding: 12px 16px 16px; }
+  .gallery-page .featured-slider-wrap { max-width: 280px; }
 }
 </style>
 </head>
